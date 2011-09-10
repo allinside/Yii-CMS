@@ -22,8 +22,8 @@
                 <?php $this->widget('TopMenu'); ?>
             </div>
             <div class="logo">
-                <h1><a href="#">winglobal
-                    <small>put your slogan here</small>
+                <h1><a href="/">Арт
+                    <small>Проект</small>
                 </a></h1>
             </div>
             <div class="clr"></div>

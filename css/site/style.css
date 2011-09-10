@@ -39,11 +39,9 @@ h1 a, h1 a:hover {
 	text-decoration:none;
 }
 h1 small {
-	display:block;
-	margin-top:-4px;
-	padding:0 0 0 68px;
+	padding:0;
 	color:#959595;
-	font:normal 13px/1.2em Arial, Helvetica, sans-serif;
+	font:normal 30px/1.2em Arial, Helvetica, sans-serif;
 	letter-spacing:normal;
 }
 h2 {

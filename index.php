@@ -18,12 +18,12 @@ defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
 
-$config = $_SERVER['DOCUMENT_ROOT'] . 'protected/config/' . getenv("APP_ENV") . '.php';
-
 require_once($yii);
 
 $session = new CHttpSession;
 $session->open();
+
+$config = $_SERVER['DOCUMENT_ROOT'] . 'protected/config/' . getenv("APP_ENV") . '.php';
 
 Yii::createWebApplication($config)->run();
 
