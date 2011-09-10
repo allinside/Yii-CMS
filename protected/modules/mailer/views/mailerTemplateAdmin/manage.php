@@ -15,8 +15,15 @@ $this->widget('application.components.GridView', array(
 		array('name' => 'is_basic', 'value' => '$data->is_basic ? "Да" : "Нет"'),
 		'date_create',
 		array(
-			'class'=>'CButtonColumn',
-			
+			'class'   => 'CButtonColumn',
+			'buttons' => array(
+                'update' => array(
+                    'visible' => '!$data->is_basic'
+                ),
+                'delete' => array(
+                    'visible' => '!$data->is_basic'
+                )
+            )
 		),
 	),
 )); 

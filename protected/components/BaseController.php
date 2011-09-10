@@ -86,7 +86,7 @@ abstract class BaseController extends CController
     
     public function checkAccess($item_name)
     {
-        if (isset(Yii::app()->user->role->name) && Yii::app()->user->role->name == AuthItem::ROOT_ROLE)
+        if (isset(Yii::app()->user->role->name) && Yii::app()->user->role->name == AuthItem::ROLE_ROOT)
         {   
             return true;
         }

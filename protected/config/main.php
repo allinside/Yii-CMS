@@ -24,8 +24,6 @@ $modules['gii'] = array(
 	'ipFilters'      => array('127.0.0.1','::1')
 );
 
-
-
 return array(
     'language' => 'ru',
 	'basePath' => dirname(__FILE__).DIRECTORY_SEPARATOR.'..',

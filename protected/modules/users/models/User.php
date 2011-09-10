@@ -407,7 +407,7 @@ class User extends ActiveRecordModel
 		if (!$assigment)
 		{
 			$assigment = new AuthAssignment();
-			$assigment->itemname = AuthItem::DEFAULT_ROLE;
+			$assigment->itemname = AuthItem::ROLE_DEFAULT;
 			$assigment->userid   = $this->id;
 			$assigment->save();
 		}
@@ -418,7 +418,7 @@ class User extends ActiveRecordModel
 
     public function isRootRole()
     {
-        return $this->role->name == AuthItem::ROOT_ROLE;
+        return $this->role->name == AuthItem::ROLE_ROOT;
     }
 }
 

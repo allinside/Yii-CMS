@@ -2,8 +2,9 @@
 
 class AuthItem extends ActiveRecordModel
 {	
-	const DEFAULT_ROLE = 'user';
-    const ROOT_ROLE    = 'admin';
+	const ROLE_DEFAULT = 'user';
+    const ROLE_GUEST   = 'guest';
+    const ROLE_ROOT    = 'admin';
 
     const TYPE_OPERATION = 0;
     const TYPE_TASK      = 1;    

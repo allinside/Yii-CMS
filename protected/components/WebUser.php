@@ -13,7 +13,7 @@ class WebUser extends CWebUser
         }
         else 
         {	
-        	return "guest";	
+        	return AuthItem::ROLE_GUEST;
         }
     }
 

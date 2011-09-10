@@ -33,7 +33,7 @@ class RoleAdminController extends AdminController
 				    $model->data
 			    );	
 			    
-			    if ($_POST['AuthItem']['parent']) 
+			    if (isset($_POST['AuthItem']['parent']) && $_POST['AuthItem']['parent'])
 			    {  
 			        Yii::app()->authManager->addItemChild($_POST['AuthItem']['parent'], $model->name);
 			    }
