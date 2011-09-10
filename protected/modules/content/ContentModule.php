@@ -53,4 +53,15 @@ class ContentModule extends WebModule
             'Добавить меню'     => '/content/menuAdmin/create'
         );
     }
+
+
+    public static function urlRules()
+    {
+        return array(
+            '' => 'content/page/main',
+            '<lang:[a-z]{2}>' => 'content/page/main',
+            '<lang:[a-z]{2}>/page/<id:\d+>' => 'content/page/view',
+            '<lang:[a-z]{2}>/page/<url:.*>' => 'content/page/view',
+        );
+    }
 }

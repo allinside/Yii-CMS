@@ -57,4 +57,14 @@ class MainModule extends WebModule
             'Разделы настроек' => '/main/SettingsSectionAdmin/manage',
 		);
 	}
+
+
+    public static function urlRules()
+    {
+        return array(
+            'admin' => 'main/mainAdmin',
+            '<lang:[a-z]{2}>/search' => 'main/main/search',
+            'feedback' => 'main/feedback/create',
+        );
+    }
 }

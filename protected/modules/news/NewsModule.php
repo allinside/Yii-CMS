@@ -48,4 +48,13 @@ class NewsModule extends WebModule
 			'Добавить новость' => '/news/newsAdmin/create'
         );
     }
+
+
+    public static function urlRules()
+    {
+        return array(
+            '<lang:[a-z]{2}>/news/<id:\d+>' => 'news/news/view',
+            '<lang:[a-z]{2}>/news'          => 'news/news/index',
+        );
+    }
 }

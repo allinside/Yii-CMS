@@ -55,4 +55,15 @@ class UsersModule extends WebModule
             'Добавить пользователя' => '/users/userAdmin/create',
         );
     }
+
+
+    public static function urlRules()
+    {
+        return array(
+            'login'        => 'users/user/login',
+            'logout'       => 'users/user/logout',
+            'registration' => 'users/user/registration',
+            'admin/login'  => 'users/userAdmin/login',
+        );
+    }
 }

@@ -54,4 +54,14 @@ class ArticlesModule extends WebModule
 			'Добавить раздел'   => '/articles/articleSectionAdmin/create'
         );
     }
+
+
+    public static function urlRules()
+    {s
+        return array(
+            '<lang:[a-z]{2}>/articles'                          => 'articles/article/index',
+            '<lang:[a-z]{2}>/articles/<id:\d+>'                 => 'articles/article/view',
+            '<lang:[a-z]{2}>/articles/section/<section_id:\d+>' => 'articles/article/SectionArticles',
+        );
+    }
 }
