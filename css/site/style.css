@@ -319,6 +319,6 @@ ol li .send {
 }
 
 .admin_link {
-    font-weight: bold;
-    color:red;
+    font-weight: bold !important;
+    color:red !important;
 }
