@@ -53,7 +53,9 @@ class RoleAdminController extends AdminController
 	public function actionUpdate($id) 
 	{	
 		$model = $this->loadModel($id);
-        
+
+        $this->protectSystemRoles($model);
+
         $role = Yii::app()->authManager->getAuthItem($model->name);
         if (!$role) 
         {
@@ -104,6 +106,8 @@ class RoleAdminController extends AdminController
 	
 	public function actionDelete($id) 
 	{
+        $this->protectSystemRoles($id);
+
 	    Yii::app()->authManager->removeAuthItem($id);
 	    
 		if(!isset($_GET['ajax']))
@@ -138,4 +142,18 @@ class RoleAdminController extends AdminController
 	    
 	    return $model;
 	}
+
+
+    private function protectSystemRoles($role)
+    {
+        if (!is_object($role))
+        {
+            $role = $this->loadModel($role);
+        }
+
+        if (in_array($role->name, AuthItem::$system_roles))
+        {
+            throw new CException('Нельзя редактировать у далять системные роли!');
+        }
+    }
 }

@@ -13,10 +13,12 @@ class AuthItem extends ActiveRecordModel
 	public $module;
 
     public $parent;
-	
-	
 
-	public static $system_roles = array('user', 'admin');     
+	public static $system_roles = array(
+        self::ROLE_DEFAULT,
+        self::ROLE_GUEST,
+        self::ROLE_ROOT
+    );
 
 
 	public static function model($className=__CLASS__)

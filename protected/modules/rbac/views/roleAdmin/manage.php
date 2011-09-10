@@ -10,6 +10,8 @@ function tasksLink($role)
 	return "<a href='/rbac/TaskAdmin/RolesTasks/role/{$role}'>Задачи</a>";
 }
 
+$not_system_role = '!in_array($data->name, AuthItem::$system_roles)';
+
 $this->widget('application.components.GridView', array(
 	'id' => 'news-grid',
 	'dataProvider' => $model->search(AuthItem::TYPE_ROLE),
@@ -18,11 +20,17 @@ $this->widget('application.components.GridView', array(
 	'columns'  => array(
         'name',
         'description',
-//        'bizrule',
-//        'data',
 		array('name' => '&nbsp', 'value' => 'tasksLink($data->name)', 'type' => 'raw'),
 		array(
 			'class' => 'CButtonColumn',
+            'buttons' => array(
+                'update' => array(
+                    'visible' => $not_system_role
+                ),
+                'delete' => array(
+                    'visible' => $not_system_role
+                )
+            )
 		),
 	),
 )); 
