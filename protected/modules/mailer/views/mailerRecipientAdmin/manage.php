@@ -1,0 +1,43 @@
+<script type="text/javascript">
+    $(function()
+    {
+        $('#resend_rl_button').click(function()
+        {
+            var msg = "Не понял зачем письма с статусом 'Ожидает' должны повторно отправиться? они же и так в очереди и так на отправку.";
+            alert(msg);
+        });
+
+
+        $('#refresh_rl_button').click(function()
+        {   
+            location.href = location.href;
+        });
+    });
+</script>
+
+<?php
+
+$this->tabs = array(
+    'добавить' => $this->createUrl('create')
+);
+
+$this->widget('application.components.GridView', array(
+	'id' => 'mailer-recipient-grid',
+	'dataProvider' => $model->search(),
+	'filter' => $model,
+	'template' => '{summary}<br/>{pager}<br/>{items}<br/>{pager}',
+	'columns' => array(
+		array('name' => 'user_id', 'value' => '$data->user->name'),
+        array('name' => 'Роль', 'value' => '$data->user->role->description'),
+		array('name' => 'status', 'value' => 'MailerRecipient::$statuses[$data->status]'),
+		array(
+			'class'=>'CButtonColumn',
+            'template' => ''
+		),
+	),
+)); 
+
+?>
+
+<input type='button' class="submit mid" value="Обновить" id="refresh_rl_button">
+<input type='button' class="submit long" value="Повторная отправка" id="resend_rl_button">

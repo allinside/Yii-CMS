@@ -1,0 +1,30 @@
+<?php
+
+return array(
+    "Напомнить пароль" => "Forgot your password",
+    "Запомнить" => "Remember",
+    "Пароль" => "Password",
+	"Войти" => "Login",
+	"Выход" => "Logout",
+	"Как стать членом Клуба?" => "How to become a member?",
+	"ПЕРВЫЙ В РОССИИ КЛУБ СПЕЦИАЛИСТОВ ПО РАСПЕРЕДЕЛЕНИЮ ЭЛЕКТРОЭНЕРГИИ" => "FIRST RUSSIAN CLUB PROFESSIONAL FOR ELECTRICITY RASPEREDELENIYU",
+	"ТРАДИЦИИ ТЕХНОЛОГИИ ИННОВАЦИИ" => "TRADITIONS OF INNOVATION TECHNOLOGY",
+	"Поиск по сайту" => "Site search",
+	"Подать заявку на вступление в члены клуба Электрополис" => "Apply for membership in the club Electropolis",
+	"Имя" => "First name",
+	"Раздел" => "Section",
+	"Фамилия" => "Last name",
+	"Отчество" => "Patronymic",
+	"Результаты поиска" => "Search results",
+	"Имя" => "First Name",
+	"Компания" => "Company",
+	"Должность" => "Post",
+	"Телефон" => "Phone",
+	"Вопрос" => "Question",
+	"*Обязательное поле" => "*Required",
+	"Комментарий" => "Comments",
+	"Подать заявку" => "Apply",
+	"Неверный формат! Пример: +7-903-5492969" => "Wrong format! example: +7-903-5492969",
+	"только русский или латинский алфавит" => "only Russian or Latin alphabet",
+	"только русский или латинский алфавит с учетом пробелов" => "only Russian or Latin alphabet, including spaces"
+);
