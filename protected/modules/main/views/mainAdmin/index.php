@@ -1,40 +1,8 @@
-<style type="text/css">
-	
-	.version {
-		font-size: 11px;
-	}
-	
-	.modules h3 {
-		float: left;
-	}
-	
-	.modules {
-		width: 100%;
-	}
-	
-	.modules .image {
-		width: 80px;
-		text-align: left;
-	}
-	
-	.modules a {
-		margin-right: 20px;	
-	}
-	
-	.modules td {
-		border: 0 !important;
-	}
-	
-	.separator {
-		border-bottom: 1px solid #DDDDDD;
-		margin-top: 10px;
-		margin-bottom: 20px;
-	}
-	
-</style>
-
 <?php
+Yii::app()->clientScript->registerCssFile($this->module->assetsUrl() . '/css/modules.css');
+
 $this->page_title = 'Модули';
+$this->tabs = array();
 ?>
 
 <?php foreach ($modules as $class => $data): ?>

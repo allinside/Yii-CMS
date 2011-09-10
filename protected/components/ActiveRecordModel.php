@@ -460,7 +460,7 @@ class ActiveRecordModel extends CActiveRecord
         }
 
         $lang = $this->defineLang();
- 
+   
         $criteria->addCondition("lang = '{$lang}'");
     }
     
@@ -468,7 +468,7 @@ class ActiveRecordModel extends CActiveRecord
     private function defineLang() 
     {
         $class = get_class(Yii::app()->controller);
-
+        
         if (mb_substr($class, -15, 5, 'utf-8') == 'Admin')
         {   
             if (isset(Yii::app()->session["admin_panel_lang"]))

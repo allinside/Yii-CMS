@@ -81,6 +81,7 @@ a.com span {
 	margin:0 auto;
 	padding:12px 0 112px;
 	width:970px;
+    position: relative;
 }
 .menu_nav {
 	margin:0;
@@ -309,4 +310,15 @@ ol li .send {
 	padding:0;
 	border:none;
 	float:left;
+}
+
+#lang_div {
+    position: absolute;
+    top: 60px;
+    left: 30px;
+}
+
+.admin_link {
+    font-weight: bold;
+    color:red;
 }

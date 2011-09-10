@@ -1,4 +1,4 @@
-<?php $this->page_title = $page->title; ?>
+<?php $this->page_title = $this->meta_title = $page->title; ?>
 
 <?php echo $page->content ?>
 

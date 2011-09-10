@@ -57,7 +57,7 @@ class ArticlesModule extends WebModule
 
 
     public static function urlRules()
-    {s
+    {
         return array(
             '<lang:[a-z]{2}>/articles'                          => 'articles/article/index',
             '<lang:[a-z]{2}>/articles/<id:\d+>'                 => 'articles/article/view',

@@ -71,7 +71,7 @@ class PageAdminController extends AdminController
 	public function actionUpdate($id)
 	{   
 		$model = $this->loadModel($id);
-		
+
 		$form = new BaseForm('content.PageForm', $model);
 		
 		if(isset($_POST['Page']))
@@ -121,7 +121,7 @@ class PageAdminController extends AdminController
 	{
 		$model=Page::model()->findByPk((int) $id);
 		if($model===null)
-        {
+        {   echo
             $this->pageNotFound();
         }
 

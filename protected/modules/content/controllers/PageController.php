@@ -13,8 +13,6 @@ class PageController extends BaseController
     
     public function actionView()
     {       
-        $this->layout = '//layouts/inner';           
-            
         $id = $this->request->getParam("id");
         if ($id)
         {
