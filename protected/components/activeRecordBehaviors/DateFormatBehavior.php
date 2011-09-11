@@ -19,8 +19,26 @@ class DateFormatBehavior  extends CActiveRecordBehavior
             {
                 if ($value != "0000-00-00")
                 {
-                    $model->$attr = Yii::app()->dateFormatter->format('dd MMMM yyyy', $value);
+                    $model->$attr = Yii::app()->dateFormatter->format('dd.MM.yyyy', $value);
                 }
+            }
+        }
+    }
+
+
+    public function beforeSave()
+    {
+        $model = $this->getOwner();
+
+        foreach ($model->attributes as $attr => $value)
+        {
+            if (preg_match(ActiveRecordModel::PATTERN_DATE, $value))
+            {
+                $model->$attr = date("Y-m-d", strtotime($value));
+            }
+            elseif (preg_match(ActiveRecordModel::PATTENT_DATE_TIME, $value))
+            {
+                $model->$attr = date("Y-m-d H:i:c", strtotime($value));
             }
         }
     }

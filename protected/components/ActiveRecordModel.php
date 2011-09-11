@@ -23,19 +23,22 @@ class ActiveRecordModel extends CActiveRecord
     {   
         return array(
             'DateFormat' => array(
-                'class' => 'application.components.DateFormatBehavior'
+                'class' => 'application.components.activeRecordBehaviors.DateFormatBehavior'
             ),
             'LangCondition' => array(
-                'class' => 'application.components.LangConditionBehavior'
+                'class' => 'application.components.activeRecordBehaviors.LangConditionBehavior'
             ),
             'ForeignKeyNullValue' => array(
-                'class' => 'application.components.ForeignKeyNullValueBehavior'
+                'class' => 'application.components.activeRecordBehaviors.ForeignKeyNullValueBehavior'
+            ),
+            'UserForeignKey' => array(
+                'class' => 'application.components.activeRecordBehaviors.UserForeignKeyBehavior'
             )
         );
     }
 
-    //VALIDATORS________________________________________________________________________________
 
+    //VALIDATORS________________________________________________________________________________
     public function humanDate($attr, $date)
     {
         if (!empty($this->$attr))
@@ -97,7 +100,6 @@ class ActiveRecordModel extends CActiveRecord
 
 
     //SCOPES___________________________________________________________________________________
-
     public function scopes()
     {
         return array(
@@ -128,38 +130,7 @@ class ActiveRecordModel extends CActiveRecord
 	}
 
 
-    //EVENTS___________________________________________________________________________________
-
-//    public function beforeSave()
-//    {
-//        foreach ($this->attributes as $attr => $value)
-//        {
-//            if (preg_match(self::PATTERN_DATE, $value))
-//            {
-//                $this->$attr = Dater::mysqlDate($value);
-//            }
-//            else if (preg_match(self::PATTENT_DATE_TIME, $value))
-//            {
-//                $this->$attr = Dater::mysqlDateTime($value);
-//            }
-//        }
-//
-//
-//        foreach ($this->attributes as $attr => $value)
-//        {
-//            if (empty($value))
-//            {
-//                $this->$attr = null;
-//            }
-//        }
-//
-//        return true;
-//    }
-
-
-
     //CRUD_____________________________________________________________________________________
-
     public function save($validate = true)
     {
         if (method_exists($this, "uploadFiles"))
@@ -282,33 +253,7 @@ class ActiveRecordModel extends CActiveRecord
         return $labels;
     }
 
-
-    public function errorsHtml()
-    {
-        $html = "";
-
-        foreach ($this->errors as $field => $errors)
-        {
-            if (!empty($html)) $html.= "<br/>";
-
-            $html.= implode("<br/>", $errors);
-        }
-
-        return $html;
-    }
-
-
-    public function validate() 
-    {
-    	if (array_key_exists('user_id', $this->attributes) && $this->user_id === null) 
-    	{
-    		$this->user_id = Yii::app()->user->id;	
-    	}
-    	
-    	return parent::validate();
-    }
-
-
+    
     public function changeOrder($id, $order)
     {
         $sql = "SELECT COUNT(id) AS count_ids

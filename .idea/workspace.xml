@@ -6,10 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="558a121d-84f3-4b9b-832e-b6358a9f0844" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/ForeignKeyNullValueBehavior.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/UserForeignKeyBehavior.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/components/DateFormatBehavior.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/components/ForeignKeyNullValueBehavior.php" afterPath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/ForeignKeyNullValueBehavior.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/components/LangConditionBehavior.php" afterPath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/LangConditionBehavior.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" afterPath="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/content/controllers/MenuLinkAdminController.php" afterPath="$PROJECT_DIR$/protected/modules/content/controllers/MenuLinkAdminController.php" />
     </list>
     <ignored path="elpolis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,28 +35,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MenuLinkAdminController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/content/controllers/MenuLinkAdminController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="93" column="0" selection-start="2736" selection-end="2736" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActiveRecordModel.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ActiveRecordModel.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/components/ActiveRecordModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="78" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ForeignKeyNullValueBehavior.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/components/ForeignKeyNullValueBehavior.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="33" selection-start="13" selection-end="40" vertical-scroll-proportion="0.049122807">
+            <state line="33" column="27" selection-start="1119" selection-end="1133" vertical-scroll-proportion="0.6561403">
               <folding />
             </state>
           </provider>
@@ -73,9 +58,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/protected/modules/mailer/models/MailerRecipient.php" />
-        <option value="$PROJECT_DIR$/protected/modules/mailer/models/MailerTemplate.php" />
-        <option value="$PROJECT_DIR$/protected/modules/mailer/models/MailerTemplateRecipient.php" />
         <option value="$PROJECT_DIR$/protected/modules/main/models/Feedback.php" />
         <option value="$PROJECT_DIR$/protected/modules/main/models/Language.php" />
         <option value="$PROJECT_DIR$/protected/modules/main/models/Log.php" />
@@ -87,8 +69,11 @@
         <option value="$PROJECT_DIR$/protected/modules/news/models/News.php" />
         <option value="$PROJECT_DIR$/protected/modules/news/controllers/NewsController.php" />
         <option value="$PROJECT_DIR$/protected/components/ForeignKeyNullValueBehavior.php" />
-        <option value="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" />
         <option value="$PROJECT_DIR$/protected/modules/content/controllers/MenuLinkAdminController.php" />
+        <option value="$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php" />
+        <option value="$PROJECT_DIR$/protected/modules/news/controllers/NewsAdminController.php" />
+        <option value="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" />
+        <option value="$PROJECT_DIR$/protected/components/activeRecordBehaviors/UserForeignKeyBehavior.php" />
       </list>
     </option>
   </component>
@@ -183,6 +168,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yii_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yii_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yii_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yii_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -356,27 +389,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/models/Feedback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="0" selection-start="1968" selection-end="1968" vertical-scroll-proportion="0.4375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/mailer/models/MailerTemplateRecipient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="0" selection-start="1071" selection-end="1071" vertical-scroll-proportion="0.486911">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/mailer/models/MailerTemplate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.29668412">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/mailer/models/MailerRecipient.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="80" column="0" selection-start="1932" selection-end="1932" vertical-scroll-proportion="0.486911">
@@ -433,13 +445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/controllers/NewsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="49" selection-start="702" selection-end="702" vertical-scroll-proportion="0.29668412">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/main/models/SiteAction.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="55" column="0" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.29668412">
@@ -447,23 +452,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/ActiveRecordModel.php">
+    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/ForeignKeyNullValueBehavior.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="78" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
+        <state line="2" column="33" selection-start="13" selection-end="40" vertical-scroll-proportion="0.049122807">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/content/controllers/MenuLinkAdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="0" selection-start="2736" selection-end="2736" vertical-scroll-proportion="0.0">
+        <state line="93" column="0" selection-start="2736" selection-end="2736" vertical-scroll-proportion="2.2842104">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/ForeignKeyNullValueBehavior.php">
+    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="33" selection-start="13" selection-end="40" vertical-scroll-proportion="0.049122807">
+        <state line="40" column="21" selection-start="1230" selection-end="1230" vertical-scroll-proportion="0.9677419">
+          <folding>
+            <marker date="1315759976000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/news/controllers/NewsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="49" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/news/controllers/NewsAdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="13" selection-start="844" selection-end="844" vertical-scroll-proportion="0.7016129">
+          <folding>
+            <marker date="1315760317000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/UserForeignKeyBehavior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="36" selection-start="106" selection-end="106" vertical-scroll-proportion="0.09677419">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/ActiveRecordModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="27" selection-start="1119" selection-end="1133" vertical-scroll-proportion="0.6561403">
           <folding />
         </state>
       </provider>
