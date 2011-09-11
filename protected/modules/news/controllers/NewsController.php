@@ -38,7 +38,6 @@ class NewsController extends BaseController
 	public function actionIndex() 
 	{
 		$model = News::model()->active()->last();
-		$model->addLangCondition();		
 
 		$criteria = $model->dbCriteria;
 

@@ -21,7 +21,6 @@ class ArticleController extends BaseController
     public function actionIndex() 
     {
         $model = Article::model();
-        $model->addLangCondition();
 
         $criteria = $model->dbCriteria;     
         $criteria->order = 'date DESC';

@@ -53,9 +53,7 @@ class SiteAction extends ActiveRecordModel
         {
             $page_size = Yii::app()->session[get_class($this) . "PerPage"];
         }
-        
-        $this->addLangCondition($criteria);
-        
+
         $criteria->order = 'date_create DESC';
         
 		return new CActiveDataProvider(get_class($this), array(

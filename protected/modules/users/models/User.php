@@ -231,8 +231,6 @@ class User extends ActiveRecordModel
             $page_size = Yii::app()->session[get_class($this) . "PerPage"];
         }
 
-        $this->addLangCondition($criteria);
-
 		return new CActiveDataProvider(get_class($this), array(
 			'criteria' => $criteria,
             'pagination' => array(

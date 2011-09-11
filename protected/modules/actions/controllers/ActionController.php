@@ -19,8 +19,7 @@ class ActionController extends BaseController
 	public function actionIndex() 
 	{	
 		$model = Action::model();
-		$model->addLangCondition();			
-
+		
 		$criteria = $model->dbCriteria;
 		$criteria->order = 'date DESC';
 

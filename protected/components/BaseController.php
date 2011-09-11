@@ -33,11 +33,6 @@ abstract class BaseController extends CController
 		{
 			Yii::app()->session['language'] = Yii::app()->language;
 		}
-
-        if (mb_substr(Yii::app()->controller->id, -5) != 'Admin')
-        {
-            Yii::app()->session["admin_panel_lang"] = Yii::app()->session['language'];
-        }
     }
     
 

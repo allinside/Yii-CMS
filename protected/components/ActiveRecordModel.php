@@ -24,6 +24,9 @@ class ActiveRecordModel extends CActiveRecord
         return array(
             'DateFormat' => array(
                 'class' => 'application.components.DateFormatBehavior'
+            ),
+            'LangCondition' => array(
+                'class' => 'application.components.LangConditionBehavior'
             )
         );
     }
@@ -124,76 +127,41 @@ class ActiveRecordModel extends CActiveRecord
 
     //EVENTS___________________________________________________________________________________
 
-    public function beforeSave()
-    {
-        foreach ($this->attributes as $attr => $value)
-        {
-            if (preg_match(self::PATTERN_DATE, $value))
-            {
-                $this->$attr = Dater::mysqlDate($value);
-            }
-            else if (preg_match(self::PATTENT_DATE_TIME, $value))
-            {
-                $this->$attr = Dater::mysqlDateTime($value);
-            }
-        }
-
-        $foreign_keys = $this->tableSchema->foreignKeys;
-
-        foreach ($this->attributes as $name => $value)
-        {
-            if (array_key_exists($name, $foreign_keys) && $this->metadata->columns[$name]->allowNull && trim($value) == '')
-            {
-                $this->$name = null;
-            }
-        }
-        
-        foreach ($this->attributes as $attr => $value)
-        {
-            if (empty($value))
-            {
-                $this->$attr = null;
-            }
-        }         
-              
-        $meta = $this->meta();
-        if (isset($meta['lang']))
-        {    
-            $this->lang = $this->defineLang();  
-        }
-        
-        return true;
-    }
-
-
-//    public function AfterFind()
+//    public function beforeSave()
 //    {
-////        foreach ($this->attributes as $attr => $value)
-////        {
-////            if (preg_match(self::PATTERN_MYSQL_DATE_TIME, $value))
-////            {
-////                if ($value != "0000-00-00 00:00:00")
-////                {
-////                    $this->$attr = Dater::humanDateTime($value);
-////                }
-////            }
-////            elseif (preg_match(self::PATTERN_MYSQL_DATE, $value))
-////            {
-////                if ($value != "0000-00-00")
-////                {
-////                    $this->$attr = Dater::humanDate($value);
-////                }
-////            }
-////        }
+//        foreach ($this->attributes as $attr => $value)
+//        {
+//            if (preg_match(self::PATTERN_DATE, $value))
+//            {
+//                $this->$attr = Dater::mysqlDate($value);
+//            }
+//            else if (preg_match(self::PATTENT_DATE_TIME, $value))
+//            {
+//                $this->$attr = Dater::mysqlDateTime($value);
+//            }
+//        }
+//
+//        $foreign_keys = $this->tableSchema->foreignKeys;
+//
+//        foreach ($this->attributes as $name => $value)
+//        {
+//            if (array_key_exists($name, $foreign_keys) && $this->metadata->columns[$name]->allowNull && trim($value) == '')
+//            {
+//                $this->$name = null;
+//            }
+//        }
+//
+//        foreach ($this->attributes as $attr => $value)
+//        {
+//            if (empty($value))
+//            {
+//                $this->$attr = null;
+//            }
+//        }
+//
+//        return true;
 //    }
-    
-    
-    public function beforeFind() 
-    {
-        parent::beforeFind();
 
-        $this->addLangCondition();
-    }    
 
 
     //CRUD_____________________________________________________________________________________
@@ -435,70 +403,5 @@ class ActiveRecordModel extends CActiveRecord
         }
 
         return $result;
-    }
-    
-    
-    public function beforeValidate() 
-    {
-        if (parent::beforeValidate()) 
-        {
-            foreach ($this->attributes as $name => $value) 
-            {
-                if ($value == "*Обязательное поле") 
-                {
-                    $this->$name = "";
-                }
-            }
-            
-            return true;
-        }
-    }
-    
-    
-    public function addLangCondition($criteria = null)
-    {
-        if (!$criteria)
-        {
-            $criteria = $this->dbCriteria;
-        }
-  
-        $meta  = $this->meta();
-
-        if (!isset($meta['lang']))
-        {
-            return;
-        }
-
-        $lang = $this->defineLang();
-
-        $criteria->addCondition("lang = '{$lang}'");
-    }
-    
-    
-    private function defineLang() 
-    {
-        $class = get_class(Yii::app()->controller);
-        
-        if (mb_substr($class, -15, 5, 'utf-8') == 'Admin')
-        {   
-            if (isset(Yii::app()->session["admin_panel_lang"]))
-            {     
-                return Yii::app()->session["admin_panel_lang"];
-            }
-            else
-            {
-                return Yii::app()->language;
-            }
-        }
-        else
-        {   
-            return Yii::app()->session["language"];
-        }    
-    }
-
-
-    public function findByPk($pk)
-    {
-        return parent::findByPk($pk);
     }
 }

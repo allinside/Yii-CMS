@@ -19,7 +19,6 @@ class DocumentController extends BaseController
 	public function actionIndex() 
 	{
 		$model = Document::model()->published();
-		$model->addLangCondition();	
 
 		$criteria = $model->dbCriteria;
 		$criteria->order = 'date_publish DESC';
