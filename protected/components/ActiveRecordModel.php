@@ -33,6 +33,9 @@ class ActiveRecordModel extends CActiveRecord
             ),
             'UserForeignKey' => array(
                 'class' => 'application.components.activeRecordBehaviors.UserForeignKeyBehavior'
+            ),
+            'UploadFile' => array(
+                'class' => 'application.components.activeRecordBehaviors.UploadFileBehavior'
             )
         );
     }
@@ -128,92 +131,6 @@ class ActiveRecordModel extends CActiveRecord
 
 	    return $this;
 	}
-
-
-    //CRUD_____________________________________________________________________________________
-    public function save($validate = true)
-    {
-        if (method_exists($this, "uploadFiles"))
-        {
-            $upload_files = $this->uploadFiles();
-
-            foreach ($upload_files as $param => $data)
-            {
-                $this->$param = CUploadedFile::getInstance($this, $param);
-                if ($this->$param)
-                {
-                    $path_info = pathinfo($this->$param->name);
-                    $file_name = md5(rand(1, 200) . $this->$param->name . time()) . "." . strtolower($path_info["extension"]);
-                    $file_dir  = $_SERVER["DOCUMENT_ROOT"] . $data["dir"];
-
-                    if (substr($file_dir, -1) !== '/')
-                    {
-                    	$file_dir.= '/';
-                    }
-                    
-                    $file_path  = $file_dir . $file_name;
-                    $file_saved = $this->$param->saveAs($file_path);
-                    
-                    if ($file_saved) 
-                    {
-                        chmod($file_path, 0777);
-
-                        if ($file_saved && $this->id)
-                        {
-                            $object = $this->findByPk($this->id);
-                            if ($object->$param)
-                            {
-                                FileSystem::deleteFileWithSimilarNames($file_dir, $object->$param);
-                            }
-                        }
-                        
-                        $this->$param = $file_name;                    
-                    }
-                }
-                else
-                {
-                	if ($this->id)
-                	{
-                		$this->$param = $this->findByPk($this->id)->$param;
-                	}
-                }
-            }
-        }
-
-        return parent::save($validate);
-    }
-
-
-    public function delete()
-    {
-    	if (method_exists($this, "uploadFiles"))
-    	{	
-    		$files = $this->uploadFiles();
-    		foreach ($files as $param => $data)
-    		{
-    			if (!$this->$param)
-    			{	
-    				continue;
-    			}
-
-    			$dir = $data["dir"];
-
-	    		if (substr($dir, 0, strlen($_SERVER['DOCUMENT_ROOT'])) != $_SERVER['DOCUMENT_ROOT'])
-				{
-					$dir = $_SERVER['DOCUMENT_ROOT'] . $dir;
-				}
-
-				if (substr($dir, -1) != '/')
-				{
-					$dir.= '/';
-				}
-
-				FileSystem::deleteFileWithSimilarNames($dir, $this->$param);
-    		}
-    	}
-
-    	return parent::delete();
-    }
 
     //_________________________________________________________________________________________
 

@@ -6,12 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="558a121d-84f3-4b9b-832e-b6358a9f0844" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/UserForeignKeyBehavior.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/components/DateFormatBehavior.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/components/ForeignKeyNullValueBehavior.php" afterPath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/ForeignKeyNullValueBehavior.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/components/LangConditionBehavior.php" afterPath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/LangConditionBehavior.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" afterPath="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" />
     </list>
     <ignored path="elpolis.iws" />
@@ -38,7 +32,16 @@
       <file leaf-file-name="ActiveRecordModel.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/components/ActiveRecordModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="27" selection-start="1119" selection-end="1133" vertical-scroll-proportion="0.6561403">
+            <state line="37" column="91" selection-start="1365" selection-end="1383" vertical-scroll-proportion="0.56491226">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UploadFileBehavior.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/UploadFileBehavior.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="22" selection-start="1879" selection-end="1884" vertical-scroll-proportion="-26.36">
               <folding />
             </state>
           </provider>
@@ -58,7 +61,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/protected/modules/main/models/Feedback.php" />
         <option value="$PROJECT_DIR$/protected/modules/main/models/Language.php" />
         <option value="$PROJECT_DIR$/protected/modules/main/models/Log.php" />
         <option value="$PROJECT_DIR$/protected/modules/main/models/Setting.php" />
@@ -72,8 +74,9 @@
         <option value="$PROJECT_DIR$/protected/modules/content/controllers/MenuLinkAdminController.php" />
         <option value="$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php" />
         <option value="$PROJECT_DIR$/protected/modules/news/controllers/NewsAdminController.php" />
-        <option value="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" />
         <option value="$PROJECT_DIR$/protected/components/activeRecordBehaviors/UserForeignKeyBehavior.php" />
+        <option value="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" />
+        <option value="$PROJECT_DIR$/protected/components/activeRecordBehaviors/UploadFileBehavior.php" />
       </list>
     </option>
   </component>
@@ -149,91 +152,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yii_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yii_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yii_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yii_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yii_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yii_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yii_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="yii_cms" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
+              <option name="myItemId" value="upload" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -389,13 +308,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/modules/mailer/models/MailerRecipient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="1932" selection-end="1932" vertical-scroll-proportion="0.486911">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/mailer/models/MailerLetter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="0" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.30357143">
@@ -434,13 +346,6 @@
     <entry file="file://$PROJECT_DIR$/protected/modules/news/models/NewsFile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="0" selection-start="1461" selection-end="1461" vertical-scroll-proportion="0.29668412">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/models/News.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="0" selection-start="2246" selection-end="2246" vertical-scroll-proportion="0.29668412">
           <folding />
         </state>
       </provider>
@@ -498,9 +403,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/news/models/News.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="35" selection-start="142" selection-end="146" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/UploadFileBehavior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="22" selection-start="1879" selection-end="1884" vertical-scroll-proportion="-26.36">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/protected/components/ActiveRecordModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="27" selection-start="1119" selection-end="1133" vertical-scroll-proportion="0.6561403">
+        <state line="37" column="91" selection-start="1365" selection-end="1383" vertical-scroll-proportion="0.56491226">
           <folding />
         </state>
       </provider>
