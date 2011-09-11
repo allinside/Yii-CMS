@@ -19,6 +19,15 @@ class ActiveRecordModel extends CActiveRecord
     const PATTERN_RULAT_ALPHA_SPACES = '/^[а-яa-z ]+$/ui';
 
 
+    public function behaviors()
+    {   
+        return array(
+            'DateFormat' => array(
+                'class' => 'application.components.DateFormatBehavior'
+            )
+        );
+    }
+
     //VALIDATORS________________________________________________________________________________
 
     public function humanDate($attr, $date)
@@ -157,31 +166,32 @@ class ActiveRecordModel extends CActiveRecord
     }
 
 
-    public function AfterFind()
-    {
-        foreach ($this->attributes as $attr => $value)
-        {
-            if (preg_match(self::PATTERN_MYSQL_DATE_TIME, $value))
-            {
-                if ($value != "0000-00-00 00:00:00")
-                {
-                    $this->$attr = Dater::humanDateTime($value);
-                }
-            }
-            elseif (preg_match(self::PATTERN_MYSQL_DATE, $value))
-            {
-                if ($value != "0000-00-00")
-                {
-                    $this->$attr = Dater::humanDate($value);
-                }
-            }
-        }
-    }
+//    public function AfterFind()
+//    {
+////        foreach ($this->attributes as $attr => $value)
+////        {
+////            if (preg_match(self::PATTERN_MYSQL_DATE_TIME, $value))
+////            {
+////                if ($value != "0000-00-00 00:00:00")
+////                {
+////                    $this->$attr = Dater::humanDateTime($value);
+////                }
+////            }
+////            elseif (preg_match(self::PATTERN_MYSQL_DATE, $value))
+////            {
+////                if ($value != "0000-00-00")
+////                {
+////                    $this->$attr = Dater::humanDate($value);
+////                }
+////            }
+////        }
+//    }
     
     
     public function beforeFind() 
     {
         parent::beforeFind();
+
         $this->addLangCondition();
     }    
 
@@ -460,7 +470,7 @@ class ActiveRecordModel extends CActiveRecord
         }
 
         $lang = $this->defineLang();
-   
+
         $criteria->addCondition("lang = '{$lang}'");
     }
     
@@ -484,5 +494,11 @@ class ActiveRecordModel extends CActiveRecord
         {   
             return Yii::app()->session["language"];
         }    
+    }
+
+
+    public function findByPk($pk)
+    {
+        return parent::findByPk($pk);
     }
 }
