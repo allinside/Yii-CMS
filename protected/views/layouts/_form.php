@@ -13,21 +13,16 @@ $elements = $form->getElements();
     switch ($element->type)
     {
         case 'text':
-            $ext_class = 'input_feedback';
-
-            if ($element->required)
-            {
-                $ext_class.= ' required_field';
-            }
+            $ext_class = 'text';
 
             break;
 
         case 'textarea':
-            $ext_class = 'textarea_feedback';
-            if ($element->required)
-            {
-                $ext_class.= ' required_field';
-            }
+            //$ext_class = 'textarea_feedback';
+            //if ($element->required)
+            //{
+            //    $ext_class.= ' required_field';
+            //}
 
             break;
     }
@@ -45,13 +40,22 @@ $elements = $form->getElements();
     <?php if ($element->type == 'hidden'): ?>
         <?php echo $element->renderInput(); ?>
     <?php else: ?>
-        <?php echo $element->label; ?>
+        <ol>
+            <li>
+                <label for="<?php $element->name; ?>">
+                    <?php echo $element->label; ?>
+                    <?php if ($element->required): ?>
+                        (<?php echo Yii::t('main', 'обязательное поле'); ?>)
+                    <?php endif ?>
+                </label>
 
-        <?php if ($error): ?>
-            <?php echo $error; ?>
-        <?php endif ?>
+                <?php if ($error): ?>
+                    <?php echo $error; ?>
+                <?php endif ?>
 
-        <?php echo $element->renderInput(); ?>
+                <?php echo $element->renderInput(); ?>
+            </li>
+        </ol>
     <?php endif; ?>
 
 <?php endforeach ?>

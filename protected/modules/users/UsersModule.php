@@ -60,10 +60,10 @@ class UsersModule extends WebModule
     public static function urlRules()
     {
         return array(
-            'login'        => 'users/user/login',
-            'logout'       => 'users/user/logout',
-            'registration' => 'users/user/registration',
-            'admin/login'  => 'users/userAdmin/login',
+            '<lang:[a-z]{2}>/login'        => 'users/user/login',
+            '<lang:[a-z]{2}>/logout'       => 'users/user/logout',
+            '<lang:[a-z]{2}>/registration' => 'users/user/registration',
+            'admin/login'                  => 'users/userAdmin/login',
         );
     }
 }

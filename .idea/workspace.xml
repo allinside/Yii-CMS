@@ -6,7 +6,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="558a121d-84f3-4b9b-832e-b6358a9f0844" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/modules/main/portlets/LanguageSwitcherAdmin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/modules/main/portlets/views/LanguageSwitcherAdmin.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/main/messages/en/main.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/main/messages/ru/main.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/main/portlets/FeedbackCreate.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/main/portlets/Langs.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/main/portlets/views/FeedbackCreate.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/main/portlets/views/Langs.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/site/style.css" afterPath="$PROJECT_DIR$/css/site/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" afterPath="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/BaseForm.php" afterPath="$PROJECT_DIR$/protected/components/BaseForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/config/development.php" afterPath="$PROJECT_DIR$/protected/config/development.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/config/main.php" afterPath="$PROJECT_DIR$/protected/config/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/messages/en/main.php" afterPath="$PROJECT_DIR$/protected/messages/en/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/actions/messages/en/main.php" afterPath="$PROJECT_DIR$/protected/modules/actions/messages/en/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/articles/messages/en/main.php" afterPath="$PROJECT_DIR$/protected/modules/articles/messages/en/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/documents/messages/en/main.php" afterPath="$PROJECT_DIR$/protected/modules/documents/messages/en/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/MainModule.php" afterPath="$PROJECT_DIR$/protected/modules/main/MainModule.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/controllers/FeedbackController.php" afterPath="$PROJECT_DIR$/protected/modules/main/controllers/FeedbackController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/forms/FeedbackForm.php" afterPath="$PROJECT_DIR$/protected/modules/main/forms/FeedbackForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/portlets/LanguageSwitcher.php" afterPath="$PROJECT_DIR$/protected/modules/main/portlets/LanguageSwitcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/portlets/views/LanguageSwitcher.php" afterPath="$PROJECT_DIR$/protected/modules/main/portlets/views/LanguageSwitcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/views/feedback/create.php" afterPath="$PROJECT_DIR$/protected/modules/main/views/feedback/create.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/news/messages/en/main.php" afterPath="$PROJECT_DIR$/protected/modules/news/messages/en/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/UsersModule.php" afterPath="$PROJECT_DIR$/protected/modules/users/UsersModule.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/messages/en/main.php" afterPath="$PROJECT_DIR$/protected/modules/users/messages/en/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/layouts/_form.php" afterPath="$PROJECT_DIR$/protected/views/layouts/_form.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/layouts/admin.php" afterPath="$PROJECT_DIR$/protected/views/layouts/admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/layouts/main.php" afterPath="$PROJECT_DIR$/protected/views/layouts/main.php" />
     </list>
     <ignored path="elpolis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,26 +57,7 @@
     <favorites_list name="elpolis" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ActiveRecordModel.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/components/ActiveRecordModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="91" selection-start="1365" selection-end="1383" vertical-scroll-proportion="0.56491226">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UploadFileBehavior.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/UploadFileBehavior.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="22" selection-start="1879" selection-end="1884" vertical-scroll-proportion="-26.36">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -61,22 +71,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/protected/modules/main/models/Language.php" />
-        <option value="$PROJECT_DIR$/protected/modules/main/models/Log.php" />
-        <option value="$PROJECT_DIR$/protected/modules/main/models/Setting.php" />
-        <option value="$PROJECT_DIR$/protected/modules/main/models/SettingsSection.php" />
-        <option value="$PROJECT_DIR$/protected/modules/main/models/SiteAction.php" />
-        <option value="$PROJECT_DIR$/protected/modules/users/models/User.php" />
-        <option value="$PROJECT_DIR$/protected/modules/news/models/NewsFile.php" />
-        <option value="$PROJECT_DIR$/protected/modules/news/models/News.php" />
-        <option value="$PROJECT_DIR$/protected/modules/news/controllers/NewsController.php" />
-        <option value="$PROJECT_DIR$/protected/components/ForeignKeyNullValueBehavior.php" />
-        <option value="$PROJECT_DIR$/protected/modules/content/controllers/MenuLinkAdminController.php" />
-        <option value="$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php" />
-        <option value="$PROJECT_DIR$/protected/modules/news/controllers/NewsAdminController.php" />
-        <option value="$PROJECT_DIR$/protected/components/activeRecordBehaviors/UserForeignKeyBehavior.php" />
-        <option value="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" />
-        <option value="$PROJECT_DIR$/protected/components/activeRecordBehaviors/UploadFileBehavior.php" />
+        <option value="$PROJECT_DIR$/protected/modules/documents/messages/en/main.php" />
+        <option value="$PROJECT_DIR$/protected/modules/articles/messages/en/main.php" />
+        <option value="$PROJECT_DIR$/protected/modules/actions/messages/en/main.php" />
+        <option value="$PROJECT_DIR$/protected/modules/main/portlets/LanguageSwitcher.php" />
+        <option value="$PROJECT_DIR$/protected/modules/main/portlets/LanguageSwitcherAdmin.php" />
+        <option value="$PROJECT_DIR$/protected/views/layouts/admin.php" />
+        <option value="$PROJECT_DIR$/protected/modules/main/portlets/views/LanguageSwitcherAdmin.php" />
+        <option value="$USER_HOME$/Рабочий стол/win_global_template_805/contact.html" />
+        <option value="$PROJECT_DIR$/protected/messages/en/main.php" />
+        <option value="$PROJECT_DIR$/protected/views/layouts/_form.php" />
+        <option value="$PROJECT_DIR$/css/site/style.css" />
+        <option value="$PROJECT_DIR$/protected/modules/main/forms/FeedbackForm.php" />
+        <option value="$PROJECT_DIR$/protected/modules/main/views/feedback/create.php" />
+        <option value="$PROJECT_DIR$/protected/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/protected/modules/main/controllers/FeedbackController.php" />
+        <option value="$PROJECT_DIR$/protected/components/BaseForm.php" />
       </list>
     </option>
   </component>
@@ -152,7 +162,65 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yii_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yii_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yii_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yii_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="messages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="en" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yii_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yii_cms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -172,7 +240,7 @@
     <property name="options.lastSelected" value="preferences.sourceCode.General" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
-    <property name="last_opened_file_path" value="$USER_HOME$/storage/project_folders/elpolis/6/elpolis/protected/config" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Рабочий стол/win_global_template_805" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="946" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="948" />
@@ -242,8 +310,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="221" y="15" width="1488" height="1041" extended-state="0" />
-    <editor active="true" />
+    <frame x="253" y="16" width="1488" height="1041" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -251,7 +319,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32924107" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19818562" sideWeight="0.6707589" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19818562" sideWeight="0.6707589" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -308,118 +376,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/modules/mailer/models/MailerLetter.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/actions/messages/en/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="0" selection-start="1388" selection-end="1388" vertical-scroll-proportion="0.30357143">
+        <state line="2" column="13" selection-start="20" selection-end="20" vertical-scroll-proportion="0.048387095">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/models/Log.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/portlets/LanguageSwitcher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="955" selection-end="955" vertical-scroll-proportion="0.486911">
+        <state line="6" column="39" selection-start="129" selection-end="129" vertical-scroll-proportion="0.14516129">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/mailer/models/MailerOption.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/portlets/views/LanguageSwitcherAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1073" selection-end="1073" vertical-scroll-proportion="0.29668412">
+        <state line="3" column="31" selection-start="152" selection-end="152" vertical-scroll-proportion="-2.1">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/models/SettingsSection.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/portlets/LanguageSwitcherAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="0" selection-start="897" selection-end="897" vertical-scroll-proportion="0.486911">
+        <state line="9" column="48" selection-start="264" selection-end="264" vertical-scroll-proportion="0.21774194">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/users/models/User.php">
+    <entry file="file://$USER_HOME$/Рабочий стол/win_global_template_805/contact.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="232" column="0" selection-start="6722" selection-end="6722" vertical-scroll-proportion="0.29464287">
+        <state line="45" column="16" selection-start="1806" selection-end="1847" vertical-scroll-proportion="-8.4">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/models/NewsFile.php">
+    <entry file="file://$PROJECT_DIR$/css/site/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="0" selection-start="1461" selection-end="1461" vertical-scroll-proportion="0.29668412">
+        <state line="326" column="25" selection-start="4905" selection-end="4905" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/models/SiteAction.php">
+    <entry file="file://$PROJECT_DIR$/css/admin/messages.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1405" selection-end="1405" vertical-scroll-proportion="0.29668412">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/ForeignKeyNullValueBehavior.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/views/feedback/create.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="33" selection-start="13" selection-end="40" vertical-scroll-proportion="0.049122807">
+        <state line="3" column="15" selection-start="127" selection-end="127" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/content/controllers/MenuLinkAdminController.php">
+    <entry file="file://$PROJECT_DIR$/protected/messages/en/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="0" selection-start="2736" selection-end="2736" vertical-scroll-proportion="2.2842104">
+        <state line="18" column="5" selection-start="454" selection-end="471" vertical-scroll-proportion="0.43548387">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php">
+    <entry file="file://$PROJECT_DIR$/protected/views/layouts/_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="21" selection-start="1230" selection-end="1230" vertical-scroll-proportion="0.9677419">
-          <folding>
-            <marker date="1315759976000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/controllers/NewsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="49" selection-start="702" selection-end="702" vertical-scroll-proportion="0.0">
+        <state line="47" column="69" selection-start="1094" selection-end="1094" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/controllers/NewsAdminController.php">
+    <entry file="file://$PROJECT_DIR$/protected/views/layouts/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="13" selection-start="844" selection-end="844" vertical-scroll-proportion="0.7016129">
-          <folding>
-            <marker date="1315760317000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/UserForeignKeyBehavior.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="36" selection-start="106" selection-end="106" vertical-scroll-proportion="0.09677419">
+        <state line="9" column="45" selection-start="439" selection-end="439" vertical-scroll-proportion="-6.3">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/models/News.php">
+    <entry file="file://$PROJECT_DIR$/protected/views/layouts/_adminForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="35" selection-start="142" selection-end="146" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-4.549628">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/UploadFileBehavior.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/forms/FeedbackForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="22" selection-start="1879" selection-end="1884" vertical-scroll-proportion="-26.36">
+        <state line="2" column="25" selection-start="36" selection-end="36" vertical-scroll-proportion="0.048387095">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/ActiveRecordModel.php">
+    <entry file="file://$PROJECT_DIR$/protected/components/BaseForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="91" selection-start="1365" selection-end="1383" vertical-scroll-proportion="0.56491226">
+        <state line="30" column="64" selection-start="733" selection-end="733" vertical-scroll-proportion="0.6014235">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/controllers/FeedbackController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="25" selection-start="684" selection-end="684" vertical-scroll-proportion="0.67741936">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/layouts/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="53" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.3325">
           <folding />
         </state>
       </provider>

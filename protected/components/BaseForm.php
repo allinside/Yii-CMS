@@ -4,7 +4,7 @@ class BaseForm extends CForm
 {
     public $model;
 
-    public $clear = false;
+    private $_clear = false;
 
     
     public function __construct($path, $model)
@@ -22,6 +22,21 @@ class BaseForm extends CForm
 
     	try
     	{
+            if ($this->_clear)
+            {
+                Yii::app()->clientScript->registerScript(
+                    'clearForm',
+                    '$(function()
+                    {
+                        $(":input","#' . $this->activeForm['id'] . '")
+                            .not(":button, :submit, :reset, :hidden")
+                            .val("")
+                            .removeAttr("checked")
+                            .removeAttr("selected");
+                    })'
+                );
+            }
+
 	        return Yii::app()->controller->renderPartial(
 	            'application.views.layouts.' . $tpl,
 	            array('form' => $this),
@@ -38,6 +53,6 @@ class BaseForm extends CForm
 
     public function clear()
     {
-        $this->clear = true;
+        $this->_clear = true;
     }
 }

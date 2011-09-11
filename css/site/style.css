@@ -322,3 +322,7 @@ ol li .send {
     font-weight: bold !important;
     color:red !important;
 }
+
+.errorMessage {
+    color:red !important;
+}

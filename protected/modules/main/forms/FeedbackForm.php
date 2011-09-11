@@ -1,6 +1,6 @@
 <?php
 return array(
-			'action' => '#feedback',
+			'action' => '',
 	'activeForm' => array(
 		'id'     => 'feedback-form',
 		'class'  => 'CActiveForm',
@@ -24,7 +24,7 @@ return array(
 	'buttons' => array(
 		'submit' => array(
 			'type'  => 'submit', 
-			'value' => Yii::t('main', 'Подать заявку'),
+			'value' => Yii::t('main', 'Отправить'),
 			'id'    => 'feedback_button'
 		)
 	)

@@ -63,8 +63,8 @@ class MainModule extends WebModule
     {
         return array(
             'admin' => 'main/mainAdmin',
-            '<lang:[a-z]{2}>/search' => 'main/main/search',
-            'feedback' => 'main/feedback/create',
+            '<lang:[a-z]{2}>/search'   => 'main/main/search',
+            '<lang:[a-z]{2}>/feedback' => 'main/feedback/create',
         );
     }
 }

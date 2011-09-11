@@ -1,23 +1,16 @@
-<?php
-$selected_lang = isset(Yii::app()->session["admin_panel_lang"]) ? Yii::app()->session["admin_panel_lang"] : null;
+<div id="lang_div">
+    <?php $max_index = count($langs) - 1; ?>
 
-?>
+    <?php foreach ($langs as $i => $lang): ?>
+        <?php if ($lang->id == Yii::app()->language): ?>
+            <b><?php echo $lang->name; ?></b>
+        <?php else: ?>
+            <a href="/<?php echo $lang->id; ?>"><?php echo $lang->name; ?></a>
+        <?php endif ?>
 
-<div id="country-select">
-    <form action="/main/mainAdmin/SessionLanguage" id="select-lang-form">
-        <select id="country-options" name="lang">
-            <?php foreach ($langs as $lang): ?>
-                <?php
-                $selected = "";
-                if ($selected_lang && $selected_lang == $lang->id)
-                {
-                    $selected = "selected";
-                }
-                ?>
-                <option value="<?php echo $lang->id; ?>" <?php echo $selected; ?>><?php echo $lang->name; ?></option>
-            <?php endforeach ?>
-        </select>
-        <input type="hidden" name="back_url" value="<?php echo base64_encode($_SERVER["REQUEST_URI"]); ?>">
-        <input value="Select" type="submit"/>
-    </form>
+        <?php if ($max_index > $i): ?>
+            &nbsp;|&nbsp;
+        <?php endif ?>
+
+    <?php endforeach ?>
 </div>

@@ -31,8 +31,6 @@
     $cs->registerCoreScript('jquery');
     $cs->registerCoreScript('jquery.ui');
     $cs->registerScriptFile('/js/admin/gridview.js');
-    $cs->registerScriptFile('/js/admin/language_switcher.js');
-    $cs->registerCssFile('/css/admin/language_switcher.css');
     ?>
 
 </head>
@@ -51,7 +49,7 @@
             <?php $this->widget('TopAdminMenu'); ?>
         </div>
 
-        <?php $this->widget("LanguageSwitcher"); ?>
+        <?php $this->widget("LanguageSwitcherAdmin"); ?>
 
         <div class="block">
             <div class="block_head">

@@ -10,7 +10,7 @@ return CMap::mergeArray(
 		        'username'         => 'root',
 		        'password'         => '1',
 		        'charset'          => 'utf8',
-		        //'enableProfiling'  => true,
+		        'enableProfiling'  => true,
 	        )
 	    ) 
     )

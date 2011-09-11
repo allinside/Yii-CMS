@@ -7,6 +7,7 @@
     <?php
     $cs = Yii::app()->clientScript;
     $cs->registerCssFile('/css/site/style.css');
+    $cs->registerCssFile('/css/admin/messages.css');
     $cs->registerCoreScript('jquery');
     $cs->registerScriptFile('/js/site/cufon-yui.js');
     $cs->registerScriptFile('/js/site/arial.js');
@@ -27,7 +28,7 @@
                 </h1>
             </div>
 
-            <?php $this->widget('Langs'); ?>
+            <?php $this->widget('LanguageSwitcher'); ?>
             
             <div class="clr"></div>
         </div>

@@ -19,6 +19,12 @@ class ActiveRecordModel extends CActiveRecord
     const PATTERN_RULAT_ALPHA_SPACES = '/^[а-яa-z ]+$/ui';
 
 
+    public static function model($className = __CLASS__)
+    {
+        return parent::model($className);
+    }
+
+
     public function behaviors()
     {   
         return array(
@@ -41,7 +47,22 @@ class ActiveRecordModel extends CActiveRecord
     }
 
 
-    //VALIDATORS________________________________________________________________________________
+    public function attributeLabels()
+    {
+        $meta = $this->meta();
+
+        $labels = array();
+
+        foreach ($meta as $field_data)
+        {
+            $labels[$field_data["Field"]] = Yii::t('main', $field_data["Comment"]);
+        }
+
+        return $labels;
+    }
+
+
+    /*VALIDATORS________________________________________________________________________________*/
     public function humanDate($attr, $date)
     {
         if (!empty($this->$attr))
@@ -100,9 +121,10 @@ class ActiveRecordModel extends CActiveRecord
             }
         }
     }
+    /*___________________________________________________________________________________*/
+    
 
-
-    //SCOPES___________________________________________________________________________________
+    /*SCOPES___________________________________________________________________________________*/
     public function scopes()
     {
         return array(
@@ -131,18 +153,13 @@ class ActiveRecordModel extends CActiveRecord
 
 	    return $this;
 	}
-
-    //_________________________________________________________________________________________
-
-    public static function model($className = __CLASS__)
-    {
-        return parent::model($className);
-    }
+    /*___________________________________________________________________________________*/
 
 
     public function meta()
     {
         $meta = Yii::app()->db
+                          ->cache(1000)
                           ->createCommand("SHOW FUll columns FROM " . $this->tableName())
                           ->queryAll();
         
@@ -153,21 +170,6 @@ class ActiveRecordModel extends CActiveRecord
         }
       
         return $meta;
-    }
-
-
-    public function attributeLabels()
-    {
-        $meta = $this->meta();
-
-        $labels = array();
-
-        foreach ($meta as $field_data)
-        {
-            $labels[$field_data["Field"]] = Yii::t('main', $field_data["Comment"]);
-        }
-
-        return $labels;
     }
 
     
