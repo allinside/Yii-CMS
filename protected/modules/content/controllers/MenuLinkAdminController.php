@@ -89,8 +89,9 @@ class MenuLinkAdminController extends AdminController
         	{
         		$model->scenario = 'pageRefNull';
         	}	
-        	
+
         	$model->attributes = $_POST['MenuLink'];
+
         	if ($model->save()) 
         	{
         		$this->redirect($this->createUrl('index', array('menu_id' => $model->menu_id)));

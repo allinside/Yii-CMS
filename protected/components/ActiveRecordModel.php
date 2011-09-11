@@ -27,6 +27,9 @@ class ActiveRecordModel extends CActiveRecord
             ),
             'LangCondition' => array(
                 'class' => 'application.components.LangConditionBehavior'
+            ),
+            'ForeignKeyNullValue' => array(
+                'class' => 'application.components.ForeignKeyNullValueBehavior'
             )
         );
     }
@@ -141,15 +144,6 @@ class ActiveRecordModel extends CActiveRecord
 //            }
 //        }
 //
-//        $foreign_keys = $this->tableSchema->foreignKeys;
-//
-//        foreach ($this->attributes as $name => $value)
-//        {
-//            if (array_key_exists($name, $foreign_keys) && $this->metadata->columns[$name]->allowNull && trim($value) == '')
-//            {
-//                $this->$name = null;
-//            }
-//        }
 //
 //        foreach ($this->attributes as $attr => $value)
 //        {
