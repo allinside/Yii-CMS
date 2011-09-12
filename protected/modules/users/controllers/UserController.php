@@ -44,7 +44,7 @@ class UserController extends BaseController
 
 
     public function actionLogin()
-    {
+    {   
         if (!Yii::app()->user->isGuest)
         {
             throw new CException('Вы уже авторизованы!');
@@ -52,27 +52,30 @@ class UserController extends BaseController
 
         $model = new User('Login');
 
-        if (isset($_POST['email']) && isset($_POST["password"]))
+        $form = new BaseForm('users.LoginForm', $model);
+
+        if (isset($_POST['User']['email']) && isset($_POST['User']["password"]))
         {
-            $model->attributes = $_POST;
+            $model->attributes = $_POST['User'];
 
             if ($model->validate())
             {
-                $identity = new UserIdentity($_POST['email'], $_POST['password']);
+                $identity = new UserIdentity($model->email, $model->password);
                 if ($identity->authenticate())
-                {
-                    echo CJSON::encode(array("done" => true));    
+                {   
+                    $this->redirect($this->url('/'));
                 }
                 else 
                 {
-                    echo CJSON::encode(array("errors" => array($identity->errorCode)));
+                    $auth_error = $identity->errorCode;
                 }    
             }
-            else 
-            {
-                echo CJSON::encode(array("errors" => $model->getErrors()));
-            }
         }
+
+        $this->render('Login', array(
+            'form'       => $form,
+            'auth_error' => isset($auth_error) ? $auth_error : null
+        ));
     }
 
 
@@ -83,16 +86,16 @@ class UserController extends BaseController
     }
 
 
-    /*public function actionRegister()
+    public function actionRegistration()
     {
         if (!Yii::app()->user->isGuest)
         {
             throw new CException('Вы уже зарегистрированы!');
         }
 
-        $model = new User('Register');
+        $model = new User('Registration');
 
-        $form = new BaseForm('users.RegisterForm', $model);
+        $form = new BaseForm('users.RegistrationForm', $model);
 
         $this->performAjaxValidation($model);
 
@@ -101,31 +104,31 @@ class UserController extends BaseController
             $model->attributes = $_POST['User'];
             if ($model->validate() && $model->register($_POST['User']))
             {
-                $_SESSION["RegisterDone"] = true;
-                $this->redirect('/users/user/registerDone');
+                $_SESSION["RegistrationDone"] = true;
+                $this->redirect($this->url('/users/user/RegistrationDone'));
             }
         }
 
-        $this->render('Register', array('form' => $form));
-    }*/
+        $this->render('Registration', array('form' => $form));
+    }
 
 
-    /*public function actionRegisterDone()
+    public function actionRegistrationDone()
     {
-        if (isset($_SESSION['RegisterDone']))
+        if (isset($_SESSION['RegistrationDone']))
         {
-            $this->render('RegisterDone', array(
-                'msg' => Settings::model()->get('REGISTER_DONE_MESSAGE')
+            $this->render('RegistrationDone', array(
+                'msg' => Settings::model()->get('REGISTRATION_DONE_MESSAGE')
             ));
         }
         else
         {
             $this->pageNotFound();
         }
-    }*/
+    }
 
 
-    /*public function actionActivate($code, $email)
+    public function actionActivate($code, $email)
     {
         $attrs = array('activate_code' => $code, 'email' => $email);
 
@@ -139,10 +142,10 @@ class UserController extends BaseController
         }
 
         $this->render('Activate');
-    }*/
+    }
 
 
-    /*public function actionActivateRequest()
+    public function actionActivateRequest()
     {
         if (!Yii::app()->user->isGuest)
         {
@@ -192,10 +195,10 @@ class UserController extends BaseController
             'form'  => $form,
             'error' => isset($error) ? $error : null
         ));
-    }*/
+    }
 
 
-    /*public function actionActivateRequestDone()
+    public function actionActivateRequestDone()
     {
         if (isset($_SESSION['ActivateRequestDone']))
         {
@@ -207,10 +210,10 @@ class UserController extends BaseController
         {
             $this->pageNotFound();
         }
-    }*/
+    }
 
 
-    /*public function actionChangePassword()
+    public function actionChangePassword()
     {
         $model = new User('ChangePassword');
 
@@ -242,10 +245,10 @@ class UserController extends BaseController
                 'done'  => isset($done) ? $done : false
             )
         );
-    }*/
+    }
 
 
-    /*public function actionPasswordRecoverRequest()
+    public function actionPasswordRecoverRequest()
     {
         if (!Yii::app()->user->isGuest)
         {
@@ -290,19 +293,19 @@ class UserController extends BaseController
             'form'  => $form,
             'error' => isset($error) ? $error : null
         ));
-    }*/
+    }
 
 
-    /*public function actionPasswordRecoverRequestDone()
+    public function actionPasswordRecoverRequestDone()
     {
         if (!isset($_SESSION['PasswordRecoverRequestDone']))
             $this->forbidden();
 
         $this->render('PasswordRecoverRequestDone');
-    }*/
+    }
 
 
-    /*public function actionPasswordRecover()
+    public function actionPasswordRecover()
     {
         if (!Yii::app()->user->isGuest)
         {
@@ -358,19 +361,5 @@ class UserController extends BaseController
             'form'  => $form,
             'error' => isset($error) ? $error : null
         ));
-    }*/
-    
-    
-    public function actionExport() 
-    {	
-    	$model  = User::model();
-    	$export = $model->export();
-    	
-		Implex::exportXLS(
-		    $export["title"], 
-		    $export["data"], 
-		    $export["labels"], 
-		    get_class($model)
-		);
     }
 }

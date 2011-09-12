@@ -20,11 +20,57 @@ class PageBlock extends ActiveRecordModel
 			array('title, text, name, lang', 'required'),
 			array('name', 'match', 'pattern' => '|^[a-z_]+$|', 'message' => 'только латиница и знак подчеркивания "_"'),
 			array('title', 'length', 'max'=>250),
-			array('title', 'unique', 'className' => 'PageBlock', 'attributeName' => 'title'),
-			array('name', 'unique', 'className' => 'PageBlock', 'attributeName' => 'name'),
+			array('title', 'groupUnique', 'group' => array('lang')),
+            array('name', 'groupUnique', 'group' => array('lang')),
 			array('id, title, text, date_create', 'safe', 'on' => 'search'),
 		);
 	}
+
+
+    public function groupUnique($main_attr, $params)
+    {
+        if (!isset($params['group']))
+        {
+            throw new CException('Забыли указать параметр group в валидаторе groupUnique');
+        }
+
+        if (!is_array($params['group']) || !$params['group'])
+        {
+            throw new CException('Параметр group валидатора groupUnique должен являться непустым массивом');
+        }
+
+        $params['group'][] = $main_attr;
+
+        $attrs = array();
+
+        foreach ($params['group'] as $group_attr)
+        {
+            $attrs[$group_attr] = $this->$group_attr;
+        }
+
+        $exist = $this->findByAttributes($attrs);
+        if ($exist)
+        {
+            if (isset($params['message']))
+            {
+                $message = $params['message'];
+            }
+            else
+            {
+                $all_labels = $this->attributeLabels();
+
+                $labels = array();
+                foreach (array_keys($attrs) as $attr)
+                {
+                    $labels[] = $all_labels[$attr];
+                }
+
+                $message = "Поля: " . implode(', ', $labels) . ' в сочетании должны быть уникальны!';
+            }
+    
+            $this->addError($main_attr, Yii::t('main', $message));
+        }
+    }
 
 
 	public function relations()

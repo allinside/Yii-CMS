@@ -13,6 +13,7 @@ $elements = $form->getElements();
     switch ($element->type)
     {
         case 'text':
+        case 'password':
             $ext_class = 'text';
 
             break;
@@ -59,6 +60,8 @@ $elements = $form->getElements();
     <?php endif; ?>
 
 <?php endforeach ?>
+
+<br/>
 
 <?php echo $form->renderButtons(); ?>
 

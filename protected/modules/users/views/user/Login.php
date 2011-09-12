@@ -1,14 +1,8 @@
 <?php $this->page_title = 'Авторизация'; ?>
 
-<?php if (isset($error)): ?>
-    <div class='error_box'>
-        <?php echo $error ?>
-    </div>
+<?php if (isset($auth_error)): ?>
+    <?php echo $this->msg($auth_error, 'error'); ?>
 <?php endif ?>
 
-<?php if (isset($msg)): ?>
-    <div class='valid_box'><?php echo $msg ?></div>
-<?php endif ?>
-
-<?php $form; ?>
+<?php echo $form; ?>
 

@@ -16,13 +16,13 @@ class LangConditionBehavior extends CActiveRecordBehavior
     }
 
 
-    public function beforeSave($event)
+    public function beforeValidate($event)
     {
         $model = $this->getOwner();
         $meta  = $model->meta();
         
         if (isset($meta['lang']))
-        {
+        {   
             $model->lang = $this->defineLang();
         }
     }
