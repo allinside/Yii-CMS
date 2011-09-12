@@ -9,7 +9,8 @@ class MainAdminController extends AdminController
             "Modules"          => "Просмотр списка модулей",
             "ChangeOrder"      => "Сортировка",
             "SessionPerPage"   => "Установки кол-ва элементов на странице",
-            "SessionLanguage"  => "Установка языка"
+            "SessionLanguage"  => "Установка языка",
+            "AdminLinkProcess" => "Переход по ссылке в админ панель"
         );
     }    
     
@@ -60,8 +61,12 @@ class MainAdminController extends AdminController
         $this->redirect(base64_decode($_GET["back_url"]));
     }
     
-    
-    
+
+    public function actionAdminLinkProcess()
+    {
+        Yii::app()->session["admin_panel_lang"] = Yii::app()->session['language'];
+        $this->redirect($_GET['url']);
+    }
 }
 
 

@@ -9,6 +9,7 @@
     $cs->registerCssFile('/css/site/style.css');
     $cs->registerCssFile('/css/admin/messages.css');
     $cs->registerCoreScript('jquery');
+    $cs->registerScriptFile('/js/admin/admin_links.js');
     $cs->registerScriptFile('/js/site/cufon-yui.js');
     $cs->registerScriptFile('/js/site/arial.js');
     $cs->registerScriptFile('/js/site/cuf_run.js');
@@ -52,19 +53,6 @@
                             </form>
                 </div>
                 <div class="gadget">
-                    <h2 class="star"><span>Sidebar</span> Menu</h2>
-
-                    <div class="clr"></div>
-                    <ul class="sb_menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">TemplateInfo</a></li>
-                        <li><a href="#">Style Demo</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Archives</a></li>
-                        <li><a href="#">Web Templates</a></li>
-                    </ul>
-                </div>
-                <div class="gadget">
                     <h2 class="star"><span>Sponsors</span></h2>
 
                     <div class="clr"></div>
@@ -96,16 +84,7 @@
     <div class="fbg">
         <div class="fbg_resize">
             <div class="col c3">
-                <h2><span>Contact</span></h2>
-
-                <p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue.</p>
-
-                <p><a href="#">support@yoursite.com</a></p>
-
-                <p>+1 (123) 444-5677<br/>
-                    +1 (123) 444-5678</p>
-
-                <p>Address: 123 TemplateAccess Rd1</p>
+                <?php echo PageBlock::model()->getText('contacts'); ?>
             </div>
             <div class="clr"></div>
         </div>

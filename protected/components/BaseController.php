@@ -26,7 +26,6 @@ abstract class BaseController extends CController
 		{
 			Yii::app()->setLanguage($_GET['lang']);
 			Yii::app()->session['language'] = $_GET['lang'];
-            Yii::app()->session["admin_panel_lang"] = $_GET['lang'];
 		}
 
 		if (!isset(Yii::app()->session['language']) || Yii::app()->session['language'] != Yii::app()->language)
