@@ -4,11 +4,16 @@ class ModuleCode extends CCodeModel
 {
 	public $moduleID;
 
+    public $name;
+
+    public $description;
+
+
 	public function rules()
 	{
 		return array_merge(parent::rules(), array(
-			array('moduleID', 'filter', 'filter'=>'trim'),
-			array('moduleID', 'required'),
+			array('moduleID, name, description', 'filter', 'filter'=>'trim'),
+			array('moduleID, name, description', 'required'),
 			array('moduleID', 'match', 'pattern'=>'/^\w+$/', 'message'=>'{attribute} should only contain word characters.'),
 		));
 	}
@@ -16,7 +21,9 @@ class ModuleCode extends CCodeModel
 	public function attributeLabels()
 	{
 		return array_merge(parent::attributeLabels(), array(
-			'moduleID'=>'Module ID',
+			'moduleID'    => 'ID',
+            'name'        => 'Название',
+            'description' => 'Описание'
 		));
 	}
 

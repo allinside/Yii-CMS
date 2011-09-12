@@ -9,7 +9,7 @@
 
 class <?php echo $this->controllerClass; ?> extends BaseController
 {
-    public function actionsTitles()
+    public static function actionsTitles()
     {
         return array(
             'View'   => 'Просмотр чего?',

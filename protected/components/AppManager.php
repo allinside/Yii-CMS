@@ -43,7 +43,8 @@ class AppManager
                 'description' => call_user_func(array($module_class, 'description')),
                 'version'     => call_user_func(array($module_class, 'version')),
                 'name'        => call_user_func(array($module_class, 'name')),
-                'class'       => $module_class
+                'class'       => $module_class,
+                'dir'         => $module_dir
             );
 
             if (method_exists($module_class, 'adminMenu'))

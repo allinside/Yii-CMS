@@ -18,11 +18,13 @@ $modules = AppManager::getModulesData(true, true);
         {
         	continue;
         }
+
+        $assets_dir = Yii::app()->getModule($module['dir'])->assetsUrl();
         ?>
 
         <div class="module_div">
             <a href="<?php echo array_shift(array_values($module['admin_menu'])); ?>" title="<?php echo $module["name"]; ?>" desc="<?php echo array_shift(array_keys($module['admin_menu'])); ?>" >
-                <img src="/images/admin/modules/<?php echo strtolower(str_replace("Module", "", $class)); ?>.png" border="0" />
+                <img src="<?php echo $assets_dir . "/img/icon.png"; ?>" border="0" />
             </a>
             
             <div class="vs-context-menu" id="<?php echo $class . "sub_menu"; ?>">

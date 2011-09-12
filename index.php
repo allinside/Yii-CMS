@@ -1,5 +1,5 @@
 <?php
-echo 123;
+
 if (substr($_SERVER['DOCUMENT_ROOT'], -1) != '/')
 {
     $_SERVER['DOCUMENT_ROOT'] = $_SERVER['DOCUMENT_ROOT'].'/';

@@ -2,7 +2,7 @@
 
 class DocumentsModule extends WebModule
 {	
-	public static $active = true;
+	public static $active = false;
 	
 	
     public static function name()

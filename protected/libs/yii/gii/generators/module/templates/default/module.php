@@ -7,13 +7,13 @@ class <?php echo $this->moduleClass; ?> extends WebModule
 
     public static function name()
     {
-        return '';
+        return '<?php echo $this->name; ?>';
     }
 
 
     public static function description()
     {
-        return '';
+        return '<?php echo $this->description; ?>';
     }
 
 
@@ -47,8 +47,6 @@ class <?php echo $this->moduleClass; ?> extends WebModule
     public static function adminMenu()
     {
         return array(
-        	'Управление' => '/Admin/manage',
-        	'Создать'    => '/Admin/create'
         );
     }
 }

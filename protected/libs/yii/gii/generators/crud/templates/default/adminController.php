@@ -2,7 +2,7 @@
 
 class <?php echo str_replace("Controller", "AdminController", $this->controllerClass); ?> extends AdminController
 {
-    public function actionsTitles()
+    public static function actionsTitles()
     {
         return array(
             'View'   => 'Просмотр чего?',
