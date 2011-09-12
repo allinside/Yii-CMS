@@ -1,32 +1,41 @@
 <?php
 
-class YmarketIPAdminController extends AdminController
+class YmarketSectionAdminController extends AdminController
 {
     public static function actionsTitles()
     {
         return array(
-            'Create' => 'Добавление IP адреса яндекс маркета',
-            'Update' => 'Редактирование IP адреса яндекс маркета',
-            'Delete' => 'Удаление IP адреса яндекс маркета',
-            'Manage' => 'IP адреса яндекс маркета',
+            'View'   => 'Просмотр раздела яндекс маркета',
+            'Create' => 'Создание раздела яндекс маркета',
+            'Update' => 'Редактирование раздела яндекс маркета',
+            'Delete' => 'Удаление раздела яндекс маркета?',
+            'Manage' => 'Разделы яндекс маркета',
         );
     }
+
+        
+	public function actionView($id)
+	{
+		$this->render('view', array(
+			'model' => $this->loadModel($id),
+		));
+	}
 
 
 	public function actionCreate()
 	{
-		$model = new YmarketIP;
+		$model = new YmarketSection;
 		
-		$form = new BaseForm('ymarket.YmarketIPForm', $model);
-
+		$form = new BaseForm('ymarket.YmarketSectionForm', $model);
+		
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['YmarketIP']))
+		if(isset($_POST['YmarketSection']))
 		{
-			$model->attributes = $_POST['YmarketIP'];
+			$model->attributes = $_POST['YmarketSection'];
 			if($model->save())
             {
-                $this->redirect(array('manage'));
+                $this->redirect(array('view', 'id' => $model->id));
             }
 		}
 
@@ -40,16 +49,16 @@ class YmarketIPAdminController extends AdminController
 	{
 		$model = $this->loadModel($id);
 
-		$form = new BaseForm('ymarket.YmarketIPForm', $model);
+		$form = new BaseForm('ymarket.YmarketSectionForm', $model);
 
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['YmarketIP']))
+		if(isset($_POST['YmarketSection']))
 		{
-			$model->attributes = $_POST['YmarketIP'];
+			$model->attributes = $_POST['YmarketSection'];
 			if($model->save())
             {
-                $this->redirect(array('manage'));
+                $this->redirect(array('view', 'id' => $model->id));
             }
 		}
 
@@ -79,11 +88,11 @@ class YmarketIPAdminController extends AdminController
 
 	public function actionManage()
 	{
-		$model=new YmarketIP('search');
+		$model=new YmarketSection('search');
 		$model->unsetAttributes();
-		if(isset($_GET['YmarketIP']))
+		if(isset($_GET['YmarketSection']))
         {
-            $model->attributes = $_GET['YmarketIP'];
+            $model->attributes = $_GET['YmarketSection'];
         }
 
 		$this->render('manage', array(
@@ -94,7 +103,7 @@ class YmarketIPAdminController extends AdminController
 
 	public function loadModel($id)
 	{
-		$model = YmarketIP::model()->findByPk((int) $id);
+		$model = YmarketSection::model()->findByPk((int) $id);
 		if($model === null)
         {
             $this->pageNotFound();
@@ -106,7 +115,7 @@ class YmarketIPAdminController extends AdminController
 
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax'] === 'ymarket-ip-form')
+		if(isset($_POST['ajax']) && $_POST['ajax'] === 'ymarket-section-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

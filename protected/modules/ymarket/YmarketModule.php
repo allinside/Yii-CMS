@@ -48,6 +48,8 @@ class YmarketModule extends WebModule
     {
         return array(
             'Бренды'            => '/ymarket/ymarketBrandAdmin/manage',
+            'Разделы'           => '/ymarket/ymarketSectionAdmin/manage',
+            'Добавить раздел'   => '/ymarket/ymarketSectionAdmin/create',
             'IP адреса'         => '/ymarket/ymarketIPAdmin/manage',
             'Добавить IP адрес' => '/ymarket/ymarketIPAdmin/create'
         );

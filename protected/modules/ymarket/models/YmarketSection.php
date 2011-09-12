@@ -17,10 +17,18 @@ class YmarketSection extends ActiveRecordModel
 	public function rules()
 	{
 		return array(
-			array('name, yandex_name, url, breadcrumbs', 'required'),
+			array('url', 'required'),
 			array('name, yandex_name', 'length', 'max' => 100),
+            array('name', 'unique', 'className' => get_class($this), 'attributeName' => 'name'),
+            array('url', 'unique', 'className' => get_class($this), 'attributeName' => 'url'),
+            array('yandex_name', 'unique', 'className' => get_class($this), 'attributeName' => 'yandex_name'),
 			array('url', 'length', 'max' => 250),
-
+            array(
+                'url',
+                'match',
+                'pattern' => '|http\:\/\/market\.yandex\.ru\/catalogmodels\.xml\?CAT_ID=[0-9]+.*?|',
+                'message' => 'Формат: http://market.yandex.ru/catalogmodels.xml?CAT_ID=.....'
+            ),
 			array('id, name, yandex_name, url, breadcrumbs, date_create', 'safe', 'on' => 'search'),
 		);
 	}
