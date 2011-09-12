@@ -10,7 +10,11 @@ class DateFormatBehavior  extends CActiveRecordBehavior
         {
             if (preg_match(ActiveRecordModel::PATTERN_MYSQL_DATE_TIME, $value))
             {
-                if ($value != "0000-00-00 00:00:00")
+                if ($value == "0000-00-00 00:00:00")
+                {
+                    $model->$attr = null;
+                }
+                else
                 {
                     $model->$attr = Yii::app()->dateFormatter->formatDateTime($value, 'long', 'short');
                 }

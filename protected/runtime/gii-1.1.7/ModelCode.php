@@ -2,6 +2,6 @@
 return array (
   'template' => 'default',
   'tablePrefix' => '',
-  'modelPath' => 'application.modules.books.models',
+  'modelPath' => 'application.modules.ymarket.models',
   'baseClass' => 'ActiveRecordModel',
 );

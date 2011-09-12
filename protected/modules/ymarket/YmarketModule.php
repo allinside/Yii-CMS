@@ -47,7 +47,9 @@ class YmarketModule extends WebModule
     public static function adminMenu()
     {
         return array(
-            'Бренды' => '/ymarket/ymarketBrandAdmin/manage'
+            'Бренды'            => '/ymarket/ymarketBrandAdmin/manage',
+            'IP адреса'         => '/ymarket/ymarketIPAdmin/manage',
+            'Добавить IP адрес' => '/ymarket/ymarketIPAdmin/create'
         );
     }
 }

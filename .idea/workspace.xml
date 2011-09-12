@@ -23,28 +23,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="YmarketBrandAdminController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketBrandAdminController.php">
+      <file leaf-file-name="ActiveRecordModel.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/components/ActiveRecordModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0">
+            <state line="31" column="39" selection-start="829" selection-end="840" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YmarketBrand.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/models/YmarketBrand.php">
+      <file leaf-file-name="DateFormatBehavior.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="93" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0">
+            <state line="13" column="20" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="manage.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/views/ymarketBrandAdmin/manage.php">
+        <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/views/ymarketIPAdmin/manage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="14" selection-start="245" selection-end="245" vertical-scroll-proportion="0.23386115">
+            <state line="16" column="42" selection-start="411" selection-end="411" vertical-scroll-proportion="0.4677223">
               <folding />
             </state>
           </provider>
@@ -64,12 +64,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/protected/libs/yii/gii/generators/module/templates/default/module.php" />
-        <option value="$PROJECT_DIR$/protected/components/AppManager.php" />
-        <option value="$PROJECT_DIR$/protected/modules/main/views/mainAdmin/_modulesPanel.php" />
-        <option value="$PROJECT_DIR$/protected/modules/main/views/mainAdmin/index.php" />
-        <option value="$PROJECT_DIR$/protected/libs/yii/gii/generators/model/ModelCode.php" />
-        <option value="$PROJECT_DIR$/protected/modules/ymarket/YmarketModule.php" />
         <option value="$PROJECT_DIR$/protected/modules/mailer/MailerModule.php" />
         <option value="$PROJECT_DIR$/protected/modules/documents/DocumentsModule.php" />
         <option value="$PROJECT_DIR$/protected/modules/articles/ArticlesModule.php" />
@@ -80,6 +74,12 @@
         <option value="$PROJECT_DIR$/protected/libs/yii/gii/generators/model/templates/default/model.php" />
         <option value="$PROJECT_DIR$/protected/modules/ymarket/models/YmarketBrand.php" />
         <option value="$PROJECT_DIR$/protected/modules/ymarket/views/ymarketBrandAdmin/manage.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/YmarketModule.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/forms/YmarketIPForm.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/models/YmarketIP.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketIPAdminController.php" />
+        <option value="$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/views/ymarketIPAdmin/manage.php" />
       </list>
     </option>
   </component>
@@ -216,7 +216,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ymarketBrandAdmin" />
+              <option name="myItemId" value="ymarketIPAdmin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -242,33 +242,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ymarket" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -415,83 +389,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/views/mainAdmin/_modulesPanel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="70" selection-start="1004" selection-end="1004" vertical-scroll-proportion="-16.551723">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/views/mainAdmin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1002" selection-end="1002" vertical-scroll-proportion="0.9550706">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/libs/yii/gii/generators/model/views/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/libs/yii/gii/generators/model/ModelGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/libs/yii/gii/generators/model/ModelCode.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="9" selection-start="6317" selection-end="6317" vertical-scroll-proportion="-10.44">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/mailer/MailerModule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="33" selection-start="72" selection-end="77" vertical-scroll-proportion="0.119700745">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/documents/DocumentsModule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="33" selection-start="80" selection-end="80" vertical-scroll-proportion="0.116930574">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/articles/ArticlesModule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="33" selection-start="81" selection-end="81" vertical-scroll-proportion="0.11881188">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/actions/ActionsModule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="33" selection-start="80" selection-end="80" vertical-scroll-proportion="0.116930574">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/YmarketModule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="58" selection-start="782" selection-end="782" vertical-scroll-proportion="1.4323995">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/libs/yii/gii/generators/crud/templates/default/adminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="17" selection-start="153" selection-end="159" vertical-scroll-proportion="0.11881188">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/libs/yii/gii/generators/crud/templates/default/controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="18" selection-start="302" selection-end="302" vertical-scroll-proportion="0.20792079">
@@ -506,16 +403,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketBrandAdminController.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/models/YmarketProduct.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/models/YmarketBrand.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="93" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -523,6 +413,90 @@
     <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/views/ymarketBrandAdmin/manage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="14" selection-start="245" selection-end="245" vertical-scroll-proportion="0.23386115">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/models/YmarketBrand.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="93" selection-start="393" selection-end="393" vertical-scroll-proportion="0.5049505">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketBrandAdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="189" selection-end="189" vertical-scroll-proportion="0.29232642">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/YmarketModule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="59" selection-start="924" selection-end="924" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/forms/YmarketIPForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="40" selection-start="292" selection-end="292" vertical-scroll-proportion="0.35079172">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/models/YmarketIP.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="45" selection-start="409" selection-end="409" vertical-scroll-proportion="0.62376237">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketIPAdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="45" selection-start="666" selection-end="666" vertical-scroll-proportion="0.46534654">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/UploadFileBehavior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="32" selection-start="1841" selection-end="1853" vertical-scroll-proportion="1.7338403">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/UserForeignKeyBehavior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/LangConditionBehavior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="44" selection-start="549" selection-end="559" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/ActiveRecordModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="39" selection-start="829" selection-end="840" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="20" selection-start="377" selection-end="377" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/views/ymarketIPAdmin/manage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="42" selection-start="411" selection-end="411" vertical-scroll-proportion="0.4677223">
           <folding />
         </state>
       </provider>
