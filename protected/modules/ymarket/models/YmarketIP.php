@@ -20,6 +20,7 @@ class YmarketIP extends ActiveRecordModel
 			array('ip', 'required'),
             array('ip', 'unique', 'className' => get_class($this), 'attributeName' => 'ip'),
 			array('ip', 'length', 'max' => 40),
+            array('last_date_use', 'default', 'value' => new CDbExpression('NOW()')),
 			array('ip, last_date_use', 'safe', 'on' => 'search'),
 		);
 	}
@@ -54,6 +55,36 @@ class YmarketIP extends ActiveRecordModel
 	}
 
 
-    public function doRequest()
-    {}
+    public function doRequest($url)
+    {
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+		curl_setopt($ch, CURLOPT_POST, 0);
+		curl_setopt($ch, CURLOPT_HEADER, 0);
+		curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 2.0.50727)");
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+
+        if ($_SERVER["SERVER_ADDR"] != "127.0.0.1")
+        {
+            curl_setopt($ch, CURLOPT_INTERFACE, $this->getNext());
+        }
+
+		$result = curl_exec($ch);
+		curl_close($ch);
+
+    	return $result;
+    }
+
+
+    public function getNext()
+    {
+        $ip = $this->find(array('order' => 'last_date_use'));
+        if ($ip)
+        {
+            $ip->save();
+            return $ip->ip;
+        }
+    }
 }

@@ -66,4 +66,24 @@ class YmarketSection extends ActiveRecordModel
             ),
 		));
 	}
+
+
+    public function parseAndUpdate()
+    {
+        //$content = YmarketIP::model()->doRequest($this->url);
+        $content = file_get_contents("/var/www/SectionContent.html");
+
+        preg_match('|<h1>(.*?)</h1>|', $content, $yandex_name);
+        if (isset($yandex_name[1]))
+        {
+            Yii::log(
+                'Ymarket:: не могу спарсить название раздела ' . $this->url,
+                'error',
+                'ymarket'
+            );
+            return;
+        }
+
+        echo $this->yandex_name = trim($yandex_name[1]);
+    }
 }
