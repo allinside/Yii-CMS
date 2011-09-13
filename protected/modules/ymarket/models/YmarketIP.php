@@ -52,4 +52,8 @@ class YmarketIP extends ActiveRecordModel
             ),
 		));
 	}
+
+
+    public function doRequest()
+    {}
 }

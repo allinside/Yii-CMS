@@ -34,8 +34,8 @@ class ActiveRecordModel extends CActiveRecord
             'LangCondition' => array(
                 'class' => 'application.components.activeRecordBehaviors.LangConditionBehavior'
             ),
-            'ForeignKeyNullValue' => array(
-                'class' => 'application.components.activeRecordBehaviors.ForeignKeyNullValueBehavior'
+            'NullValue' => array(
+                'class' => 'application.components.activeRecordBehaviors.NullValueBehavior'
             ),
             'UserForeignKey' => array(
                 'class' => 'application.components.activeRecordBehaviors.UserForeignKeyBehavior'
