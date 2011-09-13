@@ -7,7 +7,7 @@ $this->tabs = array(
 );';
 ?>
 
-<?php echo "\n"; ?>$this->widget('zii.widgets.CDetailView', array(
+<?php echo "\n"; ?>$this->widget('application.components.DetailView', array(
 	'data' => $model,
 	'attributes' => array(
 <?php

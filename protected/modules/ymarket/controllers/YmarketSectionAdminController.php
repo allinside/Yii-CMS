@@ -16,6 +16,8 @@ class YmarketSectionAdminController extends AdminController
         
 	public function actionView($id)
 	{
+        $model = $this->loadModel($id);
+
 		$this->render('view', array(
 			'model' => $this->loadModel($id),
 		));

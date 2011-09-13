@@ -37,7 +37,14 @@ class YmarketSection extends ActiveRecordModel
 	public function relations()
 	{
 		return array(
-			'ymarketSectionsRels' => array(self::HAS_MANY, 'YmarketSectionsRels', 'section_id'),
+			'rels'   => array(self::HAS_MANY, 'YmarketSectionRel', 'section_id'),
+            'brands' => array(
+                self::HAS_MANY,
+                'YmarketBrand',
+                'object_id',
+                'through'   => 'rels',
+                'condition' => "object_type = '" . YmarketSectionRel::OBJECT_TYPE_BRAND . "'"
+            )
 		);
 	}
 
