@@ -18,6 +18,13 @@ class YmarketTestController extends CController
     public function actionParseAndUpdateSection()
     {
         $section = YmarketSection::model()->findByPk(1);
-        $section->parseAndUpdate();
+        $section->parseAndUpdateAttributes();
+    }
+
+
+    public function actionParseAndUpdateSectionBrands()
+    {
+        $section = YmarketSection::model()->findByPk(1);
+        $section->parseAndUpdateBrands();
     }
 }

@@ -5,13 +5,13 @@ $this->tabs = array(
     'редактировать' => $this->createUrl('update', array('id' => $model->id))
 );
 
-$this->widget('zii.widgets.CDetailView', array(
+$this->widget('application.components.DetailView', array(
 	'data' => $model,
 	'attributes' => array(
 		'name',
 		'yandex_name',
 		'url',
-		'breadcrumbs',
+		array('name' => 'breadcrumbs', 'value' => strip_tags($model->breadcrumbs)),
 		'date_create',
 	),
 )); 

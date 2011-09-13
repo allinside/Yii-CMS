@@ -4,7 +4,7 @@ class ActiveRecordModel extends CActiveRecord
 {
     const PATTERN_DATE = '#^(\d\d?)\.(\d\d?)\.(\d\d\d\d)$#';
 
-    const PATTENT_DATE_TIME = '#^(\d\d?)\.(\d\d?)\.(\d\d\d\d) (\d\d)\:(\d\d):(\d\d)$#';
+    const PATTERN_DATE_TIME = '#^(\d\d?)\.(\d\d?)\.(\d\d\d\d) (\d\d)\:(\d\d):(\d\d)$#';
 
     const PATTERN_MYSQL_DATE = '#^(\d\d\d\d)-(\d\d?)-(\d\d?)$#';
 
@@ -28,9 +28,6 @@ class ActiveRecordModel extends CActiveRecord
     public function behaviors()
     {   
         return array(
-            'DateFormat' => array(
-                'class' => 'application.components.activeRecordBehaviors.DateFormatBehavior'
-            ),
             'LangCondition' => array(
                 'class' => 'application.components.activeRecordBehaviors.LangConditionBehavior'
             ),

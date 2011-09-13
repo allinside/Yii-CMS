@@ -68,13 +68,16 @@ class YmarketSection extends ActiveRecordModel
 	}
 
 
-    public function parseAndUpdate()
+    public function parseAndUpdateAttributes()
     {
-        //$content = YmarketIP::model()->doRequest($this->url);
-        $content = file_get_contents("/var/www/SectionContent.html");
+        $content = YmarketIP::model()->doRequest($this->url);
+        //$content = file_get_contents("/var/www/SectionContent.html");
+        $content = html_entity_decode($content);
+
 
         preg_match('|<h1>(.*?)</h1>|', $content, $yandex_name);
-        if (isset($yandex_name[1]))
+
+        if (!isset($yandex_name[1]))
         {
             Yii::log(
                 'Ymarket:: не могу спарсить название раздела ' . $this->url,
@@ -84,6 +87,104 @@ class YmarketSection extends ActiveRecordModel
             return;
         }
 
-        echo $this->yandex_name = trim($yandex_name[1]);
+        $this->yandex_name = trim($yandex_name[1]);
+
+        preg_match('|<a style="[^"]+" href="([^"]+)">Посмотреть все модели</a>|', $content, $all_models_url);
+        if (isset($all_models_url[1]))
+        {
+            $this->all_models_url = trim($all_models_url[1]);
+        }
+        else
+        {
+            Yii::log(
+                'Ymarket:: не могу спарсить ссылку на все модели' . $this->url,
+                'warning',
+                'ymarket'
+            );
+        }
+
+        preg_match('|<div class="b-breadcrumbs">(.*?)</div>|', $content, $breadcrumbs);
+        if (isset($breadcrumbs[1]))
+        {
+            $this->breadcrumbs = trim($breadcrumbs[1]);
+        }
+        else
+        {
+            Yii::log(
+                'Ymarket:: не могу спарсить хлебные крошки ' . $this->url,
+                'warning',
+                'ymarket'
+            );
+        }
+
+        preg_match('|<a href="([^"]+)" class="black">все производители[^<]+</a>|', $content, $brands_url);
+        if (isset($brands_url[1]))
+        {
+            $this->brands_url = trim($brands_url[1]);
+        }
+        else
+        {
+            Yii::log(
+                'Ymarket:: не могу спарсить ссылку на всех производителей ' . $this->url,
+                'warning',
+                'ymarket'
+            );
+        }
+
+        $this->date_update = new CDbExpression('NOW()');
+        $this->save();
+    }
+
+
+    public function parseAndUpdateBrands()
+    {
+        if (!$this->brands_url)
+        {
+            return;
+        }
+
+        $content = file_get_contents(YmarketModule::YANDEX_MARKET_WEB_URL . $this->brands_url);
+        //$content = file_get_contents("/var/www/SectionBrands.html");
+        $content = html_entity_decode($content);
+
+        preg_match_all('|<ul class="list vendor">(.*?)</ul>|', $content, $uls);
+        if (!isset($uls[1]))
+        {
+            return;
+        }
+
+        foreach ($uls[1] as $ul)
+        {
+            preg_match('|<a href=".*?">(.*?)</a>|', $ul, $brand_name);
+            if (isset($brand_name[1]))
+            {
+                $brand_name = trim($brand_name[1]);
+
+                $brand = YmarketBrand::model()->findByAttributes(array('name' => $brand_name));
+                if (!$brand)
+                {
+                    $brand = new YmarketBrand;
+                    $brand->name = $brand_name;
+                    $brand->save();
+                }
+
+                $attributes = array(
+                    'object_type' => YmarketSectionRel::OBJECT_TYPE_BRAND,
+                    'section_id'  => $this->id,
+                    'object_id'   => $brand->id
+                );
+
+                $section_rel = YmarketSectionRel::model()->findByAttributes($attributes);
+                if (!$section_rel)
+                {
+                    $section_rel = new YmarketSectionRel();
+                    $section_rel->attributes = $attributes;
+                    $section_rel->save();
+                }
+            }
+        }
+
+        $this->date_brand_update = new CDbExpression('NOW()');
+        $this->save();
     }
 }

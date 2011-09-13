@@ -2,6 +2,10 @@
 
 class YmarketSectionRel extends ActiveRecordModel
 {
+    const OBJECT_TYPE_BRAND   = 'brand';
+    const OBJECT_TYPE_PRODUCT = 'product';
+
+
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -17,7 +21,7 @@ class YmarketSectionRel extends ActiveRecordModel
 	public function rules()
 	{
 		return array(
-			array('object_type', 'required'),
+			array('object_id, section_id, object_type', 'required'),
 			array('section_id, object_id', 'length', 'max' => 11),
 			array('object_type', 'length', 'max' => 7),
 

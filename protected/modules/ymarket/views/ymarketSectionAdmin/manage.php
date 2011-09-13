@@ -12,9 +12,9 @@ $this->widget('application.components.GridView', array(
 	'columns' => array(
 		'name',
 		'yandex_name',
-		'url',
-		'breadcrumbs',
 		'date_create',
+        'date_update',
+        'date_brand_update',
 		array(
 			'class'=>'CButtonColumn',
 		),

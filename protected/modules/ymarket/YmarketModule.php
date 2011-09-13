@@ -1,7 +1,9 @@
 <?php
 
 class YmarketModule extends WebModule
-{	
+{
+    const YANDEX_MARKET_WEB_URL = "http://market.yandex.ru";
+
 	public static $active = true;
 
 
