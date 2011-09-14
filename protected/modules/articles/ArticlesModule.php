@@ -2,7 +2,7 @@
 
 class ArticlesModule extends WebModule
 {
-    public static $active = false;
+    public static $active = true;
 
 
     public static function name()

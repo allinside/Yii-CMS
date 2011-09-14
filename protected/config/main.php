@@ -58,6 +58,9 @@ return array(
         'dater' => array(
             'class' => 'application.components.DaterComponent'
         ),
+        'text' => array(
+            'class' => 'application.components.TextComponent'
+        ),
 		'urlManager' => array(
 			'urlFormat'      => 'path',
             'showScriptName' => false,

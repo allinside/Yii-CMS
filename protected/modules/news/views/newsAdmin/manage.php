@@ -26,8 +26,7 @@ $this->widget('application.components.GridView', array(
 		array(
 			'name'   => 'files', 
 			'value'  => '"
-						<a href=\'/news/newsFileAdmin/manage/news_id/$data->id\'>просмотр</a>&nbsp;|&nbsp;
-						<a href=\'/news/newsFileAdmin/create/news_id/$data->id\'>добавить</a>
+						<a href=\'/news/newsFileAdmin/manage/news_id/$data->id\'>просмотр</a>
 						";', 
 			'type'   => 'raw',
 			'header' => 'Файлы'

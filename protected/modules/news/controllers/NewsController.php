@@ -5,9 +5,6 @@ class NewsController extends BaseController
 	const PAGE_SIZE = 10;
 
 
-	public $layout='//layouts/inner';
-	
-	
 	public static function actionsTitles() 
 	{
 	    return array(

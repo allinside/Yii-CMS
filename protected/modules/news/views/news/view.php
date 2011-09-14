@@ -1,10 +1,23 @@
 <?php 
-$this->page_title = $news->title;
+$this->page_title = $this->meta_title = $news->title;
+
+if ($news->photo)
+{
+    $thumb = ImageHelper::thumb(
+        News::PHOTOS_DIR,
+        $news->photo,
+        News::PHOTO_BIG_WIDTH,
+        null,
+        false
+    );
+}
 ?>
 
-<br clear="all"/>
-
-<?php echo ImageHelper::thumb(News::PHOTOS_DIR, $news->photo, News::PHOTO_BIG_WIDTH, null, false, "border='0' class='detail_img'"); ?>
+<?php if (isset($thumb)): ?>
+    <?php echo $thumb; ?>
+    <br/>
+    <br/>
+<?php endif ?>
 
 <?php echo $news->content; ?>
 
@@ -20,10 +33,6 @@ $this->page_title = $news->title;
 	<?php endforeach ?>
 <?php endif ?>
 
-
-<div style="margin-top:30px;font-weight:bold"><?php echo Yii::t('NewsModule.main', 'Смотрите также') ?>:</div>
-
-<?php $this->renderPartial('_list', array('news_list' => $news_list)); ?>
 
 
 

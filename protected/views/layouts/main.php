@@ -52,31 +52,9 @@
                                 <input name="button_search" src="/images/site/search_btn.gif" class="button_search" type="image"/>
                             </form>
                 </div>
-                <div class="gadget">
-                    <h2 class="star"><span>Sponsors</span></h2>
 
-                    <div class="clr"></div>
-                    <ul class="ex_menu">
-                        <li><a href="http://www.dreamtemplate.com">DreamTemplate</a><br/>
-                            Over 6,000+ Premium Web Templates
-                        </li>
-                        <li><a href="http://www.templatesold.com/">TemplateSOLD</a><br/>
-                            Premium WordPress &amp; Joomla Themes
-                        </li>
-                        <li><a href="http://www.imhosted.com">ImHosted.com</a><br/>
-                            Affordable Web Hosting Provider
-                        </li>
-                        <li><a href="http://www.myvectorstore.com">MyVectorStore</a><br/>
-                            Royalty Free Stock Icons
-                        </li>
-                        <li><a href="http://www.evrsoft.com">Evrsoft</a><br/>
-                            Website Builder Software &amp; Tools
-                        </li>
-                        <li><a href="http://www.csshub.com/">CSS Hub</a><br/>
-                            Premium CSS Templates
-                        </li>
-                    </ul>
-                </div>
+                <?php $this->widget('NewsSidebar'); ?>
+
             </div>
             <div class="clr"></div>
         </div>

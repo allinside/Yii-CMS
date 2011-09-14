@@ -8,11 +8,11 @@ class News extends ActiveRecordModel
 	
 	const PHOTOS_DIR = 'upload/news';
 	
-    const PHOTO_SMALL_WIDTH  = "80";
-    const PHOTO_SMALL_HEIGHT = "80";
+    const PHOTO_SMALL_WIDTH  = "230";
+    const PHOTO_SMALL_HEIGHT = "200";
     
     
-    const PHOTO_BIG_WIDTH = "450";	
+    const PHOTO_BIG_WIDTH = "580";
 	
     
 	public static $states = array(
@@ -150,5 +150,11 @@ class News extends ActiveRecordModel
         }
 
         return $news->text;
+    }
+
+
+    public function getUrl()
+    {
+        return Yii::app()->controller->url("/news/{$this->id}");
     }
 }

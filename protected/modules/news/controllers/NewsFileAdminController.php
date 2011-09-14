@@ -6,7 +6,6 @@ class NewsFileAdminController extends AdminController
     {
         return array(
             "Create" => "Добавление файла новости",
-            "Update" => "Редактирование файла новости",
             "Delete" => "Удаление файла новости",
             "Manage" => "Управление файлами новостей",    
         );    
@@ -15,48 +14,19 @@ class NewsFileAdminController extends AdminController
 
 	public function actionCreate($news_id)
 	{	
-		$news = $this->loadNewsModel($news_id);
-		
-		$model = new NewsFile;
-		$model->news_id = $news_id;
-		
-		$form = new BaseForm('news.NewsFileForm', $model);
-
-		if(isset($_POST['NewsFile']))
-		{
-			$model->attributes = $_POST['NewsFile'];
-			if($model->save())
+        if ($_FILES)
+        {
+            $file_path = $_SERVER['DOCUMENT_ROOT'] . NewsFile::FILES_DIR . $_FILES['file']['name'];
+            if (move_uploaded_file($_FILES['file']['tmp_name'], $file_path))
             {
-                $this->redirect(array('manage', 'news_id' => $news_id));
+                $news_file = new NewsFile;
+                $news_file->news_id = $news_id;
+                $news_file->file = $_FILES['file']['name'];
+                $news_file->save();
+
+                chmod($file_path, 0777);
             }
-		}
-
-		$this->render('create', array(
-			'form' => $form,
-			'news' => $news
-		));
-	}
-
-
-	public function actionUpdate($id)
-	{
-		$model = $this->loadModel($id);
-
-		$form = new BaseForm('news.NewsFileForm', $model);
-
-		if(isset($_POST['NewsFile']))
-		{
-			$model->attributes = $_POST['NewsFile'];
-			if($model->save())
-            {
-                $this->redirect(array('manage', 'news_id' => $model->news_id));
-            }
-		}
-
-		$this->render('update', array(
-			'model' => $model,
-			'form'  => $form
-		));
+        }
 	}
 
 

@@ -326,3 +326,9 @@ ol li .send {
 .errorMessage {
     color:red !important;
 }
+
+.gadget a {
+    text-decoration: underline !important;
+    font-weight: bold;
+    color: #49b6e9 !important;
+}

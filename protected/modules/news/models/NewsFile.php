@@ -20,9 +20,8 @@ class NewsFile extends ActiveRecordModel
 	public function rules()
 	{
 		return array(
-			array('news_id, title, file', 'required'),
+			array('news_id, file', 'required'),
 			array('id, news_id', 'length', 'max' => 11),
-			array('title', 'length', 'max' => 250),
 			array(
 				'file',
 				'file',
@@ -31,7 +30,7 @@ class NewsFile extends ActiveRecordModel
 				'maxSize'    => 1024 * 1024 * 25,
 				'tooLarge'   => 'Максимальный размер файла 25 Мб'
 			),
-			array('id, news_id, title, file, created_at', 'safe', 'on' => 'search'),
+			array('id, news_id, file, created_at', 'safe', 'on' => 'search'),
 		);
 	}
 
@@ -50,7 +49,6 @@ class NewsFile extends ActiveRecordModel
 
 		$criteria->compare('id', $this->id, true);
 		$criteria->compare('news_id', $this->news_id, true);
-		$criteria->compare('title', $this->title, true);
 		$criteria->compare('file', $this->file, true);
 		$criteria->compare('created_at', $this->created_at, true);
 

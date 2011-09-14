@@ -25,7 +25,7 @@ class Article extends ActiveRecordModel
 	{
 		return array(
 			array('title, text, section_id, lang', 'required'),
-			array('date', 'humanDate'),
+			array('date', 'type', 'type' => 'date', 'dateFormat' => 'dd.mm.yyyy'),
 			array('title', 'length', 'max' => 400),
 			array('title, text, date, date_create', 'safe', 'on' => 'search'),
 		);
