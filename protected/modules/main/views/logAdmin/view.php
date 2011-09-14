@@ -9,7 +9,7 @@ $this->widget('application.components.GridView', array(
 	'columns' => array(
 		array('name' => 'message'),
 		'level',
-        array('name' => 'logtime', 'value' => 'Dater::humanDateTime($data->logtime)')
+        'logtime'
 	),
 ));
 ?>

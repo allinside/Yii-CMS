@@ -1,7 +1,8 @@
 <h3><?php echo $news->title; ?></h3>
 
-
 <?php
+Yii::app()->clientScript->registerScriptFile($this->module->assetsUrl() . '/js/filesManage.js', CClientScript::POS_END);
+
 $this->page_title = "Файлы новости";
 
 $this->widget('application.components.GridView', array(
@@ -18,7 +19,7 @@ $this->widget('application.components.GridView', array(
 		'created_at',
 		array(
 			'class'    => 'CButtonColumn',
-			'template' => '{update} {delete}'
+			'template' => '{delete}'
 		),
 	),
 ));

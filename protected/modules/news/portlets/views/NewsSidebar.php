@@ -5,36 +5,38 @@
 
     <ul class="ex_menu">
 
-    <?php foreach ($news_list as $news): ?>
+        <?php foreach ($news_list as $news): ?>
 
-        <?php
-        if ($news->photo)
-        {
-            $thumb = ImageHelper::thumb(
-                News::PHOTOS_DIR,
-                $news->photo,
-                News::PHOTO_SMALL_WIDTH,
-                News::PHOTO_SMALL_HEIGHT,
-                true
-            );
-        }
-        ?>
+            <?php
+            if ($news->photo)
+            {
+                $thumb = ImageHelper::thumb(
+                    News::PHOTOS_DIR,
+                    $news->photo,
+                    News::PHOTO_SMALL_WIDTH,
+                    News::PHOTO_SMALL_HEIGHT,
+                    true
+                );
+            }
+            ?>
 
-        <li>
-            <a href="<?php echo $news->url; ?>"><?php echo $news->title; ?></a> <br/>
-            <?php if (isset($thumb)): ?>
-                <a href="<?php echo $news->url; ?>"><?php echo $thumb; ?></a>  <br/>
-            <?php endif ?>
+            <li>
+                <a href="<?php echo $news->url; ?>"><?php echo $news->title; ?></a> <br/>
+                <?php if (isset($thumb)): ?>
+                    <a href="<?php echo $news->url; ?>"><?php echo $thumb; ?></a>  <br/>
+                <?php endif ?>
 
-            <?php echo Yii::app()->text->cut($news->text, 200, "."); ?>
+                <?php echo Yii::app()->text->cut($news->text, 200, "."); ?>
 
-            <br/>
-            <br/>
-        </li>
+                <br/>
+                <br/>
+            </li>
 
-    <?php endforeach ?>
+        <?php endforeach ?>
 
     </ul>
+
+    <a href="<?php echo $this->url('/news'); ?>">Все новости </a>→
 </div>
 
 

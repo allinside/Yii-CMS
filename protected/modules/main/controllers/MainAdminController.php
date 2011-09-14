@@ -58,7 +58,9 @@ class MainAdminController extends AdminController
             Yii::app()->session["admin_panel_lang"] = $lang;
         }
 
-        $this->redirect(base64_decode($_GET["back_url"]));
+        $back_url = base64_decode($_GET["back_url"]);
+
+        $this->redirect($back_url);
     }
     
 

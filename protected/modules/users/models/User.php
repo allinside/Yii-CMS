@@ -283,7 +283,6 @@ class User extends ActiveRecordModel
 
     public function generateActivateCodeAndDate()
     {
-        $this->activate_date = Dater::mysqlDateTime();
         $this->activate_code = md5($this->id . $this->name . $this->email . time(true) . rand(5, 10));
     }
 
@@ -338,7 +337,6 @@ class User extends ActiveRecordModel
         $settings = Settings::model()->getAll();
 
         $this->password_recover_code = md5($this->password . $this->email . $this->id . time());
-        $this->password_recover_date = Dater::mysqlDateTime();
 
         $body = $settings["PASSWORD_RECOVER_REQUEST_MAIL_BODY"]["value"];
         $body = str_replace(

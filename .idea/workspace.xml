@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e5a110c-e6df-4e2c-adfe-bd6233fb4d51" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/modules/actions/data/urlRules.txt" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/19815cfc/js/menuLinkForm.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/19815cfc/js/menuTreeView.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/2991fc63/img/icon.png" afterPath="" />
@@ -513,27 +512,14 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/c61f1819/styles/calendar-win2k-cold-1.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/c61f1819/styles/calendar-win2k-cold-2.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/d2881a00/img/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/d2881a00/js/manage.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/e3e8620/css/UsersCheckboxes.css" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/e3e8620/img/icon.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/e3e8620/js/MailerLetterForm.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/e3e8620/js/UsersCheckboxes.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/content/data/content.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/content/data/create.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/content/data/drop.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/content/data/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/faq/data/create.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/faq/data/drop.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/faq/data/faq.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/geo/data/create.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/geo/data/drop.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/geo/data/geo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/main/data/create.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/main/data/main.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/main/data/users.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/news/views/newsFileAdmin/create.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/news/views/newsFileAdmin/update.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/libs/tools/Text.php" afterPath="$PROJECT_DIR$/protected/components/TextComponent.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/articles/assets/js/manage.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news_files/awp05_alltolls_blogspot098-1280x1024.jpg" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/d2881a00/js/manage.js" afterPath="$PROJECT_DIR$/protected/modules/articles/assets/js/filesManage.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/assets/dad6e4f/js/manage.js" afterPath="$PROJECT_DIR$/protected/modules/news/assets/js/filesManage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/36721602/img/icon.png" afterPath="$PROJECT_DIR$/assets/36721602/img/icon.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/51028a3/img/icon.png" afterPath="$PROJECT_DIR$/assets/51028a3/img/icon.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/gridview/bg.gif" afterPath="$PROJECT_DIR$/assets/5147859/gridview/bg.gif" />
@@ -581,6 +567,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-gray.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-gray.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-red-line.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-red-line.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-red.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-red.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/img/backgrounds.gif" afterPath="$PROJECT_DIR$/assets/cb90211e/img/backgrounds.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/img/buttons-disabled.png" afterPath="$PROJECT_DIR$/assets/cb90211e/img/buttons-disabled.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/img/buttons.png" afterPath="$PROJECT_DIR$/assets/cb90211e/img/buttons.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/img/delete.gif" afterPath="$PROJECT_DIR$/assets/cb90211e/img/delete.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/img/done.gif" afterPath="$PROJECT_DIR$/assets/cb90211e/img/done.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/img/error.gif" afterPath="$PROJECT_DIR$/assets/cb90211e/img/error.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/img/transp50.png" afterPath="$PROJECT_DIR$/assets/cb90211e/img/transp50.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/js/plupload.flash.swf" afterPath="$PROJECT_DIR$/assets/cb90211e/js/plupload.flash.swf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/js/plupload.silverlight.xap" afterPath="$PROJECT_DIR$/assets/cb90211e/js/plupload.silverlight.xap" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/dad6e4f/img/icon.png" afterPath="$PROJECT_DIR$/assets/dad6e4f/img/icon.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/eb0d4722/img/icon.png" afterPath="$PROJECT_DIR$/assets/eb0d4722/img/icon.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f5631bef/img/icon.png" afterPath="$PROJECT_DIR$/assets/f5631bef/img/icon.png" />
@@ -632,26 +627,27 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/rating/jquery.rating.css" afterPath="$PROJECT_DIR$/assets/90f839/rating/jquery.rating.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/jquery.treeview.css" afterPath="$PROJECT_DIR$/assets/90f839/treeview/jquery.treeview.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/yiitab/jquery.yiitab.css" afterPath="$PROJECT_DIR$/assets/90f839/yiitab/jquery.yiitab.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/dad6e4f/js/manage.js" afterPath="$PROJECT_DIR$/assets/dad6e4f/js/manage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/css/plupload.queue.css" afterPath="$PROJECT_DIR$/assets/cb90211e/css/plupload.queue.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/js/browserplus-min.js" afterPath="$PROJECT_DIR$/assets/cb90211e/js/browserplus-min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/js/gears_init.js" afterPath="$PROJECT_DIR$/assets/cb90211e/js/gears_init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/js/jquery.plupload.queue.min.js" afterPath="$PROJECT_DIR$/assets/cb90211e/js/jquery.plupload.queue.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/js/plupload.full.min.js" afterPath="$PROJECT_DIR$/assets/cb90211e/js/plupload.full.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/cb90211e/js/plupload.i18n.ru.js" afterPath="$PROJECT_DIR$/assets/cb90211e/js/plupload.i18n.ru.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f5631bef/css/rolesTasks.css" afterPath="$PROJECT_DIR$/assets/f5631bef/css/rolesTasks.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f5631bef/js/rbac.js" afterPath="$PROJECT_DIR$/assets/f5631bef/js/rbac.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f5631bef/js/rolesTasks.js" afterPath="$PROJECT_DIR$/assets/f5631bef/js/rolesTasks.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f8a6567a/css/main.css" afterPath="$PROJECT_DIR$/assets/f8a6567a/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f8a6567a/css/modules.css" afterPath="$PROJECT_DIR$/assets/f8a6567a/css/modules.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/fb532234/pager.css" afterPath="$PROJECT_DIR$/assets/fb532234/pager.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/site/style.css" afterPath="$PROJECT_DIR$/css/site/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/config/main.php" afterPath="$PROJECT_DIR$/protected/config/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/articles/ArticlesModule.php" afterPath="$PROJECT_DIR$/protected/modules/articles/ArticlesModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/articles/models/Article.php" afterPath="$PROJECT_DIR$/protected/modules/articles/models/Article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/news/controllers/NewsController.php" afterPath="$PROJECT_DIR$/protected/modules/news/controllers/NewsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/articles/views/articleFileAdmin/manage.php" afterPath="$PROJECT_DIR$/protected/modules/articles/views/articleFileAdmin/manage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/controllers/MainAdminController.php" afterPath="$PROJECT_DIR$/protected/modules/main/controllers/MainAdminController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/views/logAdmin/view.php" afterPath="$PROJECT_DIR$/protected/modules/main/views/logAdmin/view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/news/controllers/NewsFileAdminController.php" afterPath="$PROJECT_DIR$/protected/modules/news/controllers/NewsFileAdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/news/models/News.php" afterPath="$PROJECT_DIR$/protected/modules/news/models/News.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/news/models/NewsFile.php" afterPath="$PROJECT_DIR$/protected/modules/news/models/NewsFile.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/news/portlets/views/NewsSidebar.php" afterPath="$PROJECT_DIR$/protected/modules/news/portlets/views/NewsSidebar.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/news/views/news/view.php" afterPath="$PROJECT_DIR$/protected/modules/news/views/news/view.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/news/views/newsAdmin/manage.php" afterPath="$PROJECT_DIR$/protected/modules/news/views/newsAdmin/manage.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/news/views/newsFileAdmin/manage.php" afterPath="$PROJECT_DIR$/protected/modules/news/views/newsFileAdmin/manage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/layouts/main.php" afterPath="$PROJECT_DIR$/protected/views/layouts/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/models/User.php" afterPath="$PROJECT_DIR$/protected/modules/users/models/User.php" />
     </list>
     <ignored path="Yii-CMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -674,28 +670,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ArticlesModule.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/articles/ArticlesModule.php">
+      <file leaf-file-name="MainAdminController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/modules/main/controllers/MainAdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="32" selection-start="80" selection-end="80" vertical-scroll-proportion="0.0">
+            <state line="60" column="53" selection-start="1670" selection-end="1670" vertical-scroll-proportion="0.52300245">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Article.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/modules/articles/models/Article.php">
+      <file leaf-file-name="MainModule.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/modules/main/MainModule.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="79" selection-start="476" selection-end="476" vertical-scroll-proportion="0.44280443">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="News.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/news/models/News.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="69" selection-start="1138" selection-end="1148" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -715,22 +702,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/protected/modules/content/data/urlRules.txt" />
-        <option value="$PROJECT_DIR$/protected/modules/documents/data/urlRules.txt" />
-        <option value="$PROJECT_DIR$/protected/modules/faq/data/urlRules.txt" />
-        <option value="$PROJECT_DIR$/protected/modules/main/data/urlRules.txt" />
-        <option value="$PROJECT_DIR$/protected/modules/news/data/urlRules.txt" />
         <option value="$PROJECT_DIR$/protected/modules/users/data/urlRules.txt" />
-        <option value="$PROJECT_DIR$/protected/modules/news/portlets/views/NewsSidebar.php" />
         <option value="$PROJECT_DIR$/protected/modules/news/controllers/NewsController.php" />
         <option value="$PROJECT_DIR$/protected/modules/news/models/News.php" />
-        <option value="$PROJECT_DIR$/protected/modules/news/views/news/view.php" />
-        <option value="$PROJECT_DIR$/protected/modules/news/controllers/NewsFileAdminController.php" />
-        <option value="$PROJECT_DIR$/protected/modules/news/models/NewsFile.php" />
-        <option value="$PROJECT_DIR$/protected/modules/news/views/newsFileAdmin/manage.php" />
         <option value="$PROJECT_DIR$/protected/modules/news/views/newsAdmin/manage.php" />
         <option value="$PROJECT_DIR$/protected/modules/articles/ArticlesModule.php" />
         <option value="$PROJECT_DIR$/protected/modules/articles/models/Article.php" />
+        <option value="$PROJECT_DIR$/protected/modules/news/models/NewsFile.php" />
+        <option value="$PROJECT_DIR$/protected/modules/news/assets/js/manage.js" />
+        <option value="$PROJECT_DIR$/protected/modules/articles/views/articleFileAdmin/manage.php" />
+        <option value="$PROJECT_DIR$/protected/modules/news/controllers/NewsFileAdminController.php" />
+        <option value="$PROJECT_DIR$/protected/modules/news/views/news/view.php" />
+        <option value="$PROJECT_DIR$/protected/modules/news/portlets/views/NewsSidebar.php" />
+        <option value="$PROJECT_DIR$/protected/modules/main/views/logAdmin/view.php" />
+        <option value="$PROJECT_DIR$/protected/modules/users/models/User.php" />
+        <option value="$PROJECT_DIR$/protected/modules/news/views/newsFileAdmin/manage.php" />
+        <option value="$PROJECT_DIR$/protected/modules/main/controllers/MainAdminController.php" />
       </list>
     </option>
   </component>
@@ -813,20 +800,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="protected" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -867,81 +840,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="news" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="articles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="articles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1019,6 +918,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290398" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24857838" sideWeight="0.6709602" order="0" side_tool="false" content_ui="tabs" />
@@ -1028,7 +928,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290398" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1077,114 +976,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/modules/users/UsersModule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="0" selection-start="950" selection-end="1226" vertical-scroll-proportion="0.622276">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/data/urlRules.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="17" selection-start="70" selection-end="74" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/controllers/NewsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="4" selection-start="77" selection-end="77" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/portlets/views/NewsSidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="77" selection-start="682" selection-end="682" vertical-scroll-proportion="-20.689655">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/articles/controllers/ArticleFileAdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="339" selection-end="848" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/articles/models/ArticleFile.php">
+    <entry file="file://$PROJECT_DIR$/nf.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/articles/views/articleAdmin/manage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="101" selection-start="737" selection-end="745" vertical-scroll-proportion="0.6952141">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/views/newsAdmin/manage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="93" selection-start="798" selection-end="798" vertical-scroll-proportion="0.82656825">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/news/models/NewsFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="32" selection-start="314" selection-end="318" vertical-scroll-proportion="0.48730963">
+        <state line="70" column="4" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.6113161">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/controllers/NewsFileAdminController.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/articles/models/ArticleFile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="32" selection-start="711" selection-end="715" vertical-scroll-proportion="0.41328412">
+        <state line="71" column="0" selection-start="1587" selection-end="1888" vertical-scroll-proportion="1.5645757">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/articles/assets/js/filesManage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="236" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/news/assets/js/filesManage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="7" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/articles/views/articleFileAdmin/manage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="606" selection-end="766" vertical-scroll-proportion="0.33290815">
+        <state line="3" column="0" selection-start="47" selection-end="168" vertical-scroll-proportion="0.091836736">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/views/newsFileAdmin/manage.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/news/controllers/NewsFileAdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="62" selection-start="395" selection-end="395" vertical-scroll-proportion="0.42857143">
+        <state line="23" column="58" selection-start="741" selection-end="741" vertical-scroll-proportion="0.6199262">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/news/views/news/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="9" selection-start="309" selection-end="309" vertical-scroll-proportion="0.5510204">
+        <state line="31" column="111" selection-start="713" selection-end="713" vertical-scroll-proportion="0.60841835">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/articles/ArticlesModule.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/news/portlets/views/NewsSidebar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="32" selection-start="80" selection-end="80" vertical-scroll-proportion="0.0">
+        <state line="38" column="66" selection-start="1036" selection-end="1036" vertical-scroll-proportion="0.66875786">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/models/News.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/views/logAdmin/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="69" selection-start="1138" selection-end="1148" vertical-scroll-proportion="0.0">
+        <state line="11" column="17" selection-start="334" selection-end="334" vertical-scroll-proportion="0.48440367">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/articles/models/Article.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/users/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="79" selection-start="476" selection-end="476" vertical-scroll-proportion="0.44280443">
+        <state line="339" column="0" selection-start="9581" selection-end="9581" vertical-scroll-proportion="0.33270678">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/content/views/page/_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="12" selection-start="95" selection-end="95" vertical-scroll-proportion="0.14314115">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/actions/views/action/_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="20" selection-start="323" selection-end="323" vertical-scroll-proportion="0.33200794">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/news/views/newsFileAdmin/manage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="27" selection-start="667" selection-end="667" vertical-scroll-proportion="0.5778061">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/MainModule.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/controllers/MainAdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="53" selection-start="1670" selection-end="1670" vertical-scroll-proportion="0.52300245">
           <folding />
         </state>
       </provider>

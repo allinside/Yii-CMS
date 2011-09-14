@@ -1,7 +1,7 @@
 <h3><?php echo $article->title; ?></h3>
 
 <?php
-Yii::app()->clientScript->registerScriptFile($this->module->assetsUrl() . '/js/manage.js', CClientScript::POS_END);
+Yii::app()->clientScript->registerScriptFile($this->module->assetsUrl() . '/js/filesManage.js', CClientScript::POS_END);
 
 $this->page_title = "Файлы материала";
 

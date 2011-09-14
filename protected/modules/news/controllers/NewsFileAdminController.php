@@ -23,7 +23,6 @@ class NewsFileAdminController extends AdminController
                 $news_file->news_id = $news_id;
                 $news_file->file = $_FILES['file']['name'];
                 $news_file->save();
-
                 chmod($file_path, 0777);
             }
         }

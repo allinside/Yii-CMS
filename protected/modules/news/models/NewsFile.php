@@ -67,12 +67,19 @@ class NewsFile extends ActiveRecordModel
             ),
 		));
 	}
-	
-	
-	public function uploadFiles() 
-	{
-		return array(
-			'file' => array('dir' => self::FILES_DIR)
-		);
-	}
+
+
+    public function delete()
+    {
+        if ($this->file)
+        {
+            $file_path = $_SERVER['DOCUMENT_ROOT'] . self::FILES_DIR . $this->file;
+            if (file_exists($file_path))
+            {
+                unlink($file_path);
+            }
+        }
+
+        parent::delete();
+    }
 }
