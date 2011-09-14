@@ -6,7 +6,7 @@ $this->tabs = array(
     "редактировать" => $this->createUrl("update", array("id" => $model->id))
 );
 
-$this->widget('zii.widgets.CDetailView', array(
+$this->widget('application.components.DetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'last_name',
@@ -39,10 +39,7 @@ $this->widget('zii.widgets.CDetailView', array(
 			'name'  => 'status',
 			'value' => User::$status_list[$model->status]
 		),
-		array(
-			'name'  => 'date_create',
-			'value' => Dater::humanDateTime($model->date_create)
-		),
+		'date_create'
 	),
 ));
 ?>

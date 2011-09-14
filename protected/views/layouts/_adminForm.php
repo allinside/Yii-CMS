@@ -1,13 +1,7 @@
-<div class='form'>
+<?php
 
-    <?php echo $this->msg('Поля отмеченные * обязательны.', 'info'); ?>
-
-    <?php echo $form->renderBegin(); ?>
-
-    <?php
-    $elements = $form->getElements();
-    $model_class = get_class($form->model);
-
+function addAttributesToElements(&$elements)
+{
     foreach ($elements as $i => $element)
     {
         $class = '';
@@ -39,8 +33,12 @@
 
         $elements[$i] = $element;
     }
+}
 
-    foreach ($form->buttons as $i => $button)
+
+function addAttributesToButtons(&$buttons)
+{
+    foreach ($buttons as $i => $button)
     {
         $length = mb_strlen($button->value, 'utf-8');
 
@@ -58,9 +56,36 @@
         }
 
 
-        $form->buttons[$i] = $button;
+        $buttons[$i] = $button;
     }
-    ?>
+}
+
+
+function formatDateAttributes(&$model)
+{
+    foreach ($model->attributes as $attr => $value)
+    {
+        if (Yii::app()->dater->isDbDate($value))
+        {
+            $model->$attr = Yii::app()->dater->formFormat($value);
+        }
+    }
+}
+
+$elements = $form->getElements();
+
+addAttributesToElements($elements);
+addAttributesToButtons($form->buttons);
+formatDateAttributes($form->model);
+
+$model_class = get_class($form->model);
+?>
+
+<div class='form'>
+
+    <?php echo $this->msg('Поля отмеченные * обязательны.', 'info'); ?>
+
+    <?php echo $form->renderBegin(); ?>
 
     <?php foreach ($elements as $element): ?>
         <?php if ($element->type == 'date'): ?>

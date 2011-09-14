@@ -29,27 +29,9 @@ class GridView extends CGridView
         {
             foreach ($item as $attr => $value)
             {
-                if (preg_match(ActiveRecordModel::PATTERN_MYSQL_DATE_TIME, $value))
+                if (Yii::app()->dater->isDbDate($value))
                 {
-                    if ($value == "0000-00-00 00:00:00")
-                    {
-                        $item->$attr = null;
-                    }
-                    else
-                    {
-                        $item->$attr = Yii::app()->dateFormatter->formatDateTime($value, 'long', 'short');
-                    }
-                }
-                elseif (preg_match(ActiveRecordModel::PATTERN_MYSQL_DATE, $value))
-                {
-                    if ($value == "0000-00-00")
-                    {
-                        $item->$attr = null;
-                    }
-                    else
-                    {
-                        $item->$attr = Yii::app()->dateFormatter->format('dd.MM.yyyy', $value);
-                    }
+                    $item->$attr = Yii::app()->dater->readableFormat($value);
                 }
             }
         }

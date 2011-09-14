@@ -55,7 +55,7 @@ class News extends ActiveRecordModel
 				'tooLarge'   => 'Максимальный размер файла 2.5 Мб'
 			),
 			array('user_id', 'length', 'max' => 11),
-			array('date', 'humanDate'),
+			array('date', 'type', 'type' => 'date', 'dateFormat' => 'dd.mm.yyyy'),
 			array('title', 'length', 'max' => 250),
 			array('state', 'length', 'max' => 6),
 			array('id, user_id, title, text, photo, state, date, date_create', 'safe', 'on' => 'search'),

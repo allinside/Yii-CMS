@@ -18,7 +18,7 @@ if ($model->operations)
 
 $operations = implode("<br/>", $operations);
 
-$this->widget('zii.widgets.CDetailView', array(
+$this->widget('application.components.DetailView', array(
     'data' => $model,
     'attributes' => array(
         'name',

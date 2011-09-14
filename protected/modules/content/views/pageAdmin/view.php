@@ -8,7 +8,7 @@ $this->tabs = array(
     "редактировать"     => $this->createUrl('update', array('id' => $model->id))
 );
 
-$this->widget('zii.widgets.CDetailView', array(
+$this->widget('application.components.DetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
         'title',

@@ -51,9 +51,12 @@ return array(
 			'allowAutoLogin' => true,
             'class'          => 'WebUser'
 		),
-		'image'=>array(
+		'image' => array(
           'class'  => 'application.extensions.image.CImageComponent',
           'driver' => 'GD'
+        ),
+        'dater' => array(
+            'class' => 'application.components.DaterComponent'
         ),
 		'urlManager' => array(
 			'urlFormat'      => 'path',

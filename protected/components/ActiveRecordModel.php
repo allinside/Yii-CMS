@@ -2,14 +2,6 @@
 
 class ActiveRecordModel extends CActiveRecord
 {
-    const PATTERN_DATE = '#^(\d\d?)\.(\d\d?)\.(\d\d\d\d)$#';
-
-    const PATTERN_DATE_TIME = '#^(\d\d?)\.(\d\d?)\.(\d\d\d\d) (\d\d)\:(\d\d):(\d\d)$#';
-
-    const PATTERN_MYSQL_DATE = '#^(\d\d\d\d)-(\d\d?)-(\d\d?)$#';
-
-    const PATTERN_MYSQL_DATE_TIME = '#^(\d\d\d\d)-(\d\d?)-(\d\d?) (\d\d)\:(\d\d):(\d\d)$#';
-
     const PATTERN_LAT_ALPHA = '/^[A-Za-z]+$/ui';
     
     const PATTERN_PHONE = '/^\+[1-9]-[0-9]+-[0-9]{7}$/';
@@ -39,6 +31,9 @@ class ActiveRecordModel extends CActiveRecord
             ),
             'UploadFile' => array(
                 'class' => 'application.components.activeRecordBehaviors.UploadFileBehavior'
+            ),
+            'DateFormat' => array(
+                'class' => 'application.components.activeRecordBehaviors.DateFormatBehavior'
             )
         );
     }
@@ -60,18 +55,6 @@ class ActiveRecordModel extends CActiveRecord
 
 
     /*VALIDATORS________________________________________________________________________________*/
-    public function humanDate($attr, $date)
-    {
-        if (!empty($this->$attr))
-        {
-            if (!preg_match(self::PATTERN_DATE, $this->$attr))
-            {
-                $this->addError($attr, Yii::t('main', 'Используейте календарь!'));
-            }
-        }
-    }
-
-
     public function phone($attr)
     {
         if (!empty($this->$attr))

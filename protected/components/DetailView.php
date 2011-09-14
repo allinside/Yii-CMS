@@ -50,27 +50,10 @@ class DetailView extends CDetailView
 			else if(isset($attribute['name']))
             {
                 $value=CHtml::value($this->data,$attribute['name']);
-                if (preg_match(ActiveRecordModel::PATTERN_MYSQL_DATE_TIME, $value))
+
+                if (Yii::app()->dater->isDbDate($value))
                 {
-                    if ($value == "0000-00-00 00:00:00")
-                    {
-                        $value = null;
-                    }
-                    else
-                    {
-                        $value = Yii::app()->dateFormatter->formatDateTime($value, 'long', 'short');
-                    }
-                }
-                elseif (preg_match(ActiveRecordModel::PATTERN_MYSQL_DATE, $value))
-                {
-                    if ($value == "0000-00-00")
-                    {
-                        $value = null;
-                    }
-                    else
-                    {
-                        $value = Yii::app()->dateFormatter->format('dd.MM.yyyy', $value);
-                    }
+                    $value = Yii::app()->dater->readableFormat($value);
                 }
             }
 			else
