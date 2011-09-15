@@ -98,7 +98,7 @@ abstract class CGridColumn extends CComponent
 	 * @since 1.1.1
 	 */
 	public function renderFilterCell()
-	{
+	{   
 		echo "<td>";
 		$this->renderFilterCellContent();
 		echo "</td>";

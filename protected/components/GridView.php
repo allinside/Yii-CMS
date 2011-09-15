@@ -78,32 +78,6 @@ class GridView extends CGridView
     }
 
 
-	public function renderFilter()
-	{
-        if (!$this->filters)
-        {
-            return;
-        }
-
-		if($this->filter!==null)
-		{
-			echo "<tr class=\"{$this->filterCssClass}\">\n";
-			foreach($this->columns as $column)
-            {
-                if (isset($column->name))
-                {
-                    if (!in_array($column->name, $this->filters))
-                    {
-                        echo "<td></td>";
-                        continue;
-                    }
-                }
-            }
-			echo "</tr>\n";
-		}
-	}
-
-
 	public function renderItems()
 	{
 		if($this->dataProvider->getItemCount()>0 || $this->showTableOnEmpty)
@@ -223,4 +197,23 @@ class GridView extends CGridView
 
         return $html;
     }
+
+
+	public function renderFilter()
+	{
+		if($this->filter!==null)
+		{
+			echo "<tr class=\"{$this->filterCssClass}\">\n";
+			foreach($this->columns as $column)
+				$column->renderFilterCell();
+			echo "</tr>\n";
+		}
+	}
+
+
+	public function registerClientScript()
+	{
+	    parent::registerClientScript();
+        Yii::app()->clientScript->registerScriptFile($this->baseScriptUrl.'/gridview.js',CClientScript::POS_END, true);
+	}
 }

@@ -117,4 +117,17 @@
 {
 	width: 100%;
 	border: 1px solid #ccc;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #333;
+    background: #fefefe;
+}
+
+.filters_link {
+    color: green;
+}
+
+.filters {
+    display: none;
 }
