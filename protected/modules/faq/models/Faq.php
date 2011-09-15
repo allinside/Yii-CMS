@@ -2,6 +2,9 @@
 
 class Faq extends ActiveRecordModel
 {
+    const PAGE_SIZE = 10;
+
+
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -54,7 +57,6 @@ class Faq extends ActiveRecordModel
 	public function search()
 	{
 		$criteria=new CDbCriteria;
-
 		$criteria->compare('id',$this->id);
 		$criteria->compare('first_name', $this->first_name, true);
         $criteria->compare('last_name', $this->last_name, true);
@@ -65,17 +67,8 @@ class Faq extends ActiveRecordModel
 		$criteria->compare('is_published',$this->is_published);
 		$criteria->compare('date_create',$this->date_create, true);
 
-        $page_size = 10;
-        if (isset(Yii::app()->session[get_class($this) . "PerPage"]))
-        {
-            $page_size = Yii::app()->session[get_class($this) . "PerPage"];
-        }
-
-		return new CActiveDataProvider(get_class($this), array(
-			'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => $page_size,
-            ),
+		return new ActiveDataProvider(get_class($this), array(
+			'criteria' => $criteria
 		));
 	}
 }

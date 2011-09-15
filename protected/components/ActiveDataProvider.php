@@ -8,12 +8,19 @@ class ActiveDataProvider extends CActiveDataProvider
     {
         if (!isset($config['pagination']['pageSize']))
         {
-            $reflection = new ReflectionClass($modelClass);
-
-            $page_size = $reflection->getConstant('PAGE_SIZE');
-            if (!$page_size)
+            if (isset(Yii::app()->session[$modelClass . "PerPage"]) && mb_substr(Yii::app()->controller->id, -5) == 'Admin')
             {
-                $page_size = self::PAGE_SIZE;;
+                $page_size = Yii::app()->session[$modelClass . "PerPage"];
+            }
+            else
+            {
+                $reflection = new ReflectionClass($modelClass);
+
+                $page_size = $reflection->getConstant('PAGE_SIZE');
+                if (!$page_size)
+                {
+                    $page_size = self::PAGE_SIZE;;
+                }
             }
 
             $config['pagination']['pageSize'] = $page_size;

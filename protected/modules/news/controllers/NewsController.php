@@ -2,9 +2,6 @@
 
 class NewsController extends BaseController
 {
-	const PAGE_SIZE = 10;
-
-
 	public static function actionsTitles() 
 	{
 	    return array(
@@ -35,8 +32,6 @@ class NewsController extends BaseController
 	public function actionIndex() 
 	{
         $data_provider = new ActiveDataProvider('News');
-        //$data_provider->pagination->pageSize = 2;
-        //$data_provider->criteria = array('condition' => 'lang = "ru"');
 
 		$this->render('index', array(
             'data_provider' => $data_provider

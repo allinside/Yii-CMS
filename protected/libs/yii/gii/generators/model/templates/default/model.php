@@ -14,6 +14,9 @@
 
 class <?php echo $modelClass; ?> extends <?php echo $this->baseClass."\n"; ?>
 {
+    const PAGE_SIZE = 10;
+
+
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -51,7 +54,6 @@ class <?php echo $modelClass; ?> extends <?php echo $this->baseClass."\n"; ?>
 	public function search()
 	{
 		$criteria = new CDbCriteria;
-
 <?php
 foreach($columns as $name => $column)
 {
@@ -66,17 +68,8 @@ foreach($columns as $name => $column)
 }
 ?>
 
-        $page_size = 10;
-        if (isset(Yii::app()->session[get_class($this) . "PerPage"]))
-        {
-            $page_size = Yii::app()->session[get_class($this) . "PerPage"];
-        }
-
-		return new CActiveDataProvider(get_class($this), array(
-			'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => $page_size,
-            ),
+		return new ActiveDataProvider(get_class($this), array(
+			'criteria' => $criteria
 		));
 	}
 }

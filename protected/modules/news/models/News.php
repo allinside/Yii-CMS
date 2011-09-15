@@ -2,18 +2,16 @@
 
 class News extends ActiveRecordModel
 {
-	const STATE_ACTIVE = 'active';
-	
-	const STATE_HIDDEN = 'hidden';
-	
+    const PAGE_SIZE = 2;
+
 	const PHOTOS_DIR = 'upload/news';
+
+	const STATE_ACTIVE = 'active';
+	const STATE_HIDDEN = 'hidden';
 	
     const PHOTO_SMALL_WIDTH  = "230";
     const PHOTO_SMALL_HEIGHT = "200";
-
-    const PAGE_SIZE = 2;
-
-    const PHOTO_BIG_WIDTH = "580";
+    const PHOTO_BIG_WIDTH    = "580";
 	
     
 	public static $states = array(
@@ -77,7 +75,6 @@ class News extends ActiveRecordModel
 	public function search()
 	{
 		$criteria = new CDbCriteria;
-
 		$criteria->compare('id', $this->id, true);
 		$criteria->compare('user_id', $this->user_id, true);
 		$criteria->compare('title', $this->title, true);
@@ -87,19 +84,8 @@ class News extends ActiveRecordModel
 		$criteria->compare('date', $this->date, true);
 		$criteria->compare('date_create', $this->date_create, true);
 
-        //$criteria->order = 'date DESC';
-
-        $page_size = 10;
-        if (isset(Yii::app()->session[get_class($this) . "PerPage"]))
-        {
-            $page_size = Yii::app()->session[get_class($this) . "PerPage"];
-        }
-
-		return new CActiveDataProvider(get_class($this), array(
-			'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => $page_size
-            )
+		return new ActiveDataProvider(get_class($this), array(
+			'criteria' => $criteria
 		));
 	}
 	

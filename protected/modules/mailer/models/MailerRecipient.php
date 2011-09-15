@@ -2,6 +2,8 @@
 
 class MailerRecipient extends ActiveRecordModel
 {
+    const PAGE_SIZE = 10;
+
     const STATUS_ACCEPTED = 'accepted';
     const STATUS_WAITING  = 'waiting';
     const STATUS_FAIL     = 'fail';
@@ -66,24 +68,14 @@ class MailerRecipient extends ActiveRecordModel
 	public function search()
 	{
 		$criteria = new CDbCriteria;
-
 		$criteria->compare('id', $this->id, true);
 		$criteria->compare('letter_id', $this->letter_id, true);
 		$criteria->compare('user_id', $this->user_id, true);
 		$criteria->compare('status', $this->status, true);
 		$criteria->compare('date_create', $this->date_create, true);
 
-        $page_size = 10;
-        if (isset(Yii::app()->session[get_class($this) . "PerPage"]))
-        {
-            $page_size = Yii::app()->session[get_class($this) . "PerPage"];
-        }
-
-		return new CActiveDataProvider(get_class($this), array(
-			'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => $page_size,
-            )
+		return new ActiveDataProvider(get_class($this), array(
+			'criteria' => $criteria
 		));
 	}
 }

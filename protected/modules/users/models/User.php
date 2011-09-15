@@ -2,6 +2,8 @@
 
 class User extends ActiveRecordModel
 {
+    const PAGE_SIZE = 10;
+
     const STATUS_ACTIVE  = 'active';
     const STATUS_NEW     = 'new';
     const STATUS_BLOCKED = 'blocked';
@@ -225,17 +227,8 @@ class User extends ActiveRecordModel
         $criteria->compare('date_create',$this->date_create, true);
         $criteria->with = 'role';
 
-        $page_size = 10;
-        if (isset(Yii::app()->session[get_class($this) . "PerPage"]))
-        {
-            $page_size = Yii::app()->session[get_class($this) . "PerPage"];
-        }
-
-		return new CActiveDataProvider(get_class($this), array(
+		return new ActiveDataProvider(get_class($this), array(
 			'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => $page_size,
-            ),
             'sort' => array('attributes' => array(
                 'role' => array(
                     'asc'  => 'role.name',

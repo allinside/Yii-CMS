@@ -2,6 +2,9 @@
 
 class Log extends ActiveRecordModel
 {
+    const PAGE_SIZE = 10;
+
+
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -33,25 +36,15 @@ class Log extends ActiveRecordModel
 
 	public function search()
 	{
-		$criteria=new CDbCriteria;
-
+		$criteria = new CDbCriteria;
 		$criteria->compare('id',$this->id);
 		$criteria->compare('level',$this->level,true);
 		$criteria->compare('category',$this->category,true);
 		$criteria->compare('logtime',$this->logtime);
 		$criteria->compare('message',$this->message,true);
 
-        $page_size = 10;
-        if (isset(Yii::app()->session[get_class($this) . "PerPage"]))
-        {
-            $page_size = Yii::app()->session[get_class($this) . "PerPage"];
-        }
-
-		return new CActiveDataProvider(get_class($this), array(
-			'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => $page_size,
-            ),
+		return new ActiveDataProvider(get_class($this), array(
+			'criteria' => $criteria
 		));
 	}
 }

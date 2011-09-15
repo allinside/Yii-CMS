@@ -2,6 +2,8 @@
 
 class NewsFile extends ActiveRecordModel
 {
+    const PAGE_SIZE = 10;
+
 	const FILES_DIR = 'upload/news_files/';
 	
 	
@@ -46,25 +48,14 @@ class NewsFile extends ActiveRecordModel
 	public function search($news_id)
 	{
 		$criteria = new CDbCriteria;
-
 		$criteria->compare('id', $this->id, true);
 		$criteria->compare('news_id', $this->news_id, true);
 		$criteria->compare('file', $this->file, true);
 		$criteria->compare('created_at', $this->created_at, true);
-
 		$criteria->condition = "news_id = {$news_id}";
 
-        $page_size = 10;
-        if (isset(Yii::app()->session[get_class($this) . "PerPage"]))
-        {
-            $page_size = Yii::app()->session[get_class($this) . "PerPage"];
-        }
-
-		return new CActiveDataProvider(get_class($this), array(
-			'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => $page_size,
-            ),
+		return new ActiveDataProvider(get_class($this), array(
+			'criteria' => $criteria
 		));
 	}
 

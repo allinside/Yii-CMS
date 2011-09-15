@@ -1,7 +1,9 @@
 <?php
 
 class MenuLink extends ActiveRecordModel
-{	
+{
+    const PAGE_SIZE = 10;
+
 	public $max_order;
 	
 	
@@ -49,7 +51,6 @@ class MenuLink extends ActiveRecordModel
 	public function search()
 	{
 		$criteria = new CDbCriteria;
-
 		$criteria->compare('id', $this->id, true);
 		$criteria->compare('page_id', $this->page_id, true);
 		$criteria->compare('menu_id', $this->menu_id, true);
@@ -59,17 +60,8 @@ class MenuLink extends ActiveRecordModel
 		$criteria->compare('order', $this->order);
 		$criteria->compare('is_visible', $this->is_visible);
 
-        $page_size = 10;
-        if (isset(Yii::app()->session[get_class($this) . "PerPage"]))
-        {
-            $page_size = Yii::app()->session[get_class($this) . "PerPage"];
-        }
-
-		return new CActiveDataProvider(get_class($this), array(
-			'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => $page_size,
-            ),
+		return new ActiveDataProvider(get_class($this), array(
+			'criteria' => $criteria
 		));
 	}
 	

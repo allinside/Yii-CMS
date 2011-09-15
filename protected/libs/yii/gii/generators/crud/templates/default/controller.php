@@ -96,6 +96,7 @@ class <?php echo $this->controllerClass; ?> extends BaseController
 	public function actionIndex()
 	{
 		$dataProvider = new CActiveDataProvider('<?php echo $this->modelClass; ?>');
+
 		$this->render('index', array(
 			'dataProvider' => $dataProvider,
 		));

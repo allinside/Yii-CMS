@@ -2,6 +2,8 @@
 
 class Setting extends ActiveRecordModel
 {
+    const PAGE_SIZE = 10;
+
     const ELEMENT_TEXT = 'text';
 
     const ELEMENT_TEXTAREA = 'textarea';
@@ -60,7 +62,6 @@ class Setting extends ActiveRecordModel
 	public function search()
 	{
 		$criteria=new CDbCriteria;
-
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('const',$this->const,true);
 		$criteria->compare('title',$this->title,true);
@@ -74,18 +75,9 @@ class Setting extends ActiveRecordModel
             $criteria->condition = 'section_id = ' . $section_id;
         }
 
-        $page_size = 10;
-        if (isset(Yii::app()->session[get_class($this) . "PerPage"]))
-        {
-            $page_size = Yii::app()->session[get_class($this) . "PerPage"];
-        }
-
-		return new CActiveDataProvider(get_class($this), array(
+		return new ActiveDataProvider(get_class($this), array(
 			'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => $page_size,
-            ),
-           'sort'=>array('attributes'=>array(
+            'sort'=>array('attributes'=>array(
                 'section'=>array(
                     'asc'  => 'section.name',
                     'desc' => 'section.name DESC',

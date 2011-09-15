@@ -2,15 +2,15 @@
 
 class Action extends ActiveRecordModel
 {
+    const PAGE_SIZE = 10;
+
 	const IMG_DIR = 'upload/actions';
 
     const IMG_SMALL_WIDTH  = "80";
     const IMG_SMALL_HEIGHT = "80";
-
-	const IMG_MID_WIDTH  = "130";
-	const IMG_MID_HEIGHT  = "130";		
-
-    const IMG_BIG_WIDTH = "450";
+	const IMG_MID_WIDTH    = "130";
+	const IMG_MID_HEIGHT   = "130";
+    const IMG_BIG_WIDTH    = "450";
 
 
 	public static function model($className=__CLASS__)
@@ -57,7 +57,6 @@ class Action extends ActiveRecordModel
 	public function search()
 	{
 		$criteria = new CDbCriteria;
-
 		$criteria->compare('id', $this->id, true);
 		$criteria->compare('name', $this->name, true);
 		$criteria->compare('place', $this->place, true);
@@ -66,17 +65,8 @@ class Action extends ActiveRecordModel
 		$criteria->compare('date', $this->date, true);
 		$criteria->compare('date_create', $this->date_create, true);
 
-        $page_size = 10;
-        if (isset(Yii::app()->session[get_class($this) . "PerPage"]))
-        {
-            $page_size = Yii::app()->session[get_class($this) . "PerPage"];
-        }
-
-		return new CActiveDataProvider(get_class($this), array(
-			'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => $page_size,
-            ),
+		return new ActiveDataProvider(get_class($this), array(
+			'criteria' => $criteria
 		));
 	}
 

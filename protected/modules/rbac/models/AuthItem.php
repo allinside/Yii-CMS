@@ -1,7 +1,11 @@
 <?php
 
 class AuthItem extends ActiveRecordModel
-{	
+{
+    const PAGE_SIZE = 10;
+
+	const PHOTOS_DIR = 'upload/news';
+
 	const ROLE_DEFAULT = 'user';
     const ROLE_GUEST   = 'guest';
     const ROLE_ROOT    = 'admin';
@@ -87,26 +91,15 @@ class AuthItem extends ActiveRecordModel
 	public function search($type)
 	{
 		$criteria = new CDbCriteria;
-
 		$criteria->compare('name', $this->name, true);
 		$criteria->compare('type', $this->type);
 		$criteria->compare('description', $this->description, true);
 		$criteria->compare('bizrule', $this->bizrule, true);
 		$criteria->compare('data', $this->data, true);
-
         $criteria->addCondition('type = ' . $type);
-   
-        $page_size = 20;
-        if (isset(Yii::app()->session[get_class($this) . "PerPage"]))
-        {
-            $page_size = Yii::app()->session[get_class($this) . "PerPage"];
-        }
 
-		return new CActiveDataProvider(get_class($this), array(
-			'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => $page_size,
-            ),
+		return new ActiveDataProvider(get_class($this), array(
+			'criteria' => $criteria
 		));
 	}
 

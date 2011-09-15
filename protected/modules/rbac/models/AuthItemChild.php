@@ -2,6 +2,9 @@
 
 class AuthItemChild extends ActiveRecordModel
 {
+	const PHOTOS_DIR = 'upload/news';
+
+
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
@@ -35,21 +38,11 @@ class AuthItemChild extends ActiveRecordModel
 	public function search()
 	{
 		$criteria = new CDbCriteria;
-
 		$criteria->compare('parent', $this->parent, true);
 		$criteria->compare('child', $this->child, true);
 
-        $page_size = 10;
-        if (isset(Yii::app()->session[get_class($this) . "PerPage"]))
-        {
-            $page_size = Yii::app()->session[get_class($this) . "PerPage"];
-        }
-
-		return new CActiveDataProvider(get_class($this), array(
-			'criteria' => $criteria,
-            'pagination' => array(
-                'pageSize' => $page_size,
-            ),
+		return new ActiveDataProvider(get_class($this), array(
+			'criteria' => $criteria
 		));
 	}
 
