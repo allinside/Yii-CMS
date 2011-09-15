@@ -25,7 +25,7 @@
             </div>
             <div class="logo">
                 <h1>
-                    <a href="/">Арт <small>Проект</small></a>
+<!--                    <a href="/">Арт <small>Проект</small></a>-->
                 </h1>
             </div>
 

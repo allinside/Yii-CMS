@@ -179,7 +179,9 @@ class CLinkPager extends CBasePager
 	public function registerClientScript()
 	{
 		if($this->cssFile!==false)
-			self::registerCssFile($this->cssFile);
+        {
+            self::registerCssFile($this->cssFile);
+        }
 	}
 
 	/**

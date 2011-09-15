@@ -38,7 +38,7 @@ class ImageHelper
 		$file_path = $dir . $file; 
 		
 		if (!file_exists($thumb_path)) 
-		{	
+		{
 			if (!file_exists($file_path)) 
 			{   
 				return null;

@@ -34,19 +34,12 @@ class NewsController extends BaseController
 	
 	public function actionIndex() 
 	{
-		$model = News::model()->active()->last();
+        $data_provider = new ActiveDataProvider('News');
+        //$data_provider->pagination->pageSize = 2;
+        //$data_provider->criteria = array('condition' => 'lang = "ru"');
 
-		$criteria = $model->dbCriteria;
-
-		$pages = new CPagination($model->count($criteria));
-		$pages->pageSize = self::PAGE_SIZE;
-		$pages->applyLimit($criteria);
-
-		$news_list = $model->findAll($criteria);
-		
 		$this->render('index', array(
-			'pages' => $pages,
-			'news_list'  => $news_list	
+            'data_provider' => $data_provider
 		));
 	}
 }

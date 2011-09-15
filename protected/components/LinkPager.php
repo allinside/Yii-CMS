@@ -2,6 +2,8 @@
 
 class LinkPager extends CLinkPager
 {
+    public $cssFile;
+
 	public function run()
 	{
 		$this->registerClientScript();

@@ -332,3 +332,12 @@ ol li .send {
     font-weight: bold;
     color: #49b6e9 !important;
 }
+
+.news_preview_image {
+    float: left;
+    margin: 0 10px 10px;
+}
+
+.news_item {
+   margin-bottom: 30px;
+}

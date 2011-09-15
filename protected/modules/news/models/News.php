@@ -10,8 +10,9 @@ class News extends ActiveRecordModel
 	
     const PHOTO_SMALL_WIDTH  = "230";
     const PHOTO_SMALL_HEIGHT = "200";
-    
-    
+
+    const PAGE_SIZE = 2;
+
     const PHOTO_BIG_WIDTH = "580";
 	
     
