@@ -127,26 +127,21 @@ abstract class BaseController extends CController
     {
         $url_prefix = '/' . Yii::app()->language;
 
-        if ($route != '/')
+        if (mb_strpos($route, 'Admin') !== false)
         {
-            if (mb_strpos($route, 'Admin') !== false)
-            {
-                $url_prefix = null;
-            }
-
-            $url = $this->createUrl($route, $params, $ampersand);
-
-            if ($url_prefix)
-            {
-                $url = '/' . $url_prefix . $url;
-            }
-
-            $url = str_replace('//', '/', $url);
-
-            return $url;
+            $url_prefix = null;
         }
 
-        return $route;
+        $url = $this->createUrl($route, $params, $ampersand);
+
+        if ($url_prefix)
+        {
+            $url = '/' . $url_prefix . $url;
+        }
+
+        $url = str_replace('//', '/', $url);
+
+        return $url;
     }
     
     

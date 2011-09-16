@@ -1,5 +1,5 @@
 <div class="gadget">
-    <h2 class="star"><span>Новости</span></h2>
+    <h2 class="star"><span><?php echo Yii::t('NewsModule.main', 'Новости'); ?></span></h2>
 
     <div class="clr"></div>
 
@@ -36,7 +36,7 @@
 
     </ul>
 
-    <a href="<?php echo $this->url('/news'); ?>">Все новости </a>→
+    <a href="<?php echo $this->url('/news'); ?>"><?php echo Yii::t('NewsModule.main', 'Все новости'); ?></a>→
 </div>
 
 

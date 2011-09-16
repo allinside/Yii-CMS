@@ -26,14 +26,11 @@ class FeedbackController extends BaseController
             $model->attributes = $_POST['Feedback'];
             if ($model->save())
             {
-                $form->clear();
-                $done = true;
+                Yii::app()->user->setFlash('feedback_done', Yii::t('MainModule.main', 'Сообщение успешно отправлено!'));
+                $this->redirect($_SERVER['REQUEST_URI']);
             }
         }
 
-        $this->render("create", array(
-            'form' => $form,
-            'done' => isset($done)
-        ));
+        $this->render("create", array('form' => $form));
     }
 }
