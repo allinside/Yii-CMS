@@ -1,10 +1,7 @@
 <?php
 
 class FaqController extends BaseController
-{	
-	public $layout = "//layouts/inner";	
-    
-    
+{
     public static function actionsTitles() 
     {
         return array(

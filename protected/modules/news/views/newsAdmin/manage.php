@@ -7,29 +7,25 @@ $this->tabs = array(
 
 $this->widget('application.components.GridView', array(
 	'id'=>'news-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	'dataProvider' => $model->search(),
+	'filter' => $model,
 	'template' => '{summary}<br/>{pager}<br/>{items}<br/>{pager}',
 	'columns'=>array(
 		'title',
 		array(
-		    'name'  => 'user_id', 
+		    'name'  => 'user_id',
 		    'value' => '$data->user->name'
-		),
-		array(
-		    'name'  => 'photo', 
-		    'value' => 'ImageHelper::thumb(News::PHOTOS_DIR, $data->photo, News::PHOTO_SMALL_WIDTH);',
-			'type'  => 'raw'
 		),
 		array('name' => 'state', 'value' => 'News::$states[$data->state]'),
 		'date',
 		array(
-			'name'   => 'files', 
+			'name'   => 'files',
 			'value'  => '"
 						<a href=\'/news/newsFileAdmin/manage/news_id/$data->id\'>просмотр</a>
-						";', 
+						";',
 			'type'   => 'raw',
-			'header' => 'Файлы'
+			'header' => 'Файлы',
+            'filter' => false
 		),
         'date_create',
         array('name' => 'lang', 'value' => '$data->language->name'),

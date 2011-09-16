@@ -11,9 +11,7 @@ class FaqSectionController extends BaseController
 
 
     public function actionIndex()
-    {	
-		$this->layout = "//layouts/inner";		
-            
+    {
         $sections_with_questions = false;    
             
         $sections = FaqSection::model()->published()->findAll();

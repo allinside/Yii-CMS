@@ -25,7 +25,7 @@
             </div>
             <div class="logo">
                 <h1>
-<!--                    <a href="/">Арт <small>Проект</small></a>-->
+                    <a href="/">YII <small>CMS</small></a>
                 </h1>
             </div>
 
@@ -44,14 +44,8 @@
                 </div>
             </div>
             <div class="sidebar">
-                <div class="searchform">
-                            <form id="formsearch" name="formsearch" method="post" action="#">
-                    <span>
-                    <input name="editbox_search" class="editbox_search" id="editbox_search" maxlength="80" value="Search our ste:" type="text"/>
-                    </span>
-                                <input name="button_search" src="/images/site/search_btn.gif" class="button_search" type="image"/>
-                            </form>
-                </div>
+
+                <?php $this->renderPartial('application.modules.main.views.main._search'); ?>
 
                 <?php $this->widget('NewsSidebar'); ?>
 

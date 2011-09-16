@@ -23,7 +23,8 @@ $this->widget('application.components.GridView', array(
 			'name'   => 'files',
 			'value'  => '"<a href=\'/articles/articleFileAdmin/manage/article_id/$data->id\'>просмотр</a>";',
 			'type'   => 'raw',
-			'header' => 'Файлы'
+			'header' => 'Файлы',
+            'filter' => false
 		),
 		array(
 			'class'=>'CButtonColumn',

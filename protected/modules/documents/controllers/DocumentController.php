@@ -2,8 +2,6 @@
 
 class DocumentController extends BaseController 
 {
-	public $layout = '//layouts/inner';	
-
 	const PAGE_SIZE = 10;	
     
     

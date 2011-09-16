@@ -81,10 +81,6 @@ return array(
 
                 '<lang:[a-z]{2}>/news/<id:\d+>' => 'news/news/view',
                 '<lang:[a-z]{2}>/news'          => 'news/news/index',
-//                ContentModule::urlRules(),
-//                MainModule::urlRules(),
-//                UsersModule::urlRules(),
-//                NewsModule::urlRules(),
 
                 '<lang:[a-z]{2}>/<controller:\w+>/<id:\d+>'=>'<controller>/view',
                 '<lang:[a-z]{2}>/<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',

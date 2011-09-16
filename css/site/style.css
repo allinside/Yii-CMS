@@ -294,6 +294,7 @@ ol li .send {
 	padding:0;
 	float:left;
 	background:#fff url(/images/site/search.gif) no-repeat top left;
+    height: 60px !important;
 }
 #formsearch input.editbox_search {
 	margin:0;

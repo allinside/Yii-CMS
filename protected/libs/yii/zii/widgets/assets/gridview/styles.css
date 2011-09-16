@@ -126,6 +126,7 @@
 
 .filters_link {
     color: green;
+    text-decoration: underline !important;
 }
 
 .filters {

@@ -12,40 +12,16 @@ class MainController extends BaseController
     
 
 	public function actionSearch($query) 
-	{   
-	    $this->layout = '//layouts/inner';
-	
+	{
 	    $models = array(
             "News" => array(
-                'attributes'   => array("title", "text"),
-                'array_var'    => 'news_list',
-                'partial_path' => 'application.modules.news.views.news._list'
+                'attributes' => array("title", "text"),
+                'view_path' => 'application.modules.news.views.news._view'
             ),
-            "Article" => array(
-                'attributes'   => array("title", "text"),
-                'array_var'    => 'articles',
-                'partial_path' => 'application.modules.articles.views.article._list'
-            ),
-            "Action" => array(
-                'attributes'   => array("name", "`desc`"),
-                'array_var'    => 'actions',
-                'partial_path' => 'application.modules.actions.views.action._list'
-            ),
-            "Document" => array(
-                'attributes'   => array("name", "`desc`"),
-                'array_var'    => 'documents',
-                'partial_path' => 'application.modules.documents.views.document._list'
-            ),
-            "Faq" => array(
-                'attributes'   => array("question", "answer"),
-                'array_var'    => 'faqs',
-                'partial_path' => 'application.modules.faq.views.faq._list'
-            ),    
             "Page" => array(
-                'attributes'   => array("title", "text"),
-                'array_var'    => 'pages',
-                'partial_path' => 'application.modules.content.views.page._list'
-            ),                                     
+                'attributes' => array("title", "text"),
+                'view_path'  => 'application.modules.content.views.page._view'
+            ),
         );
         
         $query = addslashes(strip_tags($query));
@@ -65,12 +41,11 @@ class MainController extends BaseController
 	        
 	        $items = $model->findAll($criteria);
 	        if ($items) 
-	        {   
-	            $data['items']  = $items;
-	            $result[$class] = $data;
+	        {
+	            $result[$data['view_path']] = $items;
 	        } 
 	    }
-     
+
 	    $this->render('search', array(
 	        'result' => $result,
 	        'query'  => $query
