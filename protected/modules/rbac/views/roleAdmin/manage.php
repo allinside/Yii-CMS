@@ -7,7 +7,7 @@ $this->tabs = array(
 
 function tasksLink($role)
 {
-	return "<a href='/rbac/TaskAdmin/RolesTasks/role/{$role}'>Задачи</a>";
+	return "<a href='/rbac/TaskAdmin/RolesTasks/role/{$role}'>перейти</a>";
 }
 
 $not_system_role = '!in_array($data->name, AuthItem::$system_roles)';
@@ -20,7 +20,7 @@ $this->widget('application.components.GridView', array(
 	'columns'  => array(
         'name',
         'description',
-		array('name' => '&nbsp', 'value' => 'tasksLink($data->name)', 'type' => 'raw'),
+		array('name' => 'tasks', 'value' => 'tasksLink($data->name)', 'type' => 'raw', 'filter' => false),
 		array(
 			'class' => 'CButtonColumn',
             'buttons' => array(

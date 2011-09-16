@@ -51,13 +51,4 @@ class DocumentsModule extends WebModule
         	'Добавить документ' => '/documents/DocumentAdmin/create'
         );
     }
-
-
-    public static function urlRules()
-    {
-        return array(
-            '<lang:[a-z]{2}>/documents'          => 'documents/document/index',
-            '<lang:[a-z]{2}>/documents/<id:\d+>' => 'documents/document/view',
-        );
-    }
 }

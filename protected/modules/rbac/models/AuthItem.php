@@ -72,11 +72,32 @@ class AuthItem extends ActiveRecordModel
 	public function relations()
 	{
 		return array(
-		    'operations'  => array(self::MANY_MANY, 'AuthItem', 'AuthItemChild(parent, child)'),
+		    'operations' => array(
+                self::MANY_MANY,
+                'AuthItem',
+                'AuthItemChild(parent, child)',
+                'condition' => 'type = "' . self::TYPE_OPERATION . '"'
+            ),
+            'tasks' => array(
+                self::MANY_MANY,
+                'AuthItem',
+                'AuthItemChild(parent, child)',
+                'condition' => 'type = "' . self::TYPE_TASK . '"'
+            ),
             'assignments' => array(self::HAS_MANY, 'AuthAssignment', 'itemname'),
             'users'       => array(self::HAS_MANY, 'User', 'userid', 'through' => 'assignments')
 		);
 	}
+
+
+    public function attributeLabels()
+    {
+        $labels = parent::attributeLabels();
+        $labels['operations'] = 'Операции';
+        $labels['tasks'] = 'Задачи';
+
+        return $labels;
+    }
 
 
     public function getTask()
@@ -132,14 +153,6 @@ class AuthItem extends ActiveRecordModel
         return $result;  
 	}
 	
-	
-	public function attributeLabels() 
-	{
-	    $labels = parent::attributeLabels();
-	    $labels['operations'] = 'Операции';
-	    return $labels;    
-	}
-
 
     public static function constructName($controller, $action)
     {

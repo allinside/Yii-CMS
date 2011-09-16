@@ -51,13 +51,4 @@ class ActionsModule extends WebModule
             'Создать мероприятие' => '/actions/ActionAdmin/create'
         );
     }
-
-
-    public static function urlRules()
-    {
-        return array(
-            '<lang:[a-z]{2}>/actions' => 'actions/action/index',
-            '<lang:[a-z]{2}>/action/<id:\d+>' => 'actions/action/view',
-        );
-    }
 }

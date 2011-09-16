@@ -54,14 +54,4 @@ class FaqModule extends WebModule
             'Добавить раздел'         => '/faq/faqSectionAdmin/create'
         );
     }
-
-
-    public static function urlRules()
-    {
-        return array(
-            '<lang:[a-z]{2}>/faq/create'                   => 'faq/faq/create',
-            '<lang:[a-z]{2}>/faq/section/<section_id:\d+>' => 'faq/faq/index',
-            '<lang:[a-z]{2}>/faq/create'                   => 'faq/faq/create',
-        );
-    }
 }

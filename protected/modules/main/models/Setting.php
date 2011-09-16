@@ -32,58 +32,27 @@ class Setting extends ActiveRecordModel
 	public function rules()
 	{
 		return array(
-			array('const, title, value, element','required'),
-			array('const', 'length', 'max'=>50),
+			array('code, title, value, element','required'),
+			array('code', 'length', 'max'=>50),
 			array('title', 'length', 'max'=>100),
 			array('element', 'length', 'max'=>8),
             array('value', 'safe'),
-			array('id, const, title, element', 'safe', 'on'=>'search')
+			array('id, code, title, element', 'safe', 'on'=>'search')
 		);
 	}
-
-
-	public function relations()
-	{
-		return array(
-            'section' => array(self::BELONGS_TO, 'SettingsSection', 'section_id')
-		);
-	}
-
-
-    public function attributeLabels()
-    {
-        $labels = parent::attributeLabels();
-        $labels['section'] = 'Раздел';
-
-        return $labels;
-    }
 
 
 	public function search()
 	{
 		$criteria=new CDbCriteria;
 		$criteria->compare('id',$this->id,true);
-		$criteria->compare('const',$this->const,true);
+		$criteria->compare('code',$this->code,true);
 		$criteria->compare('title',$this->title,true);
 		$criteria->compare('value',$this->value,true);
 		$criteria->compare('element',$this->element,true);
-        $criteria->with = 'section';
-
-        $section_id = Yii::app()->request->getParam('section_id');
-        if ($section_id)
-        {
-            $criteria->condition = 'section_id = ' . $section_id;
-        }
 
 		return new ActiveDataProvider(get_class($this), array(
-			'criteria' => $criteria,
-            'sort'=>array('attributes'=>array(
-                'section'=>array(
-                    'asc'  => 'section.name',
-                    'desc' => 'section.name DESC',
-                ),
-                'title'
-            )),
+			'criteria' => $criteria
 		));
 	}
 
@@ -95,7 +64,7 @@ class Setting extends ActiveRecordModel
         $settings = parent::findAll();
         foreach ($settings as $setting)
         {
-            $result[$setting->const] = array(
+            $result[$setting->code] = array(
                 "title" => $setting->title,
                 "value" => $setting->value
             );
@@ -105,9 +74,9 @@ class Setting extends ActiveRecordModel
     }
 
 
-    public function get($const)
+    public function get($code)
     {
-        $setting = $this->findByAttributes(array("const" => $const));
+        $setting = $this->findByAttributes(array("code" => $code));
         if ($setting)
         {
             return $setting->value;

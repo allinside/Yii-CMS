@@ -45,12 +45,6 @@ class SettingAdminController extends AdminController
 
 	public function actionManage()
 	{
-        $section_id = Yii::app()->request->getParam('section_id');
-        if ($section_id)
-        {
-            $section = SettingSection::model()->findByPk($section_id);
-        }
-
 		$model = new Setting('search');
 		$model->unsetAttributes();
 
@@ -59,10 +53,7 @@ class SettingAdminController extends AdminController
             $model->attributes = $_GET['Setting'];
         }
 
-		$this->render('manage', array(
-			'model'   => $model,
-            'section' => isset($section) ? $section->name : null
-		));
+		$this->render('manage', array('model' => $model));
 	}
 
 

@@ -123,7 +123,7 @@ class TaskAdminController extends AdminController
 			    }
 			}
 
-			$this->redirect(array('manage'));
+            $this->redirect(array("view", "id" => $task->name));
         }        
         
         $this->render('update', array('form' => $form)); 

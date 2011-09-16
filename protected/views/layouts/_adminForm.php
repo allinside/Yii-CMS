@@ -165,10 +165,7 @@ $model_class = get_class($form->model);
                 <?php
                 $this->widget(
                     'application.extensions.emultiselect.EMultiSelect',
-                    array(
-                        'sortable'   => true,
-                        'searchable' => true
-                    )
+                    $element->params
                 );
                 ?>
 

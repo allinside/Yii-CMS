@@ -54,17 +54,6 @@ class MainModule extends WebModule
 			'Языки'            => '/main/LanguageAdmin/manage',
 			'Добавить язык'    => '/main/LanguageAdmin/create',
             'Настройки'        => '/main/SettingAdmin/manage',
-            'Разделы настроек' => '/main/SettingsSectionAdmin/manage',
 		);
 	}
-
-
-    public static function urlRules()
-    {
-        return array(
-            'admin' => 'main/mainAdmin',
-            '<lang:[a-z]{2}>/search'   => 'main/main/search',
-            '<lang:[a-z]{2}>/feedback' => 'main/feedback/create',
-        );
-    }
 }

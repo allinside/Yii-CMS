@@ -43,7 +43,7 @@ class UserAdminController extends AdminController
                 );
 
                 if ($identity->authenticate(true))
-                {   
+                {
                     $this->redirect("/admin");
                 }
                 else

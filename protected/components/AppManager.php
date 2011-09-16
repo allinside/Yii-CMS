@@ -95,27 +95,32 @@ class AppManager
             }
             
             $reflection = new ReflectionClass($class);
-            
+
+            if (!in_array($reflection->getParentClass()->name, array('BaseController', 'AdminController')))
+            {
+                continue;
+            }
+
             $actions_titles = call_user_func(array($class, 'actionsTitles'));
-           
-            $methods = $reflection->getMethods(ReflectionMethod::IS_PUBLIC); 
-            foreach ($methods as $method) 
-            {   
-                if (in_array($method->name, array('actionsTitles', 'actions')) || mb_substr($method->name, 0, 6, 'utf-8') != 'action') 
+
+            $methods = $reflection->getMethods(ReflectionMethod::IS_PUBLIC);
+            foreach ($methods as $method)
+            {
+                if (in_array($method->name, array('actionsTitles', 'actions')) || mb_substr($method->name, 0, 6, 'utf-8') != 'action')
                 {
                     continue;
                 }
-                
+
                 $action = str_replace('action', '', $method->name);
-                
+
                 $action_name = str_replace('Controller', '', $class) . '_' . $action;
 
-				$title = isset($actions_titles[$action]) ? $actions_titles[$action] : ""; 					
-				if ($title && $use_admin_prefix && strpos($action_name, "Admin_") !== false) 
+				$title = isset($actions_titles[$action]) ? $actions_titles[$action] : "";
+				if ($title && $use_admin_prefix && strpos($action_name, "Admin_") !== false)
 				{
-					$title.= " (админка)";		
-				}				
-	
+					$title.= " (админка)";
+				}
+
                 $actions[$action_name] = $title;
             }
             

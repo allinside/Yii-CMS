@@ -8,16 +8,14 @@ class UserController extends BaseController
     public static function actionsTitles() 
     {
         return array(
-            "Login"  => "Авторизация",
-            "Logout" => "Выход",
-            "Export" => "Экспорт",
+            "Login"                 => "Авторизация",
+            "Logout"                => "Выход",
+            "Registration"          => "Регистрация",
+            "Activate"              => "Активация аккаунта",
+            "ActivateRequest"       => "Запрос на активацию аккаунта",
+            "ChangePassword"        => "Смена пароля",
+            "ChangePasswordRequest" => "Запрос на смену пароля",
         );
-    }
-    
-
-    public function filters()
-    {   
-        return array('accessControl');
     }
 
 
@@ -44,7 +42,7 @@ class UserController extends BaseController
 
 
     public function actionLogin()
-    {   
+    {
         if (!Yii::app()->user->isGuest)
         {
             throw new CException('Вы уже авторизованы!');
@@ -90,7 +88,7 @@ class UserController extends BaseController
     {
         if (!Yii::app()->user->isGuest)
         {
-            throw new CException('Вы уже зарегистрированы!');
+            throw new CException('Вы авторизованы, регистрация невозможна!');
         }
 
         $model = new User('Registration');
@@ -110,21 +108,6 @@ class UserController extends BaseController
         }
 
         $this->render('Registration', array('form' => $form));
-    }
-
-
-    public function actionRegistrationDone()
-    {
-        if (isset($_SESSION['RegistrationDone']))
-        {
-            $this->render('RegistrationDone', array(
-                'msg' => Settings::model()->get('REGISTRATION_DONE_MESSAGE')
-            ));
-        }
-        else
-        {
-            $this->pageNotFound();
-        }
     }
 
 
@@ -175,8 +158,6 @@ class UserController extends BaseController
                             $user->generateActivateCodeAndDate();
                             $user->save();
                             $user->sendActivationMail();
-                            $_SESSION['ActivateRequestDone'] = true;
-                            $this->redirect('/users/user/ActivateRequestDone');
                             break;
 
                         case User::STATUS_ACTIVE:
@@ -198,65 +179,50 @@ class UserController extends BaseController
     }
 
 
-    public function actionActivateRequestDone()
-    {
-        if (isset($_SESSION['ActivateRequestDone']))
-        {
-            $this->render('ActivateRequestDone', array(
-                'msg' => Settings::model()->get('ACTIVATE_REQUEST_DONE_MESSAGE')
-            ));
-        }
-        else
-        {
-            $this->pageNotFound();
-        }
-    }
+//    public function actionChangePassword()
+//    {
+//        $model = new User('ChangePassword');
+//
+//        if (isset($_POST['User']))
+//        {
+//            $model->attributes = $_POST['User'];
+//            if ($model->validate())
+//            {
+//                $user = $model->findByAttributes(array('password' => md5($_POST['User']['password'])));
+//                if ($user)
+//                {
+//                    $user->password = md5($_POST['User']['new_password']);
+//                    $user->save();
+//
+//                    $this->redirect('/users/user/profile/msg/changePassword');
+//                }
+//                else
+//                {
+//                    $fail = true;
+//                }
+//            }
+//        }
+//
+//        $this->render(
+//            'ChangePassword',
+//            array(
+//                'model' => $model,
+//                'fail'  => isset($fail) ? $fail : false,
+//                'done'  => isset($done) ? $done : false
+//            )
+//        );
+//    }
 
 
-    public function actionChangePassword()
-    {
-        $model = new User('ChangePassword');
-
-        if (isset($_POST['User']))
-        {
-            $model->attributes = $_POST['User'];
-            if ($model->validate())
-            {
-                $user = $model->findByAttributes(array('password' => md5($_POST['User']['password'])));
-                if ($user)
-                {
-                    $user->password = md5($_POST['User']['new_password']);
-                    $user->save();
-
-                    $this->redirect('/users/user/profile/msg/changePassword');
-                }
-                else
-                {
-                    $fail = true;
-                }
-            }
-        }
-
-        $this->render(
-            'ChangePassword',
-            array(
-                'model' => $model,
-                'fail'  => isset($fail) ? $fail : false,
-                'done'  => isset($done) ? $done : false
-            )
-        );
-    }
-
-
-    public function actionPasswordRecoverRequest()
+    public function actionChangePasswordRequest()
     {
         if (!Yii::app()->user->isGuest)
         {
             throw new CHttpException(SELF::ERROR_PASSWORD_RECOVER_AUTH);
         }
 
-        $model = new User('PasswordRecoverRequest');
-        $form  = new BaseForm('users.PasswordRecoverRequestForm', $model);
+        $model = new User('ChangePasswordRequest');
+        $form  = new BaseForm('users.ChangePasswordRequestForm', $model);
 
         if (isset($_POST['User']))
         {
@@ -268,9 +234,9 @@ class UserController extends BaseController
                 {
                     if ($user->status == User::STATUS_ACTIVE)
                     {
-                        $user->passwordRecoverRequest();
-                        $_SESSION['PasswordRecoverRequestDone'] = true;
-                        $this->redirect('/users/user/passwordRecoverRequestDone');
+                        $user->ChangePasswordRequest();
+                        $_SESSION['ChangePasswordRequestDone'] = true;
+                        $this->redirect('/users/user/ChangePasswordRequestDone');
 
                     }
                     else if ($user->status == User::STATUS_NEW)
@@ -289,23 +255,14 @@ class UserController extends BaseController
             }
         }
 
-        $this->render("PasswordRecoverRequest", array(
+        $this->render("ChangePasswordRequest", array(
             'form'  => $form,
             'error' => isset($error) ? $error : null
         ));
     }
 
 
-    public function actionPasswordRecoverRequestDone()
-    {
-        if (!isset($_SESSION['PasswordRecoverRequestDone']))
-            $this->forbidden();
-
-        $this->render('PasswordRecoverRequestDone');
-    }
-
-
-    public function actionPasswordRecover()
+    public function actionChangePassword()
     {
         if (!Yii::app()->user->isGuest)
         {
@@ -322,8 +279,8 @@ class UserController extends BaseController
             $this->forbidden();
         }
 
-        $model = new User('PasswordRecover');
-        $form  = new BaseForm('users.PasswordRecoverForm', $model);
+        $model = new User('ChangePassword');
+        $form  = new BaseForm('users.ChangePasswordForm', $model);
         $user  = $model->findByPk($_GET['id']);
 
         if (!$user || $user->password_recover_code != $_GET['code'])
@@ -344,7 +301,7 @@ class UserController extends BaseController
                         $user->password = md5($_POST['User']['password']);
                         $user->save();
 
-                        $_SESSION['PasswordRecover'] = true;
+                        $_SESSION['ChangePassword'] = true;
 
                         $this->redirect('/users/user/login/from/password_recover');
                     }
@@ -356,7 +313,7 @@ class UserController extends BaseController
             }
         }
 
-        $this->render('PasswordRecover', array(
+        $this->render('ChangePassword', array(
             'model' => $model,
             'form'  => $form,
             'error' => isset($error) ? $error : null

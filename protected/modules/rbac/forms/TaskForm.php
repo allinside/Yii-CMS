@@ -34,8 +34,9 @@ return array(
 		'description' => array('type' => 'text'),
         'allow_for_all' => array('type' => 'checkbox'),
 		'operations'  => array(
-		    'type'  => 'multi_select',
-		    'items' => CHtml::listData($operations, 'name', 'description')
+		    'type'   => 'multi_select',
+		    'items'  => CHtml::listData($operations, 'name', 'description'),
+            'params' => array('height' => '400px'),
 		),
 		'childs' => array(
 			'type' => 'hidden',

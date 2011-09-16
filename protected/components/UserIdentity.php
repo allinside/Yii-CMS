@@ -58,7 +58,7 @@ class UserIdentity extends CUserIdentity
         if (!$this->errorCode && $admin_panel)
         {
             if (!Yii::app()->controller->checkAccess('Admin_Main'))
-            {   
+            {
                 Yii::app()->user->logout();
                 $this->errorCode = self::ERROR_UNKNOWN;
                 return false;

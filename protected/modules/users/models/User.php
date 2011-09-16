@@ -88,7 +88,7 @@ class User extends ActiveRecordModel
                 'captcha',
                 'application.extensions.recaptcha.EReCaptchaValidator',
                 'privateKey' => '6LcsjsMSAAAAAHGMdF84g3szTZZe0VVwMof5bD7Y',
-                'on' => array('Register', 'ActivateRequest', 'PasswordRecoverRequest')
+                'on' => array('Register', 'ActivateRequest', 'ChangePasswordRequest')
             ),
             array('first_name', 'required', 'on' => array('Create', 'Update')),
             array('first_name, last_name, patronymic, position','length', 'max' => 40),
@@ -102,7 +102,7 @@ class User extends ActiveRecordModel
                     'Login',
                     'Activate',
                     'ActivateRequest',
-                    'PasswordRecoverRequest',
+                    'ChangePasswordRequest',
                     'Update',
                     'Create'
                 )
@@ -134,7 +134,7 @@ class User extends ActiveRecordModel
                 'on' => array(
                     'Register',
                     'ChangePassword',
-                    'PasswordRecover',
+                    'ChangePassword',
                     'Update',
                     'Create'
                 )
@@ -158,7 +158,7 @@ class User extends ActiveRecordModel
                 'on' => array(
                     'Register',
                     'ChangePassword',
-                    'PasswordRecover',
+                    'ChangePassword',
                     'Update',
                     'Create'
                 )
@@ -177,7 +177,7 @@ class User extends ActiveRecordModel
                 'compareAttribute' => 'password',
                 'on' => array(
                     'Register',
-                    'PasswordRecover',
+                    'ChangePassword',
                     'Update',
                     'Create'
                 )
@@ -325,7 +325,7 @@ class User extends ActiveRecordModel
     }
 
 
-    public function passwordRecoverRequest()
+    public function ChangePasswordRequest()
     {
         $settings = Settings::model()->getAll();
 
@@ -337,7 +337,7 @@ class User extends ActiveRecordModel
             array(
                 $this->name,
                 $settings["SITE_NAME"]["value"],
-                "http://" . $_SERVER["HTTP_HOST"] . "/users/user/passwordRecover/id/" . $this->id . "/code/" . $this->password_recover_code
+                "http://" . $_SERVER["HTTP_HOST"] . "/users/user/ChangePassword/id/" . $this->id . "/code/" . $this->password_recover_code
             ),
             $body
         );

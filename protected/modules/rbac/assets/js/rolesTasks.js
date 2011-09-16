@@ -17,10 +17,7 @@ $(function()
             }
         }
 
-        $(this).attr({
-            text  : config[action].link_text,
-            class : config[action].link_class
-        });
+        $(this).text(config[action].link_text).attr('class', config[action].link_class);
 
         var parent_tr = $(this).parents('tr:eq(0)');
 

@@ -1,11 +1,4 @@
 <?php
-$this->page_title = 'Настройки';
-if ($section)
-{
-    $this->page_title.= ' :: ' . $section;
-}
-
-
 function getValue($value)
 {
     $max_length = 50;
@@ -17,23 +10,19 @@ function getValue($value)
 
     return $value;
 }
-?>
 
-
-
-<?php
 $this->widget('application.components.GridView', array(
 	'id' => 'settings-grid',
 	'dataProvider' => $model->search(),
 	'filter' => $model,
 	'columns' => array(
-        array('name' => 'section', 'value' => '$data->section->name', 'sortable' => true),
+        array('name' => 'module', 'value' => '$data->module'),
 		'title',
-        array('name' => 'value', 'value' => 'getValue($data->value)'),
+        array('name' => 'value', 'value' => 'getValue($data->value)', 'type' => 'raw'),
 		array(
 			'class'=>'CButtonColumn',
 			'template' => '{view}{update}'
 		),
 	),
 ));
-?>
+

@@ -9,7 +9,7 @@ class WebUser extends CWebUser
     {	
         if($user = $this->getModel())
         {
-            return $user->role;
+            return $user->role->name;
         }
         else 
         {	

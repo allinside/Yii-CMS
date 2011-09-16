@@ -86,8 +86,9 @@ abstract class BaseController extends CController
     
     public function checkAccess($item_name)
     {
-        if (isset(Yii::app()->user->role->name) && Yii::app()->user->role->name == AuthItem::ROLE_ROOT)
-        {   
+        //Если суперпользователь, то разрешено все
+        if (isset(Yii::app()->user->role) && Yii::app()->user->role == AuthItem::ROLE_ROOT)
+        {
             return true;
         }
 
@@ -104,22 +105,27 @@ abstract class BaseController extends CController
             return true;
         }
 
+
         if ($auth_item->task)
         {
             if ($auth_item->task->allow_for_all)
-            {   
+            {
+                return true;
+            }
+            elseif (Yii::app()->user->checkAccess($auth_item->task->name))
+            {
+                return true;
+            }
+        }
+        else
+        {
+            if (Yii::app()->user->checkAccess($auth_item->name))
+            {
                 return true;
             }
         }
 
-        if (Yii::app()->user->checkAccess($auth_item->name))
-        {
-            return true;
-        }
-
-        return false;
-        //echo $auth_item->name . '<br/>';
-        //echo $auth_item->description . '<br/>';
+       return false;
     }
    
 

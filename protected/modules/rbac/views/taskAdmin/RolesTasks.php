@@ -19,9 +19,9 @@ $cs->registerCssFile($this->module->assetsUrl() . '/css/rolesTasks.css');
                 </td>
                 <td class="links_td">
                     <?php if ($allow): ?>
-                        <a href="" class="deny_link">Запретить</a>
+                        <a href="#" class="deny_link">Запретить</a>
                     <?php else: ?>
-                        <a href="" class="allow_link">Разрешить</a>
+                        <a href="#" class="allow_link">Разрешить</a>
                     <?php endif ?>
                 </td>
             </tr>

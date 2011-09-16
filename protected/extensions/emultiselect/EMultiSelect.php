@@ -25,8 +25,9 @@ Yii::import('zii.widgets.jui.CJuiWidget');
  */
 class EMultiSelect extends CJuiWidget
 {
-    public $sortable=true;
-    public $searchable=true;
+    public $sortable = true;
+    public $searchable = true;
+    public $height = '200px';
 
     /**
      * Run not used...
@@ -35,7 +36,7 @@ class EMultiSelect extends CJuiWidget
      */
     function run()
     {
-        
+
     }
 
     /**
@@ -80,7 +81,10 @@ class EMultiSelect extends CJuiWidget
             $params[] = "searchable:false";
         }
 
+        $params[]= "height: '{$this->height}'";
+
         $parameters = '{' .implode(',', $params). '}';
+
         Yii::app()->clientScript->registerScript(
             'EMultiSelect',
             '$(".multiselect").multiselect('. $parameters .');',
