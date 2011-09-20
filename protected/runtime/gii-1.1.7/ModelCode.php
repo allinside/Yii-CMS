@@ -2,6 +2,6 @@
 return array (
   'template' => 'default',
   'tablePrefix' => '',
-  'modelPath' => 'application.modules.certificates.models',
+  'modelPath' => 'application.modules.banners.models',
   'baseClass' => 'ActiveRecordModel',
 );
