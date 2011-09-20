@@ -10,7 +10,6 @@ $this->tabs = array(
 	'id' => '<?php echo $this->class2id($this->modelClass); ?>-grid',
 	'dataProvider' => $model->search(),
 	'filter' => $model,
-	'template' => '{summary}<br/>{pager}<br/>{items}<br/>{pager}',
 	'columns' => array(
 <?php
 $count=0;
@@ -37,7 +36,7 @@ if($count>=7)
 	echo "\t\t*/\n";
 ?>
 		array(
-			'class'=>'CButtonColumn',
+			'class' => 'CButtonColumn',
 		),
 	),
 )); 

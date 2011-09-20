@@ -2,6 +2,6 @@
 return array (
   'template' => 'default',
   'tablePrefix' => '',
-  'modelPath' => 'application.modules.ymarket.models',
+  'modelPath' => 'application.modules.certificates.models',
   'baseClass' => 'ActiveRecordModel',
 );

@@ -55,7 +55,14 @@ class AppManager
                 {   
                     foreach ($module['admin_menu'] as $title => $url)
                     {
-                        list($module_name, $controller, $action) = explode('/', trim($url, '/'));
+                        $url = explode('/', trim($url, '/'));
+
+                        if (count($url) < 3)
+                        {
+                            continue;
+                        }
+
+                        list($module_name, $controller, $action) = $url;
 
                         $auth_item = ucfirst($controller) . '_' . $action;
 
