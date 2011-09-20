@@ -5,38 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e5a110c-e6df-4e2c-adfe-bd6233fb4d51" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketCronAdminController.php" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/19815cfc/js/menuLinkForm.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/19815cfc/js/menuTreeView.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/2991fc63/img/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/css/ie.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/css/main.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/css/print.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/css/screen.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/images/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/blank.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_close.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_loading.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_nav_left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_nav_right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_e.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_n.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_ne.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_nw.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_s.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_se.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_sw.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_w.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_title_left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_title_main.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_title_over.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_title_right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancybox-x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancybox-y.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancybox.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/jquery.fancybox-1.3.1.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/jquery.fancybox-1.3.1.pack.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/495c9288/js/tools.tooltip-1.1.3.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/4a8e7022/calendar-handler.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/4a8e7022/calendar-setup.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/4a8e7022/calendar.js" afterPath="" />
@@ -539,143 +511,43 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/main/views/settingsSectionAdmin/create.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/main/views/settingsSectionAdmin/manage.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/main/views/settingsSectionAdmin/update.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/forms/RegisterForm.php" afterPath="$PROJECT_DIR$/protected/modules/users/forms/RegistrationForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/36721602/img/icon.png" afterPath="$PROJECT_DIR$/assets/36721602/img/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/51028a3/img/icon.png" afterPath="$PROJECT_DIR$/assets/51028a3/img/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/gridview/bg.gif" afterPath="$PROJECT_DIR$/assets/5147859/gridview/bg.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/gridview/delete.png" afterPath="$PROJECT_DIR$/assets/5147859/gridview/delete.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/gridview/down.gif" afterPath="$PROJECT_DIR$/assets/5147859/gridview/down.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/gridview/loading.gif" afterPath="$PROJECT_DIR$/assets/5147859/gridview/loading.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/gridview/up.gif" afterPath="$PROJECT_DIR$/assets/5147859/gridview/up.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/gridview/update.png" afterPath="$PROJECT_DIR$/assets/5147859/gridview/update.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/gridview/view.png" afterPath="$PROJECT_DIR$/assets/5147859/gridview/view.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/listview/down.gif" afterPath="$PROJECT_DIR$/assets/5147859/listview/down.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/listview/loading.gif" afterPath="$PROJECT_DIR$/assets/5147859/listview/loading.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/listview/up.gif" afterPath="$PROJECT_DIR$/assets/5147859/listview/up.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5bbb9bb/img/icon.png" afterPath="$PROJECT_DIR$/assets/5bbb9bb/img/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/6aa92456/img/icon.png" afterPath="$PROJECT_DIR$/assets/6aa92456/img/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/7157bf4b/img/icon.png" afterPath="$PROJECT_DIR$/assets/7157bf4b/img/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/autocomplete/indicator.gif" afterPath="$PROJECT_DIR$/assets/90f839/autocomplete/indicator.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_flat_0_aaaaaa_40x100.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_flat_75_ffffff_40x100.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_glass_55_fbf9ee_1x400.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_glass_65_ffffff_1x400.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_glass_75_dadada_1x400.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_glass_75_dadada_1x400.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_glass_75_e6e6e6_1x400.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_glass_95_fef1ec_1x400.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-icons_222222_256x240.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-icons_222222_256x240.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-icons_2e83ff_256x240.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-icons_2e83ff_256x240.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-icons_454545_256x240.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-icons_454545_256x240.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-icons_888888_256x240.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-icons_888888_256x240.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-icons_cd0a0a_256x240.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-icons_cd0a0a_256x240.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/rating/delete.gif" afterPath="$PROJECT_DIR$/assets/90f839/rating/delete.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/rating/star.gif" afterPath="$PROJECT_DIR$/assets/90f839/rating/star.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/ajax-loader.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/ajax-loader.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/file.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/file.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/folder-closed.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/folder-closed.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/folder.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/folder.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/minus.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/minus.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/plus.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/plus.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-black-line.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-black-line.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-black.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-black.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-default-line.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-default-line.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-default.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-default.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-famfamfam-line.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-famfamfam-line.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-famfamfam.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-famfamfam.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-gray-line.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-gray-line.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-gray.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-gray.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-red-line.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-red-line.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-red.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-red.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/dad6e4f/img/icon.png" afterPath="$PROJECT_DIR$/assets/dad6e4f/img/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/eb0d4722/img/icon.png" afterPath="$PROJECT_DIR$/assets/eb0d4722/img/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f5631bef/img/icon.png" afterPath="$PROJECT_DIR$/assets/f5631bef/img/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f8a6567a/img/icon.png" afterPath="$PROJECT_DIR$/assets/f8a6567a/img/icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/images/logo.png" afterPath="$PROJECT_DIR$/assets/495c9288/images/logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/blank.gif" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/blank.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_close.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_close.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_loading.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_loading.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_nav_left.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_nav_left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_nav_right.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_nav_right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_e.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_e.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_n.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_n.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_ne.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_ne.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_nw.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_nw.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_s.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_s.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_se.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_se.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_sw.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_sw.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_w.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_shadow_w.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_title_left.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_title_left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_title_main.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_title_main.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_title_over.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_title_over.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_title_right.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancy_title_right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancybox-x.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancybox-x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancybox-y.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancybox-y.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancybox.png" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/fancybox.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/51028a3/js/filesManage.js" afterPath="$PROJECT_DIR$/assets/51028a3/js/filesManage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/detailview/styles.css" afterPath="$PROJECT_DIR$/assets/5147859/detailview/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/gridview/gridview.js" afterPath="$PROJECT_DIR$/assets/5147859/gridview/gridview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/gridview/jquery.yiigridview.js" afterPath="$PROJECT_DIR$/assets/5147859/gridview/jquery.yiigridview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/gridview/styles.css" afterPath="$PROJECT_DIR$/assets/5147859/gridview/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/listview/jquery.yiilistview.js" afterPath="$PROJECT_DIR$/assets/5147859/listview/jquery.yiilistview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/5147859/listview/styles.css" afterPath="$PROJECT_DIR$/assets/5147859/listview/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/6aa92456/js/menuLinkForm.js" afterPath="$PROJECT_DIR$/assets/6aa92456/js/menuLinkForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/6aa92456/js/menuTreeView.js" afterPath="$PROJECT_DIR$/assets/6aa92456/js/menuTreeView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/autocomplete/jquery.autocomplete.css" afterPath="$PROJECT_DIR$/assets/90f839/autocomplete/jquery.autocomplete.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.ajaxqueue.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.ajaxqueue.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.autocomplete.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.autocomplete.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.ba-bbq.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.ba-bbq.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.bgiframe.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.bgiframe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.cookie.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.cookie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.maskedinput.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.maskedinput.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.metadata.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.metadata.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.min.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.multifile.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.multifile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.rating.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.rating.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.treeview.async.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.treeview.async.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.treeview.edit.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.treeview.edit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.treeview.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.treeview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.yii.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.yii.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.yiiactiveform.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.yiiactiveform.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.yiitab.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.yiitab.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/MIT-LICENSE.txt" afterPath="$PROJECT_DIR$/assets/90f839/jui/MIT-LICENSE.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery-ui.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery-ui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.accordion.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.accordion.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.all.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.all.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.autocomplete.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.autocomplete.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.base.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.base.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.button.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.button.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.core.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.core.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.datepicker.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.datepicker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.dialog.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.dialog.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.progressbar.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.progressbar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.resizable.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.resizable.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.selectable.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.selectable.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.slider.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.slider.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.tabs.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.tabs.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.theme.css" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/jquery.ui.theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/js/jquery-ui-i18n.min.js" afterPath="$PROJECT_DIR$/assets/90f839/jui/js/jquery-ui-i18n.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/js/jquery-ui.min.js" afterPath="$PROJECT_DIR$/assets/90f839/jui/js/jquery-ui.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/rating/jquery.rating.css" afterPath="$PROJECT_DIR$/assets/90f839/rating/jquery.rating.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/jquery.treeview.css" afterPath="$PROJECT_DIR$/assets/90f839/treeview/jquery.treeview.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/yiitab/jquery.yiitab.css" afterPath="$PROJECT_DIR$/assets/90f839/yiitab/jquery.yiitab.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/dad6e4f/js/filesManage.js" afterPath="$PROJECT_DIR$/assets/dad6e4f/js/filesManage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f5631bef/css/rolesTasks.css" afterPath="$PROJECT_DIR$/assets/f5631bef/css/rolesTasks.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f5631bef/js/rbac.js" afterPath="$PROJECT_DIR$/assets/f5631bef/js/rbac.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f5631bef/js/rolesTasks.js" afterPath="$PROJECT_DIR$/assets/f5631bef/js/rolesTasks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f8a6567a/css/main.css" afterPath="$PROJECT_DIR$/assets/f8a6567a/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f8a6567a/css/modules.css" afterPath="$PROJECT_DIR$/assets/f8a6567a/css/modules.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/fb532234/pager.css" afterPath="$PROJECT_DIR$/assets/fb532234/pager.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/AppManager.php" afterPath="$PROJECT_DIR$/protected/components/AppManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/BaseController.php" afterPath="$PROJECT_DIR$/protected/components/BaseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/UserIdentity.php" afterPath="$PROJECT_DIR$/protected/components/UserIdentity.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/WebUser.php" afterPath="$PROJECT_DIR$/protected/components/WebUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/extensions/emultiselect/EMultiSelect.php" afterPath="$PROJECT_DIR$/protected/extensions/emultiselect/EMultiSelect.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/extensions/emultiselect/assets/ui.multiselect.js" afterPath="$PROJECT_DIR$/protected/extensions/emultiselect/assets/ui.multiselect.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/libs/yii/zii/widgets/assets/gridview/gridview.js" afterPath="$PROJECT_DIR$/protected/libs/yii/zii/widgets/assets/gridview/gridview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/libs/yii/zii/widgets/assets/gridview/jquery.yiigridview.js" afterPath="$PROJECT_DIR$/protected/libs/yii/zii/widgets/assets/gridview/jquery.yiigridview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/actions/ActionsModule.php" afterPath="$PROJECT_DIR$/protected/modules/actions/ActionsModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/articles/ArticlesModule.php" afterPath="$PROJECT_DIR$/protected/modules/articles/ArticlesModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/content/ContentModule.php" afterPath="$PROJECT_DIR$/protected/modules/content/ContentModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/documents/DocumentsModule.php" afterPath="$PROJECT_DIR$/protected/modules/documents/DocumentsModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/faq/FaqModule.php" afterPath="$PROJECT_DIR$/protected/modules/faq/FaqModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/MainModule.php" afterPath="$PROJECT_DIR$/protected/modules/main/MainModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/controllers/SettingAdminController.php" afterPath="$PROJECT_DIR$/protected/modules/main/controllers/SettingAdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/models/Setting.php" afterPath="$PROJECT_DIR$/protected/modules/main/models/Setting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/manage.php" afterPath="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/manage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/news/NewsModule.php" afterPath="$PROJECT_DIR$/protected/modules/news/NewsModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/rbac/assets/js/rolesTasks.js" afterPath="$PROJECT_DIR$/protected/modules/rbac/assets/js/rolesTasks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/rbac/controllers/TaskAdminController.php" afterPath="$PROJECT_DIR$/protected/modules/rbac/controllers/TaskAdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/rbac/forms/TaskForm.php" afterPath="$PROJECT_DIR$/protected/modules/rbac/forms/TaskForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/rbac/models/AuthItem.php" afterPath="$PROJECT_DIR$/protected/modules/rbac/models/AuthItem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/rbac/views/roleAdmin/manage.php" afterPath="$PROJECT_DIR$/protected/modules/rbac/views/roleAdmin/manage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/rbac/views/taskAdmin/RolesTasks.php" afterPath="$PROJECT_DIR$/protected/modules/rbac/views/taskAdmin/RolesTasks.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/UsersModule.php" afterPath="$PROJECT_DIR$/protected/modules/users/UsersModule.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/controllers/UserAdminController.php" afterPath="$PROJECT_DIR$/protected/modules/users/controllers/UserAdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/controllers/UserController.php" afterPath="$PROJECT_DIR$/protected/modules/users/controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/models/User.php" afterPath="$PROJECT_DIR$/protected/modules/users/models/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/layouts/_adminForm.php" afterPath="$PROJECT_DIR$/protected/views/layouts/_adminForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/css/ie.css" afterPath="$PROJECT_DIR$/assets/495c9288/css/ie.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/css/main.css" afterPath="$PROJECT_DIR$/assets/495c9288/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/css/print.css" afterPath="$PROJECT_DIR$/assets/495c9288/css/print.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/css/screen.css" afterPath="$PROJECT_DIR$/assets/495c9288/css/screen.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/jquery.fancybox-1.3.1.css" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/jquery.fancybox-1.3.1.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/fancybox/jquery.fancybox-1.3.1.pack.js" afterPath="$PROJECT_DIR$/assets/495c9288/js/fancybox/jquery.fancybox-1.3.1.pack.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/main.js" afterPath="$PROJECT_DIR$/assets/495c9288/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/495c9288/js/tools.tooltip-1.1.3.min.js" afterPath="$PROJECT_DIR$/assets/495c9288/js/tools.tooltip-1.1.3.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/libs/tools/ArrayHelper.php" afterPath="$PROJECT_DIR$/protected/libs/tools/ArrayHelper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/ymarket/YmarketModule.php" afterPath="$PROJECT_DIR$/protected/modules/ymarket/YmarketModule.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketTestController.php" afterPath="$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketTestController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/ymarket/models/YmarketIP.php" afterPath="$PROJECT_DIR$/protected/modules/ymarket/models/YmarketIP.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/ymarket/models/YmarketProduct.php" afterPath="$PROJECT_DIR$/protected/modules/ymarket/models/YmarketProduct.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/ymarket/models/YmarketSection.php" afterPath="$PROJECT_DIR$/protected/modules/ymarket/models/YmarketSection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/ymarket/views/ymarketSectionAdmin/view.php" afterPath="$PROJECT_DIR$/protected/modules/ymarket/views/ymarketSectionAdmin/view.php" />
     </list>
     <ignored path="Yii-CMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -698,28 +570,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Setting.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/main/models/Setting.php">
+      <file leaf-file-name="YmarketCronAdminController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketCronAdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="35" selection-start="1229" selection-end="1229" vertical-scroll-proportion="-12.96">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manage.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/modules/main/views/settingAdmin/manage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="84" selection-start="530" selection-end="530" vertical-scroll-proportion="0.50769234">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SettingAdminController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/main/controllers/SettingAdminController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="49" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.0">
+            <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -739,22 +593,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/protected/modules/users/controllers/UserAdminController.php" />
-        <option value="$PROJECT_DIR$/protected/components/BaseController.php" />
-        <option value="$PROJECT_DIR$/protected/components/UserIdentity.php" />
-        <option value="$PROJECT_DIR$/assets/5147859/gridview/jquery.yiigridview.js" />
-        <option value="$PROJECT_DIR$/assets/5147859/gridview/gridview.js" />
-        <option value="$PROJECT_DIR$/protected/modules/main/MainModule.php" />
-        <option value="$PROJECT_DIR$/protected/modules/actions/ActionsModule.php" />
-        <option value="$PROJECT_DIR$/protected/modules/articles/ArticlesModule.php" />
-        <option value="$PROJECT_DIR$/protected/modules/content/ContentModule.php" />
-        <option value="$PROJECT_DIR$/protected/modules/documents/DocumentsModule.php" />
-        <option value="$PROJECT_DIR$/protected/modules/faq/FaqModule.php" />
-        <option value="$PROJECT_DIR$/protected/modules/users/UsersModule.php" />
         <option value="$PROJECT_DIR$/protected/modules/news/NewsModule.php" />
         <option value="$PROJECT_DIR$/protected/modules/main/controllers/SettingAdminController.php" />
         <option value="$PROJECT_DIR$/protected/modules/main/models/Setting.php" />
         <option value="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/manage.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/models/YmarketSection.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/models/YmarketIP.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/models/YmarketPage.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketTestController.php" />
+        <option value="$PROJECT_DIR$/protected/libs/tools/ArrayHelper.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/views/ymarketSectionAdmin/view.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/YmarketModule.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketProductAdminController.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/views/ymarketProductAdmin/view.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/views/ymarketProductAdmin/manage.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/models/YmarketProduct.php" />
+        <option value="$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketCronAdminController.php" />
       </list>
     </option>
   </component>
@@ -810,7 +664,6 @@
     </navigator>
     <panes>
       <pane id="Favorites" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -860,26 +713,8 @@
               <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="ymarket" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -901,63 +736,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="settingAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="ymarket" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -965,16 +744,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yii-CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yii-CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="reference.webide.settings.project.settings.php" />
-    <property name="options.searchVisible" value="true" />
+    <property name="options.lastSelected" value="File.Encoding" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1038,16 +836,16 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290398" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25832656" sideWeight="0.6709602" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27294883" sideWeight="0.6709602" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290398" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1096,114 +894,108 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/components/AdminController.php">
+    <entry file="file://$PROJECT_DIR$/protected/libs/tools/ArrayHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="42" selection-start="50" selection-end="50" vertical-scroll-proportion="0.05904059">
+        <state line="23" column="62" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/users/controllers/UserAdminController.php">
+    <entry file="file://$PROJECT_DIR$/upload/ymarket/10.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload/ymarket/2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload/ymarket/4.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/models/YmarketIP.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="40" selection-start="47" selection-end="47" vertical-scroll-proportion="0.05904059">
+        <state line="59" column="30" selection-start="1157" selection-end="1159" vertical-scroll-proportion="-10.48">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/forms/SettingForm.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/views/ymarketSectionAdmin/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="20" selection-start="323" selection-end="323" vertical-scroll-proportion="0.41947564">
+        <state line="19" column="27" selection-start="519" selection-end="519" vertical-scroll-proportion="0.5608856">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/actions/ActionsModule.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketProductAdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="5" selection-start="863" selection-end="863" vertical-scroll-proportion="0.76755446">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/faq/FaqModule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="5" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.76755446">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/content/ContentModule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="5" selection-start="1123" selection-end="1123" vertical-scroll-proportion="0.76755446">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/articles/ArticlesModule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="5" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.76755446">
+        <state line="64" column="5" selection-start="1344" selection-end="1344" vertical-scroll-proportion="1.8265682">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/YmarketModule.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.88861984">
+        <state line="51" column="59" selection-start="844" selection-end="844" vertical-scroll-proportion="0.59322035">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/users/UsersModule.php">
+    <entry file="file://$PROJECT_DIR$/protected/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="5" selection-start="881" selection-end="881" vertical-scroll-proportion="0.76755446">
+        <state line="53" column="14" selection-start="1392" selection-end="1397" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/rbac/RbacModule.php">
+    <entry file="file://$PROJECT_DIR$/protected/config/production.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.91767555">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/NewsModule.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/views/ymarketProductAdmin/manage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="5" selection-start="795" selection-end="795" vertical-scroll-proportion="0.76755446">
+        <state line="14" column="69" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/MainModule.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/models/YmarketProduct.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="5" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.76755446">
+        <state line="64" column="74" selection-start="1214" selection-end="1214" vertical-scroll-proportion="0.4095941">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/documents/DocumentsModule.php">
+    <entry file="file://$PROJECT_DIR$/protected/components/ImageHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="5" selection-start="863" selection-end="863" vertical-scroll-proportion="0.76755446">
+        <state line="4" column="27" selection-start="52" selection-end="146" vertical-scroll-proportion="0.11808118">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/controllers/SettingAdminController.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/views/ymarketProductAdmin/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="49" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.0">
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="0.02905569">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/models/Setting.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketTestController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="35" selection-start="1229" selection-end="1229" vertical-scroll-proportion="-12.96">
+        <state line="37" column="26" selection-start="831" selection-end="844" vertical-scroll-proportion="0.82656825">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/views/settingAdmin/manage.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/controllers/YmarketCronAdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="84" selection-start="530" selection-end="530" vertical-scroll-proportion="0.50769234">
+        <state line="0" column="5" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

@@ -49,6 +49,7 @@ class YmarketModule extends WebModule
     public static function adminMenu()
     {
         return array(
+            'Продукты'          => '/ymarket/ymarketProductAdmin/manage',
             'Бренды'            => '/ymarket/ymarketBrandAdmin/manage',
             'Разделы'           => '/ymarket/ymarketSectionAdmin/manage',
             'Добавить раздел'   => '/ymarket/ymarketSectionAdmin/create',

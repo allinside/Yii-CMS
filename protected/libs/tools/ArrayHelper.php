@@ -9,7 +9,7 @@
  
 class ArrayHelper
 {
-    public function extract($array_of_arrays, $key)
+    public function extract($array_of_arrays, $key, $value = null)
     {
         $result = array();
 
@@ -17,16 +17,36 @@ class ArrayHelper
         {
             if (is_object($array))
             {
-                if (isset($array->$key))
+                if ($value)
                 {
-                    $result[] = $array->$key;
+                    if (isset($array->$key) && isset($array->$value))
+                    {
+                        $result[$array->$key] = $array->$value;
+                    }
+                }
+                else
+                {
+                    if (isset($array->$key))
+                    {
+                        $result[] = $array->$key;
+                    }
                 }
             }
             elseif (is_array($array))
             {
-                if (array_key_exists($key, $array))
+                if ($value)
                 {
-                    $result[] = $array[$key];
+                    if (array_key_exists($value, $array) && array_key_exists($key, $array))
+                    {
+                        $result[$array[$key]] = $array[$value];
+                    }
+                }
+                else
+                {
+                    if (array_key_exists($key, $array))
+                    {
+                        $result[] = $array[$key];
+                    }
                 }
             }
         }

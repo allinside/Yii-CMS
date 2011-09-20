@@ -50,6 +50,12 @@ class YmarketIP extends ActiveRecordModel
 
     public function doRequest($url)
     {
+        $url_params = parse_url($url);
+        if (!isset($url_params["host"]))
+        {
+            $url= "http://market.yandex.ru" . $url;
+        }
+
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

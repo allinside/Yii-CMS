@@ -47,6 +47,16 @@ class YmarketSection extends ActiveRecordModel
                 'object_id',
                 'through'   => 'rels',
                 'condition' => "object_type = '" . YmarketSectionRel::OBJECT_TYPE_BRAND . "'"
+            ),
+            'pages' => array(
+                self::HAS_MANY,
+                'YmarketPage',
+                'section_id'
+            ),
+            'pages_count' => array(
+                self::STAT,
+                'YmarketPage',
+                'section_id'
             )
 		);
 	}

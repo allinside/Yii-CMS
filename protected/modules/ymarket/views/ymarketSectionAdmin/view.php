@@ -17,6 +17,7 @@ $this->widget('application.components.DetailView', array(
 		'date_create',
         'date_update',
         'date_brand_update',
+        'date_pages_parse',
         array(
             'name' => 'Бренды',
             'value' => $model->brands ? implode('<br/> ', ArrayHelper::extract($model->brands, 'name')) : null,
