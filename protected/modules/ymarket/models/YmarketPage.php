@@ -76,6 +76,11 @@ class YmarketPage extends ActiveRecordModel
         }
 
         $pages_urls = $this->_parse($url);
+        if (!$pages_urls)
+        {
+            return;
+        }
+
         foreach ($pages_urls as $num => $url)
         {
             $page = YmarketPage::model()->findByAttributes(array(

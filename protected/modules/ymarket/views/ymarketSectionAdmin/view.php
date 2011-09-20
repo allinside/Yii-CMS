@@ -5,6 +5,8 @@ $this->tabs = array(
     'редактировать' => $this->createUrl('update', array('id' => $model->id))
 );
 
+$brands = $model->brands ? implode('<br/> ', ArrayHelper::extract($model->brands, 'name')) : "";
+
 $this->widget('application.components.DetailView', array(
 	'data' => $model,
 	'attributes' => array(
@@ -19,9 +21,9 @@ $this->widget('application.components.DetailView', array(
         'date_brand_update',
         'date_pages_parse',
         array(
-            'name' => 'Бренды',
-            'value' => $model->brands ? implode('<br/> ', ArrayHelper::extract($model->brands, 'name')) : null,
-            'type' => 'raw'
+            'name'  => 'brands',
+            'value' => $brands,
+            'type'  => 'raw'
         ),
 	),
 )); 

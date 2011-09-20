@@ -47,6 +47,11 @@ class DaterComponent extends CApplicationComponent
 
     public function isDbDate($value)
     {
+        if (is_object($value) || is_array($value))
+        {
+            return false;
+        }
+
         return preg_match(self::PATTERN_DB_DATE, $value) || preg_match(self::PATTERN_DB_DATE_TIME, $value);
     }
 }

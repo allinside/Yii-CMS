@@ -24,7 +24,7 @@ class YmarketCron extends ActiveRecordModel
 			array('is_active, priority, interval', 'numerical', 'integerOnly' => true),
 			array('name', 'length', 'max' => 250),
 			array('method', 'length', 'max' => 100),
-
+            array('name', 'unique', 'className' => get_class($this), 'attributeName' => 'name'),
 			array('id, name, method, is_active, priority, interval, date_of', 'safe', 'on' => 'search'),
 		);
 	}
@@ -52,4 +52,30 @@ class YmarketCron extends ActiveRecordModel
 			'criteria' => $criteria
 		));
 	}
+
+
+    public function ParseAndUpdateSection()
+    {
+        $section = YmarketSection::model()->find('', array('order' => 'date_update'));
+        $section->parseAndUpdateAttributes();
+    }
+
+
+    public function ParseAndUpdateSectionBrands()
+    {
+        $section = YmarketSection::model()->find('', array('order' => 'date_brand_update'));
+        $section->parseAndUpdateBrands();
+    }
+
+
+    public function ParsePages()
+    {
+        YmarketPage::model()->parse();
+    }
+
+
+    public function ParseProducts()
+    {
+        YmarketProduct::model()->parse();
+    }
 }

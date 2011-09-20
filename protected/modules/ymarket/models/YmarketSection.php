@@ -62,6 +62,14 @@ class YmarketSection extends ActiveRecordModel
 	}
 
 
+    public function attributeLabels()
+    {
+        $labels = parent::attributeLabels();
+        $labels['brands'] = 'Брэнды';
+        return $labels;
+    }
+
+
 	public function search()
 	{
 		$criteria = new CDbCriteria;
