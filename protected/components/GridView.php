@@ -14,6 +14,8 @@ class GridView extends CGridView
 
     public $buttons = null;
 
+    public $sortable = false;
+
     public $template = '{summary}<br/>{pager}<br/>{items}<br/>{pager}';
 
 
@@ -84,7 +86,7 @@ class GridView extends CGridView
 	{
 		if($this->dataProvider->getItemCount()>0 || $this->showTableOnEmpty)
 		{
-			echo "<table class='' cellpadding='0' cellspacing='0' width='100%'>\n";
+			echo "<table class='' sortable='{$this->sortable}' cellpadding='0' cellspacing='0' width='100%'>\n";
 			$this->renderTableHeader();
 			$this->renderTableBody();
 			$this->renderTableFooter();
@@ -217,5 +219,5 @@ class GridView extends CGridView
 	{
 	    parent::registerClientScript();
         Yii::app()->clientScript->registerScriptFile($this->baseScriptUrl.'/gridview.js',CClientScript::POS_END, true);
-	}
+    }
 }

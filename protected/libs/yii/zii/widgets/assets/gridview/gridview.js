@@ -1,6 +1,11 @@
 $(function()
-{
+{  
     initFiltersLink();
+
+    if ($('.grid-view table').attr('sortable'))
+    {
+        makeSortable();
+    }
 });
 
 
@@ -27,4 +32,18 @@ function initFiltersLink()
             });
         }
     });
+}
+
+
+function makeSortable()
+{
+    var fixHelper = function(e, ui)
+    {
+        ui.children().each(function() {
+            $(this).width($(this).width());
+        });
+        return ui;
+    };
+
+    $(".grid-view tbody").sortable({helper: fixHelper}).disableSelection();
 }

@@ -1,5 +1,5 @@
-<?php 
-$this->page_title = 'Роли'; 
+<?php
+$this->page_title = 'Роли';
 
 $this->tabs = array(
     "Создать роль" => $this->createUrl("create")
@@ -17,6 +17,7 @@ $this->widget('application.components.GridView', array(
 	'dataProvider' => $model->search(AuthItem::TYPE_ROLE),
 	'filter'   => $model,
 	'template' => '{summary}<br/>{pager}<br/>{items}<br/>{pager}',
+    'sortable' => true,
 	'columns'  => array(
         'name',
         'description',
@@ -34,4 +35,4 @@ $this->widget('application.components.GridView', array(
 		),
 	),
 )); 
-
+?>
