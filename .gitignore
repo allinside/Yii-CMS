@@ -1,5 +1,5 @@
 .buildpath
-assets
-.idea
+assets/
+.idea/
 .project
-.settings
+.settings/
