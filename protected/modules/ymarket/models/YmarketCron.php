@@ -56,14 +56,21 @@ class YmarketCron extends ActiveRecordModel
 
     public function ParseAndUpdateSection()
     {
-        $section = YmarketSection::model()->find('', array('order' => 'date_update'));
+        $criteria = new CDbCriteria;
+        $criteria->order = 'date_update';
+
+        $section = YmarketSection::model()->find($criteria);
+        echo $section->id;
         $section->parseAndUpdateAttributes();
     }
 
 
     public function ParseAndUpdateSectionBrands()
     {
-        $section = YmarketSection::model()->find('', array('order' => 'date_brand_update'));
+        $criteria = new CDbCriteria;
+        $criteria->order = 'date_brand_update';
+
+        $section = YmarketSection::model()->find($criteria);
         $section->parseAndUpdateBrands();
     }
 

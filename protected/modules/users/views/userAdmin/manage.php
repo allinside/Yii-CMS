@@ -9,7 +9,6 @@ $this->widget('application.components.GridView', array(
 	'id' => 'user-grid',
 	'dataProvider' => $model->search(),
 	'filter' => $model,
-    	'template' => '{summary}<br/>{pager}<br/>{items}<br/>{pager}',
 	'columns' => array(
 		'last_name',
         'first_name',

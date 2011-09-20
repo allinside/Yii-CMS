@@ -92,7 +92,11 @@ class YmarketProduct extends ActiveRecordModel
 
     public function parse()
     {
-        $page = YmarketPage::model()->find(array('order' => 'date_parse'));
+        $criteria = new CDbCriteria;
+        $criteria->order = 'date_parse';
+
+        $page = YmarketPage::model()->find($criteria);
+
         if (!$page)
         {
             Yii::log(

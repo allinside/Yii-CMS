@@ -57,12 +57,18 @@ class YmarketPage extends ActiveRecordModel
 
     public function parse()
     {
-        $section = YmarketSection::model()->find(array('order' => 'date_pages_parse'));
+        echo "парсим страницы \n";
+        $criteria = new CDbCriteria;
+        $criteria->condition = 'date_update IS NOT NULL';
+        $criteria->order = 'date_pages_parse';
+
+        $section = YmarketSection::model()->find($criteria);
         $section->date_pages_parse = new CDbExpression('NOW()');
         $section->save();
 
         if ($section->pages)
         {
+            echo "ecть страницы";
             $page = YmarketPage::model()->findByAttributes(
                 array('section_id' => $section->id),
                 array('order' => 'num DESC')
@@ -74,7 +80,7 @@ class YmarketPage extends ActiveRecordModel
         {
             $url = $section->all_models_url;
         }
-
+        v($url);
         $pages_urls = $this->_parse($url);
         if (!$pages_urls)
         {

@@ -9,7 +9,7 @@ define("PROTECTED_PATH", $_SERVER["DOCUMENT_ROOT"] . "protected/");
 define("MODULES_PATH", $_SERVER["DOCUMENT_ROOT"] . "protected/modules/");
 define("LIBRARY_PATH", PROTECTED_PATH . "libs/");
 
-$yii    = LIBRARY_PATH . 'yii/yii.php';
+$yii = LIBRARY_PATH . 'yii/yii.php';
 
 defined('YII_DEBUG') or define('YII_DEBUG',true);
 
@@ -17,6 +17,8 @@ defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
 
 ini_set("display_errors", 1);
 error_reporting(E_ALL);
+
+date_default_timezone_set('Europe/Moscow');
 
 require_once($yii);
 
@@ -30,14 +32,13 @@ Yii::createWebApplication($config)->run();
 
 function p($data)
 {
-    echo "<pre>". print_r($data, 1) . "</pre>";
+    CVarDumper::dump($data, 1000, true);
 }
 
 function v($data)
 {
     echo "<pre>". var_dump($data) . "</pre>";
 }
-
 
 ?>
 

@@ -18,7 +18,7 @@ class BaseForm extends CForm
 
     public function __ToString()
     {
-        $tpl =  mb_substr(Yii::app()->controller->id, -5) == 'Admin' ? '_adminForm' : '_form';
+        $tpl =  Yii::app()->controller instanceof AdminController ? '_adminForm' : '_form';
 
     	try
     	{

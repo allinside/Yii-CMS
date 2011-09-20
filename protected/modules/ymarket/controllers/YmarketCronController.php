@@ -5,7 +5,12 @@ class YmarketCronController extends CController
     public function actionPerformTasks()
     {
         $model = YmarketCron::model();
-        $crons = $model->findAll('is_active = 1', array('order' => 'priority'));
+
+        $criteria = new CDbCriteria;
+        $criteria->condition = 'is_active = 1';
+        $criteria->order = 'priority';
+
+        $crons = $model->findAll($criteria);
         foreach ($crons as $cron)
         {
             $elapsed_secs= time() - strtotime($cron->date_of);
@@ -22,10 +27,10 @@ class YmarketCronController extends CController
     }
 
 
-//    public function actionIPQueue()
-//    {
-//        $ip = YmarketIP::model()->getNext();
-//    }
+    public function actionIPQueue()
+    {
+        echo YmarketIP::model()->getNext();
+    }
 //
 //
 //    public function actionSectionContent()

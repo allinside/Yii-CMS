@@ -14,6 +14,8 @@ class GridView extends CGridView
 
     public $buttons = null;
 
+    public $template = '{summary}<br/>{pager}<br/>{items}<br/>{pager}';
+
 
     public function init()
     {

@@ -12,6 +12,6 @@ class Portlet extends CPortlet
 
     public function getModule()
     {
-        return Yii::app()->getModule(Yii::app()->controller->module->name);
+        return Yii::app()->controller->module;
     }
 }

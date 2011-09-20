@@ -23,7 +23,6 @@ class YmarketIP extends ActiveRecordModel
 			array('ip', 'required'),
             array('ip', 'unique', 'className' => get_class($this), 'attributeName' => 'ip'),
 			array('ip', 'length', 'max' => 40),
-            array('last_date_use', 'default', 'value' => new CDbExpression('NOW()')),
 			array('ip, last_date_use', 'safe', 'on' => 'search'),
 		);
 	}
@@ -79,9 +78,13 @@ class YmarketIP extends ActiveRecordModel
 
     public function getNext()
     {
-        $ip = $this->find(array('order' => 'last_date_use'));
+        $criteria = new CDbCriteria;
+        $criteria->order = 'last_date_use';
+
+        $ip = $this->find($criteria);
         if ($ip)
         {
+            $ip->last_date_use = new CDbExpression('NOW()');
             $ip->save();
             return $ip->ip;
         }
