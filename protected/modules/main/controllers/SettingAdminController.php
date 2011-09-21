@@ -43,7 +43,7 @@ class SettingAdminController extends AdminController
 	}
 
 
-	public function actionManage()
+	public function actionManage($module_id = null)
 	{
 		$model = new Setting('search');
 		$model->unsetAttributes();
@@ -53,7 +53,17 @@ class SettingAdminController extends AdminController
             $model->attributes = $_GET['Setting'];
         }
 
-		$this->render('manage', array('model' => $model));
+        $params = array(
+            'model' => $model
+        );
+
+        if ($module_id)
+        {
+            $params['module_id']   = $module_id;
+            $params['module_name'] = AppManager::getModuleName($module_id);
+        }
+
+		$this->render('manage', $params);
 	}
 
 

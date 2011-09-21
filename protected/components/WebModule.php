@@ -31,4 +31,10 @@ abstract class WebModule extends CWebModule
         
         return $this->_assetsUrl;
     }
+
+
+    public static function getShortId()
+    {
+        return strtolower(str_replace('Module', '', get_called_class()));
+    }
 }

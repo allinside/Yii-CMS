@@ -42,7 +42,7 @@ class Setting extends ActiveRecordModel
 	}
 
 
-	public function search()
+	public function search($module_id = null)
 	{
 		$criteria=new CDbCriteria;
 		$criteria->compare('id',$this->id,true);
@@ -51,35 +51,27 @@ class Setting extends ActiveRecordModel
 		$criteria->compare('value',$this->value,true);
 		$criteria->compare('element',$this->element,true);
 
+        if ($module_id)
+        {
+            $criteria->compare('module_id', $module_id);
+        }
+
 		return new ActiveDataProvider(get_class($this), array(
 			'criteria' => $criteria
 		));
 	}
 
 
-    public function getAll()
+    public function findCodesValues($module_id)
     {
         $result = array();
 
-        $settings = parent::findAll();
+        $settings = $this->findAll("module_id = '{$module_id}'");
         foreach ($settings as $setting)
         {
-            $result[$setting->code] = array(
-                "title" => $setting->title,
-                "value" => $setting->value
-            );
+            $result[$setting->code] = $setting->value;
         }
 
         return $result;
-    }
-
-
-    public function get($code)
-    {
-        $setting = $this->findByAttributes(array("code" => $code));
-        if ($setting)
-        {
-            return $setting->value;
-        }
     }
 }

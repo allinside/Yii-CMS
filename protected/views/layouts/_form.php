@@ -1,7 +1,8 @@
 <?php
 echo $form->renderBegin();
 
-$elements = $form->getElements();
+$model_class = get_class($form->model);
+$elements    = $form->getElements();
 ?>
 
 <?php foreach ($elements as $element): ?>
@@ -15,16 +16,11 @@ $elements = $form->getElements();
         case 'text':
         case 'password':
             $ext_class = 'text';
-
             break;
 
-        case 'textarea':
-            //$ext_class = 'textarea_feedback';
-            //if ($element->required)
-            //{
-            //    $ext_class.= ' required_field';
-            //}
-
+        case 'date':
+            $ext_class = 'text date_picker';
+            $element->attributes['readonly'] = true;
             break;
     }
 
@@ -43,18 +39,42 @@ $elements = $form->getElements();
     <?php else: ?>
         <ol>
             <li>
-                <label for="<?php $element->name; ?>">
-                    <?php echo $element->label; ?>
-                    <?php if ($element->required): ?>
-                        (<?php echo Yii::t('main', 'обязательное поле'); ?>)
+                <?php if ($element->type == 'date'): ?>
+
+                    <label for="<?php $element->name; ?>">
+                        <?php echo $form->getActiveFormWidget()->labelEx($form->model, $element->name); ?>
+                        <?php if ($element->required): ?>
+                            (<?php echo Yii::t('main', 'обязательное поле'); ?>)
+                        <?php endif ?>
+                    </label>
+
+                    <?php echo $form->getActiveFormWidget()->textField($form->model, $element->name, $element->attributes); ?>
+                    <?php
+                    $this->widget('application.extensions.calendar.SCalendar',
+                        array(
+                        'inputField' => "{$model_class}_{$element->name}",
+                        'ifFormat'   => '%d.%m.%Y',
+                        'language'   => 'ru-UTF'
+                    ));
+                    ?>
+                    <?php echo $form->getActiveFormWidget()->error($form->model, $element->name); ?>
+
+                <?php else : ?>
+
+                    <label for="<?php $element->name; ?>">
+                        <?php echo $element->label; ?>
+                        <?php if ($element->required): ?>
+                            (<?php echo Yii::t('main', 'обязательное поле'); ?>)
+                        <?php endif ?>
+                    </label>
+
+                    <?php if ($error): ?>
+                        <?php echo $error; ?>
                     <?php endif ?>
-                </label>
 
-                <?php if ($error): ?>
-                    <?php echo $error; ?>
+                    <?php echo $element->renderInput(); ?>
+
                 <?php endif ?>
-
-                <?php echo $element->renderInput(); ?>
             </li>
         </ol>
     <?php endif; ?>

@@ -13,20 +13,8 @@ $this->widget('application.components.DetailView', array(
         'first_name',
         'patronymic',
 		'email',
-		'company',
 		'birthdate',
-		array(
-			'name'  => 'city_id',
-			'value' => $model->city->name
-		),
-		array(
-			'name'  => 'club_status', 
-			'value' => User::$club_status_list[$model->club_status]
-		),
 		'phone',
-		'fax',
-        'company',
-        'position',
 		array(
 			'name'  => 'role',
 			'value' => $model->role->description

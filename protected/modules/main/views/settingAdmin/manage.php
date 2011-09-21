@@ -11,12 +11,17 @@ function getValue($value)
     return $value;
 }
 
+if (isset($module_name))
+{
+    $this->page_title.= " :: {$module_name}";
+}
+
 $this->widget('application.components.GridView', array(
 	'id' => 'settings-grid',
-	'dataProvider' => $model->search(),
+	'dataProvider' => $model->search(isset($module_id) ? $module_id : null),
 	'filter' => $model,
 	'columns' => array(
-        array('name' => 'module', 'value' => '$data->module'),
+        array('name' => 'module_id', 'value' => 'AppManager::getModuleName($data->module_id)'),
 		'title',
         array('name' => 'value', 'value' => 'getValue($data->value)', 'type' => 'raw'),
 		array(

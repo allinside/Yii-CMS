@@ -9,7 +9,6 @@ $this->widget('application.components.DetailView', array(
 		array('name' => 'brand_id', 'value' => $model->brand->name),
 		'name',
 		array('name' => 'image', 'value' => $model->getImageHtml(), 'type' => 'raw'),
-		'desc_html:raw',
 		'date_create',
 		'date_update',
 	),

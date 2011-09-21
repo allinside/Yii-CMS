@@ -6,31 +6,56 @@ class YmarketCronController extends CController
     {
         $model = YmarketCron::model();
 
-        $criteria = new CDbCriteria;
-        $criteria->condition = 'is_active = 1';
-        $criteria->order = 'priority';
-
-        $crons = $model->findAll($criteria);
-        foreach ($crons as $cron)
+        //Вначале необходимо спарсить данные раздела
+        $sections = YmarketSection::model()->findAll('date_update IS NULL');
+        if ($sections)
         {
-            $elapsed_secs= time() - strtotime($cron->date_of);
-            if ($elapsed_secs < $cron->interval)
+            foreach ($sections as $section)
             {
-                continue;
+                $section->parseAndUpdateAttributes();
             }
+        }
+        else
+        {
+            //Потом его бренды и связи с ними
+            $sections = YmarketSection::model()->findAll('date_brand_update IS NULL');
+            if ($sections)
+            {
+                foreach ($sections as $section)
+                {
+                    $section->parseAndUpdateBrands();
+                }
+            }
+            else
+            {
+                //И только потом парсим товары и страницы с товарами
+                $criteria = new CDbCriteria;
+                $criteria->condition = 'is_active = 1';
+                $criteria->order = 'priority';
 
-            $model->{$cron->method}();
+                $crons = $model->findAll($criteria);
+                foreach ($crons as $cron)
+                {
+                    $elapsed_secs= time() - strtotime($cron->date_of);
+                    if ($elapsed_secs < $cron->interval)
+                    {
+                        continue;
+                    }
 
-            $cron->date_of = new CDbExpression('NOW()');
-            $cron->save();
+                    $model->{$cron->method}();
+
+                    $cron->date_of = new CDbExpression('NOW()');
+                    $cron->save();
+                }
+            }
         }
     }
 
 
-    public function actionIPQueue()
-    {
-        echo YmarketIP::model()->getNext();
-    }
+//    public function actionIPQueue()
+//    {
+//        echo YmarketIP::model()->getNext();
+//    }
 //
 //
 //    public function actionSectionContent()

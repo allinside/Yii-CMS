@@ -7,7 +7,7 @@ $this->widget('application.components.DetailView', array(
 	'data' => $model,
 	'attributes' => array(
         'title',
-		'const',
+		'code',
         array('label' => 'Значение', 'value' => $model->value, 'type' => 'raw')
 	),
 ));

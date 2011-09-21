@@ -51,6 +51,12 @@ class AppManager
             {
                 $module['admin_menu'] = call_user_func(array($module_class, 'adminMenu'));
 
+                $settins_count = Setting::model()->count("module_id = '{$module_dir}'");
+                if ($settins_count)
+                {
+                    $module['admin_menu']['Настройки'] = '/main/SettingAdmin/manage/module_id/' . $module_dir;
+                }
+
                 if ($check_allowed_links)
                 {   
                     foreach ($module['admin_menu'] as $title => $url)
@@ -155,6 +161,16 @@ class AppManager
             {
                 return ucfirst($dir) . "Module";
             }
+        }
+    }
+
+
+    public static function getModuleName($id)
+    {
+        $module = Yii::app()->getModule($id);
+        if ($module)
+        {
+            return $module->name();
         }
     }
 }

@@ -95,9 +95,9 @@ class YmarketProduct extends ActiveRecordModel
         $criteria = new CDbCriteria;
         $criteria->order = 'date_parse';
 
-        $page = YmarketPage::model()->find($criteria);
+        $pages = YmarketPage::model()->limit(10)->findAll($criteria);
 
-        if (!$page)
+        if (!$pages)
         {
             Yii::log(
                 'Ymarket:: не нашел страниц с продуктами для парсинга',
@@ -107,170 +107,174 @@ class YmarketProduct extends ActiveRecordModel
             return;
         }
 
-        $page->date_parse = new CDbExpression('NOW()');
-        $page->save();
-
-        $content = YmarketIP::model()->doRequest($page->url);
-        //$content = file_get_contents("/var/www/ParseProducts.html");
-
-        preg_match_all('|<img class="b-offers__img" src="(.*?)"|', $content, $products_images);
-        if (!isset($products_images[1]))
+        foreach ($pages as $page)
         {
-            Yii::log(
-                'Ymarket:: не могу спарсить картинки товаров ' . $page->url,
-                'warning',
-                'ymarket'
-            );
+            $page->date_parse = new CDbExpression('NOW()');
+            $page->save();
 
-            return;
-        }
+            $content = YmarketIP::model()->doRequest($page->url);
+            //$content = file_get_contents("/var/www/ParseProducts.html");
 
-        $products_images = $products_images[1];
-
-        preg_match_all('|<div class="b-offers__desc">(.*?)</div>|', $content, $products_desc);
-        if (!isset($products_desc[1]))
-        {
-            Yii::log(
-                'Ymarket:: не могу спарсить описания товаров ' . $page->url,
-                'warning',
-                'ymarket'
-            );
-
-            return;
-        }
-
-        $products_desc = $products_desc[1];
-        foreach ($products_desc as $i => $desc)
-        {
-            $desc = trim($desc);
-
-            if (empty($desc))
-            {
-                unset($products_desc[$i]);
-            }
-        }
-
-        if (count($products_images) != count($products_desc))
-        {
-            Yii::log(
-                'Ymarket:: кол-во картинок не совпадает кол-ву описаний ' . $page->url,
-                'warning',
-                'ymarket'
-            );
-
-            return;
-        }
-
-        $brands = YmarketBrand::model()->findAll(array('order' => 'LENGTH(name) DESC'));
-        if (!$brands)
-        {
-            Yii::log(
-                'Ymarket:: не могу добавить товар так как нет брэндов!',
-                'warning',
-                'ymarket'
-            );
-        }
-
-        $img_dir = $_SERVER['DOCUMENT_ROOT'] . self::IMAGES_DIR;
-        if (!file_exists($img_dir))
-        {
-            mkdir($img_dir);
-            chmod($img_dir, 0777);
-        }
-
-        $brands = ArrayHelper::extract($brands, 'id', 'name');
-
-        $products_data = array_combine($products_images, $products_desc);
-        foreach ($products_data as $img => $desc_html)
-        {
-            preg_match('|class="b-offers__name">(.*?)</a>|', $desc_html, $product_name);
-            if (!isset($product_name[1]))
+            preg_match_all('|<img class="b-offers__img" src="(.*?)"|', $content, $products_images);
+            if (!isset($products_images[1]))
             {
                 Yii::log(
-                    'Ymarket:: не могу спарсить название продукта ' . $page->url . ' html: ' . $desc_html,
+                    'Ymarket:: не могу спарсить картинки товаров ' . $page->url,
                     'warning',
                     'ymarket'
                 );
 
-                continue;
+                return;
             }
 
-            $product_name = $product_name[1];
+            $products_images = $products_images[1];
 
-            foreach ($brands as $id => $brand)
+            preg_match_all('|<div class="b-offers__desc">(.*?)</div>|', $content, $products_desc);
+            if (!isset($products_desc[1]))
             {
-                if (mb_substr($product_name, 0, mb_strlen($brand)) == $brand)
+                Yii::log(
+                    'Ymarket:: не могу спарсить описания товаров ' . $page->url,
+                    'warning',
+                    'ymarket'
+                );
+
+                return;
+            }
+
+            $products_desc = $products_desc[1];
+            foreach ($products_desc as $i => $desc)
+            {
+                $desc = trim($desc);
+
+                if (empty($desc))
                 {
-                    $brand_id = $id;
+                    unset($products_desc[$i]);
                 }
             }
 
-            if (!isset($brand_id))
+            if (count($products_images) != count($products_desc))
             {
                 Yii::log(
-                    'Ymarket:: не могу определить бренд товара ' . $product_name,
+                    'Ymarket:: кол-во картинок не совпадает кол-ву описаний ' . $page->url,
                     'warning',
                     'ymarket'
                 );
 
-                continue;
+                return;
             }
 
-            $name = str_replace($brands[$brand_id], null, $product_name);
-
-            $product = YmarketProduct::model()->findByAttributes(array(
-                'brand_id' => $brand_id,
-                'name'     => $name
-            ));
-
-            if ($product)
-            {
-                $product->date_update = new CDbExpression('NOW()');
-            }
-            else
-            {
-                $product = new YmarketProduct;
-            }
-
-            $product->brand_id  = $brand_id;
-            $product->name      = $name;
-            $product->desc_html = $desc_html;
-
-            if (!$product->save())
+            $brands = YmarketBrand::model()->findAll(array('order' => 'LENGTH(name) DESC'));
+            if (!$brands)
             {
                 Yii::log(
-                    'Ymarket:: не могу сохранить товар ' . print_r($product->errors, 1),
+                    'Ymarket:: не могу добавить товар так как нет брэндов!',
                     'warning',
                     'ymarket'
                 );
-
-                continue;
             }
 
-            $img = html_entity_decode($img);
-            $img = str_replace('&size=2', '', $img);
-
-            $img_ext  = pathinfo($img, PATHINFO_EXTENSION);
-            $img_name = $product->id . '.' . $img_ext;
-            $img_path = $img_dir . $img_name;
-
-            try
+            $img_dir = $_SERVER['DOCUMENT_ROOT'] . self::IMAGES_DIR;
+            if (!file_exists($img_dir))
             {
-                file_put_contents($img_path, file_get_contents($img));
+                mkdir($img_dir);
+                chmod($img_dir, 0777);
             }
-            catch (CException $e)
+
+            $brands = ArrayHelper::extract($brands, 'id', 'name');
+
+            $products_data = array_combine($products_images, $products_desc);
+            foreach ($products_data as $img => $desc_html)
             {
-                Yii::log(
-                    'Ymarket:: ' . $e->getMessage(),
-                    'warning',
-                    'ymarket'
-                );
+                preg_match('|class="b-offers__name" href=".*?">(.*?)</a>|', $desc_html, $product_name);
 
-                continue;
+                if (!isset($product_name[1]))
+                {
+                    Yii::log(
+                        'Ymarket:: не могу спарсить название продукта ' . $page->url . ' html: ' . $desc_html,
+                        'warning',
+                        'ymarket'
+                    );
+
+                    continue;
+                }
+
+                $product_name = $product_name[1];
+
+                foreach ($brands as $id => $brand)
+                {
+                    if (mb_substr($product_name, 0, mb_strlen($brand)) == $brand)
+                    {
+                        $brand_id = $id;
+                    }
+                }
+
+                if (!isset($brand_id))
+                {
+                    Yii::log(
+                        'Ymarket:: не могу определить бренд товара ' . $product_name,
+                        'warning',
+                        'ymarket'
+                    );
+
+                    continue;
+                }
+
+                $name = str_replace($brands[$brand_id], null, $product_name);
+
+                $product = YmarketProduct::model()->findByAttributes(array(
+                    'brand_id' => $brand_id,
+                    'name'     => $name
+                ));
+
+                if ($product)
+                {
+                    $product->date_update = new CDbExpression('NOW()');
+                }
+                else
+                {
+                    $product = new YmarketProduct;
+                }
+
+                $product->brand_id  = $brand_id;
+                $product->name      = $name;
+                $product->desc_html = $desc_html;
+
+                if (!$product->save())
+                {
+                    Yii::log(
+                        'Ymarket:: не могу сохранить товар ' . print_r($product->errors, 1),
+                        'warning',
+                        'ymarket'
+                    );
+
+                    continue;
+                }
+
+                $img = html_entity_decode($img);
+                $img = str_replace('&size=2', '', $img);
+
+                $img_ext  = pathinfo($img, PATHINFO_EXTENSION);
+                $img_name = $product->id . '.' . $img_ext;
+                $img_path = $img_dir . $img_name;
+
+                try
+                {
+                    file_put_contents($img_path, file_get_contents($img));
+                }
+                catch (CException $e)
+                {
+                    Yii::log(
+                        'Ymarket:: ' . $e->getMessage(),
+                        'warning',
+                        'ymarket'
+                    );
+
+                    continue;
+                }
+
+                $product->image = $img_name;
+                $product->save();
             }
-
-            $product->image = $img_name;
-            $product->save();
         }
     }
 }

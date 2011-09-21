@@ -11,9 +11,6 @@ class User extends ActiveRecordModel
     const GENDER_MAN   = "man";
     const GENDER_WOMAN = "woman";
 
-    const CLUB_STATUS_CANDIDATE = "candidate";
-    const CLUB_STATUS_CLUBMAN   = "clubman";	
-
     public $password_c;
 
     public $captcha;
@@ -48,12 +45,6 @@ class User extends ActiveRecordModel
         self::GENDER_MAN   => "Мужской",
         self::GENDER_WOMAN => "Женский"
     );
-
-	
-    public static $club_status_list = array(
-        self::CLUB_STATUS_CANDIDATE => "кандидат в члены клуба",
-		self::CLUB_STATUS_CLUBMAN   => "член клуба"
-    ); 	
 
 
     public function getName()
@@ -91,7 +82,7 @@ class User extends ActiveRecordModel
                 'on' => array('Register', 'ActivateRequest', 'ChangePasswordRequest')
             ),
             array('first_name', 'required', 'on' => array('Create', 'Update')),
-            array('first_name, last_name, patronymic, position','length', 'max' => 40),
+            array('first_name, last_name, patronymic','length', 'max' => 40),
             array('first_name, last_name, patronymic','ruLatAlpha'),
             array(
                 'email',
@@ -107,21 +98,10 @@ class User extends ActiveRecordModel
                     'Create'
                 )
             ),
-			array('city_id', 'numerical', 'integerOnly' => true),            
             array(
                 'new_password',
                 'required',
                 'on' => 'ChangePassword'
-            ),
-            array(
-                'position',
-                'match',
-                'pattern' => '/^[А-Яа-я ]+$/ui',
-            ),
-            array(
-                'position',
-                'length',
-                'max' => 40
             ),
             array(
                 'birthdate',
@@ -189,16 +169,11 @@ class User extends ActiveRecordModel
                 'on' => 'ChangePassword'
             ),
             array('email', 'length', 'max' => 200),
-            array('company','length', 'max' => 250),
-            array('phone, fax','length','max' => 50),
-            array('phone, fax','phone'),
-	    	array('club_status', 'in', 'range' => array_keys(self::$club_status_list)),	
             array('gender', 'in', 'range' => array_keys(self::$gender_list)),
             array('status', 'in', 'range' => array_keys(self::$status_list)),
             array('birthdate,activate_code', 'safe'),
             array('email', 'filter', 'filter' => 'trim'),
             array('id, email, birthdate, gender, status, date_create','safe', 'on'=>'search'),
-            array('phone, company, fax', 'filter', 'filter'=>'strip_tags'),
         );
     }
 
@@ -206,7 +181,6 @@ class User extends ActiveRecordModel
     public function relations()
     {
         return array(
-        	'city'       => array(self::BELONGS_TO, 'City', 'city_id'),
             'assignment' => array(self::HAS_ONE, 'AuthAssignment', 'userid'),
             'role'       => array(self::HAS_ONE, 'AuthItem', 'itemname', 'through' => 'assignment')
 		);
@@ -347,45 +321,6 @@ class User extends ActiveRecordModel
         $this->save();
     }
     
-    
-    public function export() 
-    {
-    	$labels = $this->attributeLabels();
-    		
-    	$date = Yii::app()->dateFormatter->format('d MMMM yyyy', time());	
-    		
-    	$result = array(
-    	    "title" => 'СПИСОК ЧЛЕНОВ КЛУБА "ЭЛЕКТРОПОЛИС" на ' . $date . 'г.',
-    	    
-    		"labels" => array(
-                "№",
-                "ФИО",
-    			$labels["company"],
-                $labels["position"],
-    			$labels["city_id"]
-    		),
-    		"data" => array()
-    	);
-    	 	
-        $users = User::model()->findAllByAttributes(array(
-            'status'      => User::STATUS_ACTIVE,
-            'club_status' => User::CLUB_STATUS_CLUBMAN
-        ));
-		
-		foreach ($users as $user) 
-		{
-			$result["data"][] = array(
-                $user->id,
-    			$user->name,
-				$user->company,
-                $user->position,
-				$user->city->name	
-			);
-		}
-    	
-    	return $result;
-    }
-
 
 	public function getRole()
 	{

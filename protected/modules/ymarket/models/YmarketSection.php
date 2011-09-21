@@ -162,18 +162,24 @@ class YmarketSection extends ActiveRecordModel
         }
 
         $content = file_get_contents(YmarketModule::YANDEX_MARKET_WEB_URL . $this->brands_url);
-        //$content = file_get_contents("/var/www/SectionBrands.html");
         $content = html_entity_decode($content);
 
-        preg_match_all('|<ul class="list vendor">(.*?)</ul>|', $content, $uls);
-        if (!isset($uls[1]))
+        preg_match_all('|<li class="vendor">(.*?)</li>|', $content, $lis);
+
+        if (!isset($lis[1]))
         {
+            Yii::log(
+                'Ymarket:: не могу спарсить списки с брендами ' . $this->brands_url,
+                'warning',
+                'ymarket'
+            );
             return;
         }
 
-        foreach ($uls[1] as $ul)
+        foreach ($lis[1] as $li)
         {
-            preg_match('|<a href=".*?">(.*?)</a>|', $ul, $brand_name);
+            preg_match('|>(.*?)</a>|', $li, $brand_name);
+
             if (isset($brand_name[1]))
             {
                 $brand_name = trim($brand_name[1]);

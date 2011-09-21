@@ -14,22 +14,16 @@ $this->widget('application.components.GridView', array(
         'first_name',
         'patronymic',
 		'email',
-//		'birthdate',
-//		array(
-//			'name'  => 'gender',
-//			'value' => 'User::$gender_list[$data->gender]'
-//		),
+		'birthdate',
+		array(
+			'name'  => 'gender',
+			'value' => 'User::$gender_list[$data->gender]'
+		),
 		array(
 			'name'  => 'status', 
 			'value' => 'User::$status_list[$data->status]'
 		),
-		array(
-			'name'  => 'club_status', 
-			'value' => 'User::$club_status_list[$data->club_status]'
-		),
-//		'phone',
-        'company',
-        'position',
+		'phone',
 		array(
 			'name'  => 'role',
 			'value' => 'isset($data->role->description) ? $data->role->description : null'
