@@ -158,40 +158,12 @@ class MailerLetter extends ActiveRecordModel
                 continue;
             }
 
-            $fields = MailerField::model()->findAll();
-
             foreach ($recipients as $recipient)
             {
-                $body   = $letter->template ? $letter->template->text : $letter->text;
-                $user   = $recipient->user;
-                $codes  = array();
-                $values = array();
+                $user = $recipient->user;
 
-                foreach ($fields as $field)
-                {
-                    if (mb_substr($field->value, -1) != ';')
-                    {
-                        $field->value.= ';';
-                    }
-
-                    if (mb_substr($field->value, 0, 7) != 'return ')
-                    {
-                        $field->value = 'return ' . $field->value;
-                    }
-
-                    $value = "";
-
-                    try
-                    {
-                        $value = @eval($field->value);
-                    }
-                    catch (CException $e){}
-
-                    $codes[]  = $field->code;
-                    $values[] = $value;
-                }
-
-                $body = str_replace($codes, $values, $body);
+                $body = $letter->template ? $letter->template->text : $letter->text;
+                $body = $this->compileText($body, array('user' => $user));
                 $body.= "<br><br>" . $options['signature'];
                 $body.= "<img src='http://{$_SERVER['HTTP_HOST']}/mailer/Mailer/ConfirmReceipt/letter_id/{$letter->id}/user_id/{$user->id}.jpg' />";
           
@@ -234,5 +206,44 @@ class MailerLetter extends ActiveRecordModel
                 }
             }
         }
+    }
+
+
+    public function compileText($text, $objects = array())
+    {
+        extract($objects);
+
+        $fields = MailerField::model()->findAll();
+
+        $codes  = array();
+        $values = array();
+
+        foreach ($fields as $field)
+        {
+            if (mb_substr($field->value, -1) != ';')
+            {
+                $field->value.= ';';
+            }
+
+            if (mb_substr($field->value, 0, 7) != 'return ')
+            {
+                $field->value = 'return ' . $field->value;
+            }
+
+            $value = "";
+
+            try
+            {
+                $value = @eval($field->value);
+            }
+            catch (CException $e){}
+
+            $codes[]  = trim($field->code);
+            $values[] = $value;
+        }
+
+        $text = urldecode($text);
+
+        return str_replace($codes, $values, $text);
     }
 }

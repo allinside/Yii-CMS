@@ -6,15 +6,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e5a110c-e6df-4e2c-adfe-bd6233fb4d51" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/registration.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/PasswordRecoverRequestDone.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/Registration.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/RegistrationDone.php" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/Activate.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/activate.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/ActivateRequest.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/activateRequest.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/ActivateRequestDone.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/activateRequestDone.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/Login.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/login.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/PasswordRecover.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/passwordRecover.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/PasswordRecoverRequest.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/passwordRecoverRequest.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" afterPath="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php" afterPath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/controllers/TestController.php" afterPath="$PROJECT_DIR$/protected/modules/main/controllers/TestController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/config/main.php" afterPath="$PROJECT_DIR$/protected/config/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/mailer/models/MailerField.php" afterPath="$PROJECT_DIR$/protected/modules/mailer/models/MailerField.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/mailer/models/MailerLetter.php" afterPath="$PROJECT_DIR$/protected/modules/mailer/models/MailerLetter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/forms/SettingForm.php" afterPath="$PROJECT_DIR$/protected/modules/main/forms/SettingForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/models/Setting.php" afterPath="$PROJECT_DIR$/protected/modules/main/models/Setting.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/manage.php" afterPath="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/manage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/view.php" afterPath="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/controllers/UserController.php" afterPath="$PROJECT_DIR$/protected/modules/users/controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/forms/RegistrationForm.php" afterPath="$PROJECT_DIR$/protected/modules/users/forms/RegistrationForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/forms/UserForm.php" afterPath="$PROJECT_DIR$/protected/modules/users/forms/UserForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/data/urlRules.txt" afterPath="$PROJECT_DIR$/protected/modules/users/data/urlRules.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/models/User.php" afterPath="$PROJECT_DIR$/protected/modules/users/models/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/layouts/_form.php" afterPath="$PROJECT_DIR$/protected/views/layouts/_form.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yii_cms.sql" afterPath="$PROJECT_DIR$/yii_cms.sql" />
     </list>
     <ignored path="Yii-CMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,55 +50,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserController.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/config/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="41" selection-start="2300" selection-end="2300" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/modules/users/controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="18" selection-start="2854" selection-end="2854" vertical-scroll-proportion="-25.8">
+            <state line="203" column="22" selection-start="5666" selection-end="5680" vertical-scroll-proportion="0.33333334">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DateFormatBehavior.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php">
+      <file leaf-file-name="registration.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/modules/users/views/user/registration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="13" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/modules/users/models/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="0" selection-start="1404" selection-end="1712" vertical-scroll-proportion="0.6871728">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="4" selection-start="794" selection-end="794" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserForm.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/users/forms/UserForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="12" selection-start="1066" selection-end="1073" vertical-scroll-proportion="-26.08">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationForm.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/users/forms/RegistrationForm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
+            <state line="3" column="72" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -105,22 +91,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/view.php" />
-        <option value="$PROJECT_DIR$/protected/modules/mailer/data/dump.sql" />
-        <option value="$PROJECT_DIR$/protected/libs/tools/Mailman.php" />
-        <option value="$PROJECT_DIR$/protected/modules/mailer/models/MailerLetter.php" />
-        <option value="$PROJECT_DIR$/protected/modules/main/models/Setting.php" />
-        <option value="$PROJECT_DIR$/protected/components/WebModule.php" />
-        <option value="$PROJECT_DIR$/protected/modules/mailer/MailerModule.php" />
-        <option value="$PROJECT_DIR$/protected/modules/main/controllers/TestController.php" />
-        <option value="$PROJECT_DIR$/protected/views/layouts/_form.php" />
-        <option value="$PROJECT_DIR$/protected/modules/users/forms/UserForm.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/protected/components/ActiveRecordModel.php" />
         <option value="$PROJECT_DIR$/protected/modules/users/forms/RegistrationForm.php" />
         <option value="$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php" />
-        <option value="$PROJECT_DIR$/protected/modules/users/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/protected/modules/mailer/models/MailerField.php" />
+        <option value="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/manage.php" />
+        <option value="$PROJECT_DIR$/protected/modules/main/forms/SettingForm.php" />
+        <option value="$PROJECT_DIR$/protected/modules/main/models/Setting.php" />
+        <option value="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/view.php" />
+        <option value="$PROJECT_DIR$/protected/modules/users/controllers/UserAdminController.php" />
+        <option value="$PROJECT_DIR$/protected/modules/mailer/models/MailerLetter.php" />
+        <option value="$PROJECT_DIR$/protected/modules/users/data/urlRules.txt" />
+        <option value="$PROJECT_DIR$/protected/config/main.php" />
         <option value="$PROJECT_DIR$/protected/modules/users/models/User.php" />
+        <option value="$PROJECT_DIR$/protected/components/WebUser.php" />
+        <option value="$PROJECT_DIR$/protected/modules/users/views/user/registration.php" />
+        <option value="$PROJECT_DIR$/protected/modules/users/controllers/UserController.php" />
       </list>
     </option>
   </component>
@@ -223,11 +209,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layouts" />
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -248,22 +230,8 @@
               <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
+              <option name="myItemId" value="users" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -281,11 +249,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yii-CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Yii-CMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="activeRecordBehaviors" />
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -420,104 +402,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/protected/modules/mailer/models/MailerField.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="43" selection-start="669" selection-end="675" vertical-scroll-proportion="0.5940594">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/views/settingAdmin/manage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="13" selection-start="588" selection-end="588" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/forms/SettingForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="40" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/views/settingAdmin/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="250" selection-end="250" vertical-scroll-proportion="0.23940149">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/main/controllers/SettingAdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="39" selection-start="96" selection-end="101" vertical-scroll-proportion="0.091377094">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="23" selection-start="3037" selection-end="3040" vertical-scroll-proportion="0.33246073">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/main/models/Setting.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="35" selection-start="1380" selection-end="1395" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/mailer/MailerModule.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="0" selection-start="3049" selection-end="3049" vertical-scroll-proportion="0.67005074" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/models/YmarketPage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.594096" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/ymarket/models/YmarketProduct.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-5.2619925" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/controllers/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="64" column="35" selection-start="1375" selection-end="1390" vertical-scroll-proportion="0.4524715">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/main/controllers/TestController.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/mailer/models/MailerLetter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="54" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0">
+        <state line="209" column="4" selection-start="5796" selection-end="5796" vertical-scroll-proportion="0.37623763">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/layouts/_adminForm.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/users/controllers/UserAdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="0" selection-start="4688" selection-end="5404" vertical-scroll-proportion="0.23740053">
+        <state line="52" column="37" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.4059406">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/users/data/urlRules.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="4" selection-start="794" selection-end="794" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/users/forms/UserForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="12" selection-start="1066" selection-end="1073" vertical-scroll-proportion="-26.08">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/layouts/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="55" selection-start="2272" selection-end="2279" vertical-scroll-proportion="-11.965517">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/users/forms/RegistrationForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/ActiveRecordModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="91" selection-start="1148" selection-end="1166" vertical-scroll-proportion="0.33246073">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="13" selection-start="520" selection-end="520" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/users/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="18" selection-start="2854" selection-end="2854" vertical-scroll-proportion="-25.8">
+        <state line="3" column="0" selection-start="179" selection-end="245" vertical-scroll-proportion="0.08769793">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/users/models/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="0" selection-start="1404" selection-end="1712" vertical-scroll-proportion="0.6871728">
+        <state line="249" column="0" selection-start="7272" selection-end="7272" vertical-scroll-proportion="0.4559387">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="41" selection-start="2300" selection-end="2300" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/faq/controllers/FaqController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.70158345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/WebUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="5" selection-start="911" selection-end="911" vertical-scroll-proportion="0.76613885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/users/views/user/registration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="72" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/users/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="203" column="22" selection-start="5666" selection-end="5680" vertical-scroll-proportion="0.33333334">
           <folding />
         </state>
       </provider>

@@ -32,12 +32,12 @@ class Setting extends ActiveRecordModel
 	public function rules()
 	{
 		return array(
-			array('code, title, value, element','required'),
+			array('code, name, value, element','required'),
 			array('code', 'length', 'max'=>50),
-			array('title', 'length', 'max'=>100),
+			array('name', 'length', 'max'=>100),
 			array('element', 'length', 'max'=>8),
             array('value', 'safe'),
-			array('id, code, title, element', 'safe', 'on'=>'search')
+			array('id, code, name, element', 'safe', 'on'=>'search')
 		);
 	}
 
@@ -47,7 +47,7 @@ class Setting extends ActiveRecordModel
 		$criteria=new CDbCriteria;
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('code',$this->code,true);
-		$criteria->compare('title',$this->title,true);
+		$criteria->compare('name',$this->name,true);
 		$criteria->compare('value',$this->value,true);
 		$criteria->compare('element',$this->element,true);
 
@@ -73,5 +73,29 @@ class Setting extends ActiveRecordModel
         }
 
         return $result;
+    }
+
+
+    public function getValue($code)
+    {
+        $setting = $this->findByAttributes(array('code' => $code));
+        if ($setting)
+        {
+            return $setting->value;
+        }
+    }
+
+
+    public function checkRequired($codes)
+    {
+        $settings = Setting::model()->findCodesValues(Yii::app()->controller->module->id);
+
+        foreach ($codes as $code)
+        {
+            if (!array_key_exists($code, $settings))
+            {
+                throw new Exception('Не найдена обязательная настройка: ' . $code);
+            }
+        }
     }
 }

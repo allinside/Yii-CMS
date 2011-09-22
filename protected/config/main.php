@@ -74,10 +74,11 @@ return array(
                 '<lang:[a-z]{2}>/search'   => 'main/main/search',
                 '<lang:[a-z]{2}>/feedback' => 'main/feedback/create',
 
-                '<lang:[a-z]{2}>/login'        => 'users/user/login',
-                '<lang:[a-z]{2}>/logout'       => 'users/user/logout',
+                '<lang:[a-z]{2}>/login'  => 'users/user/login',
+                '<lang:[a-z]{2}>/logout' => 'users/user/logout',
                 '<lang:[a-z]{2}>/registration' => 'users/user/registration',
-                'admin/login'                 => 'users/userAdmin/login',
+                '<lang:[a-z]{2}>/activateAccount/<code:.*>/<email:.*>' => 'users/user/activateAccount',
+                'admin/login' => 'users/userAdmin/login',
 
                 '<lang:[a-z]{2}>/news/<id:\d+>' => 'news/news/view',
                 '<lang:[a-z]{2}>/news'          => 'news/news/index',

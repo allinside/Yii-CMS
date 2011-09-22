@@ -11,7 +11,7 @@ class UserController extends BaseController
             "Login"                 => "Авторизация",
             "Logout"                => "Выход",
             "Registration"          => "Регистрация",
-            "Activate"              => "Активация аккаунта",
+            "ActivateAccount"       => "Активация аккаунта",
             "ActivateRequest"       => "Запрос на активацию аккаунта",
             "ChangePassword"        => "Смена пароля",
             "ChangePasswordRequest" => "Запрос на смену пароля",
@@ -70,7 +70,7 @@ class UserController extends BaseController
             }
         }
 
-        $this->render('Login', array(
+        $this->render('login', array(
             'form'       => $form,
             'auth_error' => isset($auth_error) ? $auth_error : null
         ));
@@ -86,6 +86,12 @@ class UserController extends BaseController
 
     public function actionRegistration()
     {
+        Setting::model()->checkRequired(array(
+            User::SETTING_REGISTRATION_MAIL_BODY,
+            User::SETTING_REGISTRATION_MAIL_SUBJECT,
+            User::SETTING_REGISTRATION_DONE_MESSAGE
+        ));
+
         if (!Yii::app()->user->isGuest)
         {
             throw new CException('Вы авторизованы, регистрация невозможна!');
@@ -99,35 +105,55 @@ class UserController extends BaseController
             $user->attributes = $_POST['User'];
             if ($user->validate())
             {
-                $user->password = md5($user->password);
-                $user->generateActivateCodeAndDate();
-                $user->save(false);
+                //$user->password = md5($user->password);
+                //$user->generateActivateCode();
+                //$user->save(false);
                 //$user->sendActivationMail();
-            }
-            else
-            {
-                //p($user->errors);
+
+                Yii::app()->user->setFlash(
+                    'done',
+                    Setting::model()->getValue(User::SETTING_REGISTRATION_DONE_MESSAGE)
+                );
+
+                $this->redirect($_SERVER['REQUEST_URI']);
             }
         }
 
-        $this->render('Registration', array('form' => $form));
+        $this->render('registration', array('form' => $form));
     }
 
 
-    public function actionActivate($code, $email)
+    public function actionActivateAccount($code, $email)
     {
-        $attrs = array('activate_code' => $code, 'email' => $email);
+        $user = User::model()->findByAttributes(array('activate_code' => $code));
+        echo $user->name;
 
-        $user = new User('Activate');
-        $user->attributes = $attrs;
+//        $attrs = array('activate_code' => $code, 'email' => $email);
+//
+//        $user = $this->findByAttributes($attrs);
+//
+//        if ($user)
+//        {
+//            if (strtotime($user->activate_date) + 24 * 3600 > time())
+//            {
+//                $user->activate_date = null;
+//                $user->activate_code = null;
+//                $user->status        = self::STATUS_ACTIVE;
+//                $user->save();
+//
+//                return true;
+//            }
+//            else
+//            {
+//                $this->activate_error = self::ACTIVATE_ERROR_DATE;
+//            }
+//        }
+//        else
+//        {
+//            $this->activate_error = UserIdentity::ERROR_UNKNOWN;
+//        }
 
-        if ($user->validate() && $user->activate($attrs))
-        {
-            $_SESSION['Activate'] = true;
-            $this->redirect('/users/user/login/from/activate');
-        }
-
-        $this->render('Activate');
+        $this->render('activateAccount');
     }
 
 
@@ -175,7 +201,7 @@ class UserController extends BaseController
             }
         }
 
-        $this->render('ActivateRequest', array(
+        $this->render('activateRequest', array(
             'form'  => $form,
             'error' => isset($error) ? $error : null
         ));
@@ -258,7 +284,7 @@ class UserController extends BaseController
             }
         }
 
-        $this->render("ChangePasswordRequest", array(
+        $this->render("changePasswordRequest", array(
             'form'  => $form,
             'error' => isset($error) ? $error : null
         ));
@@ -316,7 +342,7 @@ class UserController extends BaseController
             }
         }
 
-        $this->render('ChangePassword', array(
+        $this->render('changePassword', array(
             'model' => $model,
             'form'  => $form,
             'error' => isset($error) ? $error : null

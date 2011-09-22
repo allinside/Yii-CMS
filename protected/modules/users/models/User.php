@@ -11,6 +11,13 @@ class User extends ActiveRecordModel
     const GENDER_MAN   = "man";
     const GENDER_WOMAN = "woman";
 
+    const SETTING_CHANGE_PASSWORD_REQUEST_MAIL_SUBJECT = 'change_password_request_mail_subject';
+    const SETTING_CHANGE_PASSWORD_REQUEST_MAIL_BODY    = 'change_password_request_mail_body';
+    const SETTING_ACTIVATE_REQUEST_DONE_MESSAGE        = 'activate_request_done_message';
+    const SETTING_REGISTRATION_MAIL_SUBJECT            = 'registration_mail_subject';
+    const SETTING_REGISTRATION_DONE_MESSAGE            = 'registration_done_message';
+    const SETTING_REGISTRATION_MAIL_BODY               = 'registration_mail_body';
+
     public $password_c;
 
     public $captcha;
@@ -20,6 +27,8 @@ class User extends ActiveRecordModel
     public $activate_error;
 
     public $new_password;
+
+    public $activate_code;
 
 
     public static function model($className=__CLASS__)
@@ -82,8 +91,13 @@ class User extends ActiveRecordModel
 //                'on' => array('Registration', 'ActivateRequest', 'ChangePasswordRequest')
 //            ),
             array(
-                'first_name, last_name, patronymic, email, password, phone',
+                'email, password',
                 'required'
+            ),
+            array(
+                'first_name, last_name, patronymic, phone',
+                'required',
+                'on' => array('Registration')
             ),
             array('first_name, last_name, patronymic','length', 'max' => 40),
             array('first_name, last_name, patronymic','ruLatAlpha'),
@@ -229,40 +243,13 @@ class User extends ActiveRecordModel
     }
 
 
-    public function generateActivateCodeAndDate()
+    public function generateActivateCode()
     {
         $this->activate_code = md5($this->id . $this->name . $this->email . time(true) . rand(5, 10));
     }
 
 
-    public function activate($attrs)
-    {
-        $user = $this->findByAttributes($attrs);
-
-        if ($user)
-        {
-            if (strtotime($user->activate_date) + 24 * 3600 > time())
-            {
-                $user->activate_date = null;
-                $user->activate_code = null;
-                $user->status        = self::STATUS_ACTIVE;
-                $user->save();
-
-                return true;
-            }
-            else
-            {
-                $this->activate_error = self::ACTIVATE_ERROR_DATE;
-            }
-        }
-        else
-        {
-            $this->activate_error = UserIdentity::ERROR_UNKNOWN;
-        }
-    }
-
-
-    public function ChangePasswordRequest()
+    public function changePasswordRequest()
     {
         $settings = Settings::model()->getAll();
 
@@ -311,7 +298,20 @@ class User extends ActiveRecordModel
 
     public function sendActivationMail()
     {
+        $subject = Setting::model()->getValue(self::SETTING_REGISTRATION_MAIL_SUBJECT);
 
+        $body = Setting::model()->getValue(self::SETTING_REGISTRATION_MAIL_BODY);
+        $body = MailerLetter::model()->compileText($body, array('user' => $this));
+
+        MailerModule::sendMail($this->email, $subject, $body);
+    }
+
+
+    public function activateAccountUrl()
+    {
+        $url = 'http://' . $_SERVER['HTTP_HOST'];
+        $url.= Yii::app()->controller->url('/activateAccount/' . $this->activate_code . '/' . md5($this->email));
+        return $url;
     }
 }
 

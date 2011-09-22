@@ -8,7 +8,7 @@ return array(
 		'class' => 'CActiveForm'
 	),
 	'elements' => array(
-		'title' => array('type' => 'text'),
+		'name'  => array('type' => 'text'),
 		'value' => array('type' => $type) 
 	),
 	'buttons' => array('submit' => array('type' => 'submit', 'value' => 'Сохранить'))

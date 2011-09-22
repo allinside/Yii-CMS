@@ -6,7 +6,7 @@ $this->tabs['Редактировать'] = $this->createUrl('update', array('id
 $this->widget('application.components.DetailView', array(
 	'data' => $model,
 	'attributes' => array(
-        'title',
+        'name',
 		'code',
         array('label' => 'Значение', 'value' => $model->value, 'type' => 'raw')
 	),

@@ -22,7 +22,7 @@ $this->widget('application.components.GridView', array(
 	'filter' => $model,
 	'columns' => array(
         array('name' => 'module_id', 'value' => 'AppManager::getModuleName($data->module_id)'),
-		'title',
+		'name',
         array('name' => 'value', 'value' => 'getValue($data->value)', 'type' => 'raw'),
 		array(
 			'class'=>'CButtonColumn',

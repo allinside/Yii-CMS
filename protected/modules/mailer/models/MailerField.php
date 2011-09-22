@@ -26,6 +26,7 @@ class MailerField extends ActiveRecordModel
 			array('value', 'length', 'max' => 250),
             array('code', 'unique', 'attributeName' => 'code', 'className' => 'MailerField'),
 			array('name', 'unique', 'attributeName' => 'name', 'className' => 'MailerField'),
+            array('code', 'filter', 'filter' => 'trim'),
             array('id, code, name, value', 'safe', 'on' => 'search'),
 		);
 	}
