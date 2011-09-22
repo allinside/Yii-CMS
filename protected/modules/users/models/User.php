@@ -298,10 +298,13 @@ class User extends ActiveRecordModel
 
     public function sendActivationMail()
     {
+        $mailler_letter = MailerLetter::model();
+
         $subject = Setting::model()->getValue(self::SETTING_REGISTRATION_MAIL_SUBJECT);
+        $subject = $mailler_letter->compileText($subject);
 
         $body = Setting::model()->getValue(self::SETTING_REGISTRATION_MAIL_BODY);
-        $body = MailerLetter::model()->compileText($body, array('user' => $this));
+        $body = $mailler_letter->compileText($body, array('user' => $this));
 
         MailerModule::sendMail($this->email, $subject, $body);
     }

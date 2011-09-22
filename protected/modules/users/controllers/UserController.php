@@ -3,7 +3,16 @@
 class UserController extends BaseController
 {
     const ERROR_PASSWORD_RECOVER_AUTH = 'Вы не можете восстановить пароль будучи авторизованным!';
-    
+
+
+    public function accessRules()
+    {
+        return array(
+            ''
+        );
+    }
+
+
     
     public static function actionsTitles() 
     {
@@ -105,10 +114,10 @@ class UserController extends BaseController
             $user->attributes = $_POST['User'];
             if ($user->validate())
             {
-                //$user->password = md5($user->password);
-                //$user->generateActivateCode();
-                //$user->save(false);
-                //$user->sendActivationMail();
+                $user->password = md5($user->password);
+                $user->generateActivateCode();
+                $user->save(false);
+                $user->sendActivationMail();
 
                 Yii::app()->user->setFlash(
                     'done',

@@ -6,28 +6,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e5a110c-e6df-4e2c-adfe-bd6233fb4d51" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/registration.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/PasswordRecoverRequestDone.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/Registration.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/RegistrationDone.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/Activate.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/activate.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/ActivateRequest.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/activateRequest.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/ActivateRequestDone.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/activateRequestDone.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/Login.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/login.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/PasswordRecover.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/passwordRecover.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/PasswordRecoverRequest.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/passwordRecoverRequest.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/protected/modules/users/views/user/activate.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/user/activateAccount.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/config/main.php" afterPath="$PROJECT_DIR$/protected/config/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/mailer/models/MailerField.php" afterPath="$PROJECT_DIR$/protected/modules/mailer/models/MailerField.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/mailer/models/MailerLetter.php" afterPath="$PROJECT_DIR$/protected/modules/mailer/models/MailerLetter.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/forms/SettingForm.php" afterPath="$PROJECT_DIR$/protected/modules/main/forms/SettingForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/models/Setting.php" afterPath="$PROJECT_DIR$/protected/modules/main/models/Setting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/manage.php" afterPath="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/manage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/view.php" afterPath="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/view.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/controllers/UserController.php" afterPath="$PROJECT_DIR$/protected/modules/users/controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/data/urlRules.txt" afterPath="$PROJECT_DIR$/protected/modules/users/data/urlRules.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/models/User.php" afterPath="$PROJECT_DIR$/protected/modules/users/models/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/yii_cms.sql" afterPath="$PROJECT_DIR$/yii_cms.sql" />
     </list>
     <ignored path="Yii-CMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,35 +32,7 @@
     <favorites_list name="Yii-CMS" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="main.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/config/main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="41" selection-start="2300" selection-end="2300" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/modules/users/controllers/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="203" column="22" selection-start="5666" selection-end="5680" vertical-scroll-proportion="0.33333334">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registration.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/users/views/user/registration.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="72" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -100,12 +55,12 @@
         <option value="$PROJECT_DIR$/protected/modules/main/models/Setting.php" />
         <option value="$PROJECT_DIR$/protected/modules/main/views/settingAdmin/view.php" />
         <option value="$PROJECT_DIR$/protected/modules/users/controllers/UserAdminController.php" />
-        <option value="$PROJECT_DIR$/protected/modules/mailer/models/MailerLetter.php" />
         <option value="$PROJECT_DIR$/protected/modules/users/data/urlRules.txt" />
         <option value="$PROJECT_DIR$/protected/config/main.php" />
-        <option value="$PROJECT_DIR$/protected/modules/users/models/User.php" />
         <option value="$PROJECT_DIR$/protected/components/WebUser.php" />
         <option value="$PROJECT_DIR$/protected/modules/users/views/user/registration.php" />
+        <option value="$PROJECT_DIR$/protected/modules/mailer/models/MailerLetter.php" />
+        <option value="$PROJECT_DIR$/protected/modules/users/models/User.php" />
         <option value="$PROJECT_DIR$/protected/modules/users/controllers/UserController.php" />
       </list>
     </option>
@@ -169,106 +124,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Yii-CMS" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="users" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -339,7 +194,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="51" width="1280" height="998" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -347,7 +202,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29373473" sideWeight="0.6666667" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29373473" sideWeight="0.6666667" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -451,13 +306,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/mailer/models/MailerLetter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="209" column="4" selection-start="5796" selection-end="5796" vertical-scroll-proportion="0.37623763">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/users/controllers/UserAdminController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="52" column="37" selection-start="1443" selection-end="1443" vertical-scroll-proportion="0.4059406">
@@ -468,20 +316,6 @@
     <entry file="file://$PROJECT_DIR$/protected/modules/users/data/urlRules.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="0" selection-start="179" selection-end="245" vertical-scroll-proportion="0.08769793">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/users/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="249" column="0" selection-start="7272" selection-end="7272" vertical-scroll-proportion="0.4559387">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="41" selection-start="2300" selection-end="2300" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -507,9 +341,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/mailer/models/MailerLetter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="233" column="13" selection-start="6383" selection-end="6383" vertical-scroll-proportion="-16.92">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/users/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="304" column="0" selection-start="8736" selection-end="8736" vertical-scroll-proportion="-9.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/users/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="203" column="22" selection-start="5666" selection-end="5680" vertical-scroll-proportion="0.33333334">
+        <state line="10" column="13" selection-start="229" selection-end="229" vertical-scroll-proportion="0.3065134">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="41" selection-start="2300" selection-end="2300" vertical-scroll-proportion="0.41584158">
           <folding />
         </state>
       </provider>

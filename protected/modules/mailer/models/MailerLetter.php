@@ -230,16 +230,11 @@ class MailerLetter extends ActiveRecordModel
                 $field->value = 'return ' . $field->value;
             }
 
-            $value = "";
-
-            try
+            if (mb_strpos($text, $field->code) !== false)
             {
-                $value = @eval($field->value);
+                $codes[]  = trim($field->code);
+                $values[] = @eval($field->value);
             }
-            catch (CException $e){}
-
-            $codes[]  = trim($field->code);
-            $values[] = $value;
         }
 
         $text = urldecode($text);
