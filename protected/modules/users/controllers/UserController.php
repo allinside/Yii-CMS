@@ -91,19 +91,22 @@ class UserController extends BaseController
             throw new CException('Вы авторизованы, регистрация невозможна!');
         }
 
-        $model = new User('Registration');
-
-        $form = new BaseForm('users.RegistrationForm', $model);
-
-        $this->performAjaxValidation($model);
+        $user = new User('Registration');
+        $form = new BaseForm('users.RegistrationForm', $user);
 
         if (isset($_POST['User']))
         {
-            $model->attributes = $_POST['User'];
-            if ($model->validate() && $model->register($_POST['User']))
+            $user->attributes = $_POST['User'];
+            if ($user->validate())
             {
-                $_SESSION["RegistrationDone"] = true;
-                $this->redirect($this->url('/users/user/RegistrationDone'));
+                $user->password = md5($user->password);
+                $user->generateActivateCodeAndDate();
+                $user->save(false);
+                //$user->sendActivationMail();
+            }
+            else
+            {
+                //p($user->errors);
             }
         }
 

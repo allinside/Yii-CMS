@@ -75,44 +75,33 @@ class User extends ActiveRecordModel
     public function rules()
     {
         return array(
+//            array(
+//                'captcha',
+//                'application.extensions.recaptcha.EReCaptchaValidator',
+//                'privateKey' => '6LcsjsMSAAAAAHGMdF84g3szTZZe0VVwMof5bD7Y',
+//                'on' => array('Registration', 'ActivateRequest', 'ChangePasswordRequest')
+//            ),
             array(
-                'captcha',
-                'application.extensions.recaptcha.EReCaptchaValidator',
-                'privateKey' => '6LcsjsMSAAAAAHGMdF84g3szTZZe0VVwMof5bD7Y',
-                'on' => array('Register', 'ActivateRequest', 'ChangePasswordRequest')
+                'first_name, last_name, patronymic, email, password, phone',
+                'required'
             ),
-            array('first_name', 'required', 'on' => array('Create', 'Update')),
             array('first_name, last_name, patronymic','length', 'max' => 40),
             array('first_name, last_name, patronymic','ruLatAlpha'),
-            array(
-                'email',
-                'required',
-                'on' => array(
-                    'Update',
-                    'Register',
-                    'Login',
-                    'Activate',
-                    'ActivateRequest',
-                    'ChangePasswordRequest',
-                    'Update',
-                    'Create'
-                )
-            ),
             array(
                 'new_password',
                 'required',
                 'on' => 'ChangePassword'
             ),
             array(
-                'birthdate',
+                'birthdate, gender',
                 'required',
-                'on' => array('Register')
+                'on' => array('Registration')
             ),
             array(
                 'password_c, password',
                 'required',
                 'on' => array(
-                    'Register',
+                    'Registration',
                     'ChangePassword',
                     'ChangePassword',
                     'Update',
@@ -136,7 +125,7 @@ class User extends ActiveRecordModel
                 'length',
                 'min' => 6,
                 'on' => array(
-                    'Register',
+                    'Registration',
                     'ChangePassword',
                     'ChangePassword',
                     'Update',
@@ -149,14 +138,14 @@ class User extends ActiveRecordModel
                 'unique',
                 'attributeName' => 'email',
                 'className' => 'User',
-                'on' => 'Register'
+                'on' => 'Registration'
             ),
             array(
                 'password_c',
                 'compare',
                 'compareAttribute' => 'password',
                 'on' => array(
-                    'Register',
+                    'Registration',
                     'ChangePassword',
                     'Update',
                     'Create'
@@ -168,6 +157,14 @@ class User extends ActiveRecordModel
                 'compareAttribute' => 'new_password',
                 'on' => 'ChangePassword'
             ),
+            array('phone', 'phone'),
+            array(
+                'birthdate',
+                'date',
+                'format'  => 'dd.mm.yyyy',
+                'message' => 'Верный формат даты (дд.мм.гггг) используйте календарь.'
+            ),
+            array('first_name, last_name, patronymic', 'length', 'min' => 2),
             array('email', 'length', 'max' => 200),
             array('gender', 'in', 'range' => array_keys(self::$gender_list)),
             array('status', 'in', 'range' => array_keys(self::$status_list)),
@@ -232,43 +229,9 @@ class User extends ActiveRecordModel
     }
 
 
-    public function register($attrs)
-    {
-        $attrs["password"] = md5($attrs["password"]);
-
-        $user = new User();
-        $user->attributes = $attrs;
-        $user->generateActivateCodeAndDate();
-
-        if ($user->save(false))
-        {
-            $user->sendActivationMail();
-            return true;
-        }
-    }
-
-
     public function generateActivateCodeAndDate()
     {
         $this->activate_code = md5($this->id . $this->name . $this->email . time(true) . rand(5, 10));
-    }
-
-
-    public function sendActivationMail()
-    {
-        $settings = Settings::model()->getAll();
-
-        $mail_body = str_replace(
-            array("{NAME}", "{SITE_NAME}", "{LINK}"),
-            array(
-                $this->name,
-                $settings["SITE_NAME"]["value"],
-                "http://" . $_SERVER["HTTP_HOST"] . "/users/user/activate/code/" . $this->activate_code . "/email/" . $this->email
-            ),
-            $settings["REGISTER_MAIL_BODY"]["value"]
-        );
-
-        Mailer::sendMail($this->email, $settings["REGISTER_MAIL_SUBJECT"]["value"], $mail_body);
     }
 
 
@@ -343,6 +306,12 @@ class User extends ActiveRecordModel
     public function isRootRole()
     {
         return $this->role->name == AuthItem::ROLE_ROOT;
+    }
+
+
+    public function sendActivationMail()
+    {
+
     }
 }
 

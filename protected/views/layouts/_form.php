@@ -42,7 +42,7 @@ $elements    = $form->getElements();
                 <?php if ($element->type == 'date'): ?>
 
                     <label for="<?php $element->name; ?>">
-                        <?php echo $form->getActiveFormWidget()->labelEx($form->model, $element->name); ?>
+                        <?php echo $element->label; ?>
                         <?php if ($element->required): ?>
                             (<?php echo Yii::t('main', 'обязательное поле'); ?>)
                         <?php endif ?>
@@ -58,6 +58,23 @@ $elements    = $form->getElements();
                     ));
                     ?>
                     <?php echo $form->getActiveFormWidget()->error($form->model, $element->name); ?>
+
+                <?php elseif ($element->name == 'captcha'): ?>
+
+                    <p>
+                        <?php echo $form->getActiveFormWidget()->labelEx($form->model, 'captcha'); ?>
+                        <?php
+                        $this->widget('application.extensions.recaptcha.EReCaptcha',
+                           array(
+                               'model'      => $form->model,
+                               'attribute'  => 'captcha',
+                               'theme'      => 'red',
+                               'language'   => 'ru_Ru',
+                               'publicKey' => '6LcsjsMSAAAAAG5GLiFpNi5R80_tg6v3NndjyuVh'
+                        ));
+                        ?>
+                        <?php echo $form->getActiveFormWidget()->error($form->model, 'captcha'); ?>
+                    </p>
 
                 <?php else : ?>
 

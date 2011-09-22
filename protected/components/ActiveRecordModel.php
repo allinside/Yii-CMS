@@ -73,7 +73,7 @@ class ActiveRecordModel extends CActiveRecord
         {
             if (!preg_match(self::PATTERN_LAT_ALPHA, $this->$attr))
             {
-                $this->addError($attr, Yii::t('main', 'только латинский алфавит'));
+                $this->addError($attr, Yii::t('main', 'Только латинский алфавит'));
             }
         }    
     }
@@ -85,7 +85,7 @@ class ActiveRecordModel extends CActiveRecord
         {
             if (!preg_match(self::PATTERN_RULAT_ALPHA, $this->$attr))
             {
-                $this->addError($attr, Yii::t('main', 'только русский или латинский алфавит'));
+                $this->addError($attr, Yii::t('main', 'Только русский или латинский алфавит'));
             }
         }
     }
@@ -97,7 +97,7 @@ class ActiveRecordModel extends CActiveRecord
         {
             if (!preg_match(self::PATTERN_RULAT_ALPHA_SPACES, $this->$attr))
             {
-                $this->addError($attr, Yii::t('main', 'только русский или латинский алфавит с учетом пробелов'));
+                $this->addError($attr, Yii::t('main', 'Только русский или латинский алфавит с учетом пробелов'));
             }
         }
     }

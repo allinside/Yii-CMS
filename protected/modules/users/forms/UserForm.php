@@ -27,7 +27,10 @@ return array(
         	'items' => CHtml::listData($roles, 'name', 'description')
     	),
         'password'   => array('type' => 'password'),
-        'password_c' => array('type' => 'password')
+        'password_c' => array('type' => 'password'),
+        'captcha' => array(
+            'type' => 'captcha'
+        ),
     ),
     'buttons' => array(
         'submit' => array('type' => 'submit', 'value' => 'сохранить')
