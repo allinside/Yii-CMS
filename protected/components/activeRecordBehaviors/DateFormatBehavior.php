@@ -4,7 +4,9 @@ class DateFormatBehavior extends CActiveRecordBehavior
 {
     const DB_DATE_TIME_FORMAT = 'Y-m-d h:i:c';
     const DB_DATE_FORMAT      = 'Y-m-d';
-
+	
+    public $not_formattable_attrs = array('date_create', 'date_update');
+     
 
     public function beforeSave()
     {
@@ -15,6 +17,11 @@ class DateFormatBehavior extends CActiveRecordBehavior
         {
             $attr = $column->name;
 
+            if (in_array($attr, $this->not_formattable_attrs)) 
+            {
+            	continue;
+            }
+            
             if (!$model->$attr)
             {
                 continue;

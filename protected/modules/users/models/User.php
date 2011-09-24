@@ -17,7 +17,16 @@ class User extends ActiveRecordModel
     const SETTING_REGISTRATION_MAIL_SUBJECT            = 'registration_mail_subject';
     const SETTING_REGISTRATION_DONE_MESSAGE            = 'registration_done_message';
     const SETTING_REGISTRATION_MAIL_BODY               = 'registration_mail_body';
-
+    
+    const SCENARIO_CHANGE_PASSWORD_REQUEST = 'ChangePasswordRequest';
+    const SCENARIO_ACTIVATE_REQUEST        = 'ActivateRequest';
+    const SCENARIO_CHANGE_PASSWORD         = 'ChangePassword';
+    const SCENARIO_REGISTRATION            = 'Registration';
+    const SCENARIO_UPDATE                  = 'Update';	
+    const SCENARIO_CREATE                  = 'Create';
+    const SCENARIO_LOGIN                   = 'Login';
+    
+    
     public $password_c;
 
     public $captcha;
@@ -84,12 +93,16 @@ class User extends ActiveRecordModel
     public function rules()
     {
         return array(
-//            array(
-//                'captcha',
-//                'application.extensions.recaptcha.EReCaptchaValidator',
-//                'privateKey' => '6LcsjsMSAAAAAHGMdF84g3szTZZe0VVwMof5bD7Y',
-//                'on' => array('Registration', 'ActivateRequest', 'ChangePasswordRequest')
-//            ),
+            array(
+                'captcha',
+                'application.extensions.recaptcha.EReCaptchaValidator',
+                'privateKey' => '6LcsjsMSAAAAAHGMdF84g3szTZZe0VVwMof5bD7Y',
+                'on' => array(
+            		self::SCENARIO_REGISTRATION, 
+            		self::SCENARIO_ACTIVATE_REQUEST, 
+            		self::SCENARIO_CHANGE_PASSWORD_REQUEST
+            	)
+            ),
             array(
                 'email, password',
                 'required'
@@ -97,36 +110,35 @@ class User extends ActiveRecordModel
             array(
                 'first_name, last_name, patronymic, phone',
                 'required',
-                'on' => array('Registration')
+                'on' => array(self::SCENARIO_REGISTRATION)
             ),
             array('first_name, last_name, patronymic','length', 'max' => 40),
             array('first_name, last_name, patronymic','ruLatAlpha'),
             array(
                 'new_password',
                 'required',
-                'on' => 'ChangePassword'
+                'on' => self::SCENARIO_CHANGE_PASSWORD
             ),
             array(
                 'birthdate, gender',
                 'required',
-                'on' => array('Registration')
+                'on' => array(self::SCENARIO_REGISTRATION)
             ),
             array(
                 'password_c, password',
                 'required',
                 'on' => array(
-                    'Registration',
-                    'ChangePassword',
-                    'ChangePassword',
-                    'Update',
-                    'Create'
+                    self::SCENARIO_REGISTRATION,
+                    self::SCENARIO_CHANGE_PASSWORD,
+                    self::SCENARIO_UPDATE,
+                    self::SCENARIO_CREATE
                 )
             ),
 
             array(
                 'password',
                 'required',
-                'on' => 'Login'
+                'on' => self::SCENARIO_LOGIN
             ),
 
             array(
@@ -139,11 +151,10 @@ class User extends ActiveRecordModel
                 'length',
                 'min' => 6,
                 'on' => array(
-                    'Registration',
-                    'ChangePassword',
-                    'ChangePassword',
-                    'Update',
-                    'Create'
+                    self::SCENARIO_REGISTRATION,
+                    self::SCENARIO_CHANGE_PASSWORD,
+                    self::SCENARIO_UPDATE,
+                    self::SCENARIO_CREATE
                 )
             ),
             array('email', 'email'),
@@ -152,31 +163,32 @@ class User extends ActiveRecordModel
                 'unique',
                 'attributeName' => 'email',
                 'className' => 'User',
-                'on' => 'Registration'
+                'on' => self::SCENARIO_REGISTRATION
             ),
             array(
                 'password_c',
                 'compare',
                 'compareAttribute' => 'password',
                 'on' => array(
-                    'Registration',
-                    'ChangePassword',
-                    'Update',
-                    'Create'
+                    self::SCENARIO_REGISTRATION,
+                    self::SCENARIO_CHANGE_PASSWORD,
+                    self::SCENARIO_UPDATE,
+                    self::SCENARIO_CREATE
                 )
             ),
             array(
                 'password_c',
                 'compare',
                 'compareAttribute' => 'new_password',
-                'on' => 'ChangePassword'
+                'on' => self::SCENARIO_CHANGE_PASSWORD
             ),
             array('phone', 'phone'),
             array(
                 'birthdate',
                 'date',
                 'format'  => 'dd.mm.yyyy',
-                'message' => 'Верный формат даты (дд.мм.гггг) используйте календарь.'
+                'message' => 'Верный формат даты (дд.мм.гггг) используйте календарь.',
+            	'on' => self::SCENARIO_REGISTRATION
             ),
             array('first_name, last_name, patronymic', 'length', 'min' => 2),
             array('email', 'length', 'max' => 200),

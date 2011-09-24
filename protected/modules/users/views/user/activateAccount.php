@@ -1,5 +1,5 @@
 <?php $this->page_title = 'Активация аккаунта'; ?>
 
-<div class="error_box">
-    Ошибка активации аккаунта: неверные данные или с момента отправления письма прошло 24 часа
-</div>
+<?php if (isset($activate_error)): ?>
+	<?php echo $this->msg(Yii::t('UsersModule.main', $activate_error), 'error'); ?>
+<?php endif ?>

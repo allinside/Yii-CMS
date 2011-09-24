@@ -17,13 +17,13 @@ class UserController extends BaseController
     public static function actionsTitles() 
     {
         return array(
-            "Login"                 => "Авторизация",
-            "Logout"                => "Выход",
-            "Registration"          => "Регистрация",
-            "ActivateAccount"       => "Активация аккаунта",
-            "ActivateRequest"       => "Запрос на активацию аккаунта",
-            "ChangePassword"        => "Смена пароля",
-            "ChangePasswordRequest" => "Запрос на смену пароля",
+            "Login"                  => "Авторизация",
+            "Logout"                 => "Выход",
+            "Registration"           => "Регистрация",
+            "ActivateAccount"        => "Активация аккаунта",
+            "ActivateAccountRequest" => "Запрос на активацию аккаунта",
+            "ChangePassword"         => "Смена пароля",
+            "ChangePasswordRequest"  => "Запрос на смену пароля",
         );
     }
 
@@ -51,13 +51,17 @@ class UserController extends BaseController
 
 
     public function actionLogin()
-    {
+    {	
+    	$u = User::model()->findByPk(1);
+    	$u->first_name = 'yo';
+    	$u->save(); 
+    	
         if (!Yii::app()->user->isGuest)
         {
             throw new CException('Вы уже авторизованы!');
         }
 
-        $model = new User('Login');
+        $model = new User(User::SCENARIO_LOGIN);
 
         $form = new BaseForm('users.LoginForm', $model);
 
@@ -75,6 +79,12 @@ class UserController extends BaseController
                 else 
                 {
                     $auth_error = $identity->errorCode;
+                    if ($auth_error == UserIdentity::ERROR_NOT_ACTIVE) 
+                    {
+                    	$auth_error.= "<br/><a href='" . $this->url('/activateAccountRequest') . "'>
+                    							Мне не пришло письмо, активировать аккаунт повторно
+                    						</a>";
+                    }
                 }    
             }
         }
@@ -106,7 +116,7 @@ class UserController extends BaseController
             throw new CException('Вы авторизованы, регистрация невозможна!');
         }
 
-        $user = new User('Registration');
+        $user = new User(User::SCENARIO_REGISTRATION);
         $form = new BaseForm('users.RegistrationForm', $user);
 
         if (isset($_POST['User']))
@@ -117,8 +127,14 @@ class UserController extends BaseController
                 $user->password = md5($user->password);
                 $user->generateActivateCode();
                 $user->save(false);
+                
+                $assignment = new AuthAssignment();
+                $assignment->itemname = AuthItem::ROLE_DEFAULT;
+                $assignment->userid   = $user->id;
+                $assignment->save();                
+                
                 $user->sendActivationMail();
-
+				
                 Yii::app()->user->setFlash(
                     'done',
                     Setting::model()->getValue(User::SETTING_REGISTRATION_DONE_MESSAGE)
@@ -135,45 +151,47 @@ class UserController extends BaseController
     public function actionActivateAccount($code, $email)
     {
         $user = User::model()->findByAttributes(array('activate_code' => $code));
-        echo $user->name;
-
-//        $attrs = array('activate_code' => $code, 'email' => $email);
-//
-//        $user = $this->findByAttributes($attrs);
-//
-//        if ($user)
-//        {
-//            if (strtotime($user->activate_date) + 24 * 3600 > time())
-//            {
-//                $user->activate_date = null;
-//                $user->activate_code = null;
-//                $user->status        = self::STATUS_ACTIVE;
-//                $user->save();
-//
-//                return true;
-//            }
-//            else
-//            {
-//                $this->activate_error = self::ACTIVATE_ERROR_DATE;
-//            }
-//        }
-//        else
-//        {
-//            $this->activate_error = UserIdentity::ERROR_UNKNOWN;
-//        }
-
-        $this->render('activateAccount');
+       	 
+        if ($user && md5($user->email) == $email)
+        {	
+            if (strtotime($user->date_create) + 24 * 3600 > time())
+            {	
+                $user->activate_date = null;
+                $user->activate_code = null;
+                $user->status        = User::STATUS_ACTIVE;
+                $user->save();
+   
+		        Yii::app()->user->setFlash(
+		        	'acrivate_done', 
+		        	'Активация аккаунта прошла успешно! Вы можете авторизоваться.'
+		        );
+		        
+		        $this->redirect($this->url('/login'));
+            }
+            else
+            {
+                $activate_error = 'С момента регистрации прошло больше суток!';
+            }
+        }
+        else
+        {
+            $activate_error = 'Неверные данные активации аккаунта!';
+        }
+	
+        $this->render('activateAccount', array(
+        	'activate_error' => isset($activate_error) ? $activate_error : null
+        ));
     }
 
 
-    public function actionActivateRequest()
-    {
+    public function actionActivateAccountRequest()
+    {	die("actionActivateAccountRequest");
         if (!Yii::app()->user->isGuest)
         {
             throw new CException('Вы уже зарегистрированы!');
         }
 
-        $model = new User('ActivateRequest');
+        $model = new User(User::SCENARIO_ACTIVATE_REQUEST);
 
         $form = new BaseForm('users.ActivateRequestForm', $model);
 
@@ -219,7 +237,7 @@ class UserController extends BaseController
 
 //    public function actionChangePassword()
 //    {
-//        $model = new User('ChangePassword');
+//        $model = new User(User::SCENARIO_CHANGE_PASSWORD);
 //
 //        if (isset($_POST['User']))
 //        {
@@ -259,7 +277,7 @@ class UserController extends BaseController
             throw new CHttpException(SELF::ERROR_PASSWORD_RECOVER_AUTH);
         }
 
-        $model = new User('ChangePasswordRequest');
+        $model = new User(User::SCENARIO_CHANGE_PASSWORD_REQUEST);
         $form  = new BaseForm('users.ChangePasswordRequestForm', $model);
 
         if (isset($_POST['User']))
@@ -317,7 +335,7 @@ class UserController extends BaseController
             $this->forbidden();
         }
 
-        $model = new User('ChangePassword');
+        $model = new User(User::SCENARIO_CHANGE_PASSWORD);
         $form  = new BaseForm('users.ChangePasswordForm', $model);
         $user  = $model->findByPk($_GET['id']);
 

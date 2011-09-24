@@ -102,8 +102,6 @@ class UserAdminController extends AdminController
                 $assignment->userid   = $model->id;
                 $assignment->save();
           
-                Implex::refreshXLS(get_class($model));
-
                 $this->redirect(array('view','id' => $model->id));
             }
 		}
