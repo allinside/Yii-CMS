@@ -80,7 +80,8 @@ return array(
                 '<lang:[a-z]{2}>/activateAccount/<code:.*>/<email:.*>' => 'users/user/activateAccount',
         		'<lang:[a-z]{2}>/activateAccountRequest' => 'users/user/activateAccountRequest',
         		'<lang:[a-z]{2}>/changePasswordRequest'  => 'users/user/changePasswordRequest',
-                'admin/login' => 'users/userAdmin/login',
+				'<lang:[a-z]{2}>/changePassword/<code:.*>/<email:.*>' => 'users/user/changePassword',        
+        		'admin/login' => 'users/userAdmin/login',
 
                 '<lang:[a-z]{2}>/news/<id:\d+>' => 'news/news/view',
                 '<lang:[a-z]{2}>/news'          => 'news/news/index',

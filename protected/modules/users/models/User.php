@@ -308,6 +308,14 @@ class User extends ActiveRecordModel
         $url.= Yii::app()->controller->url('/activateAccount/' . $this->activate_code . '/' . md5($this->email));
         return $url;
     }
+    
+    
+    public function changePasswordUrl() 
+    {
+        $url = 'http://' . $_SERVER['HTTP_HOST'];
+        $url.= Yii::app()->controller->url('/changePassword/' . $this->password_change_code . '/' . md5($this->email));
+        return $url;    	
+    }
 }
 
 

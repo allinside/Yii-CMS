@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.3.7
+-- version 3.2.3
 -- http://www.phpmyadmin.net
 --
--- Хост: localhost
--- Время создания: Сен 22 2011 г., 20:26
--- Версия сервера: 5.1.49
--- Версия PHP: 5.3.3-1ubuntu9.5
+-- Host: localhost
+-- Generation Time: Sep 24, 2011 at 08:14 PM
+-- Server version: 5.1.54
+-- PHP Version: 5.3.5-1ubuntu7.2
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -16,13 +16,13 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- База данных: `yii_cms`
+-- Database: `yii_cms`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `actions`
+-- Table structure for table `actions`
 --
 
 CREATE TABLE IF NOT EXISTS `actions` (
@@ -39,14 +39,14 @@ CREATE TABLE IF NOT EXISTS `actions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- Дамп данных таблицы `actions`
+-- Dumping data for table `actions`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `actions_files`
+-- Table structure for table `actions_files`
 --
 
 CREATE TABLE IF NOT EXISTS `actions_files` (
@@ -59,14 +59,14 @@ CREATE TABLE IF NOT EXISTS `actions_files` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- Дамп данных таблицы `actions_files`
+-- Dumping data for table `actions_files`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `articles`
+-- Table structure for table `articles`
 --
 
 CREATE TABLE IF NOT EXISTS `articles` (
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Дамп данных таблицы `articles`
+-- Dumping data for table `articles`
 --
 
 INSERT INTO `articles` (`id`, `lang`, `section_id`, `title`, `text`, `date`, `date_create`) VALUES
@@ -92,7 +92,7 @@ INSERT INTO `articles` (`id`, `lang`, `section_id`, `title`, `text`, `date`, `da
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `articles_files`
+-- Table structure for table `articles_files`
 --
 
 CREATE TABLE IF NOT EXISTS `articles_files` (
@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `articles_files` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
--- Дамп данных таблицы `articles_files`
+-- Dumping data for table `articles_files`
 --
 
 INSERT INTO `articles_files` (`id`, `article_id`, `file`, `created_at`) VALUES
@@ -118,7 +118,7 @@ INSERT INTO `articles_files` (`id`, `article_id`, `file`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `articles_sections`
+-- Table structure for table `articles_sections`
 --
 
 CREATE TABLE IF NOT EXISTS `articles_sections` (
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `articles_sections` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Дамп данных таблицы `articles_sections`
+-- Dumping data for table `articles_sections`
 --
 
 INSERT INTO `articles_sections` (`id`, `lang`, `parent_id`, `name`, `date_create`, `in_sidebar`) VALUES
@@ -144,7 +144,7 @@ INSERT INTO `articles_sections` (`id`, `lang`, `parent_id`, `name`, `date_create
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `AuthAssignment`
+-- Table structure for table `AuthAssignment`
 --
 
 CREATE TABLE IF NOT EXISTS `AuthAssignment` (
@@ -157,16 +157,17 @@ CREATE TABLE IF NOT EXISTS `AuthAssignment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `AuthAssignment`
+-- Dumping data for table `AuthAssignment`
 --
 
 INSERT INTO `AuthAssignment` (`itemname`, `userid`, `bizrule`, `data`) VALUES
-('admin', 1, NULL, NULL);
+('admin', 1, NULL, NULL),
+('user', 24, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `AuthItem`
+-- Table structure for table `AuthItem`
 --
 
 CREATE TABLE IF NOT EXISTS `AuthItem` (
@@ -180,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `AuthItem` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `AuthItem`
+-- Dumping data for table `AuthItem`
 --
 
 INSERT INTO `AuthItem` (`name`, `type`, `description`, `bizrule`, `data`, `allow_for_all`) VALUES
@@ -378,7 +379,7 @@ INSERT INTO `AuthItem` (`name`, `type`, `description`, `bizrule`, `data`, `allow
 ('UserAdmin_View', 0, 'Просмотр пользователя (админка)', NULL, 'N;', 0),
 ('Users_Account', 1, 'Авторизация, регистрация, смена пароля', NULL, 's:0:"";', 1),
 ('User_ActivateAccount', 0, 'Активация аккаунта', NULL, 'N;', 0),
-('User_ActivateRequest', 0, 'Запрос на активацию аккаунта', NULL, 'N;', 0),
+('User_ActivateAccountRequest', 0, 'Запрос на активацию аккаунта', NULL, 'N;', 0),
 ('User_ChangePassword', 0, 'Смена пароля', NULL, 'N;', 0),
 ('User_ChangePasswordRequest', 0, 'Запрос на смену пароля', NULL, 'N;', 0),
 ('User_Login', 0, 'Авторизация', NULL, 'N;', 1),
@@ -403,7 +404,7 @@ INSERT INTO `AuthItem` (`name`, `type`, `description`, `bizrule`, `data`, `allow
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `AuthItemChild`
+-- Table structure for table `AuthItemChild`
 --
 
 CREATE TABLE IF NOT EXISTS `AuthItemChild` (
@@ -414,7 +415,7 @@ CREATE TABLE IF NOT EXISTS `AuthItemChild` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `AuthItemChild`
+-- Dumping data for table `AuthItemChild`
 --
 
 INSERT INTO `AuthItemChild` (`parent`, `child`) VALUES
@@ -545,7 +546,7 @@ INSERT INTO `AuthItemChild` (`parent`, `child`) VALUES
 ('Admin_Users', 'UserAdmin_Update'),
 ('Admin_Users', 'UserAdmin_View'),
 ('Users_Account', 'User_ActivateAccount'),
-('Users_Account', 'User_ActivateRequest'),
+('Users_Account', 'User_ActivateAccountRequest'),
 ('Users_Account', 'User_ChangePassword'),
 ('Users_Account', 'User_ChangePasswordRequest'),
 ('Users_Account', 'User_Login'),
@@ -554,7 +555,7 @@ INSERT INTO `AuthItemChild` (`parent`, `child`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `cities`
+-- Table structure for table `cities`
 --
 
 CREATE TABLE IF NOT EXISTS `cities` (
@@ -565,7 +566,7 @@ CREATE TABLE IF NOT EXISTS `cities` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 --
--- Дамп данных таблицы `cities`
+-- Dumping data for table `cities`
 --
 
 INSERT INTO `cities` (`id`, `name`) VALUES
@@ -587,7 +588,7 @@ INSERT INTO `cities` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `countries`
+-- Table structure for table `countries`
 --
 
 CREATE TABLE IF NOT EXISTS `countries` (
@@ -598,7 +599,7 @@ CREATE TABLE IF NOT EXISTS `countries` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=352 ;
 
 --
--- Дамп данных таблицы `countries`
+-- Dumping data for table `countries`
 --
 
 INSERT INTO `countries` (`id`, `name`) VALUES
@@ -884,7 +885,7 @@ INSERT INTO `countries` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `documents`
+-- Table structure for table `documents`
 --
 
 CREATE TABLE IF NOT EXISTS `documents` (
@@ -900,14 +901,14 @@ CREATE TABLE IF NOT EXISTS `documents` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- Дамп данных таблицы `documents`
+-- Dumping data for table `documents`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `documents_files`
+-- Table structure for table `documents_files`
 --
 
 CREATE TABLE IF NOT EXISTS `documents_files` (
@@ -921,14 +922,14 @@ CREATE TABLE IF NOT EXISTS `documents_files` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- Дамп данных таблицы `documents_files`
+-- Dumping data for table `documents_files`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `faq`
+-- Table structure for table `faq`
 --
 
 CREATE TABLE IF NOT EXISTS `faq` (
@@ -953,14 +954,14 @@ CREATE TABLE IF NOT EXISTS `faq` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- Дамп данных таблицы `faq`
+-- Dumping data for table `faq`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `faq_sections`
+-- Table structure for table `faq_sections`
 --
 
 CREATE TABLE IF NOT EXISTS `faq_sections` (
@@ -974,14 +975,14 @@ CREATE TABLE IF NOT EXISTS `faq_sections` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- Дамп данных таблицы `faq_sections`
+-- Dumping data for table `faq_sections`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `feedback`
+-- Table structure for table `feedback`
 --
 
 CREATE TABLE IF NOT EXISTS `feedback` (
@@ -999,7 +1000,7 @@ CREATE TABLE IF NOT EXISTS `feedback` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
--- Дамп данных таблицы `feedback`
+-- Dumping data for table `feedback`
 --
 
 INSERT INTO `feedback` (`id`, `first_name`, `last_name`, `patronymic`, `company`, `position`, `phone`, `email`, `comment`, `date_create`) VALUES
@@ -1023,7 +1024,7 @@ INSERT INTO `feedback` (`id`, `first_name`, `last_name`, `patronymic`, `company`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `languages`
+-- Table structure for table `languages`
 --
 
 CREATE TABLE IF NOT EXISTS `languages` (
@@ -1034,7 +1035,7 @@ CREATE TABLE IF NOT EXISTS `languages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `languages`
+-- Dumping data for table `languages`
 --
 
 INSERT INTO `languages` (`id`, `name`) VALUES
@@ -1044,7 +1045,7 @@ INSERT INTO `languages` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `log`
+-- Table structure for table `log`
 --
 
 CREATE TABLE IF NOT EXISTS `log` (
@@ -1054,10 +1055,10 @@ CREATE TABLE IF NOT EXISTS `log` (
   `logtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Время',
   `message` text COMMENT 'Сообщение',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=192 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=264 ;
 
 --
--- Дамп данных таблицы `log`
+-- Dumping data for table `log`
 --
 
 INSERT INTO `log` (`id`, `level`, `category`, `logtime`, `message`) VALUES
@@ -1254,12 +1255,85 @@ INSERT INTO `log` (`id`, `level`, `category`, `logtime`, `message`) VALUES
 (188, 'warning', 'application', '2011-09-22 20:22:49', 'Не удалось присвоить небезопасный атрибут "operations".\nin /var/www/Yii-CMS/protected/modules/rbac/controllers/TaskAdminController.php (107)\nin /var/www/Yii-CMS/index.php (30)'),
 (189, 'warning', 'application', '2011-09-22 20:22:49', 'Не удалось присвоить небезопасный атрибут "childs".\nin /var/www/Yii-CMS/protected/modules/rbac/controllers/TaskAdminController.php (107)\nin /var/www/Yii-CMS/index.php (30)'),
 (190, 'error', 'exception.CException', '2011-09-22 20:22:51', 'exception ''CException'' with message ''Вы авторизованы, регистрация невозможна!'' in /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php:97\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionRegistration()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''registration'')\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/regi...'')\n#6 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#7 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#8 {main} REQUEST_URI=/ru/registration'),
-(191, 'error', 'exception.CException', '2011-09-22 20:22:55', 'exception ''CException'' with message ''Контроллер UserController не может найти представление "activateAccount".'' in /var/www/Yii-CMS/protected/libs/yii/web/CController.php:875\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): CController->renderPartial(''activateAccount'', NULL, true)\n#1 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(156): CController->render(''activateAccount'')\n#2 [internal function]: UserController->actionActivateAccount(''7533c7b47ed8206...'', ''b2cd60cc789b7b1...'')\n#3 /var/www/Yii-CMS/protected/libs/yii/web/actions/CAction.php(104): ReflectionMethod->invokeArgs(Object(UserController), Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''activateAccount'')\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/acti...'')\n#10 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#11 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#12 {main} REQUEST_URI=/ru/activateAccount/7533c7b47ed8206d6913e6d271b23ec3/b2cd60cc789b7b17c33d812b65d0a9d9');
+(191, 'error', 'exception.CException', '2011-09-22 20:22:55', 'exception ''CException'' with message ''Контроллер UserController не может найти представление "activateAccount".'' in /var/www/Yii-CMS/protected/libs/yii/web/CController.php:875\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): CController->renderPartial(''activateAccount'', NULL, true)\n#1 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(156): CController->render(''activateAccount'')\n#2 [internal function]: UserController->actionActivateAccount(''7533c7b47ed8206...'', ''b2cd60cc789b7b1...'')\n#3 /var/www/Yii-CMS/protected/libs/yii/web/actions/CAction.php(104): ReflectionMethod->invokeArgs(Object(UserController), Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(UserController), Object(ReflectionMethod), Array)\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''activateAccount'')\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/acti...'')\n#10 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#11 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#12 {main} REQUEST_URI=/ru/activateAccount/7533c7b47ed8206d6913e6d271b23ec3/b2cd60cc789b7b17c33d812b65d0a9d9'),
+(192, 'error', 'exception.CException', '2011-09-24 13:36:03', 'exception ''CException'' with message ''Контроллер UserController содержит в своем представлении "/var/www/Yii-CMS/protected/modules/users/views/user/registration.php" тэги виджетов с неправильной вложенностью. В виджете CActiveForm не используется вызов endWidget().'' in /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php:94\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): CBaseController->renderFile(''/var/www/Yii-CM...'', Array, true)\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): CController->renderPartial(''registration'', Array, true)\n#2 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(131): CController->render(''registration'', Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionRegistration()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''registration'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/regi...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/registration'),
+(193, 'error', 'exception.CException', '2011-09-24 13:36:06', 'exception ''CException'' with message ''Контроллер UserController содержит в своем представлении "/var/www/Yii-CMS/protected/modules/users/views/user/registration.php" тэги виджетов с неправильной вложенностью. В виджете CActiveForm не используется вызов endWidget().'' in /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php:94\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): CBaseController->renderFile(''/var/www/Yii-CM...'', Array, true)\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): CController->renderPartial(''registration'', Array, true)\n#2 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(131): CController->render(''registration'', Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionRegistration()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''registration'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/regi...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/registration'),
+(194, 'error', 'exception.CException', '2011-09-24 13:36:11', 'exception ''CException'' with message ''Контроллер UserController содержит в своем представлении "/var/www/Yii-CMS/protected/modules/users/views/user/registration.php" тэги виджетов с неправильной вложенностью. В виджете CActiveForm не используется вызов endWidget().'' in /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php:94\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): CBaseController->renderFile(''/var/www/Yii-CM...'', Array, true)\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): CController->renderPartial(''registration'', Array, true)\n#2 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(131): CController->render(''registration'', Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionRegistration()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''registration'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/regi...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/registration'),
+(195, 'error', 'exception.CException', '2011-09-24 13:36:11', 'exception ''CException'' with message ''Контроллер UserController содержит в своем представлении "/var/www/Yii-CMS/protected/modules/users/views/user/registration.php" тэги виджетов с неправильной вложенностью. В виджете CActiveForm не используется вызов endWidget().'' in /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php:94\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): CBaseController->renderFile(''/var/www/Yii-CM...'', Array, true)\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): CController->renderPartial(''registration'', Array, true)\n#2 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(131): CController->render(''registration'', Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionRegistration()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''registration'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/regi...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/registration'),
+(196, 'error', 'exception.CException', '2011-09-24 13:36:22', 'exception ''CException'' with message ''Контроллер UserController содержит в своем представлении "/var/www/Yii-CMS/protected/modules/users/views/user/registration.php" тэги виджетов с неправильной вложенностью. В виджете CActiveForm не используется вызов endWidget().'' in /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php:94\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): CBaseController->renderFile(''/var/www/Yii-CM...'', Array, true)\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): CController->renderPartial(''registration'', Array, true)\n#2 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(131): CController->render(''registration'', Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionRegistration()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''registration'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/regi...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/registration'),
+(197, 'error', 'exception.CException', '2011-09-24 13:37:55', 'exception ''CException'' with message ''Путь CAssetManager.basePath "/var/www/Yii-CMS/assets" задан неверно. Удостоверьтесь, что директория существует и доступна для записи пользователю, под которым запущен веб-сервер.'' in /var/www/Yii-CMS/protected/libs/yii/web/CAssetManager.php:98\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CAssetManager.php(83): CAssetManager->setBasePath(''/var/www/Yii-CM...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CAssetManager.php(192): CAssetManager->getBasePath()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CClientScript.php(464): CAssetManager->publish(''/var/www/Yii-CM...'')\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CClientScript.php(317): CClientScript->getCoreScriptUrl()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CClientScript.php(197): CClientScript->renderCoreScripts()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(343): CClientScript->render(''<!DOCTYPE HTML ...'')\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(785): CController->processOutput(''<!DOCTYPE HTML ...'')\n#7 /var/www/Yii-CMS/protected/modules/users/controllers/UserAdminController.php(56): CController->render(''login'', Array)\n#8 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserAdminController->actionLogin()\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''login'')\n#13 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/userAdmin...'')\n#14 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#15 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#16 {main} REQUEST_URI=/admin/login'),
+(198, 'warning', 'application', '2011-09-24 13:38:54', 'Не удалось присвоить небезопасный атрибут "remember_me".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserAdminController.php (36)\nin /var/www/Yii-CMS/index.php (30)'),
+(199, 'error', 'exception.CException', '2011-09-24 13:55:06', 'exception ''CException'' with message ''Вы авторизованы, регистрация невозможна!'' in /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php:106\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionRegistration()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''registration'')\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/regi...'')\n#6 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#7 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#8 {main} REQUEST_URI=/ru/registration'),
+(200, 'error', 'php', '2011-09-24 13:55:32', 'include(.php): failed to open stream: No such file or directory (/var/www/Yii-CMS/protected/libs/yii/YiiBase.php:396)\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWidgetFactory.php(147): import()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(139): CWidgetFactory->createWidget()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(165): UserController->createWidget()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/form/CFormButtonElement.php(122): UserController->widget()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/form/CForm.php(507): CFormButtonElement->render()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/form/CForm.php(478): BaseForm->renderElement()\n#6 /var/www/Yii-CMS/protected/views/layouts/_form.php(103): BaseForm->renderButtons()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(119): require()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(88): UserController->renderInternal()\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): UserController->renderFile()\n#10 /var/www/Yii-CMS/protected/components/BaseForm.php(44): UserController->renderPartial()\n#11 /var/www/Yii-CMS/protected/modules/users/views/user/registration.php(6): BaseForm->__ToString()\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(119): require()\n#13 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(88): UserController->renderInternal()\n#14 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): UserController->renderFile()\n#15 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): UserController->renderPartial()\n#16 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(131): UserController->render()\n#17 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionRegistration()\n#18 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams()\n#19 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): UserController->runAction()\n#20 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): UserController->runActionWithFilters()\n#21 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): UserController->run()\n#22 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#23 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#24 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/ru/registration\nin /var/www/Yii-CMS/protected/views/layouts/_form.php (103)\nin /var/www/Yii-CMS/protected/components/BaseForm.php (44)\nin /var/www/Yii-CMS/protected/modules/users/views/user/registration.php (6)'),
+(201, 'error', 'php', '2011-09-24 13:55:44', 'include(texts.php): failed to open stream: No such file or directory (/var/www/Yii-CMS/protected/libs/yii/YiiBase.php:396)\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWidgetFactory.php(147): import()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(139): CWidgetFactory->createWidget()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(165): UserController->createWidget()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/form/CFormInputElement.php(215): UserController->widget()\n#4 /var/www/Yii-CMS/protected/views/layouts/_form.php(92): CFormInputElement->renderInput()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(119): require()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(88): UserController->renderInternal()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): UserController->renderFile()\n#8 /var/www/Yii-CMS/protected/components/BaseForm.php(44): UserController->renderPartial()\n#9 /var/www/Yii-CMS/protected/modules/users/views/user/registration.php(6): BaseForm->__ToString()\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(119): require()\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(88): UserController->renderInternal()\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): UserController->renderFile()\n#13 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): UserController->renderPartial()\n#14 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(131): UserController->render()\n#15 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionRegistration()\n#16 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams()\n#17 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): UserController->runAction()\n#18 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): UserController->runActionWithFilters()\n#19 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): UserController->run()\n#20 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#21 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#22 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/ru/registration\nin /var/www/Yii-CMS/protected/views/layouts/_form.php (92)\nin /var/www/Yii-CMS/protected/components/BaseForm.php (44)\nin /var/www/Yii-CMS/protected/modules/users/views/user/registration.php (6)'),
+(202, 'error', 'php', '2011-09-24 13:56:20', 'Cannot use a scalar value as an array (/var/www/Yii-CMS/protected/modules/users/forms/RegistrationForm.php:4)\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/form/CForm.php(141): BaseForm->__construct()\n#1 /var/www/Yii-CMS/protected/components/BaseForm.php(15): BaseForm->__construct()\n#2 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(110): BaseForm->__construct()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionRegistration()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): UserController->runAction()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): UserController->runActionWithFilters()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): UserController->run()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/ru/registration\nin /var/www/Yii-CMS/protected/modules/users/forms/RegistrationForm.php (4)\nin /var/www/Yii-CMS/protected/components/BaseForm.php (15)\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (110)'),
+(203, 'warning', 'application', '2011-09-24 13:56:30', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (114)\nin /var/www/Yii-CMS/index.php (30)'),
+(204, 'error', 'exception.CHttpException.404', '2011-09-24 13:57:25', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/4a8e7022/styles/menuarrow.gif".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/4a8e7022...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/4a8e7022/styles/menuarrow.gif'),
+(205, 'warning', 'application', '2011-09-24 13:57:35', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (114)\nin /var/www/Yii-CMS/index.php (30)'),
+(206, 'error', 'exception.CHttpException.404', '2011-09-24 14:12:24', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "ru/users/user/activateAccountRequest".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''ru/users/user/a...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/ru/users/user/activateAccountRequest'),
+(207, 'info', 'application', '2011-09-24 14:12:38', 'Задача $item_name не найдена!\nin /var/www/Yii-CMS/protected/components/BaseController.php (99)\nin /var/www/Yii-CMS/protected/components/BaseController.php (42)\nin /var/www/Yii-CMS/index.php (30)'),
+(208, 'error', 'exception.CHttpException.403', '2011-09-24 14:12:38', 'exception ''CHttpException'' with message ''Запрещено!'' in /var/www/Yii-CMS/protected/components/BaseController.php:162\nStack trace:\n#0 /var/www/Yii-CMS/protected/components/BaseController.php(44): BaseController->forbidden()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(298): BaseController->beforeAction(Object(CInlineAction))\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''activateAccount...'')\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/acti...'')\n#6 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#7 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#8 {main} REQUEST_URI=/ru/activateAccountRequest'),
+(209, 'error', 'php', '2011-09-24 14:30:23', 'Missing argument 2 for YiiBase::t(), called in /var/www/Yii-CMS/protected/modules/users/views/user/activateAccount.php on line 4 and defined (/var/www/Yii-CMS/protected/libs/yii/YiiBase.php:535)\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(88): UserController->renderInternal()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): UserController->renderFile()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): UserController->renderPartial()\n#3 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(173): UserController->render()\n#4 unknown(0): UserController->actionActivateAccount()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/actions/CAction.php(104): ReflectionMethod->invokeArgs()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): UserController->runAction()\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): UserController->runActionWithFilters()\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): UserController->run()\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#12 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#13 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/ru/activateAccount/77504c71bf0d968fb2b64dbfcec391df/sb2cd60cc789b7b17c33d812b65d0a9d9\nin /var/www/Yii-CMS/protected/modules/users/views/user/activateAccount.php (4)\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (173)\nin /var/www/Yii-CMS/index.php (30)'),
+(210, 'error', 'php', '2011-09-24 14:30:35', 'include(Users.php): failed to open stream: No such file or directory (/var/www/Yii-CMS/protected/libs/yii/YiiBase.php:396)\nStack trace:\n#0 unknown(0): spl_autoload_call()\n#1 /var/www/Yii-CMS/protected/libs/yii/i18n/CPhpMessageSource.php(99): ReflectionClass->__construct()\n#2 /var/www/Yii-CMS/protected/libs/yii/i18n/CPhpMessageSource.php(116): CPhpMessageSource->getMessageFile()\n#3 /var/www/Yii-CMS/protected/libs/yii/i18n/CMessageSource.php(102): CPhpMessageSource->loadMessages()\n#4 /var/www/Yii-CMS/protected/libs/yii/i18n/CMessageSource.php(84): CPhpMessageSource->translateMessage()\n#5 /var/www/Yii-CMS/protected/libs/yii/YiiBase.php(542): CPhpMessageSource->translate()\n#6 /var/www/Yii-CMS/protected/modules/users/views/user/activateAccount.php(4): t()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(119): require()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(88): UserController->renderInternal()\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): UserController->renderFile()\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): UserController->renderPartial()\n#11 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(173): UserController->render()\n#12 unknown(0): UserController->actionActivateAccount()\n#13 /var/www/Yii-CMS/protected/libs/yii/web/actions/CAction.php(104): ReflectionMethod->invokeArgs()\n#14 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()\n#15 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams()\n#16 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): UserController->runAction()\n#17 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): UserController->runActionWithFilters()\n#18 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): UserController->run()\n#19 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#20 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#21 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/ru/activateAccount/77504c71bf0d968fb2b64dbfcec391df/sb2cd60cc789b7b17c33d812b65d0a9d9\nin /var/www/Yii-CMS/protected/modules/users/views/user/activateAccount.php (4)\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (173)\nin /var/www/Yii-CMS/index.php (30)'),
+(211, 'warning', 'application', '2011-09-24 14:32:53', 'Не удалось присвоить небезопасный атрибут "remember_me".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserAdminController.php (36)\nin /var/www/Yii-CMS/index.php (30)'),
+(212, 'error', 'exception.CException', '2011-09-24 14:36:48', 'exception ''CException'' with message ''Вы уже авторизованы!'' in /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php:57\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionLogin()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''login'')\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/logi...'')\n#6 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#7 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#8 {main} REQUEST_URI=/ru/login'),
+(213, 'error', 'exception.CHttpException.404', '2011-09-24 14:37:24', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/4a8e7022/styles/menuarrow.gif".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/4a8e7022...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/4a8e7022/styles/menuarrow.gif'),
+(214, 'error', 'exception.CHttpException.404', '2011-09-24 14:39:03', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/4a8e7022/styles/menuarrow.gif".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/4a8e7022...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/4a8e7022/styles/menuarrow.gif'),
+(215, 'error', 'php', '2011-09-24 14:56:34', 'Trying to get property of non-object (/var/www/Yii-CMS/protected/components/WebUser.php:12)\nStack trace:\n#0 /var/www/Yii-CMS/protected/components/BaseController.php(90): WebUser->__isset()\n#1 /var/www/Yii-CMS/protected/components/BaseController.php(42): PageController->checkAccess()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(298): PageController->beforeAction()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): PageController->runAction()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): PageController->runActionWithFilters()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): PageController->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#7 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#8 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/ru\nin /var/www/Yii-CMS/protected/components/WebUser.php (12)\nin /var/www/Yii-CMS/protected/components/BaseController.php (90)\nin /var/www/Yii-CMS/protected/components/BaseController.php (42)'),
+(216, 'error', 'system.db.CDbCommand', '2011-09-24 14:59:01', 'Не удалось выполнить CDbCommand::execute(): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yii_cms`.`site_actions`, CONSTRAINT `site_actions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). Выполнявшийся SQL-запрос: INSERT INTO `site_actions` (`title`, `module`, `controller`, `action`, `user_id`, `object_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).\nin /var/www/Yii-CMS/protected/components/BaseController.php (83)\nin /var/www/Yii-CMS/protected/components/BaseController.php (47)\nin /var/www/Yii-CMS/index.php (30)'),
+(217, 'error', 'exception.CDbException', '2011-09-24 14:59:01', 'exception ''CDbException'' with message ''CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yii_cms`.`site_actions`, CONSTRAINT `site_actions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `site_actions` (`title`, `module`, `controller`, `action`, `user_id`, `object_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)'' in /var/www/Yii-CMS/protected/libs/yii/db/CDbCommand.php:338\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(1015): CDbCommand->execute()\n#1 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(779): CActiveRecord->insert(NULL)\n#2 /var/www/Yii-CMS/protected/components/BaseController.php(83): CActiveRecord->save()\n#3 /var/www/Yii-CMS/protected/components/BaseController.php(47): BaseController->setTitleAndSaveSiteAction(Object(CInlineAction))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(298): BaseController->beforeAction(Object(CInlineAction))\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''main'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''content/page/ma...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/'),
+(218, 'error', 'exception.CHttpException.404', '2011-09-24 14:59:07', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "logout".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''logout'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/logout'),
+(219, 'error', 'system.db.CDbCommand', '2011-09-24 14:59:07', 'Не удалось выполнить CDbCommand::execute(): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yii_cms`.`site_actions`, CONSTRAINT `site_actions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). Выполнявшийся SQL-запрос: INSERT INTO `site_actions` (`title`, `module`, `controller`, `action`, `user_id`, `object_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).\nin /var/www/Yii-CMS/protected/components/BaseController.php (83)\nin /var/www/Yii-CMS/protected/components/BaseController.php (47)'),
+(220, 'error', 'exception.CHttpException.404', '2011-09-24 15:00:01', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "logout".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''logout'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/logout'),
+(221, 'error', 'system.db.CDbCommand', '2011-09-24 15:00:17', 'Не удалось выполнить CDbCommand::execute(): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yii_cms`.`site_actions`, CONSTRAINT `site_actions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). Выполнявшийся SQL-запрос: INSERT INTO `site_actions` (`title`, `module`, `controller`, `action`, `user_id`, `object_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).\nin /var/www/Yii-CMS/protected/components/BaseController.php (83)\nin /var/www/Yii-CMS/protected/components/BaseController.php (47)\nin /var/www/Yii-CMS/index.php (30)'),
+(222, 'error', 'exception.CDbException', '2011-09-24 15:00:17', 'exception ''CDbException'' with message ''CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yii_cms`.`site_actions`, CONSTRAINT `site_actions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `site_actions` (`title`, `module`, `controller`, `action`, `user_id`, `object_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)'' in /var/www/Yii-CMS/protected/libs/yii/db/CDbCommand.php:338\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(1015): CDbCommand->execute()\n#1 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(779): CActiveRecord->insert(NULL)\n#2 /var/www/Yii-CMS/protected/components/BaseController.php(83): CActiveRecord->save()\n#3 /var/www/Yii-CMS/protected/components/BaseController.php(47): BaseController->setTitleAndSaveSiteAction(Object(CInlineAction))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(298): BaseController->beforeAction(Object(CInlineAction))\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''registration'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/regi...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/registration'),
+(223, 'error', 'system.db.CDbCommand', '2011-09-24 15:00:46', 'Не удалось выполнить CDbCommand::execute(): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yii_cms`.`site_actions`, CONSTRAINT `site_actions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). Выполнявшийся SQL-запрос: INSERT INTO `site_actions` (`title`, `module`, `controller`, `action`, `user_id`, `object_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).\nin /var/www/Yii-CMS/protected/components/BaseController.php (83)\nin /var/www/Yii-CMS/protected/components/BaseController.php (47)\nin /var/www/Yii-CMS/index.php (30)'),
+(224, 'error', 'exception.CDbException', '2011-09-24 15:00:46', 'exception ''CDbException'' with message ''CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`yii_cms`.`site_actions`, CONSTRAINT `site_actions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `site_actions` (`title`, `module`, `controller`, `action`, `user_id`, `object_id`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)'' in /var/www/Yii-CMS/protected/libs/yii/db/CDbCommand.php:338\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(1015): CDbCommand->execute()\n#1 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(779): CActiveRecord->insert(NULL)\n#2 /var/www/Yii-CMS/protected/components/BaseController.php(83): CActiveRecord->save()\n#3 /var/www/Yii-CMS/protected/components/BaseController.php(47): BaseController->setTitleAndSaveSiteAction(Object(CInlineAction))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(298): BaseController->beforeAction(Object(CInlineAction))\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''registration'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/regi...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/registration'),
+(225, 'error', 'exception.CHttpException.404', '2011-09-24 15:01:27', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/4a8e7022/styles/menuarrow.gif".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/4a8e7022...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/4a8e7022/styles/menuarrow.gif'),
+(226, 'error', 'exception.CHttpException.404', '2011-09-24 15:18:24', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/4a8e7022/styles/menuarrow.gif".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/4a8e7022...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/4a8e7022/styles/menuarrow.gif');
+INSERT INTO `log` (`id`, `level`, `category`, `logtime`, `message`) VALUES
+(227, 'error', 'exception.CHttpException.404', '2011-09-24 15:19:48', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/4a8e7022/styles/menuarrow.gif".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/4a8e7022...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/4a8e7022/styles/menuarrow.gif'),
+(228, 'error', 'exception.CHttpException.404', '2011-09-24 15:21:41', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/4a8e7022/styles/menuarrow.gif".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/4a8e7022...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/4a8e7022/styles/menuarrow.gif'),
+(229, 'info', 'application', '2011-09-24 15:22:16', 'Задача $item_name не найдена!\nin /var/www/Yii-CMS/protected/components/BaseController.php (99)\nin /var/www/Yii-CMS/protected/components/BaseController.php (42)\nin /var/www/Yii-CMS/index.php (30)'),
+(230, 'error', 'exception.CHttpException.403', '2011-09-24 15:22:16', 'exception ''CHttpException'' with message ''Запрещено!'' in /var/www/Yii-CMS/protected/components/BaseController.php:162\nStack trace:\n#0 /var/www/Yii-CMS/protected/components/BaseController.php(44): BaseController->forbidden()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(298): BaseController->beforeAction(Object(CInlineAction))\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''activateAccount...'')\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/acti...'')\n#6 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#7 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#8 {main} REQUEST_URI=/ru/activateAccountRequest'),
+(231, 'warning', 'application', '2011-09-24 15:22:32', 'Не удалось присвоить небезопасный атрибут "remember_me".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserAdminController.php (36)\nin /var/www/Yii-CMS/index.php (30)'),
+(232, 'warning', 'application', '2011-09-24 15:22:40', 'Не удалось присвоить небезопасный атрибут "remember_me".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserAdminController.php (36)\nin /var/www/Yii-CMS/index.php (30)'),
+(233, 'warning', 'application', '2011-09-24 15:25:13', 'Не удалось присвоить небезопасный атрибут "operations".\nin /var/www/Yii-CMS/protected/modules/rbac/controllers/TaskAdminController.php (107)\nin /var/www/Yii-CMS/index.php (30)'),
+(234, 'warning', 'application', '2011-09-24 15:25:13', 'Не удалось присвоить небезопасный атрибут "childs".\nin /var/www/Yii-CMS/protected/modules/rbac/controllers/TaskAdminController.php (107)\nin /var/www/Yii-CMS/index.php (30)'),
+(235, 'warning', 'application', '2011-09-24 18:29:06', 'Не удалось присвоить небезопасный атрибут "remember_me".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserAdminController.php (36)\nin /var/www/Yii-CMS/index.php (30)'),
+(236, 'warning', 'application', '2011-09-24 18:29:13', 'Не удалось присвоить небезопасный атрибут "remember_me".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserAdminController.php (36)\nin /var/www/Yii-CMS/index.php (30)'),
+(237, 'error', 'exception.CException', '2011-09-24 18:29:20', 'exception ''CException'' with message ''Вы уже зарегистрированы!'' in /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php:191\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionActivateAccountRequest()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''activateAccount...'')\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/acti...'')\n#6 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#7 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#8 {main} REQUEST_URI=/ru/activateAccountRequest'),
+(238, 'error', 'exception.CHttpException.403', '2011-09-24 18:34:46', 'exception ''CHttpException'' with message ''Запрещено!'' in /var/www/Yii-CMS/protected/components/BaseController.php:162\nStack trace:\n#0 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(201): BaseController->forbidden()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionActivateAccountRequest()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#7 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''activateAccount...'')\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/acti...'')\n#12 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#13 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#14 {main} REQUEST_URI=/ru/activateAccountRequest'),
+(239, 'error', 'exception.CHttpException.403', '2011-09-24 18:35:16', 'exception ''CHttpException'' with message ''Запрещено!'' in /var/www/Yii-CMS/protected/components/BaseController.php:162\nStack trace:\n#0 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(202): BaseController->forbidden()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionActivateAccountRequest()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#7 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''activateAccount...'')\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/acti...'')\n#12 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#13 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#14 {main} REQUEST_URI=/ru/activateAccountRequest'),
+(240, 'error', 'exception.CHttpException.403', '2011-09-24 18:38:14', 'exception ''CHttpException'' with message ''Запрещено!'' in /var/www/Yii-CMS/protected/components/BaseController.php:162\nStack trace:\n#0 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(206): BaseController->forbidden()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionActivateAccountRequest()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#7 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''activateAccount...'')\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/acti...'')\n#12 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#13 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#14 {main} REQUEST_URI=/ru/activateAccountRequest'),
+(241, 'error', 'exception.CException', '2011-09-24 18:41:10', 'exception ''CException'' with message ''Контроллер UserController не может найти представление "activatesRequest".'' in /var/www/Yii-CMS/protected/libs/yii/web/CController.php:875\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): CController->renderPartial(''activatesReques...'', Array, true)\n#1 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(230): CController->render(''activatesReques...'', Array)\n#2 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionActivateAccountRequest()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))\n#5 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#7 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#8 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''activateAccount...'')\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/acti...'')\n#13 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#14 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#15 {main} REQUEST_URI=/ru/activateAccountRequest'),
+(242, 'error', 'exception.CException', '2011-09-24 18:59:29', 'exception ''CException'' with message ''User не содержит метода "generateActivateCodeAndDate".'' in /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php:266\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(213): CComponent->__call(''generateActivat...'', Array)\n#1 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(210): CActiveRecord->__call(''generateActivat...'', Array)\n#2 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(210): User->generateActivateCodeAndDate()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionActivateAccountRequest()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#5 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#8 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#9 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''activateAccount...'')\n#13 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/acti...'')\n#14 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#15 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#16 {main} REQUEST_URI=/ru/activateAccountRequest'),
+(243, 'error', 'exception.CException', '2011-09-24 19:28:30', 'exception ''CException'' with message ''Не определено свойство "UserController.page_title".'' in /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php:173\nStack trace:\n#0 /var/www/Yii-CMS/protected/modules/users/views/user/login.php(1): CComponent->__set(''page_title'', ''???????????????...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(119): require(''/var/www/Yii-CM...'')\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(88): CBaseController->renderInternal(''/var/www/Yii-CM...'', Array, true)\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): CBaseController->renderFile(''/var/www/Yii-CM...'', Array, true)\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): CController->renderPartial(''login'', Array, true)\n#5 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(101): CController->render(''login'', Array)\n#6 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionLogin()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#8 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))\n#9 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#11 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#12 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#13 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#14 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#15 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''login'')\n#16 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/logi...'')\n#17 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#18 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#19 {main} REQUEST_URI=/ru/login'),
+(244, 'error', 'exception.CException', '2011-09-24 19:28:41', 'exception ''CException'' with message ''Не определено свойство "UserController.page_title".'' in /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php:173\nStack trace:\n#0 /var/www/Yii-CMS/protected/modules/users/views/user/login.php(1): CComponent->__set(''page_title'', ''???????????????...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(119): require(''/var/www/Yii-CM...'')\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(88): CBaseController->renderInternal(''/var/www/Yii-CM...'', Array, true)\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): CBaseController->renderFile(''/var/www/Yii-CM...'', Array, true)\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): CController->renderPartial(''login'', Array, true)\n#5 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(101): CController->render(''login'', Array)\n#6 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionLogin()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#8 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))\n#9 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#11 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#12 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#13 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#14 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#15 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''login'')\n#16 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/logi...'')\n#17 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#18 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#19 {main} REQUEST_URI=/ru/login'),
+(245, 'error', 'exception.CHttpException.403', '2011-09-24 19:31:51', 'exception ''CHttpException'' with message ''У вас недостаточно прав для выполнения указанного действия.'' in /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php:157\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php(119): CAccessControlFilter->accessDenied(Object(WebUser), ''?? ?????? ?????...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#3 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''login'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/logi...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/login'),
+(246, 'error', 'exception.CHttpException.403', '2011-09-24 19:31:57', 'exception ''CHttpException'' with message ''У вас недостаточно прав для выполнения указанного действия.'' in /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php:157\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php(119): CAccessControlFilter->accessDenied(Object(WebUser), ''?? ?????? ?????...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#3 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''login'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/logi...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/login'),
+(247, 'error', 'exception.CHttpException.404', '2011-09-24 19:36:52', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "ru/ChangePasswordRequest".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''ru/ChangePasswo...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/ru/ChangePasswordRequest'),
+(248, 'error', 'exception.CHttpException.404', '2011-09-24 19:36:52', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "ru/ChangePasswordRequest".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''ru/ChangePasswo...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/ru/ChangePasswordRequest'),
+(249, 'error', 'exception.CHttpException.404', '2011-09-24 19:37:10', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "ru/changePasswordRequest".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''ru/changePasswo...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/ru/changePasswordRequest'),
+(250, 'error', 'exception.CHttpException.404', '2011-09-24 19:38:01', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "ru/changePasswordRequest".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''ru/changePasswo...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/ru/changePasswordRequest'),
+(251, 'error', 'php', '2011-09-24 19:38:29', 'require(/var/www/Yii-CMS/protected/modules/users/forms/ChangePasswordRequestForm.php): failed to open stream: No such file or directory (/var/www/Yii-CMS/protected/libs/yii/web/form/CFormElement.php:117)\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/form/CForm.php(141): BaseForm->__construct()\n#1 /var/www/Yii-CMS/protected/components/BaseForm.php(15): BaseForm->__construct()\n#2 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(282): BaseForm->__construct()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionChangePasswordRequest()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): UserController->runAction()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CAccessControlFilter->filter()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): UserController->filterAccessControl()\n#9 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter()\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): UserController->runActionWithFilters()\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): UserController->run()\n#13 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#14 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#15 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/ru/changePasswordRequest\nin /var/www/Yii-CMS/protected/components/BaseForm.php (15)\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (282)\nin /var/www/Yii-CMS/index.php (30)'),
+(252, 'error', 'exception.CException', '2011-09-24 19:39:08', 'exception ''CException'' with message ''Контроллер UserController не может найти представление "changePasswordRequest".'' in /var/www/Yii-CMS/protected/libs/yii/web/CController.php:875\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): CController->renderPartial(''changePasswordR...'', Array, true)\n#1 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(318): CController->render(''changePasswordR...'', Array)\n#2 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionChangePasswordRequest()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))\n#5 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#7 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#8 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''changePasswordR...'')\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/chan...'')\n#13 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#14 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#15 {main} REQUEST_URI=/ru/changePasswordRequest'),
+(253, 'warning', 'application', '2011-09-24 19:49:58', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (286)\nin /var/www/Yii-CMS/index.php (30)'),
+(254, 'error', 'exception.CException', '2011-09-24 19:49:58', 'exception ''CException'' with message ''Setting не содержит метода "getCodesValues".'' in /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php:266\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(213): CComponent->__call(''getCodesValues'', Array)\n#1 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(296): CActiveRecord->__call(''getCodesValues'', Array)\n#2 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(296): Setting->getCodesValues(''users'')\n#3 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionChangePasswordRequest()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#5 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#8 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#9 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''changePasswordR...'')\n#13 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/chan...'')\n#14 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#15 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#16 {main} REQUEST_URI=/ru/changePasswordRequest'),
+(255, 'warning', 'application', '2011-09-24 19:53:17', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (286)\nin /var/www/Yii-CMS/index.php (30)'),
+(256, 'error', 'php', '2011-09-24 19:53:17', 'include(Mailer.php): failed to open stream: No such file or directory (/var/www/Yii-CMS/protected/libs/yii/YiiBase.php:396)\nStack trace:\n#0 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(300): spl_autoload_call()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionChangePasswordRequest()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): UserController->runAction()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CAccessControlFilter->filter()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): UserController->filterAccessControl()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): UserController->runActionWithFilters()\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): UserController->run()\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#12 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#13 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/ru/changePasswordRequest\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (300)\nin /var/www/Yii-CMS/index.php (30)'),
+(257, 'warning', 'application', '2011-09-24 19:53:35', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (286)\nin /var/www/Yii-CMS/index.php (30)'),
+(258, 'error', 'php', '2011-09-24 19:53:35', 'Undefined index: PASSWORD_RECOVER_REQUEST_MAIL_SUBJECT (/var/www/Yii-CMS/protected/modules/users/controllers/UserController.php:302)\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): UserController->runAction()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CAccessControlFilter->filter()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): UserController->filterAccessControl()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): UserController->runActionWithFilters()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): UserController->run()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/ru/changePasswordRequest\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (302)\nin /var/www/Yii-CMS/index.php (30)'),
+(259, 'error', 'exception.Exception', '2011-09-24 19:55:15', 'exception ''Exception'' with message ''Не найдена обязательная настройка: PASSWORD_CHANGE_REQUEST_MAIL_SUBJECT'' in /var/www/Yii-CMS/protected/modules/main/models/Setting.php:102\nStack trace:\n#0 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(284): Setting->checkRequired(Array)\n#1 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionChangePasswordRequest()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#7 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''changePasswordR...'')\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/chan...'')\n#12 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#13 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#14 {main} REQUEST_URI=/ru/changePasswordRequest'),
+(260, 'warning', 'application', '2011-09-24 19:56:46', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (291)\nin /var/www/Yii-CMS/index.php (30)'),
+(261, 'error', 'exception.CException', '2011-09-24 19:56:47', 'exception ''CException'' with message ''MailerLetter не содержит метода "compile".'' in /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php:266\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(213): CComponent->__call(''compile'', Array)\n#1 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(307): CActiveRecord->__call(''compile'', Array)\n#2 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(307): MailerLetter->compile(''???????????? ??...'')\n#3 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionChangePasswordRequest()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#5 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#8 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#9 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''changePasswordR...'')\n#13 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/chan...'')\n#14 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#15 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#16 {main} REQUEST_URI=/ru/changePasswordRequest'),
+(262, 'warning', 'application', '2011-09-24 19:57:14', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (291)\nin /var/www/Yii-CMS/index.php (30)'),
+(263, 'warning', 'application', '2011-09-24 20:01:42', 'Не удалось присвоить небезопасный атрибут "remember_me".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserAdminController.php (36)\nin /var/www/Yii-CMS/index.php (30)');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `mailer_fields`
+-- Table structure for table `mailer_fields`
 --
 
 CREATE TABLE IF NOT EXISTS `mailer_fields` (
@@ -1271,10 +1345,10 @@ CREATE TABLE IF NOT EXISTS `mailer_fields` (
   UNIQUE KEY `code` (`code`),
   UNIQUE KEY `name` (`name`),
   UNIQUE KEY `value` (`value`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
--- Дамп данных таблицы `mailer_fields`
+-- Dumping data for table `mailer_fields`
 --
 
 INSERT INTO `mailer_fields` (`id`, `code`, `name`, `value`) VALUES
@@ -1285,12 +1359,13 @@ INSERT INTO `mailer_fields` (`id`, `code`, `name`, `value`) VALUES
 (6, '{ROLE}', 'Наименование группы к которой принадлежит пользователь', '$user->role->description'),
 (7, '{APPEAL}', 'Обращение к пользователю', '$user->gender == User::GENDER_MAN ? ''Уважаемый'' : ''Уважаемая'''),
 (9, '{SITE_NAME}', 'Название сайта', 'yii_cms'),
-(10, '{ACTIVATE_ACCOUNT_URL}', 'URL ссылки активации аккаунта', '$user->activateAccountUrl();');
+(10, '{ACTIVATE_ACCOUNT_URL}', 'URL ссылки активации аккаунта', '$user->activateAccountUrl();'),
+(11, '{CHANGE_PASSWORD_URL}', 'URL ссылки смены пароля', '$user->changePasswordUrl();');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `mailer_letters`
+-- Table structure for table `mailer_letters`
 --
 
 CREATE TABLE IF NOT EXISTS `mailer_letters` (
@@ -1304,14 +1379,14 @@ CREATE TABLE IF NOT EXISTS `mailer_letters` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- Дамп данных таблицы `mailer_letters`
+-- Dumping data for table `mailer_letters`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `mailer_options`
+-- Table structure for table `mailer_options`
 --
 
 CREATE TABLE IF NOT EXISTS `mailer_options` (
@@ -1323,7 +1398,7 @@ CREATE TABLE IF NOT EXISTS `mailer_options` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
--- Дамп данных таблицы `mailer_options`
+-- Dumping data for table `mailer_options`
 --
 
 INSERT INTO `mailer_options` (`id`, `name`, `code`, `value`) VALUES
@@ -1342,7 +1417,7 @@ INSERT INTO `mailer_options` (`id`, `name`, `code`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `mailer_recipients`
+-- Table structure for table `mailer_recipients`
 --
 
 CREATE TABLE IF NOT EXISTS `mailer_recipients` (
@@ -1358,14 +1433,14 @@ CREATE TABLE IF NOT EXISTS `mailer_recipients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- Дамп данных таблицы `mailer_recipients`
+-- Dumping data for table `mailer_recipients`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `mailer_templates`
+-- Table structure for table `mailer_templates`
 --
 
 CREATE TABLE IF NOT EXISTS `mailer_templates` (
@@ -1380,14 +1455,14 @@ CREATE TABLE IF NOT EXISTS `mailer_templates` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
--- Дамп данных таблицы `mailer_templates`
+-- Dumping data for table `mailer_templates`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `mailer_templates_recipients`
+-- Table structure for table `mailer_templates_recipients`
 --
 
 CREATE TABLE IF NOT EXISTS `mailer_templates_recipients` (
@@ -1401,14 +1476,14 @@ CREATE TABLE IF NOT EXISTS `mailer_templates_recipients` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
--- Дамп данных таблицы `mailer_templates_recipients`
+-- Dumping data for table `mailer_templates_recipients`
 --
 
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `menu`
+-- Table structure for table `menu`
 --
 
 CREATE TABLE IF NOT EXISTS `menu` (
@@ -1419,7 +1494,7 @@ CREATE TABLE IF NOT EXISTS `menu` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- Дамп данных таблицы `menu`
+-- Dumping data for table `menu`
 --
 
 INSERT INTO `menu` (`id`, `name`, `is_visible`) VALUES
@@ -1428,7 +1503,7 @@ INSERT INTO `menu` (`id`, `name`, `is_visible`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `menu_links`
+-- Table structure for table `menu_links`
 --
 
 CREATE TABLE IF NOT EXISTS `menu_links` (
@@ -1453,7 +1528,7 @@ CREATE TABLE IF NOT EXISTS `menu_links` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
--- Дамп данных таблицы `menu_links`
+-- Dumping data for table `menu_links`
 --
 
 INSERT INTO `menu_links` (`id`, `lang`, `parent_id`, `page_id`, `menu_id`, `title`, `url`, `user_role`, `not_user_role`, `order`, `is_visible`) VALUES
@@ -1472,7 +1547,7 @@ INSERT INTO `menu_links` (`id`, `lang`, `parent_id`, `page_id`, `menu_id`, `titl
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `news`
+-- Table structure for table `news`
 --
 
 CREATE TABLE IF NOT EXISTS `news` (
@@ -1491,7 +1566,7 @@ CREATE TABLE IF NOT EXISTS `news` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- Дамп данных таблицы `news`
+-- Dumping data for table `news`
 --
 
 INSERT INTO `news` (`id`, `lang`, `user_id`, `title`, `text`, `photo`, `state`, `date`, `date_create`) VALUES
@@ -1505,7 +1580,7 @@ INSERT INTO `news` (`id`, `lang`, `user_id`, `title`, `text`, `photo`, `state`, 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `news_files`
+-- Table structure for table `news_files`
 --
 
 CREATE TABLE IF NOT EXISTS `news_files` (
@@ -1518,7 +1593,7 @@ CREATE TABLE IF NOT EXISTS `news_files` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
--- Дамп данных таблицы `news_files`
+-- Dumping data for table `news_files`
 --
 
 INSERT INTO `news_files` (`id`, `news_id`, `file`, `created_at`) VALUES
@@ -1529,7 +1604,7 @@ INSERT INTO `news_files` (`id`, `news_id`, `file`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `pages`
+-- Table structure for table `pages`
 --
 
 CREATE TABLE IF NOT EXISTS `pages` (
@@ -1548,7 +1623,7 @@ CREATE TABLE IF NOT EXISTS `pages` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
--- Дамп данных таблицы `pages`
+-- Dumping data for table `pages`
 --
 
 INSERT INTO `pages` (`id`, `lang`, `meta_title`, `meta_description`, `meta_keywords`, `title`, `url`, `text`, `is_published`, `date_create`) VALUES
@@ -1560,7 +1635,7 @@ INSERT INTO `pages` (`id`, `lang`, `meta_title`, `meta_description`, `meta_keywo
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `pages_blocks`
+-- Table structure for table `pages_blocks`
 --
 
 CREATE TABLE IF NOT EXISTS `pages_blocks` (
@@ -1577,7 +1652,7 @@ CREATE TABLE IF NOT EXISTS `pages_blocks` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
--- Дамп данных таблицы `pages_blocks`
+-- Dumping data for table `pages_blocks`
 --
 
 INSERT INTO `pages_blocks` (`id`, `lang`, `title`, `name`, `text`, `date_create`) VALUES
@@ -1589,7 +1664,7 @@ INSERT INTO `pages_blocks` (`id`, `lang`, `title`, `name`, `text`, `date_create`
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `settings`
+-- Table structure for table `settings`
 --
 
 CREATE TABLE IF NOT EXISTS `settings` (
@@ -1605,7 +1680,7 @@ CREATE TABLE IF NOT EXISTS `settings` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
--- Дамп данных таблицы `settings`
+-- Dumping data for table `settings`
 --
 
 INSERT INTO `settings` (`id`, `module_id`, `code`, `name`, `value`, `element`) VALUES
@@ -1631,7 +1706,7 @@ INSERT INTO `settings` (`id`, `module_id`, `code`, `name`, `value`, `element`) V
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `site_actions`
+-- Table structure for table `site_actions`
 --
 
 CREATE TABLE IF NOT EXISTS `site_actions` (
@@ -1645,10 +1720,10 @@ CREATE TABLE IF NOT EXISTS `site_actions` (
   `date_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Дата',
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3769 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4039 ;
 
 --
--- Дамп данных таблицы `site_actions`
+-- Dumping data for table `site_actions`
 --
 
 INSERT INTO `site_actions` (`id`, `user_id`, `object_id`, `title`, `module`, `controller`, `action`, `date_create`) VALUES
@@ -5427,12 +5502,274 @@ INSERT INTO `site_actions` (`id`, `user_id`, `object_id`, `title`, `module`, `co
 (3765, 1, NULL, 'Управление задачами', 'rbac', 'taskAdmin', 'manage', '2011-09-22 20:22:23'),
 (3766, 1, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-22 20:22:51'),
 (3767, 1, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-22 20:22:55'),
-(3768, 1, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-22 20:23:40');
+(3768, 1, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-22 20:23:40'),
+(3769, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:36:03'),
+(3770, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:36:06'),
+(3771, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:36:10'),
+(3772, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:36:11'),
+(3773, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:36:22'),
+(3774, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 13:37:55'),
+(3775, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 13:38:49'),
+(3776, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 13:38:54'),
+(3777, 1, NULL, 'Просмотр главной страницы', 'main', 'mainAdmin', 'index', '2011-09-24 13:38:54'),
+(3778, 1, NULL, 'IP адреса яндекс маркета', 'ymarket', 'ymarketIPAdmin', 'manage', '2011-09-24 13:39:09'),
+(3779, 1, 1, 'Редактирование IP адреса яндекс маркета', 'ymarket', 'ymarketIPAdmin', 'update', '2011-09-24 13:39:12'),
+(3780, 1, 1, 'Редактирование IP адреса яндекс маркета', 'ymarket', 'ymarketIPAdmin', 'update', '2011-09-24 13:39:21'),
+(3781, 1, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:55:06'),
+(3782, 1, NULL, 'Выход', 'users', 'user', 'logout', '2011-09-24 13:55:09'),
+(3783, 1, NULL, 'Выход', 'users', 'user', 'logout', '2011-09-24 13:55:10'),
+(3784, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 13:55:10'),
+(3785, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:55:11'),
+(3786, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:55:32'),
+(3787, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:55:44'),
+(3788, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:55:51'),
+(3789, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:55:59'),
+(3790, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:56:07'),
+(3791, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:56:19'),
+(3792, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:56:25'),
+(3793, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:56:29'),
+(3794, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 13:57:24'),
+(3795, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:57:35'),
+(3796, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 13:57:57'),
+(3797, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 14:00:52'),
+(3798, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 14:00:55'),
+(3799, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 14:00:59'),
+(3800, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:01:06'),
+(3801, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:01:12'),
+(3802, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:01:20'),
+(3803, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:01:24'),
+(3804, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:01:31'),
+(3805, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:04:41'),
+(3806, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 14:10:54'),
+(3807, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:10:58'),
+(3808, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:11:11'),
+(3809, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:12:21'),
+(3810, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 14:12:23'),
+(3811, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:12:33'),
+(3812, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 14:12:38'),
+(3813, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:12:47'),
+(3814, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:17:31'),
+(3815, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:18:01'),
+(3816, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:18:02'),
+(3817, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:18:57'),
+(3818, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:19:58'),
+(3819, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:20:28'),
+(3820, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:20:36'),
+(3821, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:29:34'),
+(3822, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:30:23'),
+(3823, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:30:35'),
+(3824, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:30:41'),
+(3825, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:31:07'),
+(3826, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:31:35'),
+(3827, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:31:50'),
+(3828, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 14:32:48'),
+(3829, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 14:32:53'),
+(3830, 1, NULL, 'Просмотр главной страницы', 'main', 'mainAdmin', 'index', '2011-09-24 14:32:53'),
+(3831, 1, NULL, 'Управление настройками', 'main', 'settingAdmin', 'manage', '2011-09-24 14:33:03'),
+(3832, 1, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:35:04'),
+(3833, 1, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:35:58'),
+(3834, 1, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:36:17'),
+(3835, 1, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:36:28'),
+(3836, 1, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:36:48'),
+(3837, 1, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:36:48'),
+(3838, 1, NULL, 'Выход', 'users', 'user', 'logout', '2011-09-24 14:36:54'),
+(3839, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 14:36:55'),
+(3840, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:36:58'),
+(3841, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 14:37:02'),
+(3842, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 14:37:24'),
+(3843, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 14:37:41'),
+(3844, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 14:37:42'),
+(3845, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:38:05'),
+(3846, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 14:38:30'),
+(3847, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 14:39:02'),
+(3848, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 14:39:20'),
+(3849, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 14:39:22'),
+(3850, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:39:28'),
+(3851, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:39:28'),
+(3852, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:39:35'),
+(3853, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 14:40:35'),
+(3854, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:40:50'),
+(3855, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:41:01'),
+(3856, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:41:28'),
+(3857, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:54:11'),
+(3858, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:54:35'),
+(3859, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:55:20'),
+(3860, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:55:40'),
+(3861, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 14:56:26'),
+(3862, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:56:27'),
+(3863, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 14:56:34'),
+(3866, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 15:00:01'),
+(3869, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 15:01:08'),
+(3870, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:01:11'),
+(3871, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:01:12'),
+(3872, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 15:01:27'),
+(3873, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:01:44'),
+(3874, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:01:45'),
+(3875, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 15:02:24'),
+(3876, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:02:25'),
+(3877, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:02:29'),
+(3880, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 15:02:33'),
+(3881, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:03:09'),
+(3882, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:03:56'),
+(3883, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:04:48'),
+(3884, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:06:37'),
+(3885, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:13:48'),
+(3886, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 15:13:55'),
+(3887, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:14:06'),
+(3888, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:14:16'),
+(3889, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:14:48'),
+(3890, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:15:11'),
+(3891, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:15:17'),
+(3892, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:15:54'),
+(3893, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:15:56'),
+(3894, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:17:50'),
+(3895, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:17:53'),
+(3896, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:18:11'),
+(3897, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 15:18:24'),
+(3898, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:18:43'),
+(3899, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:18:45'),
+(3900, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 15:18:55'),
+(3901, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:19:32'),
+(3902, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 15:19:48'),
+(3903, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:20:10'),
+(3904, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:20:11'),
+(3905, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 15:20:56'),
+(3906, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:20:56'),
+(3907, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:20:59'),
+(3910, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 15:21:01'),
+(3911, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:21:20'),
+(3912, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:21:24'),
+(3913, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:21:25'),
+(3914, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 15:21:41'),
+(3915, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:21:53'),
+(3916, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-24 15:21:55'),
+(3917, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:22:09'),
+(3918, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 15:22:12'),
+(3919, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 15:22:16'),
+(3920, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 15:22:29'),
+(3921, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 15:22:32'),
+(3922, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 15:22:40'),
+(3923, 1, NULL, 'Просмотр главной страницы', 'main', 'mainAdmin', 'index', '2011-09-24 15:22:40'),
+(3924, 1, NULL, 'Управление задачами', 'rbac', 'taskAdmin', 'manage', '2011-09-24 15:22:48'),
+(3925, 1, NULL, 'Управление задачами', 'rbac', 'taskAdmin', 'manage', '2011-09-24 15:22:51'),
+(3926, 1, NULL, 'Управление операциями', 'rbac', 'operationAdmin', 'manage', '2011-09-24 15:23:07'),
+(3927, 1, NULL, 'Добавление всех операций модулей', 'rbac', 'operationAdmin', 'addAllOperations', '2011-09-24 15:23:10'),
+(3928, 1, NULL, 'Добавление всех операций модулей', 'rbac', 'operationAdmin', 'addAllOperations', '2011-09-24 15:23:35'),
+(3929, 1, NULL, 'Управление операциями', 'rbac', 'operationAdmin', 'manage', '2011-09-24 15:23:52'),
+(3930, 1, NULL, 'Добавление всех операций модулей', 'rbac', 'operationAdmin', 'addAllOperations', '2011-09-24 15:23:55'),
+(3931, 1, NULL, 'Добавление всех операций модулей', 'rbac', 'operationAdmin', 'addAllOperations', '2011-09-24 15:24:12'),
+(3932, 1, NULL, 'Добавление всех операций модулей', 'rbac', 'operationAdmin', 'addAllOperations', '2011-09-24 15:24:18'),
+(3933, 1, NULL, 'Добавление всех операций модулей', 'rbac', 'operationAdmin', 'AddAllOperations', '2011-09-24 15:24:18'),
+(3934, 1, NULL, 'Управление операциями', 'rbac', 'operationAdmin', 'manage', '2011-09-24 15:24:22'),
+(3935, 1, NULL, 'Установки кол-ва элементов на странице', 'main', 'mainAdmin', 'SessionPerPage', '2011-09-24 15:24:28'),
+(3936, 1, NULL, 'Управление операциями', 'rbac', 'operationAdmin', 'manage', '2011-09-24 15:24:30'),
+(3937, 1, NULL, 'Управление операциями', 'rbac', 'operationAdmin', 'manage', '2011-09-24 15:24:45'),
+(3938, 1, NULL, 'Управление задачами', 'rbac', 'taskAdmin', 'manage', '2011-09-24 15:24:57'),
+(3939, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:21:31'),
+(3940, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 18:28:35'),
+(3941, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 18:29:06'),
+(3942, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 18:29:13'),
+(3943, 1, NULL, 'Просмотр главной страницы', 'main', 'mainAdmin', 'index', '2011-09-24 18:29:13'),
+(3944, 1, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:29:20'),
+(3945, 1, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:34:46'),
+(3946, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 18:34:46'),
+(3947, 1, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:35:15'),
+(3948, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 18:35:15'),
+(3949, 1, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:38:14'),
+(3950, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 18:38:14'),
+(3951, 1, NULL, 'Выход', 'users', 'user', 'logout', '2011-09-24 18:38:30'),
+(3952, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 18:38:31'),
+(3953, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 18:38:35'),
+(3954, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 18:38:37'),
+(3955, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 18:38:40'),
+(3956, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:38:58'),
+(3957, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:40:45'),
+(3958, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:41:10'),
+(3959, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:49:32'),
+(3960, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:50:23'),
+(3961, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:50:28'),
+(3962, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:50:34'),
+(3963, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:51:15'),
+(3964, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:51:20'),
+(3965, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:51:30'),
+(3966, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:51:39'),
+(3967, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:51:47'),
+(3968, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:52:19'),
+(3969, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:53:24'),
+(3970, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:53:58'),
+(3971, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:54:09'),
+(3972, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:58:19'),
+(3973, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:58:34'),
+(3974, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:59:17'),
+(3975, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 18:59:29'),
+(3976, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:21:52'),
+(3977, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:21:59'),
+(3978, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:22:07'),
+(3979, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:26:11'),
+(3980, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:26:12'),
+(3981, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:26:15'),
+(3982, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:26:36'),
+(3983, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:26:46'),
+(3984, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:26:48'),
+(3985, NULL, NULL, 'Активация аккаунта', 'users', 'user', 'activateAccount', '2011-09-24 19:27:14'),
+(3986, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 19:27:14'),
+(3987, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 19:27:18'),
+(3988, 24, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 19:27:18'),
+(3989, 24, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:27:22'),
+(3990, 24, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 19:27:28'),
+(3991, 24, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:27:32'),
+(3992, 24, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:27:59'),
+(3993, 24, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 19:28:08'),
+(3994, 24, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 19:28:57'),
+(3995, 24, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 19:29:03'),
+(3996, 24, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 19:31:50'),
+(3997, 24, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 19:31:57'),
+(3998, 24, NULL, 'Выход', 'users', 'user', 'logout', '2011-09-24 19:32:02'),
+(3999, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 19:32:02'),
+(4000, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 19:32:05'),
+(4001, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 19:32:18'),
+(4002, 24, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 19:32:18'),
+(4003, 24, NULL, 'Выход', 'users', 'user', 'logout', '2011-09-24 19:32:21'),
+(4004, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 19:32:22'),
+(4005, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:32:26'),
+(4006, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:32:49'),
+(4007, NULL, NULL, 'Запрос на активацию аккаунта', 'users', 'user', 'activateAccountRequest', '2011-09-24 19:33:21'),
+(4008, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 19:35:23'),
+(4009, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-24 19:36:45'),
+(4010, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 19:36:52'),
+(4011, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 19:36:52'),
+(4012, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 19:37:10'),
+(4013, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 19:38:01'),
+(4014, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:38:29'),
+(4015, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:39:08'),
+(4016, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:39:48'),
+(4017, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:40:01'),
+(4018, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:42:34'),
+(4019, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:46:13'),
+(4020, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:46:27'),
+(4021, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:48:40'),
+(4022, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:49:55'),
+(4023, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:49:58'),
+(4024, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:50:49'),
+(4025, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:53:17'),
+(4026, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:53:35'),
+(4027, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:55:15'),
+(4028, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:56:43'),
+(4029, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:56:46'),
+(4030, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 19:57:12'),
+(4031, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 20:01:33'),
+(4032, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 20:01:42'),
+(4033, 1, NULL, 'Просмотр главной страницы', 'main', 'mainAdmin', 'index', '2011-09-24 20:01:43'),
+(4034, 1, NULL, 'Управление настройками', 'main', 'settingAdmin', 'manage', '2011-09-24 20:01:49'),
+(4035, 1, NULL, 'Управление генерируемыми полями', 'mailer', 'mailerFieldAdmin', 'manage', '2011-09-24 20:01:54'),
+(4036, 1, NULL, 'Добавление генерируемого поля', 'mailer', 'mailerFieldAdmin', 'create', '2011-09-24 20:02:06'),
+(4037, 1, NULL, 'Добавление генерируемого поля', 'mailer', 'mailerFieldAdmin', 'create', '2011-09-24 20:14:11'),
+(4038, 1, NULL, 'Управление генерируемыми полями', 'mailer', 'mailerFieldAdmin', 'manage', '2011-09-24 20:14:11');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -5453,20 +5790,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   `date_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Зарегистрирован',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
--- Дамп данных таблицы `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `patronymic`, `email`, `phone`, `password`, `birthdate`, `gender`, `status`, `activate_code`, `activate_date`, `password_recover_code`, `password_recover_date`, `date_create`) VALUES
-(1, 'Иван', 'Иванов', 'Васильевич', 'admin@ya.ru', '+7-965-1935233', 'e10adc3949ba59abbe56e057f20f883e', '2003-05-20', 'man', 'active', '070a63ae33af0eb7986992e774dc53e8', '2011-05-21 13:18:39', NULL, NULL, '2011-05-19 03:25:50'),
-(17, 'Артем', 'Остапец', 'Игоревич', 'artem-moscow@yandex.ru', '+7-903-5492969', '813107300f254c3a072c17066c15a22a', '2011-09-25', 'man', 'new', '7533c7b47ed8206d6913e6d271b23ec3', NULL, NULL, NULL, '2011-09-22 20:19:48');
+(1, 'yo', 'Иванов', 'Васильевич', 'admin@ya.ru', '+7-965-1935233', 'e10adc3949ba59abbe56e057f20f883e', '2003-05-20', 'man', 'active', '070a63ae33af0eb7986992e774dc53e8', '0000-00-00 00:00:00', NULL, NULL, '2011-09-13 00:00:00'),
+(24, 'Артем', 'Остапец', 'Игоревич', 'artem-moscow@yandex.ru', '+7-903-5492969', '813107300f254c3a072c17066c15a22a', '2011-09-16', 'man', 'active', NULL, NULL, NULL, NULL, '2011-09-24 15:21:54');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ymarket_brands`
+-- Table structure for table `ymarket_brands`
 --
 
 CREATE TABLE IF NOT EXISTS `ymarket_brands` (
@@ -5477,7 +5814,7 @@ CREATE TABLE IF NOT EXISTS `ymarket_brands` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=138 ;
 
 --
--- Дамп данных таблицы `ymarket_brands`
+-- Dumping data for table `ymarket_brands`
 --
 
 INSERT INTO `ymarket_brands` (`id`, `name`) VALUES
@@ -5622,7 +5959,7 @@ INSERT INTO `ymarket_brands` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ymarket_crons`
+-- Table structure for table `ymarket_crons`
 --
 
 CREATE TABLE IF NOT EXISTS `ymarket_crons` (
@@ -5639,7 +5976,7 @@ CREATE TABLE IF NOT EXISTS `ymarket_crons` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
--- Дамп данных таблицы `ymarket_crons`
+-- Dumping data for table `ymarket_crons`
 --
 
 INSERT INTO `ymarket_crons` (`id`, `name`, `method`, `is_active`, `priority`, `interval`, `date_of`) VALUES
@@ -5649,7 +5986,7 @@ INSERT INTO `ymarket_crons` (`id`, `name`, `method`, `is_active`, `priority`, `i
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ymarket_ips`
+-- Table structure for table `ymarket_ips`
 --
 
 CREATE TABLE IF NOT EXISTS `ymarket_ips` (
@@ -5662,7 +5999,7 @@ CREATE TABLE IF NOT EXISTS `ymarket_ips` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 --
--- Дамп данных таблицы `ymarket_ips`
+-- Dumping data for table `ymarket_ips`
 --
 
 INSERT INTO `ymarket_ips` (`id`, `ip`, `last_date_use`, `date_create`) VALUES
@@ -5701,7 +6038,7 @@ INSERT INTO `ymarket_ips` (`id`, `ip`, `last_date_use`, `date_create`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ymarket_pages`
+-- Table structure for table `ymarket_pages`
 --
 
 CREATE TABLE IF NOT EXISTS `ymarket_pages` (
@@ -5716,7 +6053,7 @@ CREATE TABLE IF NOT EXISTS `ymarket_pages` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
--- Дамп данных таблицы `ymarket_pages`
+-- Dumping data for table `ymarket_pages`
 --
 
 INSERT INTO `ymarket_pages` (`id`, `section_id`, `url`, `num`, `date_create`, `date_parse`) VALUES
@@ -5751,7 +6088,7 @@ INSERT INTO `ymarket_pages` (`id`, `section_id`, `url`, `num`, `date_create`, `d
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ymarket_products`
+-- Table structure for table `ymarket_products`
 --
 
 CREATE TABLE IF NOT EXISTS `ymarket_products` (
@@ -5767,7 +6104,7 @@ CREATE TABLE IF NOT EXISTS `ymarket_products` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1811 ;
 
 --
--- Дамп данных таблицы `ymarket_products`
+-- Dumping data for table `ymarket_products`
 --
 
 INSERT INTO `ymarket_products` (`id`, `brand_id`, `name`, `image`, `desc_html`, `date_create`, `date_update`) VALUES
@@ -5805,7 +6142,7 @@ INSERT INTO `ymarket_products` (`id`, `brand_id`, `name`, `image`, `desc_html`, 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ymarket_sections`
+-- Table structure for table `ymarket_sections`
 --
 
 CREATE TABLE IF NOT EXISTS `ymarket_sections` (
@@ -5827,7 +6164,7 @@ CREATE TABLE IF NOT EXISTS `ymarket_sections` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
--- Дамп данных таблицы `ymarket_sections`
+-- Dumping data for table `ymarket_sections`
 --
 
 INSERT INTO `ymarket_sections` (`id`, `name`, `yandex_name`, `url`, `all_models_url`, `brands_url`, `breadcrumbs`, `date_create`, `date_update`, `date_brand_update`, `date_pages_parse`) VALUES
@@ -5838,7 +6175,7 @@ INSERT INTO `ymarket_sections` (`id`, `name`, `yandex_name`, `url`, `all_models_
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ymarket_sections_rels`
+-- Table structure for table `ymarket_sections_rels`
 --
 
 CREATE TABLE IF NOT EXISTS `ymarket_sections_rels` (
@@ -5852,7 +6189,7 @@ CREATE TABLE IF NOT EXISTS `ymarket_sections_rels` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=176 ;
 
 --
--- Дамп данных таблицы `ymarket_sections_rels`
+-- Dumping data for table `ymarket_sections_rels`
 --
 
 INSERT INTO `ymarket_sections_rels` (`id`, `section_id`, `object_id`, `object_type`) VALUES
@@ -6033,69 +6370,69 @@ INSERT INTO `ymarket_sections_rels` (`id`, `section_id`, `object_id`, `object_ty
 (172, 3, 137, 'brand');
 
 --
--- Ограничения внешнего ключа сохраненных таблиц
+-- Constraints for dumped tables
 --
 
 --
--- Ограничения внешнего ключа таблицы `actions_files`
+-- Constraints for table `actions_files`
 --
 ALTER TABLE `actions_files`
   ADD CONSTRAINT `actions_files_ibfk_1` FOREIGN KEY (`action_id`) REFERENCES `actions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `articles_files`
+-- Constraints for table `articles_files`
 --
 ALTER TABLE `articles_files`
   ADD CONSTRAINT `articles_files_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `articles_sections`
+-- Constraints for table `articles_sections`
 --
 ALTER TABLE `articles_sections`
   ADD CONSTRAINT `articles_sections_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `articles_sections` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `AuthAssignment`
+-- Constraints for table `AuthAssignment`
 --
 ALTER TABLE `AuthAssignment`
   ADD CONSTRAINT `AuthAssignment_ibfk_1` FOREIGN KEY (`itemname`) REFERENCES `AuthItem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `AuthAssignment_ibfk_2` FOREIGN KEY (`userid`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `AuthItemChild`
+-- Constraints for table `AuthItemChild`
 --
 ALTER TABLE `AuthItemChild`
   ADD CONSTRAINT `AuthItemChild_ibfk_1` FOREIGN KEY (`parent`) REFERENCES `AuthItem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `AuthItemChild_ibfk_2` FOREIGN KEY (`child`) REFERENCES `AuthItem` (`name`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `documents_files`
+-- Constraints for table `documents_files`
 --
 ALTER TABLE `documents_files`
   ADD CONSTRAINT `documents_files_ibfk_1` FOREIGN KEY (`document_id`) REFERENCES `documents` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `mailer_letters`
+-- Constraints for table `mailer_letters`
 --
 ALTER TABLE `mailer_letters`
   ADD CONSTRAINT `mailer_letters_ibfk_1` FOREIGN KEY (`template_id`) REFERENCES `mailer_templates` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `mailer_recipients`
+-- Constraints for table `mailer_recipients`
 --
 ALTER TABLE `mailer_recipients`
   ADD CONSTRAINT `mailer_recipients_ibfk_1` FOREIGN KEY (`letter_id`) REFERENCES `mailer_letters` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `mailer_recipients_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `mailer_templates_recipients`
+-- Constraints for table `mailer_templates_recipients`
 --
 ALTER TABLE `mailer_templates_recipients`
   ADD CONSTRAINT `mailer_templates_recipients_ibfk_1` FOREIGN KEY (`template_id`) REFERENCES `mailer_templates` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `mailer_templates_recipients_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `menu_links`
+-- Constraints for table `menu_links`
 --
 ALTER TABLE `menu_links`
   ADD CONSTRAINT `menu_links_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `menu_links` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -6105,31 +6442,31 @@ ALTER TABLE `menu_links`
   ADD CONSTRAINT `menu_links_ibfk_5` FOREIGN KEY (`not_user_role`) REFERENCES `AuthItem` (`name`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `news_files`
+-- Constraints for table `news_files`
 --
 ALTER TABLE `news_files`
   ADD CONSTRAINT `news_files_ibfk_1` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `site_actions`
+-- Constraints for table `site_actions`
 --
 ALTER TABLE `site_actions`
   ADD CONSTRAINT `site_actions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `ymarket_pages`
+-- Constraints for table `ymarket_pages`
 --
 ALTER TABLE `ymarket_pages`
   ADD CONSTRAINT `ymarket_pages_ibfk_1` FOREIGN KEY (`section_id`) REFERENCES `ymarket_sections` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `ymarket_products`
+-- Constraints for table `ymarket_products`
 --
 ALTER TABLE `ymarket_products`
   ADD CONSTRAINT `barnd_fk` FOREIGN KEY (`brand_id`) REFERENCES `ymarket_brands` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `ymarket_sections_rels`
+-- Constraints for table `ymarket_sections_rels`
 --
 ALTER TABLE `ymarket_sections_rels`
   ADD CONSTRAINT `section_fk` FOREIGN KEY (`section_id`) REFERENCES `ymarket_sections` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;

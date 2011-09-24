@@ -217,7 +217,7 @@ class UserController extends BaseController
                             $user->save();
                             $user->sendActivationMail();
                             
-                            Yii::app()->user->setFlash('done', 'На ваш Email отправлено письмо с дальнейшими инструкциями');
+                            Yii::app()->user->setFlash('done', 'На ваш Email отправлено письмо с дальнейшими инструкциями.');
                             
                             $this->redirect($this->url('/activateAccountRequest'));
                             break;
@@ -241,41 +241,6 @@ class UserController extends BaseController
     }
 
 
-//    public function actionChangePassword()
-//    {
-//        $model = new User(User::SCENARIO_CHANGE_PASSWORD);
-//
-//        if (isset($_POST['User']))
-//        {
-//            $model->attributes = $_POST['User'];
-//            if ($model->validate())
-//            {
-//                $user = $model->findByAttributes(array('password' => md5($_POST['User']['password'])));
-//                if ($user)
-//                {
-//                    $user->password = md5($_POST['User']['new_password']);
-//                    $user->save();
-//
-//                    $this->redirect('/users/user/profile/msg/changePassword');
-//                }
-//                else
-//                {
-//                    $fail = true;
-//                }
-//            }
-//        }
-//
-//        $this->render(
-//            'ChangePassword',
-//            array(
-//                'model' => $model,
-//                'fail'  => isset($fail) ? $fail : false,
-//                'done'  => isset($done) ? $done : false
-//            )
-//        );
-//    }
-
-
     public function actionChangePasswordRequest()
     {
     	Setting::model()->checkRequired(array(
@@ -296,19 +261,27 @@ class UserController extends BaseController
                 {
                     if ($user->status == User::STATUS_ACTIVE)
                     {	
-				        $user->password_recover_code = md5($user->password . $user->email . $user->id . time());
+				        $user->password_change_code = md5($user->password . $user->email . $user->id . time());
 						
 				        $mailer_letter = MailerLetter::model();
 				        
 				        $settings = Setting::model()->findCodesValues();
-							
-				        MailerModule::sendMail(
-				        	$user->email, 
-							$mailer_letter->compileText($settings[User::SETTING_CHANGE_PASSWORD_REQUEST_MAIL_SUBJECT]),
-				        	$mailer_letter->compileText($settings[User::SETTING_CHANGE_PASSWORD_REQUEST_MAIL_SUBJECT])
+
+				        $subject = $mailer_letter->compileText(
+							$settings[User::SETTING_CHANGE_PASSWORD_REQUEST_MAIL_SUBJECT],
+							array('user' => $user)
+						);
+				        
+						$body = $mailer_letter->compileText(
+				        	$settings[User::SETTING_CHANGE_PASSWORD_REQUEST_MAIL_BODY],
+				        	array('user' => $user)
 				        );
+	
+				        MailerModule::sendMail($user->email, $subject, $body);
  						
-                        //$this->redirect('/users/user/ChangePasswordRequestDone');
+				        Yii::app()->user->setFlash('done', 'На ваш Email отправлено письмо с дальнейшими инструкциями.');
+				        
+                        $this->redirect($this->url('/changePasswordRequest'));
 
                     }
                     else if ($user->status == User::STATUS_NEW)
@@ -336,27 +309,26 @@ class UserController extends BaseController
 
     public function actionChangePassword($code, $email)
     {
-		die("actionChangePassword");
-
         $model = new User(User::SCENARIO_CHANGE_PASSWORD);
         $form  = new BaseForm('users.ChangePasswordForm', $model);
-        $user  = $model->findByPk($_GET['id']);
-
-        if (!$user || $user->password_recover_code != $_GET['code'])
+		
+        $user = User::model()->findByAttributes(array('password_change_code' => $code));
+		p($user);
+        if (!$user || md5($user->email) != $email)
         {
-            $this->forbidden();
+            $error = 'Неверная ссылка изменения пароля!';
         }
         else
         {
-            if (strtotime($user->password_recover_date) + 24 * 3600 > time())
+            if (strtotime($user->password_change_date) + 24 * 3600 > time())
             {
                 if (isset($_POST['User']))
                 {
                     $model->attributes = $_POST['User'];
                     if ($model->validate())
                     {
-                        $user->password_recover_code = null;
-                        $user->password_recover_date = null;
+                        $user->password_change_code = null;
+                        $user->password_change_date = null;
                         $user->password = md5($_POST['User']['password']);
                         $user->save();
 

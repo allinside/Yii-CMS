@@ -1,3 +1,3 @@
-<?php $this->page_title = "Восстановление пароля"; ?>
+<?php $this->page_title = "Изменение пароля"; ?>
 
-<?php $form; ?>
+<?php echo $form; ?>
