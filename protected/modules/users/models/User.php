@@ -93,7 +93,7 @@ class User extends ActiveRecordModel
     public function rules()
     {
         return array(
-            array(
+            /*array(
                 'captcha',
                 'application.extensions.recaptcha.EReCaptchaValidator',
                 'privateKey' => '6LcsjsMSAAAAAHGMdF84g3szTZZe0VVwMof5bD7Y',
@@ -102,9 +102,9 @@ class User extends ActiveRecordModel
             		self::SCENARIO_ACTIVATE_REQUEST, 
             		self::SCENARIO_CHANGE_PASSWORD_REQUEST
             	)
-            ),
+            ),*/
             array(
-                'email, password',
+                'email',
                 'required'
             ),
             array(
@@ -138,7 +138,10 @@ class User extends ActiveRecordModel
             array(
                 'password',
                 'required',
-                'on' => self::SCENARIO_LOGIN
+                'on' => array(
+            		self::SCENARIO_LOGIN,
+            		self::SCENARIO_REGISTRATION,
+            	)
             ),
 
             array(
@@ -258,29 +261,6 @@ class User extends ActiveRecordModel
     public function generateActivateCode()
     {
         $this->activate_code = md5($this->id . $this->name . $this->email . time(true) . rand(5, 10));
-    }
-
-
-    public function changePasswordRequest()
-    {
-        $settings = Settings::model()->getAll();
-
-        $this->password_recover_code = md5($this->password . $this->email . $this->id . time());
-
-        $body = $settings["PASSWORD_RECOVER_REQUEST_MAIL_BODY"]["value"];
-        $body = str_replace(
-            array("{name}", "{SITE_NAME}", "{LINK}"),
-            array(
-                $this->name,
-                $settings["SITE_NAME"]["value"],
-                "http://" . $_SERVER["HTTP_HOST"] . "/users/user/ChangePassword/id/" . $this->id . "/code/" . $this->password_recover_code
-            ),
-            $body
-        );
-
-        Mailer::sendMail($this->email, $settings["PASSWORD_RECOVER_REQUEST_MAIL_SUBJECT"]["value"], $body);
-
-        $this->save();
     }
     
 

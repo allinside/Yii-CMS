@@ -62,8 +62,13 @@ class Setting extends ActiveRecordModel
 	}
 
 
-    public function findCodesValues($module_id)
+    public function findCodesValues($module_id = null)
     {
+    	if (!$module_id) 
+    	{
+    		$module_id = Yii::app()->controller->module->id;
+    	}
+    	
         $result = array();
 
         $settings = $this->findAll("module_id = '{$module_id}'");
