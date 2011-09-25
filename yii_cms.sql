@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 24, 2011 at 08:14 PM
+-- Generation Time: Sep 25, 2011 at 03:27 PM
 -- Server version: 5.1.54
 -- PHP Version: 5.3.5-1ubuntu7.2
 
@@ -1055,7 +1055,7 @@ CREATE TABLE IF NOT EXISTS `log` (
   `logtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Время',
   `message` text COMMENT 'Сообщение',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=264 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=293 ;
 
 --
 -- Dumping data for table `log`
@@ -1328,7 +1328,37 @@ INSERT INTO `log` (`id`, `level`, `category`, `logtime`, `message`) VALUES
 (260, 'warning', 'application', '2011-09-24 19:56:46', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (291)\nin /var/www/Yii-CMS/index.php (30)'),
 (261, 'error', 'exception.CException', '2011-09-24 19:56:47', 'exception ''CException'' with message ''MailerLetter не содержит метода "compile".'' in /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php:266\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(213): CComponent->__call(''compile'', Array)\n#1 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(307): CActiveRecord->__call(''compile'', Array)\n#2 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(307): MailerLetter->compile(''???????????? ??...'')\n#3 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): UserController->actionChangePasswordRequest()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#5 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))\n#6 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#8 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#9 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''changePasswordR...'')\n#13 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/chan...'')\n#14 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#15 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#16 {main} REQUEST_URI=/ru/changePasswordRequest'),
 (262, 'warning', 'application', '2011-09-24 19:57:14', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (291)\nin /var/www/Yii-CMS/index.php (30)'),
-(263, 'warning', 'application', '2011-09-24 20:01:42', 'Не удалось присвоить небезопасный атрибут "remember_me".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserAdminController.php (36)\nin /var/www/Yii-CMS/index.php (30)');
+(263, 'warning', 'application', '2011-09-24 20:01:42', 'Не удалось присвоить небезопасный атрибут "remember_me".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserAdminController.php (36)\nin /var/www/Yii-CMS/index.php (30)'),
+(264, 'error', 'exception.CHttpException.404', '2011-09-24 20:19:14', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
+(265, 'error', 'exception.CHttpException.403', '2011-09-24 20:22:30', 'exception ''CHttpException'' with message ''У вас недостаточно прав для выполнения указанного действия.'' in /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php:157\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php(119): CAccessControlFilter->accessDenied(Object(WebUser), ''?? ?????? ?????...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#3 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''changePasswordR...'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/chan...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/changePasswordRequest'),
+(266, 'warning', 'application', '2011-09-24 20:23:05', 'Не удалось присвоить небезопасный атрибут "remember_me".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserAdminController.php (36)\nin /var/www/Yii-CMS/index.php (30)'),
+(267, 'error', 'exception.CHttpException.404', '2011-09-24 20:25:07', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
+(268, 'error', 'exception.CHttpException.404', '2011-09-24 20:28:04', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
+(269, 'error', 'exception.CHttpException.404', '2011-09-24 20:28:52', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
+(270, 'error', 'exception.CHttpException.404', '2011-09-24 20:29:59', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
+(271, 'error', 'exception.CHttpException.404', '2011-09-24 20:30:18', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
+(272, 'error', 'exception.CHttpException.403', '2011-09-24 20:30:27', 'exception ''CHttpException'' with message ''У вас недостаточно прав для выполнения указанного действия.'' in /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php:157\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php(119): CAccessControlFilter->accessDenied(Object(WebUser), ''?? ?????? ?????...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#3 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''changePasswordR...'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/chan...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/changePasswordRequest'),
+(273, 'error', 'exception.CHttpException.404', '2011-09-24 20:32:55', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "ru/changePassword/2a47959ec515c9570dbbb87f6ac0b409/b2cd60cc789b7b17c33d812b65d0a9d9".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''ru/changePasswo...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/ru/changePassword/2a47959ec515c9570dbbb87f6ac0b409/b2cd60cc789b7b17c33d812b65d0a9d9'),
+(274, 'warning', 'application', '2011-09-24 20:36:56', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (291)\nin /var/www/Yii-CMS/index.php (30)'),
+(275, 'error', 'exception.CHttpException.404', '2011-09-24 20:37:09', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "ru/changePassword/1c5bd8d7fc47a1803540d6bd726fc2a5/b2cd60cc789b7b17c33d812b65d0a9d9".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''ru/changePasswo...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/ru/changePassword/1c5bd8d7fc47a1803540d6bd726fc2a5/b2cd60cc789b7b17c33d812b65d0a9d9');
+INSERT INTO `log` (`id`, `level`, `category`, `logtime`, `message`) VALUES
+(276, 'error', 'exception.CHttpException.404', '2011-09-24 20:38:15', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "ru/changePassword/1c5bd8d7fc47a1803540d6bd726fc2a5/b2cd60cc789b7b17c33d812b65d0a9d9".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''ru/changePasswo...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/ru/changePassword/1c5bd8d7fc47a1803540d6bd726fc2a5/b2cd60cc789b7b17c33d812b65d0a9d9'),
+(277, 'error', 'php', '2011-09-24 20:42:17', 'require(/var/www/Yii-CMS/protected/modules/users/forms/ChangePasswordForm.php): failed to open stream: No such file or directory (/var/www/Yii-CMS/protected/libs/yii/web/form/CFormElement.php:117)\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/form/CForm.php(141): BaseForm->__construct()\n#1 /var/www/Yii-CMS/protected/components/BaseForm.php(15): BaseForm->__construct()\n#2 /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php(313): BaseForm->__construct()\n#3 unknown(0): UserController->actionChangePassword()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/actions/CAction.php(104): ReflectionMethod->invokeArgs()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(48): CInlineAction->runWithParamsInternal()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(133): UserController->runAction()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(41): CFilterChain->run()\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CAccessControlFilter->filter()\n#10 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): UserController->filterAccessControl()\n#11 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter()\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#13 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): UserController->runActionWithFilters()\n#14 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): UserController->run()\n#15 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#16 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#17 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/ru/changePassword/1c5bd8d7fc47a1803540d6bd726fc2a5/b2cd60cc789b7b17c33d812b65d0a9d9\nin /var/www/Yii-CMS/protected/components/BaseForm.php (15)\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (313)\nin /var/www/Yii-CMS/index.php (30)'),
+(278, 'error', 'exception.CHttpException.404', '2011-09-24 23:46:47', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "favicon.ico".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''favicon.ico'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/favicon.ico'),
+(279, 'error', 'exception.CHttpException.404', '2011-09-24 23:46:49', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "favicon.ico".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''favicon.ico'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/favicon.ico'),
+(280, 'error', 'exception.CHttpException.404', '2011-09-24 23:46:50', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "favicon.ico".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''favicon.ico'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/favicon.ico'),
+(281, 'error', 'exception.CHttpException.404', '2011-09-24 23:46:51', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "favicon.ico".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''favicon.ico'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/favicon.ico'),
+(282, 'error', 'exception.CHttpException.404', '2011-09-25 14:49:13', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "favicon.ico".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''favicon.ico'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/favicon.ico'),
+(283, 'error', 'exception.CHttpException.404', '2011-09-25 14:49:14', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "favicon.ico".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''favicon.ico'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/favicon.ico'),
+(284, 'warning', 'application', '2011-09-25 14:49:42', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (256)\nin /var/www/Yii-CMS/index.php (30)'),
+(285, 'warning', 'application', '2011-09-25 14:52:17', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (256)\nin /var/www/Yii-CMS/index.php (30)'),
+(286, 'warning', 'application', '2011-09-25 14:55:49', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (256)\nin /var/www/Yii-CMS/index.php (30)'),
+(287, 'error', 'exception.CHttpException.404', '2011-09-25 15:08:16', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/4a8e7022/styles/menuarrow.gif".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/4a8e7022...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/4a8e7022/styles/menuarrow.gif'),
+(288, 'warning', 'application', '2011-09-25 15:08:22', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (131)\nin /var/www/Yii-CMS/index.php (30)'),
+(289, 'warning', 'application', '2011-09-25 15:08:34', 'Не удалось присвоить небезопасный атрибут "captcha".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserController.php (131)\nin /var/www/Yii-CMS/index.php (30)'),
+(290, 'error', 'exception.CHttpException.403', '2011-09-25 15:22:28', 'exception ''CHttpException'' with message ''У вас недостаточно прав для выполнения указанного действия.'' in /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php:157\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php(119): CAccessControlFilter->accessDenied(Object(WebUser), ''?? ?????? ?????...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#3 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''login'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/logi...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/login'),
+(291, 'error', 'exception.CHttpException.403', '2011-09-25 15:22:55', 'exception ''CHttpException'' with message ''У вас недостаточно прав для выполнения указанного действия.'' in /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php:157\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php(119): CAccessControlFilter->accessDenied(Object(WebUser), ''?? ?????? ?????...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#3 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''login'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/logi...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/login'),
+(292, 'error', 'exception.CHttpException.403', '2011-09-25 15:23:33', 'exception ''CHttpException'' with message ''У вас недостаточно прав для выполнения указанного действия.'' in /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php:157\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/auth/CAccessControlFilter.php(119): CAccessControlFilter->accessDenied(Object(WebUser), ''?? ?????? ?????...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(1122): CFilter->filter(Object(CFilterChain))\n#3 /var/www/Yii-CMS/protected/libs/yii/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))\n#4 /var/www/Yii-CMS/protected/libs/yii/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(283): CFilterChain->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''login'')\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''users/user/logi...'')\n#9 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#10 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#11 {main} REQUEST_URI=/ru/login');
 
 -- --------------------------------------------------------
 
@@ -1452,7 +1482,7 @@ CREATE TABLE IF NOT EXISTS `mailer_templates` (
   `date_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Создан',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `mailer_templates`
@@ -1688,8 +1718,8 @@ INSERT INTO `settings` (`id`, `module_id`, `code`, `name`, `value`, `element`) V
 (7, 'users', 'registration_mail_subject', 'Тема письма регистрации', 'Регистрация на сайте {SITE_NAME}', 'text'),
 (9, 'users', 'registration_done_message', 'Сообщение о завершении регистрации', '<p>Вы успешно зарегистрированы в системе, на ваш Email отправлено письмо с инструкциями завершения регистрации.</p>', 'editor'),
 (10, 'users', 'activate_request_done_message', 'Сообщение после повторного запроса активации аккаунта', 'Мы выслали на ваш Email письмо, в котором нужно будет пройти по ссылке для активации аккаунта!', 'textarea'),
-(11, 'users', 'change_password_request_mail_body', 'Шаблон письма запроса на смену пароля', '<p>Здравствуйте {LAST_NAME} {FIRST_NAME} {PATRONYMIC}!</p>\r\n<p>Вы сделали запрос на восстановление пароля на сайте {SITE_NAME}.</p>\r\n<p>Для того чтобы изменить пароль пройдите <a href="%7BLINK%7D">по этой ссылке.</a></p>\r\n<p>Адрес ссылки: {LINK}</p>  ', 'editor'),
-(12, 'users', 'change_password_request_mail_subject', 'Тема письма запроса на смену пароля', 'Запрос на смену пароля {SITE_NAME}  ', 'editor'),
+(11, 'users', 'change_password_request_mail_body', 'Шаблон письма запроса на смену пароля', 'Уважаемый {LAST_NAME} {FIRST_NAME} {PATRONYMIC}.\r\nДля того чтобы изменить пароль пройдите  <a href="%7BCHANGE_PASSWORD_URL%7D">этой ссылке</a>.\r\nАдрес ссылки: {CHANGE_PASSWORD_URL}  ', 'editor'),
+(12, 'users', 'change_password_request_mail_subject', 'Тема письма изменение пароля', 'Изменение пароля на сайте {SITE_NAME}  ', 'editor'),
 (13, 'mailer', 'timeout', 'Таймаут отправки (сек.)', '30', 'text'),
 (14, 'mailer', 'signature', 'Подпись в письме', 'Данное сообщение отправлено роботом, просим Вас на него не отвечать.', 'text'),
 (15, 'mailer', 'encoding', 'Кодировка писем', 'KOI8-U', 'text'),
@@ -1720,7 +1750,7 @@ CREATE TABLE IF NOT EXISTS `site_actions` (
   `date_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Дата',
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4039 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4180 ;
 
 --
 -- Dumping data for table `site_actions`
@@ -5764,7 +5794,149 @@ INSERT INTO `site_actions` (`id`, `user_id`, `object_id`, `title`, `module`, `co
 (4035, 1, NULL, 'Управление генерируемыми полями', 'mailer', 'mailerFieldAdmin', 'manage', '2011-09-24 20:01:54'),
 (4036, 1, NULL, 'Добавление генерируемого поля', 'mailer', 'mailerFieldAdmin', 'create', '2011-09-24 20:02:06'),
 (4037, 1, NULL, 'Добавление генерируемого поля', 'mailer', 'mailerFieldAdmin', 'create', '2011-09-24 20:14:11'),
-(4038, 1, NULL, 'Управление генерируемыми полями', 'mailer', 'mailerFieldAdmin', 'manage', '2011-09-24 20:14:11');
+(4038, 1, NULL, 'Управление генерируемыми полями', 'mailer', 'mailerFieldAdmin', 'manage', '2011-09-24 20:14:11'),
+(4039, 1, NULL, 'Управление настройками', 'main', 'settingAdmin', 'manage', '2011-09-24 20:18:56'),
+(4040, 1, 12, 'Редактирование настройки', 'main', 'settingAdmin', 'update', '2011-09-24 20:19:14'),
+(4041, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 20:19:14'),
+(4042, 1, NULL, 'Управление генерируемыми полями', 'mailer', 'mailerFieldAdmin', 'manage', '2011-09-24 20:21:16');
+INSERT INTO `site_actions` (`id`, `user_id`, `object_id`, `title`, `module`, `controller`, `action`, `date_create`) VALUES
+(4043, 1, 12, 'Редактирование настройки', 'main', 'settingAdmin', 'update', '2011-09-24 20:22:06'),
+(4044, 1, 12, 'Просмотр настройки', 'main', 'settingAdmin', 'view', '2011-09-24 20:22:07'),
+(4045, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 20:22:30'),
+(4046, 1, NULL, 'Выход', 'users', 'user', 'logout', '2011-09-24 20:22:35'),
+(4047, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 20:22:36'),
+(4048, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 20:22:38'),
+(4049, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 20:22:50'),
+(4050, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-09-24 20:23:05'),
+(4051, 1, NULL, 'Просмотр главной страницы', 'main', 'mainAdmin', 'index', '2011-09-24 20:23:05'),
+(4052, 1, NULL, 'Управление настройками', 'main', 'settingAdmin', 'manage', '2011-09-24 20:24:47'),
+(4053, 1, 12, 'Редактирование настройки', 'main', 'settingAdmin', 'update', '2011-09-24 20:25:06'),
+(4054, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 20:25:06'),
+(4055, 1, 12, 'Редактирование настройки', 'main', 'settingAdmin', 'update', '2011-09-24 20:26:03'),
+(4056, 1, 12, 'Просмотр настройки', 'main', 'settingAdmin', 'view', '2011-09-24 20:26:03'),
+(4057, 1, NULL, 'Управление настройками', 'main', 'settingAdmin', 'manage', '2011-09-24 20:26:19'),
+(4058, 1, 12, 'Редактирование настройки', 'main', 'settingAdmin', 'update', '2011-09-24 20:28:03'),
+(4059, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 20:28:04'),
+(4060, 1, NULL, 'Управление настройками', 'main', 'settingAdmin', 'manage', '2011-09-24 20:28:33'),
+(4061, 1, 12, 'Редактирование настройки', 'main', 'settingAdmin', 'update', '2011-09-24 20:28:51'),
+(4062, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 20:28:51'),
+(4063, 1, 12, 'Редактирование настройки', 'main', 'settingAdmin', 'update', '2011-09-24 20:29:46'),
+(4064, 1, 12, 'Просмотр настройки', 'main', 'settingAdmin', 'view', '2011-09-24 20:29:46'),
+(4065, 1, NULL, 'Управление настройками', 'main', 'settingAdmin', 'Manage', '2011-09-24 20:29:49'),
+(4066, 1, 1, 'Редактирование настройки', 'main', 'settingAdmin', 'update', '2011-09-24 20:29:58'),
+(4067, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 20:29:58'),
+(4068, 1, NULL, 'Управление настройками', 'main', 'settingAdmin', 'Manage', '2011-09-24 20:30:10'),
+(4069, 1, 11, 'Редактирование настройки', 'main', 'settingAdmin', 'update', '2011-09-24 20:30:17'),
+(4070, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 20:30:18'),
+(4071, 1, 11, 'Редактирование настройки', 'main', 'settingAdmin', 'update', '2011-09-24 20:30:23'),
+(4072, 1, 11, 'Просмотр настройки', 'main', 'settingAdmin', 'view', '2011-09-24 20:30:23'),
+(4073, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 20:30:27'),
+(4074, 1, NULL, 'Выход', 'users', 'user', 'logout', '2011-09-24 20:30:33'),
+(4075, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 20:30:33'),
+(4076, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 20:30:35'),
+(4077, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 20:30:51'),
+(4078, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 20:32:52'),
+(4079, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 20:32:55'),
+(4080, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 20:33:07'),
+(4081, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 20:36:55'),
+(4082, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 20:36:56'),
+(4083, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 20:37:09'),
+(4084, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 20:38:14'),
+(4085, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-24 20:38:50'),
+(4086, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-24 20:42:17'),
+(4087, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-24 20:42:56'),
+(4088, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-24 20:43:22'),
+(4089, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-24 20:43:29'),
+(4090, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-24 20:43:45'),
+(4091, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-24 23:46:43'),
+(4092, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-24 23:46:45'),
+(4093, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-24 23:46:46'),
+(4094, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 23:46:47'),
+(4095, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 23:46:48'),
+(4096, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 23:46:49'),
+(4097, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-24 23:46:50'),
+(4098, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-25 14:49:11'),
+(4099, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-25 14:49:13'),
+(4100, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-25 14:49:13'),
+(4101, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 14:49:21'),
+(4102, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 14:49:24'),
+(4103, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:49:27'),
+(4104, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:49:40'),
+(4105, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:49:42'),
+(4106, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 14:50:04'),
+(4107, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 14:51:57'),
+(4108, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 14:52:01'),
+(4109, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:52:04'),
+(4110, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:52:16'),
+(4111, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:52:17'),
+(4112, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 14:52:23'),
+(4113, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 14:53:28'),
+(4114, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 14:53:31'),
+(4115, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:53:36'),
+(4116, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:53:48'),
+(4117, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:54:04'),
+(4118, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:54:20'),
+(4119, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:55:38'),
+(4120, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:55:49'),
+(4121, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:55:49'),
+(4122, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 14:55:58'),
+(4123, NULL, NULL, 'Запрос на смену пароля', 'users', 'user', 'changePasswordRequest', '2011-09-25 14:56:30'),
+(4124, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 14:56:33'),
+(4125, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 14:56:39'),
+(4126, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 14:56:48'),
+(4127, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 14:57:49'),
+(4128, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 14:58:09'),
+(4129, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 14:58:32'),
+(4130, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:00:56'),
+(4131, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:03:23'),
+(4132, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:03:38'),
+(4133, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:03:43'),
+(4134, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:03:48'),
+(4135, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:03:54'),
+(4136, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:04:03'),
+(4137, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:04:17'),
+(4138, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:05:36'),
+(4139, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:06:36'),
+(4140, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:06:37'),
+(4141, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:06:55'),
+(4142, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:07:40'),
+(4143, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:07:46'),
+(4144, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:07:59'),
+(4145, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-25 15:08:07'),
+(4146, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-25 15:08:16'),
+(4147, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-25 15:08:22'),
+(4148, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-25 15:08:33'),
+(4149, NULL, NULL, 'Регистрация', 'users', 'user', 'registration', '2011-09-25 15:08:35'),
+(4150, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:10:53'),
+(4151, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:11:10'),
+(4152, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:13:12'),
+(4153, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 15:13:12'),
+(4154, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:14:24'),
+(4155, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 15:14:24'),
+(4156, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:14:27'),
+(4157, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 15:14:27'),
+(4158, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:14:31'),
+(4159, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:14:36'),
+(4160, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:14:39'),
+(4161, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:14:55'),
+(4162, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:14:59'),
+(4163, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:15:05'),
+(4164, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:15:09'),
+(4165, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:15:15'),
+(4166, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 15:15:15'),
+(4167, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:15:41'),
+(4168, NULL, NULL, 'Смена пароля', 'users', 'user', 'changePassword', '2011-09-25 15:15:52'),
+(4169, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 15:15:52'),
+(4170, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 15:16:02'),
+(4171, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 15:16:58'),
+(4172, 24, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-25 15:16:58'),
+(4173, 24, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-25 15:22:28'),
+(4174, 24, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-25 15:22:55'),
+(4175, 24, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-09-25 15:23:32'),
+(4176, 24, NULL, 'Выход', 'users', 'user', 'logout', '2011-09-25 15:23:38'),
+(4177, NULL, NULL, 'Главная страница', 'content', 'page', 'main', '2011-09-25 15:23:38'),
+(4178, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 15:23:41'),
+(4179, NULL, NULL, 'Авторизация', 'users', 'user', 'login', '2011-09-25 15:26:19');
 
 -- --------------------------------------------------------
 
@@ -5785,20 +5957,20 @@ CREATE TABLE IF NOT EXISTS `users` (
   `status` enum('active','new','blocked') DEFAULT 'new' COMMENT 'Статус',
   `activate_code` varchar(32) DEFAULT NULL COMMENT 'Код активации',
   `activate_date` datetime DEFAULT NULL COMMENT 'Дата активации',
-  `password_recover_code` varchar(32) DEFAULT NULL,
-  `password_recover_date` datetime DEFAULT NULL,
+  `password_change_code` varchar(32) DEFAULT NULL,
+  `password_change_date` datetime DEFAULT NULL,
   `date_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Зарегистрирован',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `patronymic`, `email`, `phone`, `password`, `birthdate`, `gender`, `status`, `activate_code`, `activate_date`, `password_recover_code`, `password_recover_date`, `date_create`) VALUES
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `patronymic`, `email`, `phone`, `password`, `birthdate`, `gender`, `status`, `activate_code`, `activate_date`, `password_change_code`, `password_change_date`, `date_create`) VALUES
 (1, 'yo', 'Иванов', 'Васильевич', 'admin@ya.ru', '+7-965-1935233', 'e10adc3949ba59abbe56e057f20f883e', '2003-05-20', 'man', 'active', '070a63ae33af0eb7986992e774dc53e8', '0000-00-00 00:00:00', NULL, NULL, '2011-09-13 00:00:00'),
-(24, 'Артем', 'Остапец', 'Игоревич', 'artem-moscow@yandex.ru', '+7-903-5492969', '813107300f254c3a072c17066c15a22a', '2011-09-16', 'man', 'active', NULL, NULL, NULL, NULL, '2011-09-24 15:21:54');
+(24, 'Артем', 'Остапец', 'Игоревич', 'artem-moscow@yandex.ru', '+7-903-5492969', 'e10adc3949ba59abbe56e057f20f883e', '2011-09-16', 'man', 'active', NULL, '2011-09-24 15:21:54', NULL, '2011-09-24 15:21:54', '2011-09-24 15:21:54');
 
 -- --------------------------------------------------------
 
@@ -5996,7 +6168,7 @@ CREATE TABLE IF NOT EXISTS `ymarket_ips` (
   `date_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Добавлен',
   PRIMARY KEY (`id`),
   UNIQUE KEY `ip` (`ip`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 --
 -- Dumping data for table `ymarket_ips`
@@ -6161,7 +6333,7 @@ CREATE TABLE IF NOT EXISTS `ymarket_sections` (
   UNIQUE KEY `url` (`url`),
   UNIQUE KEY `yandex_name` (`yandex_name`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `ymarket_sections`

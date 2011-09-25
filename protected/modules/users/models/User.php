@@ -35,8 +35,6 @@ class User extends ActiveRecordModel
 
     public $activate_error;
 
-    public $new_password;
-
     public $activate_code;
 
 
@@ -105,7 +103,15 @@ class User extends ActiveRecordModel
             ),*/
             array(
                 'email',
-                'required'
+                'required',
+            	'on' => array(
+            		self::SCENARIO_ACTIVATE_REQUEST,
+            		self::SCENARIO_CHANGE_PASSWORD_REQUEST,
+            		self::SCENARIO_CREATE,
+            		self::SCENARIO_LOGIN,
+            		self::SCENARIO_REGISTRATION,
+            		self::SCENARIO_UPDATE
+            	)
             ),
             array(
                 'first_name, last_name, patronymic, phone',
@@ -114,11 +120,6 @@ class User extends ActiveRecordModel
             ),
             array('first_name, last_name, patronymic','length', 'max' => 40),
             array('first_name, last_name, patronymic','ruLatAlpha'),
-            array(
-                'new_password',
-                'required',
-                'on' => self::SCENARIO_CHANGE_PASSWORD
-            ),
             array(
                 'birthdate, gender',
                 'required',
@@ -142,12 +143,6 @@ class User extends ActiveRecordModel
             		self::SCENARIO_LOGIN,
             		self::SCENARIO_REGISTRATION,
             	)
-            ),
-
-            array(
-                'password_c, new_password',
-                'length',
-                'min' => 6
             ),
             array(
                 'password',
@@ -178,12 +173,6 @@ class User extends ActiveRecordModel
                     self::SCENARIO_UPDATE,
                     self::SCENARIO_CREATE
                 )
-            ),
-            array(
-                'password_c',
-                'compare',
-                'compareAttribute' => 'new_password',
-                'on' => self::SCENARIO_CHANGE_PASSWORD
             ),
             array('phone', 'phone'),
             array(
@@ -248,8 +237,6 @@ class User extends ActiveRecordModel
                 "password_c"   => "Пароль еще раз",
                 "remember_me"  => "Запомни меня",
                 "captcha"      => "Введите код",
-                "new_password" => "Новый пароль",
-                "new_password" => "Новый пароль",
                 "role"         => "Роль"
             )
         );

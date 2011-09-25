@@ -66,7 +66,7 @@ class UserController extends BaseController
 
 
     public function actionLogin()
-    {	
+    {	    	
         $model = new User(User::SCENARIO_LOGIN);
 
         $form = new BaseForm('users.LoginForm', $model);
@@ -262,6 +262,8 @@ class UserController extends BaseController
                     if ($user->status == User::STATUS_ACTIVE)
                     {	
 				        $user->password_change_code = md5($user->password . $user->email . $user->id . time());
+						$user->password_change_date = new CDbExpression('NOW()');
+				        $user->save();
 						
 				        $mailer_letter = MailerLetter::model();
 				        
@@ -313,7 +315,7 @@ class UserController extends BaseController
         $form  = new BaseForm('users.ChangePasswordForm', $model);
 		
         $user = User::model()->findByAttributes(array('password_change_code' => $code));
-		p($user);
+		
         if (!$user || md5($user->email) != $email)
         {
             $error = 'Неверная ссылка изменения пароля!';
@@ -323,7 +325,7 @@ class UserController extends BaseController
             if (strtotime($user->password_change_date) + 24 * 3600 > time())
             {
                 if (isset($_POST['User']))
-                {
+                {	
                     $model->attributes = $_POST['User'];
                     if ($model->validate())
                     {
@@ -331,10 +333,10 @@ class UserController extends BaseController
                         $user->password_change_date = null;
                         $user->password = md5($_POST['User']['password']);
                         $user->save();
-
-                        $_SESSION['ChangePassword'] = true;
-
-                        $this->redirect('/users/user/login/from/password_recover');
+				
+                        Yii::app()->user->setFlash('change_password_done', 'Ваш пароль успешно изменен, вы можете авторизоваться!');
+                        
+                        $this->redirect($this->url('/login'));
                     }
                 }
             }
