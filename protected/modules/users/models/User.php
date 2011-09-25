@@ -91,7 +91,7 @@ class User extends ActiveRecordModel
     public function rules()
     {
         return array(
-            /*array(
+            array(
                 'captcha',
                 'application.extensions.recaptcha.EReCaptchaValidator',
                 'privateKey' => '6LcsjsMSAAAAAHGMdF84g3szTZZe0VVwMof5bD7Y',
@@ -100,7 +100,7 @@ class User extends ActiveRecordModel
             		self::SCENARIO_ACTIVATE_REQUEST, 
             		self::SCENARIO_CHANGE_PASSWORD_REQUEST
             	)
-            ),*/
+            ),
             array(
                 'email',
                 'required',

@@ -87,7 +87,9 @@ class UserAdminController extends AdminController
         $model->scenario = 'Create';
 
         $form = new BaseForm('users.UserForm', $model);
-
+		
+        unset($form->elements['captcha']);
+        
 		if(isset($_POST['User']))
 		{
 			$model->attributes = $_POST['User'];
@@ -118,8 +120,10 @@ class UserAdminController extends AdminController
 
         $old_password = $model->password;
 
-        $form  = new BaseForm('users.UserForm', $model);
+        $form = new BaseForm('users.UserForm', $model);
 
+        unset($form->elements['captcha']);
+        
 		if(isset($_POST['User']))
 		{
 			$model->attributes = $_POST['User'];
