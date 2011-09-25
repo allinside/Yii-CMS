@@ -194,10 +194,14 @@ input.submit.tiny {
     padding-bottom: 2px;
     vertical-align: middle;
     font-family: "Lucida Grande", Arial, Helvetica, sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     text-transform: none;
     background: url(/images/admin/tiny.gif) top center no-repeat;
+}
+
+input.submit.tiny.red {
+	background: url(/images/admin/tiny_red.gif) top center no-repeat;
 }
 
 input.submit.tiny:hover {

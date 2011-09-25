@@ -15,7 +15,9 @@ class GridView extends CGridView
     public $buttons = null;
 
     public $sortable = false;
-
+	
+    public $mass_removal = false;
+    
     public $template = '{summary}<br/>{pager}<br/>{items}<br/>{pager}';
 
 
@@ -86,11 +88,16 @@ class GridView extends CGridView
 	{
 		if($this->dataProvider->getItemCount()>0 || $this->showTableOnEmpty)
 		{
-			echo "<table class='' sortable='{$this->sortable}' cellpadding='0' cellspacing='0' width='100%'>\n";
+			echo "<table class='' sortable='{$this->sortable}' mass_removal='{$this->mass_removal}' cellpadding='0' cellspacing='0' width='100%'>\n";
 			$this->renderTableHeader();
 			$this->renderTableBody();
 			$this->renderTableFooter();
 			echo "</table>";
+			
+			if ($this->mass_removal) 
+			{
+				echo "<input type='submit' class='submit tiny red' value='удалить' id='mass_remove_button'>";
+			}
 		}
 		else
 			$this->renderEmptyText();
@@ -107,7 +114,11 @@ class GridView extends CGridView
 				$this->renderFilter();
 
 			echo "<tr>\n";
-            //echo "<td><input type='checkbox'></td>";
+			
+			if ($this->mass_removal) 
+			{
+				echo "<td><input type='checkbox' class='object_checkboxes'></td>";
+			}
 
 			foreach($this->columns as $column)
             {
@@ -127,9 +138,37 @@ class GridView extends CGridView
 			$this->renderFilter();
 			echo "</thead>\n";
 		}
+	}
+	
+	
+	public function renderTableRow($row)
+	{	
+		$data = $this->dataProvider->data[$row];
 
+		if($this->rowCssClassExpression!==null)
+		{
+			echo '<tr class="'.$this->evaluateExpression($this->rowCssClassExpression,array('row'=>$row,'data'=>$data)).'">';
+		}
+		else if(is_array($this->rowCssClass) && ($n=count($this->rowCssClass))>0)
+		{
+			echo '<tr class="'.$this->rowCssClass[$row%$n].'">';
+		}	
+		else 
+		{
+			echo '<tr>';
+		}
 
-
+		if ($this->mass_removal) 
+		{
+			echo "<td><input type='checkbox' object_id='{$data->primarykey}' class='object_checkbox'></td>";
+		}
+		
+		foreach($this->columns as $column)
+		{
+			$column->renderDataCell($row);
+		}
+			
+		echo "</tr>\n";
 	}
 
 

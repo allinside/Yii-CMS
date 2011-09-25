@@ -1,9 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta http-equiv="X-UA-Compatible" content="IE=7"/>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <title></title>
 
@@ -30,9 +30,13 @@
 
     $cs->registerCoreScript('jquery');
     $cs->registerCoreScript('jquery.ui');
-    $cs->registerScriptFile('/js/admin/gridview.js');
+    $cs->registerScriptFile('/js/plugins/jquery.slidingmessage/jquery.slidingmessage.min.js');
+    
+    $cs->registerScriptFile('/js/plugins/jquery-loadmask-0.4/jquery.loadmask.min.js');
+    $cs->registerScriptFile('/js/plugins/jquery-loadmask-0.4/loadmask.js');
+    $cs->registerCssFile('/js/plugins/jquery-loadmask-0.4/jquery.loadmask.css');
     ?>
-
+	
 </head>
 <body>
 <div id="hld">
