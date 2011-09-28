@@ -40,10 +40,6 @@ class RoleAdminController extends AdminController
 			    
 			    $this->redirect($this->redirect($this->createUrl("view", array('id' => $model->name))));
 			}
-			else 
-			{
-			    p($model->getErrors());
-			}
 		}
 		
 		$this->render('create', array('form' => $form));
