@@ -55,6 +55,32 @@ class ActiveRecordModel extends CActiveRecord
 
 
     /*VALIDATORS________________________________________________________________________________*/
+    public function city($attr) 
+    {	
+    	$name = trim($this->$attr);
+    	
+    	if (!empty($name)) 
+    	{
+    		if (!is_numeric($name)) 
+    		{
+		    	$city = City::model()->findByAttributes(array('name' => $name));
+		    	if ($city) 
+		    	{
+		    		$this->$attr = $city->id;	
+		    	}   
+		    	else 
+		    	{
+		    		$this->addError($attr, Yii::t('main', 'Город не найден'));
+		    	} 	    		
+    		}
+    	}
+    	else 
+    	{
+    		$this->$attr = null;	
+    	}
+    }
+        
+    
     public function phone($attr)
     {
         if (!empty($this->$attr))
