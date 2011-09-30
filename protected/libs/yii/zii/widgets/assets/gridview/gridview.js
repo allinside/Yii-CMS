@@ -22,7 +22,14 @@ $(function()
 
 function initFiltersLink()
 {
-    $('.filters input').each(function()
+	var inputs_count = $('.filters input[type=text]').length;
+	
+	if (inputs_count == 0) 
+	{
+		return false;
+	}
+	
+	$('.filters input').each(function()
     {
         if ($(this).val())
         {
@@ -33,7 +40,7 @@ function initFiltersLink()
     $('.grid-view th').each(function()
     {
         if ($(this).html() == '&nbsp;')
-        {
+        {	
             $(this).html("<a href='' class='filters_link'>фильтры</a>");
 
             $('.filters_link').click(function()

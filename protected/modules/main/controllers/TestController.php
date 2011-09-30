@@ -6,4 +6,10 @@ class TestController extends CController
     {
         MailerModule::sendMail("artem-moscow@yandex.ru", "Mailer Тест", "Все пиздато");
     }
+
+
+	public function actionTestDbExport() 
+	{
+		
+	}
 }

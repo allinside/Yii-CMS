@@ -2,6 +2,20 @@
 
 class MailerModule extends WebModule
 {	
+    const SETTING_LETTERS_PART_COUNT = 'letters_part_count';
+    const SETTING_REPLY_ADDRESS      = 'reply_address';
+    const SETTING_DISPATCH_TIME      = 'dispatch_time';
+    const SETTING_FROM_EMAIL         = 'from_email';
+    const SETTING_SIGNATURE          = 'signature';
+    const SETTING_FROM_NAME          = 'from_name';   
+    const SETTING_ENCODING           = 'encoding';   
+    const SETTING_PASSWORD           = 'password';
+    const SETTING_TIMEOUT            = 'timeout';
+    const SETTING_LOGIN              = 'login'; 
+    const SETTING_HOST               = 'host';
+    const SETTING_PORT               = 'port';	
+	
+	
 	public static $active = true;
 
 
@@ -54,7 +68,6 @@ class MailerModule extends WebModule
             'Добавить шаблон'   => '/mailer/MailerTemplateAdmin/create',
             'Генерируемые поля' => '/mailer/MailerFieldAdmin/manage',
             'Добавить поле'     => '/mailer/MailerFieldAdmin/create',
-            'Параметры'         => '/mailer/MailerOptionAdmin/manage'
         );
     }
 

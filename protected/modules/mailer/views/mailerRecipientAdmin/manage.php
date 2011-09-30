@@ -27,9 +27,9 @@ $this->widget('application.components.GridView', array(
 	'filter' => $model,
 	'template' => '{summary}<br/>{pager}<br/>{items}<br/>{pager}',
 	'columns' => array(
-		array('name' => 'user_id', 'value' => '$data->user->name'),
-        array('name' => 'Роль', 'value' => '$data->user->role->description'),
-		array('name' => 'status', 'value' => 'MailerRecipient::$statuses[$data->status]'),
+		array('name'   => 'user_id', 'value' => '$data->user->name', 'filter' => false),
+        array('header' => 'Роль', 'value' => '$data->user->role->description'),
+		array('name'   => 'status', 'value' => 'MailerRecipient::$statuses[$data->status]', 'filter' => false),
 		array(
 			'class'=>'CButtonColumn',
             'template' => ''
@@ -40,4 +40,3 @@ $this->widget('application.components.GridView', array(
 ?>
 
 <input type='button' class="submit mid" value="Обновить" id="refresh_rl_button">
-<input type='button' class="submit long" value="Повторная отправка" id="resend_rl_button">

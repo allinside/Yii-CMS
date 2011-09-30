@@ -122,30 +122,33 @@ class MailerLetter extends ActiveRecordModel
     public function sendLetters()
     {
         $first_sending = false;
-
-        $model = MailerOption::model();
-
-        $options = MailerOption::model()->getValues();
- 
-        if (!isset($options['dispatch_time']))
+		
+        $settings = Setting::model()->findCodesValues();
+      
+        if (!isset($settings[MailerModule::SETTING_DISPATCH_TIME]))
         {
-            $dispatch_time = new MailerOption;
-            $dispatch_time->name   = 'Последнее время отправки';
-            $dispatch_time->code   = 'dispatch_time';
-            $dispatch_time->value  = time();
-            $dispatch_time->hidden = 1;
+            $dispatch_time = new Setting;
+            $dispatch_time->attributes = array(
+	            'module_id' => Yii::app()->controller->module->id,
+	            'name'      => 'Последнее время отправки',
+	            'code'      => MailerModule::SETTING_DISPATCH_TIME,
+	            'value'     => time(),
+	            'hidden'    => 1            	
+            );
+
             $dispatch_time->save();
 
-            $options['dispatch_time'] = $dispatch_time->value;
+            $settings[MailerModule::SETTING_DISPATCH_TIME] = $dispatch_time->value;
 
             $first_sending = true;
         }
-        
-        if (!$first_sending && ((time() - $options['dispatch_time']) < $options['timeout']))
-        {
+
+
+        if (!$first_sending && ((time() - $settings[MailerModule::SETTING_DISPATCH_TIME]) < $settings[MailerModule::SETTING_TIMEOUT]))
+        {	
             return;
         }
-        echo "Начинаем<br/>";
+
         $letters_sent_count = 0;
 
         $letters = MailerLetter::model()->findAll(array('order' => 'date_create'));
@@ -162,22 +165,26 @@ class MailerLetter extends ActiveRecordModel
             {
                 $user = $recipient->user;
 
+                $subject = $letter->template ? $letter->template->subject : $letter->subject;
+                $subject = $this->compileText($subject, array('user' => $user));
+
                 $body = $letter->template ? $letter->template->text : $letter->text;
                 $body = $this->compileText($body, array('user' => $user));
-                $body.= "<br><br>" . $options['signature'];
+
+                $body.= "<br><br>" . $settings[MailerModule::SETTING_SIGNATURE];
                 $body.= "<img src='http://{$_SERVER['HTTP_HOST']}/mailer/Mailer/ConfirmReceipt/letter_id/{$letter->id}/user_id/{$user->id}.jpg' />";
           
-                $sent = Mailman::sendMail(
+                $sent = MailerModule::sendMail(
                     $user->email,
-                    $letter->template ? $letter->template->subject : $letter->subject,
+                    $subject,
                     $body,
-                    $options['from_name'],
-                    $options['reply_address'],
-                    $options['host'],
-                    $options['port'],
-                    $options['login'],
-                    $options['password'],
-                    $options['encoding'],
+                    $settings[MailerModule::SETTING_FROM_NAME],
+                    $settings[MailerModule::SETTING_REPLY_ADDRESS],
+                    $settings[MailerModule::SETTING_HOST],
+                    $settings[MailerModule::SETTING_PORT],
+                    $settings[MailerModule::SETTING_LOGIN],
+                    $settings[MailerModule::SETTING_PASSWORD],
+                    $settings[MailerModule::SETTING_ENCODING],
                     true
                 );
 
@@ -196,10 +203,10 @@ class MailerLetter extends ActiveRecordModel
 
                 echo $user->email . "<br/>";
 
-                if ($letters_sent_count >= $options['letters_part_count'])
+                if ($letters_sent_count >= $settings[MailerModule::SETTING_LETTERS_PART_COUNT])
                 {
-                    $dispatch_time = MailerOption::model()->findByAttributes(array('code' => 'dispatch_time'));
-                    $dispatch_time->value = time();
+                    $dispatch_time = Setting::model()->findByAttributes(array('code' => MailerModule::SETTING_DISPATCH_TIME));
+                    $dispatch_time->value = new CDbExpression('NOW()');
                     $dispatch_time->save();
 
                     Yii::app()->end();

@@ -46,8 +46,20 @@ $this->widget('application.components.GridView', array(
 		array('name' => 'subject', 'value' => '$data->template ? $data->template->subject : $data->subject'),
         array('name' => 'text', 'value' => '$data->template ? $data->template->getTextContent(true) : $data->getTextContent(true)', 'type' => 'raw'),
 		array('name' => 'template_id', 'value' => '$data->template ? $data->template->name : null'),
-		array('name' => 'Список рассылки', 'value' => 'getRecipientsList($data)', 'type' => 'raw'),
-        array('name' => 'Статистика', 'value' => 'getStatistics($data)', 'type' => 'raw'),
+		array(
+			'header' => 'Список рассылки', 
+			'value' => 'getRecipientsList($data)', 
+			'type' => 'raw', 
+			'filter' => false,
+			'sortable' => false
+		),
+        array(
+        	'header'   => 'Статистика', 
+        	'value'    => 'getStatistics($data)', 
+        	'type'     => 'raw', 
+        	'filter'   => false,
+        	'sortable' => false
+        ),
 		array(
 			'class'=>'CButtonColumn',
 		),

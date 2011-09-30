@@ -4,12 +4,10 @@ class Setting extends ActiveRecordModel
 {
     const PAGE_SIZE = 10;
 
-    const ELEMENT_TEXT = 'text';
-
     const ELEMENT_TEXTAREA = 'textarea';
-
-    const ELEMENT_EDITOR = 'editor';
-
+    const ELEMENT_EDITOR   = 'editor';
+    const ELEMENT_TEXT     = 'text';
+   
 
     public static $elements = array(
         self::ELEMENT_TEXT     => "Строка",
@@ -36,7 +34,8 @@ class Setting extends ActiveRecordModel
 			array('code', 'length', 'max'=>50),
 			array('name', 'length', 'max'=>100),
 			array('element', 'length', 'max'=>8),
-            array('value', 'safe'),
+			array('hidden', 'numerical', 'integerOnly' => true),
+            array('value', 'safe'), 
 			array('id, code, name, element', 'safe', 'on'=>'search')
 		);
 	}
