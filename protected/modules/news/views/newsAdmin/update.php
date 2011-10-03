@@ -7,11 +7,10 @@ $this->tabs = array(
 
 echo $form;
 
-
 $this->widget('upload.portlets.Uploader', array(
     'model' => $form->model,
     'id' => 'uploader',
-    'filesType' => 'any',
+    'dataType' => 'any',
     'maxFileSize' => 10*1000*1000,
     'tag' => 'files'
 ));

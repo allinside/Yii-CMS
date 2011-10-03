@@ -1,0 +1,109 @@
+Используемые js плагины:
+jEditable - инлайн редактирование. см: http://www.appelsiini.net/projects/jeditable
+jFileUpload - мультизагрузка файлов. см: http://aquantum-demo.appspot.com/file-upload
+moderniz - проверка на поддержку браузером определенных технологий. см: http://www.modernizr.com/
+
+Используемые php библиотеки:
+upload_class - работа с изображениями - ресайз, кроп, наложение водяных знаков, повороты и т.п. см: http://www.verot.net/php_class_upload_samples.htm
+
+Модели:
+1) File:
+Общий принцип работы - есть 3 поля в БД по которым определяется хозяин файла:
+    typeParent - имя модели, которой принадлежит файл, например News
+    idParent - id модели, которой принадлежит файл.
+    tag - у одной новости могут быть файлы с разными тегами, например before/after. (я даю имена тегам такие же как и релейшнам в родительских классах)
+            пример релейшна: 'images' => array(self::HAS_MANY, 'Files', 'idParent',
+                                    'condition' => "typeParent='".get_class($this)."' AND images.tag='images'",
+                                    'order' => 'images.`order` DESC'
+                                ),
+    
+публичные вспомогательные поля:
+    public $size; - размер заполняется в методе fill()
+    public $error;
+вспоморательные функции
+    mimeByExt() - определяет mime тип по расширению - через большой-большой case ☺
+    rus2translit() - транслит
+    str2url() - осталась еще от прошлого загрузчика, делает транслит и чистит строку.
+
+скоупы:
+    parent(String $type, Int $id) - задает, для какого родителя выбирать файлы.
+    tag(String $tag) - задает тэг
+
+геттеры и сеттеры:
+    getDeleteUrl() - урл для удаления
+    getUrl() - урл для скачивания
+    getSrc() - вроде дублирует предыдущий, только хреновый, его лучше убить.
+    
+    setExt($val) - устанавливает расширение и сразу mime тип
+
+    getIsImage() - in_array($this->extension, array('png', 'jpeg', 'jpg', 'tiff', 'ief', 'gif'));
+    getIsSound() - in_array($this->extension, array('wma', 'mp3'));
+    getIsExcel() - in_array($this->extension, array('xl', 'xla', 'xlb', 'xlc', 'xld', 'xlk', 'xll', 'xlm', 'xls', 'xlt', 'xlv', 'xlw'));
+    getIsWord() - in_array($this->extension, array('doc', 'dot', 'docx'));
+    getIsArchive() - in_array($this->extension, array('zip', 'rar', 'tar', 'gz'));
+
+    getIcon() - урл иконки файла(например для вордовских или музыкальных файлов)
+    getFormatSize() - преобразует размер в читабельный формат.
+    getUniqueName() - возвращает уникальное имя для файла(транслитит, если что приписывает счетчик, и добавляет постфикс)
+    
+    setWatermark(String $position) - устанавливает водяной знак, входной параметр лубую комбинацию из "LTBR" или "center" //@todo replace 40% on real center
+
+методы: 
+    beforeSaveOnServer - неудачно назвал, потому что это не событие. просто оно вызывается перед сейвом файла на сервер. проверяет, что есть куда сохранять.
+    fill() - заполняет размер и расширение. (используется в afterFind и при сохранении)
+
+методы для сохранения:
+    пояснение: я сразу создал несколько отдельных методов для сохранения файлов, отдельно для картинок, музыки, видео, документов и прочего.
+                мало ли какие преобразования и библиотеки придется навесить на отдельные типы файлов.
+saveImageOnServer
+saveSoundOnServer
+saveVideoOnServer
+saveDocumentOnServer
+saveAnyOnServer
+
+
+Контроллеры:
+1) FilesController:
+экшены:
+    "UpdateAttr"    => "Инлайн-редактирование",
+    "Upload"        => "Отображение брендов",
+    "SavePriority"  => "Сортировка", * @todo generally action must work with 2 parameters: from and to, and update only records between them at one query, but then we must use draggable and droppable on client instead of sortable. maybe later
+    "Delete"        => "Удаление файла",
+    "ExistFiles"    => "Существующие файлы",
+    "SetWatermark"  => "Наложить изображение"
+приватне методы:
+    sendFilesAsJson($files) - принемает массив объектов типа File
+                             выводит в json формат пригодный для понимания jFileUpload
+
+
+Портлеты:
+    1) Uploader - админский портлет для закачки файлов.
+    Обязательные поля -
+        id - просто айдишник загрузчика, нужен при наличии двух загрузчиков на страницах(можно было бы и вывести его из тэга, но как-то это магично),
+        model - нужная нам модель, а не ее название (из нее возьмется idParent),
+        dataType - тип данных который разрешено загружать через этот загрузчик(от этого параметра зависит по каким регуляркам  будут допускаться файлы и какой метод будет использован в модели File для загрузки файлов)
+        tag - даже если загрузчик на стронице один все равно нужно задавать тег, потому что завтра обязательно приспичит поставить второй.
+
+    Необязательные поля -
+        maxFileSize - например так: 10*100*100
+        $options - параметры которые будут переданы в методы Files::saveImageOnServer и подобные,
+            например, если dataType установлен в image, то это будут настройки для библиотеки upload_class
+            если - sound, то для какой-то другой будущей библиотеки.
+    Примечание: инфраструктура плагинов загрузки такая: есть базовый UI виджет fileupload,
+                от него наследуется fileupload-ui, а от него отнаследовался я cmsUI.fileupload
+                
+                в конструкторе инициализируются всякие jEditable, удаляет drop-zone в неподдерживающих браузерах, и прочее.
+                Если нужно прибиндить какой-то еще плагин, то это можно сделать там.
+
+    2) FilesList - портлет для вывода файлов на сайте.
+        содержит одно поле $items
+
+Общие принципы:
+    при загрузке страницы, посылается get запрос до /upload/files/existFiles и получает существующие файлы
+    полученные данные прогоняются через uploader.data('fileupload')._renderDownload(data) У портлета Upload есть вид,
+    в котором можно найти блок с id="template-download" это шаблон для плагина jquery.tmpl, оттуда и берется весь HTMl
+
+    при добавлении новых файлов, они прогоняются через id="template-upload"
+
+
+

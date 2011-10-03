@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Сен 30 2011 г., 19:20
+-- Время создания: Окт 03 2011 г., 16:50
 -- Версия сервера: 5.1.49
 -- Версия PHP: 5.3.3-1ubuntu9.5
 
@@ -1025,6 +1025,32 @@ INSERT INTO `feedback` (`id`, `first_name`, `last_name`, `patronymic`, `company`
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `files`
+--
+
+CREATE TABLE IF NOT EXISTS `files` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `tag` varchar(100) DEFAULT NULL,
+  `has_watermark` tinyint(1) unsigned NOT NULL,
+  `title` text,
+  `descr` text,
+  `extension` varchar(5) NOT NULL,
+  `mimeType` varchar(100) NOT NULL,
+  `idParent` int(11) NOT NULL,
+  `typeParent` varchar(100) NOT NULL,
+  `order` int(110) unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=158 ;
+
+--
+-- Дамп данных таблицы `files`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `languages`
 --
 
@@ -1056,7 +1082,7 @@ CREATE TABLE IF NOT EXISTS `log` (
   `logtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Время',
   `message` text COMMENT 'Сообщение',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=86 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=106 ;
 
 --
 -- Дамп данных таблицы `log`
@@ -1149,7 +1175,27 @@ INSERT INTO `log` (`id`, `level`, `category`, `logtime`, `message`) VALUES
 (82, 'error', 'exception.CHttpException.404', '2011-09-30 19:03:33', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
 (83, 'error', 'exception.CHttpException.404', '2011-09-30 19:03:47', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
 (84, 'error', 'exception.CException', '2011-09-30 19:16:50', 'exception ''CException'' with message ''MailerRecipient не содержит метода "errorsHtml".'' in /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php:266\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(213): CComponent->__call(''errorsHtml'', Array)\n#1 /var/www/Yii-CMS/protected/modules/mailer/controllers/MailerController.php(27): CActiveRecord->__call(''errorsHtml'', Array)\n#2 /var/www/Yii-CMS/protected/modules/mailer/controllers/MailerController.php(27): MailerRecipient->errorsHtml()\n#3 [internal function]: MailerController->actionConfirmReceipt(''4'', ''18.jpg'')\n#4 /var/www/Yii-CMS/protected/libs/yii/web/actions/CAction.php(104): ReflectionMethod->invokeArgs(Object(MailerController), Array)\n#5 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(MailerController), Object(ReflectionMethod), Array)\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''ConfirmReceipt'')\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''mailer/Mailer/C...'')\n#11 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#12 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#13 {main} REQUEST_URI=/mailer/Mailer/ConfirmReceipt/letter_id/4/user_id/18.jpg'),
-(85, 'error', 'exception.CHttpException.404', '2011-09-30 19:17:01', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css');
+(85, 'error', 'exception.CHttpException.404', '2011-09-30 19:17:01', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
+(86, 'error', 'exception.CHttpException.404', '2011-10-03 16:41:19', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "favicon.ico".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''favicon.ico'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/favicon.ico'),
+(87, 'error', 'exception.CHttpException.404', '2011-10-03 16:41:20', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "favicon.ico".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''favicon.ico'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/favicon.ico'),
+(88, 'warning', 'application', '2011-10-03 16:41:21', 'Не удалось присвоить небезопасный атрибут "remember_me".\nin /var/www/Yii-CMS/protected/modules/users/controllers/UserAdminController.php (36)\nin /var/www/Yii-CMS/index.php (30)'),
+(89, 'error', 'exception.CException', '2011-10-03 16:41:53', 'exception ''CException'' with message ''Не определено свойство "Uploader.filesType".'' in /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php:173\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWidgetFactory.php(162): CComponent->__set(''filesType'', ''any'')\n#1 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(139): CWidgetFactory->createWidget(Object(NewsAdminController), ''upload.portlets...'', Array)\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(165): CBaseController->createWidget(''upload.portlets...'', Array)\n#3 /var/www/Yii-CMS/protected/modules/news/views/newsAdmin/update.php(17): CBaseController->widget(''upload.portlets...'', Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(119): require(''/var/www/Yii-CM...'')\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CBaseController.php(88): CBaseController->renderInternal(''/var/www/Yii-CM...'', Array, true)\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(866): CBaseController->renderFile(''/var/www/Yii-CM...'', Array, true)\n#7 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(779): CController->renderPartial(''update'', Array, true)\n#8 /var/www/Yii-CMS/protected/modules/news/controllers/NewsAdminController.php(71): CController->render(''update'', Array)\n#9 [internal function]: NewsAdminController->actionUpdate(''3'')\n#10 /var/www/Yii-CMS/protected/libs/yii/web/actions/CAction.php(104): ReflectionMethod->invokeArgs(Object(NewsAdminController), Array)\n#11 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(48): CAction->runWithParamsInternal(Object(NewsAdminController), Object(ReflectionMethod), Array)\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#13 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#14 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#15 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''update'')\n#16 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''news/newsAdmin/...'')\n#17 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#18 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#19 {main} REQUEST_URI=/news/newsAdmin/update/id/3'),
+(90, 'error', 'exception.CHttpException.404', '2011-10-03 16:43:35', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
+(91, 'error', 'exception.CException', '2011-10-03 16:43:36', 'exception ''CException'' with message ''Псевдоним "application.components.activeRecordBehaviors.SortableBehavior" неверен. Убедитесь, что он указывает на существующий PHP файл.'' in /var/www/Yii-CMS/protected/libs/yii/YiiBase.php:311\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/YiiBase.php(191): YiiBase::import(''application.com...'', true)\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php(331): YiiBase::createComponent(Array)\n#2 /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php(300): CComponent->attachBehavior(''sortable'', Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(372): CComponent->attachBehaviors(Array)\n#4 /var/www/Yii-CMS/protected/components/ActiveRecordModel.php(16): CActiveRecord::model(''Files'')\n#5 /var/www/Yii-CMS/protected/modules/upload/models/Files.php(16): ActiveRecordModel::model(''Files'')\n#6 /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php(35): Files::model()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): FilesController->actionExistFiles()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''existFiles'')\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''upload/files/ex...'')\n#13 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#14 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#15 {main} REQUEST_URI=/upload/files/existFiles/typeParent/News/idParent/3/tag/files'),
+(92, 'error', 'exception.CException', '2011-10-03 16:43:50', 'exception ''CException'' with message ''Псевдоним "application.components.activeRecordBehaviors.SortableBehavior" неверен. Убедитесь, что он указывает на существующий PHP файл.'' in /var/www/Yii-CMS/protected/libs/yii/YiiBase.php:311\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/YiiBase.php(191): YiiBase::import(''application.com...'', true)\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php(331): YiiBase::createComponent(Array)\n#2 /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php(300): CComponent->attachBehavior(''sortable'', Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(372): CComponent->attachBehaviors(Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(386): CActiveRecord::model(''Files'')\n#5 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(62): CActiveRecord->getMetaData()\n#6 /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php(46): CActiveRecord->__construct(''insert'')\n#7 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): FilesController->actionUpload()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''upload'')\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''upload/files/up...'')\n#13 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#14 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#15 {main} REQUEST_URI=/upload/files/upload/typeParent/News/idParent/3/dataType/any/tag/files'),
+(93, 'error', 'exception.CException', '2011-10-03 16:46:12', 'exception ''CException'' with message ''Псевдоним "application.components.activeRecordBehaviors.SortableBehavior" неверен. Убедитесь, что он указывает на существующий PHP файл.'' in /var/www/Yii-CMS/protected/libs/yii/YiiBase.php:311\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/YiiBase.php(191): YiiBase::import(''application.com...'', true)\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php(331): YiiBase::createComponent(Array)\n#2 /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php(300): CComponent->attachBehavior(''sortable'', Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(372): CComponent->attachBehaviors(Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(386): CActiveRecord::model(''Files'')\n#5 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(62): CActiveRecord->getMetaData()\n#6 /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php(46): CActiveRecord->__construct(''insert'')\n#7 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): FilesController->actionUpload()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''upload'')\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''upload/files/up...'')\n#13 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#14 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#15 {main} REQUEST_URI=/upload/files/upload/typeParent/News/idParent/3/dataType/any/tag/files'),
+(94, 'error', 'exception.CHttpException.404', '2011-10-03 16:46:37', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
+(95, 'error', 'exception.CException', '2011-10-03 16:46:38', 'exception ''CException'' with message ''Псевдоним "application.components.activeRecordBehaviors.SortableBehavior" неверен. Убедитесь, что он указывает на существующий PHP файл.'' in /var/www/Yii-CMS/protected/libs/yii/YiiBase.php:311\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/YiiBase.php(191): YiiBase::import(''application.com...'', true)\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php(331): YiiBase::createComponent(Array)\n#2 /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php(300): CComponent->attachBehavior(''sortable'', Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(372): CComponent->attachBehaviors(Array)\n#4 /var/www/Yii-CMS/protected/components/ActiveRecordModel.php(16): CActiveRecord::model(''Files'')\n#5 /var/www/Yii-CMS/protected/modules/upload/models/Files.php(16): ActiveRecordModel::model(''Files'')\n#6 /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php(35): Files::model()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): FilesController->actionExistFiles()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''existFiles'')\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''upload/files/ex...'')\n#13 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#14 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#15 {main} REQUEST_URI=/upload/files/existFiles/typeParent/News/idParent/3/tag/files'),
+(96, 'error', 'exception.CException', '2011-10-03 16:46:48', 'exception ''CException'' with message ''Псевдоним "application.components.activeRecordBehaviors.SortableBehavior" неверен. Убедитесь, что он указывает на существующий PHP файл.'' in /var/www/Yii-CMS/protected/libs/yii/YiiBase.php:311\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/YiiBase.php(191): YiiBase::import(''application.com...'', true)\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php(331): YiiBase::createComponent(Array)\n#2 /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php(300): CComponent->attachBehavior(''sortable'', Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(372): CComponent->attachBehaviors(Array)\n#4 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(386): CActiveRecord::model(''Files'')\n#5 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(62): CActiveRecord->getMetaData()\n#6 /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php(46): CActiveRecord->__construct(''insert'')\n#7 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): FilesController->actionUpload()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''upload'')\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''upload/files/up...'')\n#13 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#14 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#15 {main} REQUEST_URI=/upload/files/upload/typeParent/News/idParent/3/dataType/any/tag/files'),
+(97, 'error', 'exception.CHttpException.404', '2011-10-03 16:47:17', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
+(98, 'error', 'exception.CException', '2011-10-03 16:47:19', 'exception ''CException'' with message ''Псевдоним "application.components.activeRecordBehaviors.SortableBehavior" неверен. Убедитесь, что он указывает на существующий PHP файл.'' in /var/www/Yii-CMS/protected/libs/yii/YiiBase.php:311\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/YiiBase.php(191): YiiBase::import(''application.com...'', true)\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php(331): YiiBase::createComponent(Array)\n#2 /var/www/Yii-CMS/protected/libs/yii/base/CComponent.php(300): CComponent->attachBehavior(''sortable'', Array)\n#3 /var/www/Yii-CMS/protected/libs/yii/db/ar/CActiveRecord.php(372): CComponent->attachBehaviors(Array)\n#4 /var/www/Yii-CMS/protected/components/ActiveRecordModel.php(16): CActiveRecord::model(''Files'')\n#5 /var/www/Yii-CMS/protected/modules/upload/models/Files.php(16): ActiveRecordModel::model(''Files'')\n#6 /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php(35): Files::model()\n#7 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): FilesController->actionExistFiles()\n#8 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams(Array)\n#9 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): CController->runAction(Object(CInlineAction))\n#10 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)\n#11 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): CController->run(''existFiles'')\n#12 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''upload/files/ex...'')\n#13 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#14 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#15 {main} REQUEST_URI=/upload/files/existFiles/typeParent/News/idParent/3/tag/files'),
+(99, 'error', 'exception.CHttpException.404', '2011-10-03 16:47:59', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
+(100, 'error', 'php', '2011-10-03 16:48:21', 'move_uploaded_file(./upload/NATURE-AtTheEdgeOfAtmosphere_1024x768.jpg): failed to open stream: Permission denied (/var/www/Yii-CMS/protected/libs/yii/web/CUploadedFile.php:183)\nStack trace:\n#0 /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php(58): Files->saveAnyOnServer()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): FilesController->actionUpload()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): FilesController->runAction()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): FilesController->runActionWithFilters()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): FilesController->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#7 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#8 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/upload/files/upload/typeParent/News/idParent/3/dataType/any/tag/files\nin /var/www/Yii-CMS/protected/modules/upload/models/Files.php (479)\nin /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php (58)\nin /var/www/Yii-CMS/index.php (30)'),
+(101, 'error', 'php', '2011-10-03 16:48:40', 'move_uploaded_file(./upload/MeeToo_Specification_v_1.3_clear.doc): failed to open stream: Permission denied (/var/www/Yii-CMS/protected/libs/yii/web/CUploadedFile.php:183)\nStack trace:\n#0 /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php(58): Files->saveAnyOnServer()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): FilesController->actionUpload()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): FilesController->runAction()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): FilesController->runActionWithFilters()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): FilesController->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#7 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#8 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/upload/files/upload/typeParent/News/idParent/3/dataType/any/tag/files\nin /var/www/Yii-CMS/protected/modules/upload/models/Files.php (479)\nin /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php (58)\nin /var/www/Yii-CMS/index.php (30)'),
+(102, 'error', 'php', '2011-10-03 16:49:07', 'move_uploaded_file(./upload/PHP-5-3-Study-Guide-v1.pdf): failed to open stream: Permission denied (/var/www/Yii-CMS/protected/libs/yii/web/CUploadedFile.php:183)\nStack trace:\n#0 /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php(58): Files->saveAnyOnServer()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): FilesController->actionUpload()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): FilesController->runAction()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): FilesController->runActionWithFilters()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): FilesController->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#7 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#8 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/upload/files/upload/typeParent/News/idParent/3/dataType/any/tag/files\nin /var/www/Yii-CMS/protected/modules/upload/models/Files.php (479)\nin /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php (58)\nin /var/www/Yii-CMS/index.php (30)'),
+(103, 'error', 'exception.CHttpException.404', '2011-10-03 16:49:51', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css'),
+(104, 'error', 'php', '2011-10-03 16:49:59', 'move_uploaded_file(./upload/MeeToo_Specification_v_1.3_clear.doc): failed to open stream: Permission denied (/var/www/Yii-CMS/protected/libs/yii/web/CUploadedFile.php:183)\nStack trace:\n#0 /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php(58): Files->saveDocumentOnServer()\n#1 /var/www/Yii-CMS/protected/libs/yii/web/actions/CInlineAction.php(50): FilesController->actionUpload()\n#2 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(300): CInlineAction->runWithParams()\n#3 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(278): FilesController->runAction()\n#4 /var/www/Yii-CMS/protected/libs/yii/web/CController.php(257): FilesController->runActionWithFilters()\n#5 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(328): FilesController->run()\n#6 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController()\n#7 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#8 /var/www/Yii-CMS/index.php(30): CWebApplication->run()\nREQUEST_URI=/upload/files/upload/typeParent/News/idParent/3/dataType/document/tag/files\nin /var/www/Yii-CMS/protected/modules/upload/models/Files.php (511)\nin /var/www/Yii-CMS/protected/modules/upload/controllers/FilesController.php (58)\nin /var/www/Yii-CMS/index.php (30)'),
+(105, 'error', 'exception.CHttpException.404', '2011-10-03 16:50:40', 'exception ''CHttpException'' with message ''Невозможно обработать запрос "assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css".'' in /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php:332\nStack trace:\n#0 /var/www/Yii-CMS/protected/libs/yii/web/CWebApplication.php(121): CWebApplication->runController(''assets/856dbe23...'')\n#1 /var/www/Yii-CMS/protected/libs/yii/base/CApplication.php(155): CWebApplication->processRequest()\n#2 /var/www/Yii-CMS/index.php(30): CApplication->run()\n#3 {main} REQUEST_URI=/assets/856dbe23/elrte/css/smoothness/jquery-ui-1.8.5.custom.css');
 
 -- --------------------------------------------------------
 
@@ -1246,7 +1292,7 @@ CREATE TABLE IF NOT EXISTS `mailer_templates` (
   `date_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Создан',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 --
 -- Дамп данных таблицы `mailer_templates`
@@ -1516,7 +1562,7 @@ CREATE TABLE IF NOT EXISTS `site_actions` (
   `date_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Дата',
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4023 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4055 ;
 
 --
 -- Дамп данных таблицы `site_actions`
@@ -5552,7 +5598,40 @@ INSERT INTO `site_actions` (`id`, `user_id`, `object_id`, `title`, `module`, `co
 (4019, 1, 5, 'Отчет об отправке', 'mailer', 'mailerLetterAdmin', 'view', '2011-09-30 19:18:23'),
 (4020, 1, NULL, 'Отправить письма', 'mailer', 'mailer', 'sendMails', '2011-09-30 19:18:30'),
 (4021, 1, NULL, 'Отправить письма', 'mailer', 'mailer', 'sendMails', '2011-09-30 19:19:56'),
-(4022, 1, NULL, 'Отчеты о рассылках', 'mailer', 'mailerLetterAdmin', 'manage', '2011-09-30 19:20:00');
+(4022, 1, NULL, 'Отчеты о рассылках', 'mailer', 'mailerLetterAdmin', 'manage', '2011-09-30 19:20:00'),
+(4023, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-10-03 16:41:13'),
+(4024, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-10-03 16:41:15'),
+(4025, NULL, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-10-03 16:41:20'),
+(4026, NULL, NULL, 'Авторизация', 'users', 'userAdmin', 'login', '2011-10-03 16:41:20'),
+(4027, 1, NULL, 'Просмотр главной страницы', 'main', 'mainAdmin', 'index', '2011-10-03 16:41:21'),
+(4028, 1, NULL, 'Управление новостями', 'news', 'newsAdmin', 'manage', '2011-10-03 16:41:46'),
+(4029, 1, 3, 'Редактирование новости', 'news', 'newsAdmin', 'update', '2011-10-03 16:41:52'),
+(4030, 1, 3, 'Редактирование новости', 'news', 'newsAdmin', 'update', '2011-10-03 16:43:35');
+INSERT INTO `site_actions` (`id`, `user_id`, `object_id`, `title`, `module`, `controller`, `action`, `date_create`) VALUES
+(4031, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-10-03 16:43:35'),
+(4032, 1, NULL, 'Существующие файлы', 'upload', 'files', 'existFiles', '2011-10-03 16:43:36'),
+(4033, 1, NULL, 'Отображение брендов', 'upload', 'files', 'upload', '2011-10-03 16:43:50'),
+(4034, 1, NULL, 'Отображение брендов', 'upload', 'files', 'upload', '2011-10-03 16:46:11'),
+(4035, 1, 3, 'Редактирование новости', 'news', 'newsAdmin', 'update', '2011-10-03 16:46:37'),
+(4036, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-10-03 16:46:37'),
+(4037, 1, NULL, 'Существующие файлы', 'upload', 'files', 'existFiles', '2011-10-03 16:46:38'),
+(4038, 1, NULL, 'Отображение брендов', 'upload', 'files', 'upload', '2011-10-03 16:46:48'),
+(4039, 1, 3, 'Редактирование новости', 'news', 'newsAdmin', 'update', '2011-10-03 16:47:16'),
+(4040, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-10-03 16:47:17'),
+(4041, 1, NULL, 'Существующие файлы', 'upload', 'files', 'existFiles', '2011-10-03 16:47:19'),
+(4042, 1, 3, 'Редактирование новости', 'news', 'newsAdmin', 'update', '2011-10-03 16:47:59'),
+(4043, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-10-03 16:47:59'),
+(4044, 1, NULL, 'Существующие файлы', 'upload', 'files', 'existFiles', '2011-10-03 16:48:01'),
+(4045, 1, NULL, 'Отображение брендов', 'upload', 'files', 'upload', '2011-10-03 16:48:21'),
+(4046, 1, NULL, 'Отображение брендов', 'upload', 'files', 'upload', '2011-10-03 16:48:40'),
+(4047, 1, NULL, 'Отображение брендов', 'upload', 'files', 'upload', '2011-10-03 16:49:07'),
+(4048, 1, 3, 'Редактирование новости', 'news', 'newsAdmin', 'update', '2011-10-03 16:49:50'),
+(4049, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-10-03 16:49:51'),
+(4050, 1, NULL, 'Существующие файлы', 'upload', 'files', 'existFiles', '2011-10-03 16:49:53'),
+(4051, 1, NULL, 'Отображение брендов', 'upload', 'files', 'upload', '2011-10-03 16:49:59'),
+(4052, 1, 3, 'Редактирование новости', 'news', 'newsAdmin', 'update', '2011-10-03 16:50:39'),
+(4053, 1, NULL, 'Ошибка на странице', 'main', 'main', 'error', '2011-10-03 16:50:40'),
+(4054, 1, NULL, 'Существующие файлы', 'upload', 'files', 'existFiles', '2011-10-03 16:50:41');
 
 -- --------------------------------------------------------
 
@@ -5785,7 +5864,7 @@ CREATE TABLE IF NOT EXISTS `ymarket_ips` (
   `date_create` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Добавлен',
   PRIMARY KEY (`id`),
   UNIQUE KEY `ip` (`ip`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 --
 -- Дамп данных таблицы `ymarket_ips`
@@ -5950,7 +6029,7 @@ CREATE TABLE IF NOT EXISTS `ymarket_sections` (
   UNIQUE KEY `url` (`url`),
   UNIQUE KEY `yandex_name` (`yandex_name`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Дамп данных таблицы `ymarket_sections`
@@ -6178,8 +6257,8 @@ ALTER TABLE `actions_files`
 -- Ограничения внешнего ключа таблицы `articles`
 --
 ALTER TABLE `articles`
-  ADD CONSTRAINT `articles_ibfk_2` FOREIGN KEY (`section_id`) REFERENCES `articles_sections` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`lang`) REFERENCES `languages` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`lang`) REFERENCES `languages` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `articles_ibfk_2` FOREIGN KEY (`section_id`) REFERENCES `articles_sections` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `articles_files`
@@ -6191,8 +6270,8 @@ ALTER TABLE `articles_files`
 -- Ограничения внешнего ключа таблицы `articles_sections`
 --
 ALTER TABLE `articles_sections`
-  ADD CONSTRAINT `articles_sections_ibfk_2` FOREIGN KEY (`lang`) REFERENCES `languages` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `articles_sections_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `articles_sections` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `articles_sections_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `articles_sections` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `articles_sections_ibfk_2` FOREIGN KEY (`lang`) REFERENCES `languages` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `AuthAssignment`
@@ -6224,8 +6303,8 @@ ALTER TABLE `documents_files`
 -- Ограничения внешнего ключа таблицы `faq`
 --
 ALTER TABLE `faq`
-  ADD CONSTRAINT `faq_ibfk_2` FOREIGN KEY (`section_id`) REFERENCES `faq_sections` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `faq_ibfk_1` FOREIGN KEY (`lang`) REFERENCES `languages` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `faq_ibfk_1` FOREIGN KEY (`lang`) REFERENCES `languages` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `faq_ibfk_2` FOREIGN KEY (`section_id`) REFERENCES `faq_sections` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `faq_sections`
@@ -6257,19 +6336,19 @@ ALTER TABLE `mailer_templates_recipients`
 -- Ограничения внешнего ключа таблицы `menu_links`
 --
 ALTER TABLE `menu_links`
-  ADD CONSTRAINT `menu_links_ibfk_6` FOREIGN KEY (`lang`) REFERENCES `languages` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `menu_links_ibfk_1` FOREIGN KEY (`parent_id`) REFERENCES `menu_links` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `menu_links_ibfk_2` FOREIGN KEY (`page_id`) REFERENCES `pages` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `menu_links_ibfk_3` FOREIGN KEY (`menu_id`) REFERENCES `menu` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `menu_links_ibfk_4` FOREIGN KEY (`user_role`) REFERENCES `AuthItem` (`name`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `menu_links_ibfk_5` FOREIGN KEY (`not_user_role`) REFERENCES `AuthItem` (`name`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `menu_links_ibfk_5` FOREIGN KEY (`not_user_role`) REFERENCES `AuthItem` (`name`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `menu_links_ibfk_6` FOREIGN KEY (`lang`) REFERENCES `languages` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `news`
 --
 ALTER TABLE `news`
-  ADD CONSTRAINT `news_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `news_ibfk_1` FOREIGN KEY (`lang`) REFERENCES `languages` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `news_ibfk_1` FOREIGN KEY (`lang`) REFERENCES `languages` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `news_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `news_files`
