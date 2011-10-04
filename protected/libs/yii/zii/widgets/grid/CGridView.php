@@ -257,6 +257,7 @@ class CGridView extends CBaseListView
 	{
 		parent::init();
 
+
 		if(!isset($this->htmlOptions['class']))
 			$this->htmlOptions['class']='grid-view';
 

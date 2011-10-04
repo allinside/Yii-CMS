@@ -1,12 +1,11 @@
-<?php 
+<?php
 
 class Files extends ActiveRecordModel
 {
-    const UPLOAD_PATH = './upload/';
+    const UPLOAD_PATH = './upload/fmanager/';
     const FILE_POSTFIX = '';
 
-    const HAS_WATERMARK = 1;
-    const WATERMARK_FILE = './images/watermark.png';
+    public $extension;
 
     public $size;
     public $error;
@@ -30,7 +29,8 @@ class Files extends ActiveRecordModel
     {
         return array(
             array(
-                'nameWithoutExt', 'length', 'min' => 1, 'max' => 900, 'tooShort' => 'Название файла должно быть больше 1 сим.', 'tooLong' => 'Пожалуйста, сократите наименование файла до 900 сим.'
+                'nameWithoutExt',
+                'length', 'min' => 1, 'max' => 900, 'tooShort' => 'Название файла должно быть меньше 1 сим.', 'tooLong' => 'Пожалуйста, сократите наименование файла до 900 сим.'
             )
         );
     }
@@ -48,9 +48,9 @@ class Files extends ActiveRecordModel
     {
         $alias = $this->getTableAlias();
         $this->getDbCriteria()->mergeWith(array(
-                                               'condition' => $alias . '.typeParent="' . $_GET['typeParent'] . '" AND ' . $alias . '.idParent=' . $_GET['idParent'],
-                                               'order' => $alias . '.order DESC'
-                                          ));
+            'condition' => $alias . '.model_id="' . $_GET['model_id'] . '" AND ' . $alias . '.object_id=' . $_GET['object_id'],
+            'order'     => $alias . '.order DESC'
+        ));
         return $this;
     }
 
@@ -65,7 +65,7 @@ class Files extends ActiveRecordModel
 
     public function getDeleteUrl()
     {
-        return Yii::app()->controller->url('/upload/files/delete', array('id' => $this->id));
+        return Yii::app()->controller->url('filesAdmin/delete', array('id' => $this->id));
     }
 
     /**
@@ -347,36 +347,7 @@ class Files extends ActiveRecordModel
         return true;
     }
 
-    public function setWatermark($position)
-    {
-        $handler = $this->getUploader();
 
-        $handler->image_watermark = self::WATERMARK_FILE;
-        if ($position == 'center') {
-            //@todo replace 40% on real center
-            $handler->image_watermark_x = '40%';
-            $handler->image_watermark_y = '-40%';
-        } else {
-            $handler->image_watermark_position = $position;
-        }
-
-        $handler->process(self::UPLOAD_PATH);
-        if ($handler->processed) {
-            $this->name = $handler->file_dst_name;
-            $this->has_watermark = self::HAS_WATERMARK;
-            return $this->save();
-        } else {
-            $this->error = $handler->error;
-            return false;
-        }
-    }
-
-    /**
-     * transliting and cleaning string
-     * @static
-     * @param $str
-     * @return string
-     */
     public static function str2url($str)
     {
         $str = self::rus2translit($str); // переводим в транслит
@@ -405,15 +376,13 @@ class Files extends ActiveRecordModel
     {
         $this->title = $_FILES[$field]['name'];
 
-        //Если нет такой директори то создаем ее
         if (!is_dir(self::UPLOAD_PATH))
+        {
             mkdir(self::UPLOAD_PATH, 0777);
+        }
     }
 
-    /**
-     * @param $fileName
-     * @return null
-     */
+
     public function saveImageOnServer($field, $newName, $options)
     {
         $this->beforeSaveOnServer($field);
@@ -422,26 +391,12 @@ class Files extends ActiveRecordModel
         $handler->file_new_name_body = $newName;
         $handler->file_name_body_add = self::FILE_POSTFIX;
 
-        foreach ($options as $key => $val) {
-            //do boolean tipization
+        foreach ($options as $key => $val)
+        {
             $handler->$key = ($val === 'false') ? false : ($val === 'true' ? true : $val);
         }
 
         $this->setExtraProperties($field, $handler, $options);
-
-        //        $file = CUploadedFile::getInstanceByName('file');
-        //        $tmp = $_FILES[$field]['tmp_name'];
-        //        $path = self::UPLOAD_PATH.$newName.'.jpg';
-        //        if ($tmp) {
-        //            move_uploaded_file($tmp, self::UPLOAD_PATH.$this->name);
-        //        } else {
-        //            // Non-multipart uploads (PUT method support)
-        //            file_put_contents(
-        //                $path,
-        //                fopen('php://input', 'r'),
-        //                is_file(self::UPLOAD_PATH.$this->name) ? FILE_APPEND : 0
-        //            );
-        //        }
 
         $handler->process(self::UPLOAD_PATH);
         if ($handler->processed) {
@@ -456,53 +411,25 @@ class Files extends ActiveRecordModel
 
     public function saveSoundOnServer($field, $newName, $options)
     {
-        $this->beforeSaveOnServer($field);
-        $file = CUploadedFile::getInstanceByName('file');
-        $fullNewName = $newName . self::FILE_POSTFIX . '.' . $file->getExtensionName();
-
-        if ($file->saveAs(self::UPLOAD_PATH . $fullNewName)) {
-            $this->name = $fullNewName;
-            $this->fill();
-            return true;
-        } else {
-            $this->error = $file->getError();
-            return false;
-        }
+        return $this->saveSimpleFile($field, $newName);
     }
 
     public function saveAnyOnServer($field, $newName, $options)
     {
-        $this->beforeSaveOnServer($field);
-        $file = CUploadedFile::getInstanceByName('file');
-        $fullNewName = $newName . self::FILE_POSTFIX . '.' . $file->getExtensionName();
-
-        if ($file->saveAs(self::UPLOAD_PATH . $fullNewName)) {
-            $this->name = $fullNewName;
-            $this->fill();
-            return true;
-        } else {
-            $this->error = $file->getError();
-            return false;
-        }
+        return $this->saveSimpleFile($field, $newName);
     }
 
     public function saveVideoOnServer($field, $newName, $options)
     {
-        $this->beforeSaveOnServer($field);
-        $file = CUploadedFile::getInstanceByName('file');
-        $fullNewName = $newName . self::FILE_POSTFIX . '.' . $file->getExtensionName();
-
-        if ($file->saveAs(self::UPLOAD_PATH . $fullNewName)) {
-            $this->name = $fullNewName;
-            $this->fill();
-            return true;
-        } else {
-            $this->error = $file->getError();
-            return false;
-        }
+        return $this->saveSimpleFile($field, $newName);
     }
 
     public function saveDocumentOnServer($field, $newName, $options)
+    {
+        return $this->saveSimpleFile($field, $newName);
+    }
+
+    public function saveSimpleFile($field, $newName)
     {
         $this->beforeSaveOnServer($field);
         $file = CUploadedFile::getInstanceByName('file');
@@ -517,7 +444,7 @@ class Files extends ActiveRecordModel
             return false;
         }
     }
-
+    
     /**
      * @return string formatted file size
      */
@@ -540,13 +467,7 @@ class Files extends ActiveRecordModel
         return $ret;
     }
 
-    /**
-     * @static
-     * @throws CException when too much images with this name
-     * @param $path to images
-     * @param $fileName
-     * @return string new file name
-     */
+
     public static function getUniqueName($path, $field)
     {
         $fileName = self::rus2translit($_FILES[$field]['name']);
@@ -564,10 +485,7 @@ class Files extends ActiveRecordModel
         return $newName;
     }
 
-    /**
-     * @todo bad method. need rewrite
-     * @return string
-     */
+
     public function getSrc($realFile = false)
     {
         $src = Yii::app()->baseUrl;
@@ -598,35 +516,46 @@ class Files extends ActiveRecordModel
 
     public function getNameWithoutExt()
     {
-        return strtr(pathinfo($this->name, PATHINFO_FILENAME), array(
-                                                                    ' ' => '', self::FILE_POSTFIX => ''
-                                                               ));
+        $name = pathinfo($this->name, PATHINFO_FILENAME);
+        $params = array(' ' => '');
+        if (self::FILE_POSTFIX)
+        {
+            $params[self::FILE_POSTFIX] = '';
+        }
+        return strtr($name, $params);
     }
 
     public function beforeSave()
     {
-        if (parent::beforeSave()) {
-            if ($this->isNewRecord) {
-                $model = Files::model()->parent($this->typeParent, $this->idParent)->limit(1)->find();
-
+        if (parent::beforeSave())
+        {
+            if ($this->isNewRecord)
+            {
+                $model = Files::model()->parent($this->model_id, $this->object_id)->limit(1)->find();
                 $this->order = $model ? $model->order + 1 : 1;
-
-                //translit and other
                 $this->title;
             }
+
             return true;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
 
     public function beforeDelete()
     {
-        if (parent::beforeDelete()) {
+        if (parent::beforeDelete())
+        {
             if (is_file(self::UPLOAD_PATH . $this->name))
+            {
                 unlink(self::UPLOAD_PATH . $this->name);
+            }
+
             return true;
         }
+
         return false;
     }
 }

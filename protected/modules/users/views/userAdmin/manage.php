@@ -21,7 +21,7 @@ $this->widget('application.components.GridView', array(
 		),
 		array(
 			'name'  => 'status', 
-			'value' => 'User::$status_list[$data->status]'
+            'value' => 'User::$status_list[$data->status]'
 		),
 		'phone',
 		array(

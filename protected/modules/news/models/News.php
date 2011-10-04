@@ -26,6 +26,14 @@ class News extends ActiveRecordModel
 	}
 
 
+    public function behaviors()
+    {
+        $behaviors = parent::behaviors();
+        $behaviors['Fmanager'] = array('class' => 'application.components.activeRecordBehaviors.FmanagerBehavior');
+        return $behaviors;
+    }
+
+
 	public function tableName()
 	{
 		return 'news';

@@ -37,7 +37,9 @@ function p($data)
 
 function v($data)
 {
-    echo "<pre>". var_dump($data) . "</pre>";
+    echo "<pre>";
+    var_dump($data);
+    echo "</pre>";
 }
 
 ?>

@@ -295,9 +295,11 @@
                 options.paramName = options.fileInput.attr('name') ||
                     'files[]';
             }
+
             if (!options.url) {
                 options.url = options.form.attr('action') || location.href;
             }
+
             // The HTTP request method must be "POST" or "PUT":
             options.type = (options.type || options.form.attr('method') || '')
                 .toUpperCase();

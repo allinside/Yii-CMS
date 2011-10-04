@@ -17,14 +17,89 @@ class GridView extends CGridView
     public $sortable = false;
 	
     public $mass_removal = false;
-    
+
+    public $manage_columns = false;
+
     public $template = '{summary}<br/>{pager}<br/>{items}<br/>{pager}';
 
 
     public function init()
     {
+        if ($this->manage_columns)
+        {
+            $this->manageColumns();
+        }
+
         parent::init();
+
         $this->formatDateValues();
+    }
+
+
+    public function manageColumns()
+    {
+        $path = Yii::getPathOfAlias('application.runtime') . '/GridView/';
+        if (!file_exists($path))
+        {
+            mkdir($path);
+            chmod($path, 0777);
+        }
+
+        $conf_path = $path . $this->id . '_columns';
+        if (!file_exists($conf_path))
+        {
+            file_put_contents($conf_path, serialize(array()));
+            chmod($conf_path, 0777);
+        }
+
+        $columns_array = unserialize(file_get_contents($conf_path));
+
+        $columns_names = array();
+
+        foreach ($this->columns as $column)
+        {
+            if (is_array($column))
+            {
+                if (isset($column['name']))
+                {
+                    $name = $column['name'];
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            else
+            {
+                $name = $column;
+            }
+
+            $columns_names[] = $name;
+        }
+
+        foreach ($columns_array as $column_name => $display)
+        {
+            if (!in_array($column_name, $columns_names))
+            {
+                unset($columns_array[$column_name]);
+            }
+        }
+
+        foreach ($columns_names as $column_name)
+        {
+            if (!array_key_exists($column_name, $columns_array))
+            {
+                $columns_array[$column_name] = 1;
+            }
+        }
+
+        file_put_contents($conf_path, serialize($columns_array));
+
+        if (isset($_POST['manage_columns_get']))
+        {
+            echo CJSON::encode(unserialize(file_get_contents($conf_path)));
+            Yii::app()->end();
+        }
     }
 
 
@@ -88,7 +163,7 @@ class GridView extends CGridView
 	{
 		if($this->dataProvider->getItemCount()>0 || $this->showTableOnEmpty)
 		{
-			echo "<table class='' sortable='{$this->sortable}' mass_removal='{$this->mass_removal}' cellpadding='0' cellspacing='0' width='100%'>\n";
+			echo "<table class='' sortable='{$this->sortable}' mass_removal='{$this->mass_removal}' manage_columns='{$this->manage_columns}' cellpadding='0' cellspacing='0' width='100%'>\n";
 			$this->renderTableHeader();
 			$this->renderTableBody();
 			$this->renderTableFooter();
@@ -97,6 +172,11 @@ class GridView extends CGridView
 			if ($this->mass_removal) 
 			{
 				echo "<input type='submit' class='submit tiny red' value='удалить' id='mass_remove_button'>";
+			}
+
+			if ($this->manage_columns)
+			{
+				echo "<input type='submit' class='submit tiny' grid_id='{$this->id}' value='атрибуты' id='columns_manage'>";
 			}
 		}
 		else

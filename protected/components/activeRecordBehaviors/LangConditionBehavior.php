@@ -30,7 +30,7 @@ class LangConditionBehavior extends CActiveRecordBehavior
 
     private function defineLang()
     {
-        if (mb_substr(Yii::app()->controller->id, -5) == 'Admin')
+        if (Yii::app()->controller instanceof AdminController)
         {
             if (isset(Yii::app()->session["admin_panel_lang"]))
             {

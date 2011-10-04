@@ -214,6 +214,22 @@ $model_class = get_class($form->model);
 
             <?php $this->widget($element->attributes['widget'], array('model' => $form->model)); ?>
 
+        <?php elseif ($element->type == 'fmanager'): ?>
+
+            <fieldset>
+                <legend>Файлы:</legend>
+
+                <?php
+                $this->widget('upload.portlets.Uploader', array(
+                    'model'       => $form->model,
+                    'id'          => 'uploader',
+                    'data_type'   => 'any',
+                    'maxFileSize' => 10*1000*1000,
+                    'tag'         => 'files'
+                ));
+                ?>
+            </fieldset>
+
         <?php else: ?>
             <p>
                 <?php echo $element->render(); ?>

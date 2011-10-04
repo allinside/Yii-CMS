@@ -1,14 +1,13 @@
 <?php
-/**
- *
- */
+
 Yii::import('zii.widgets.jui.CJuiWidget');
+
 class Uploader extends CJuiWidget
 {
     public $model;
     public $id;
 
-    public $dataType; //image, sound, video, document
+    public $data_type; //image, sound, video, document
 
     /*
     *  image: see http://www.verot.net/php_class_upload_samples.htm or comments in Resizer class
@@ -51,8 +50,8 @@ class Uploader extends CJuiWidget
         if ($this->model === null)
             throw new CException('Параметр model является обязательным');
 
-        if (!in_array($this->dataType, array('image', 'sound','video','document', 'any'), true))
-            throw new CException('Параметр dataType является обязательным  и может принемать значения: image, sound, video, document');
+        if (!in_array($this->data_type, array('image', 'sound','video','document', 'any'), true))
+            throw new CException('Параметр data_type является обязательным  и может принемать значения: image, sound, video, document');
 
         if ($this->tag === null)
             throw new CException('Параметр tag является обязательным');
@@ -60,26 +59,27 @@ class Uploader extends CJuiWidget
         $this->assets = Yii::app()->getModule('upload')->assetsUrl();
 
         //uploadUrl
-        $this->uploadUrl = UploadHtml::url('files/upload', array(
-            'typeParent' => get_class($this->model),
-            'idParent' => $this->model->id,
-            'dataType' => $this->dataType,
+        $this->uploadUrl = UploadHtml::url('filesAdmin/upload', array(
+            'model_id'  => get_class($this->model),
+            'object_id' => $this->model->id ? $this->model->id : 0,
+            'data_type' => $this->data_type,
             'tag' => $this->tag,
             'options' => $this->options
         ));
 
         //options
         $default = array(
+            'url'                       => $this->uploadUrl,
             'dropZone'                  => "js:$('#{$this->id}-drop-zone')",
             'maxFileSize'               => $this->maxFileSize,
-            'acceptFileTypes'           => $this->allowType[$this->dataType],
+            'acceptFileTypes'           => $this->allowType[$this->data_type],
 //            'maxChunkSize'              => 1*1000*1000,
-            'sortableSaveUrl'           => UploadHtml::url('files/savePriority'),
+            'sortableSaveUrl'           => UploadHtml::url('filesAdmin/savePriority'),
             'limitConcurrentUploads'    => 4,
-            'existFilesUrl'             => UploadHtml::url('files/existFiles', array(
-                                                'typeParent'    => get_class($this->model),
-                                                'idParent'      => $this->model->id,
-                                                'tag'           => $this->tag
+            'existFilesUrl'             => UploadHtml::url('filesAdmin/existFiles', array(
+                                                'model_id'  => get_class($this->model),
+                                                'object_id' => $this->model->id,
+                                                'tag'       => $this->tag
                                             )),
         );
         $this->params = CMap::mergeArray($default, $this->params);
@@ -111,7 +111,7 @@ class Uploader extends CJuiWidget
             $this->render('uploaderTemplates');
             self::$isTemplatesRender = true;
         }
-        $this->render('uploader', array('uploadUrl'=> $this->uploadUrl));
+        $this->render('uploader');
     }
 
 }

@@ -1,5 +1,5 @@
 <div id="<?php echo $this->id ?>" class="uploader">
-    <form action="<?php echo $uploadUrl ?>" method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data">
         <div class="fileupload-buttonbar">
             <label class="fileinput-button">
                 <span>Добавить файлы...</span>
@@ -16,4 +16,17 @@
         <div class="fileupload-progressbar"></div>
     </div>
 </div>
+
+<script type="text/javascript">
+    $(function()
+    {
+        $('.submit').click(function()
+        {
+            alert(222);
+            $(this).parents('form:eq(0)').remove();
+            //$(this).parents('form:eq(0)').remove();
+            return false;
+        });
+    });
+</script>
 

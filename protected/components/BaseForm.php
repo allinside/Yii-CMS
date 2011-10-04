@@ -20,34 +20,26 @@ class BaseForm extends CForm
     {
         $tpl =  Yii::app()->controller instanceof AdminController ? '_adminForm' : '_form';
 
-    	try
-    	{
-            if ($this->_clear)
-            {
-                Yii::app()->clientScript->registerScript(
-                    'clearForm',
-                    '$(function()
-                    {
-                        $(":input","#' . $this->activeForm['id'] . '")
-                            .not(":button, :submit, :reset, :hidden")
-                            .val("")
-                            .removeAttr("checked")
-                            .removeAttr("selected");
-                    })'
-                );
-            }
+        if ($this->_clear)
+        {
+            Yii::app()->clientScript->registerScript(
+                'clearForm',
+                '$(function()
+                {
+                    $(":input","#' . $this->activeForm['id'] . '")
+                        .not(":button, :submit, :reset, :hidden")
+                        .val("")
+                        .removeAttr("checked")
+                        .removeAttr("selected");
+                })'
+            );
+        }
 
-	        return Yii::app()->controller->renderPartial(
-	            'application.views.layouts.' . $tpl,
-	            array('form' => $this),
-	            true
-	        );  		
-    	}
-		catch (CException $e)
-		{
-			echo $e->getMessage();
-			return "";
-		}
+        return Yii::app()->controller->renderPartial(
+            'application.views.layouts.' . $tpl,
+            array('form' => $this),
+            true
+        );
     }
 
 

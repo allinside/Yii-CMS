@@ -832,3 +832,14 @@ a:hover {
 .no_borders_table tr td{
     border-bottom:0 !important;
 }
+
+fieldset {
+    border: 1px solid #E0E0E0;
+    padding: 10px 15px 10px 15px;
+    margin-bottom: 20px;
+}
+
+fieldset legend {
+    padding: 0 10px 0 10px;
+    font-weight: bold;
+}

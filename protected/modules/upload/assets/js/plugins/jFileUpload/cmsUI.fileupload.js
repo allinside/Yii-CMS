@@ -23,6 +23,7 @@ $.widget('cmsUI.fileupload', $.blueimpUI.fileupload, {
     },
 	_loadExistingFiles : function() {
         var widget = this;
+
         $.getJSON(this.options.existFilesUrl, {}, function (files) {
             widget._adjustMaxNumberOfFiles(-files.length);
             widget._renderDownload(files)
