@@ -13,8 +13,13 @@ class FilesAdminController extends AdminController
     }
 
 
-    public function actionExistFiles($model_id, $object_id)
+    public function actionExistFiles($model_id, $object_id, $tag)
     {
+        if ($object_id == 0)
+        {
+            $object_id = 'tmp_' . Yii::app()->user->id;
+        }
+
         $existFiles = Files::model()
             ->parent($model_id, $object_id)
             ->tag($_GET['tag'])
@@ -60,7 +65,8 @@ class FilesAdminController extends AdminController
     private function sendFilesAsJson($files)
     {
         $res = array();
-        foreach ((array)$files as $file) {
+        foreach ((array)$files as $file)
+        {
             $res[] = array(
                 'name'          => $file->title,
                 'size'          => $file->size,
@@ -72,19 +78,21 @@ class FilesAdminController extends AdminController
                 'id'            => 'File_'.$file->id
             );
         }
+
         header('Vary: Accept');
-        if (isset($_SERVER['HTTP_ACCEPT']) && (strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false)) {
+        if (isset($_SERVER['HTTP_ACCEPT']) && (strpos($_SERVER['HTTP_ACCEPT'], 'application/json') !== false))
+        {
             header('Content-type: application/json');
-        } else {
+        }
+        else
+        {
             header('Content-type: text/plain');
         }
-        echo  CJSON::encode($res);
+
+        echo CJSON::encode($res);
     }
     
-    /**
-     * @todo generally action must work with 2 parameters: from and to, and update only records between them at one query, but then we must use draggable and droppable on client instead of sortable. maybe later
-     * @return void
-     */
+
     public function actionSavePriority()
     {
         $i = 0;
@@ -106,9 +114,7 @@ class FilesAdminController extends AdminController
         }
     }
 
-    /**
-     * @return void
-     */
+
     public function actionDelete()
     {
         $model = $this->loadModel()->delete();

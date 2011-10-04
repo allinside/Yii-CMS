@@ -2,7 +2,7 @@
 
 class News extends ActiveRecordModel
 {
-    const PAGE_SIZE = 2;
+    const PAGE_SIZE = 15;
 
 	const PHOTOS_DIR = 'upload/news';
 

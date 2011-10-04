@@ -50,24 +50,7 @@
             </td>
             <td class="name">${name}</td>
             <td class="size">${sizef}</td>
-            {{if has_watermark}}
-                <td class="watermark-ready">
-                    <span>Установлен</span>
-                </td>
-            {{else}}
-                <td>
-                    <div class="watermark">
-                        <a href="/upload/files/setWatermark/position/LT" style="background: url(<?php echo $this->assets.'/img/lt.png'?>); left:0px;top:0px"></a>
-                        <a href="/upload/files/setWatermark/position/RT" style="background: url(<?php echo $this->assets.'/img/rt.png'?>); left:22px;top:0px"></a>
-                        <br/>
-                        <a href="/upload/files/setWatermark/position/center" style="background: url(<?php echo $this->assets.'/img/ltbr.png'?>) no-repeat; left:13px;top:18px" ></a>
-                        <br/>
-                        <a href="/upload/files/setWatermark/position/LB" style="background: url(<?php echo $this->assets.'/img/lb.png'?>); left:0px;top:32px" ></a>
-                        <a href="/upload/files/setWatermark/position/RB" style="background: url(<?php echo $this->assets.'/img/rb.png'?>); left:22px;top:32px" ></a>
-                    </div>
 
-                </td>
-            {{/if}}
             <td class="dnd-handler"><img height="20" src="<?php echo $this->assets?>/img/hand.png" /></td>
             <td>{{html edit_link}}</td>
         {{/if}}

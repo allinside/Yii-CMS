@@ -79,6 +79,7 @@ addAttributesToButtons($form->buttons);
 formatDateAttributes($form->model);
 
 $model_class = get_class($form->model);
+$form->attributes['class'] = 'admin_form';
 ?>
 
 <div class='form'>

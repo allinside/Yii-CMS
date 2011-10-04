@@ -6,7 +6,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6e5a110c-e6df-4e2c-adfe-bd6233fb4d51" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/FmanagerBehavior.php" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/856dbe23/elRTE.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/856dbe23/elfinder/connectors/php/connector.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/856dbe23/elfinder/connectors/php/elFinder.class.php" afterPath="" />
@@ -121,151 +120,18 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/856dbe23/elrte/js/i18n/elrte.zh_TW.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/856dbe23/elrte/js/jquery-1.4.4.min.js" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/assets/856dbe23/elrte/js/jquery-ui-1.8.7.custom.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/modules/upload/controllers/FilesController.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/articles_files/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/articles_files/NATURE-AtTheEdgeOfAtmosphere_1024x768.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/articles_files/OTHER-SmolovSummer2004_1024x768.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/articles_files/ski-resort-bad-hofgastein-1280x1024.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/articles_files/ubuntualien.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/200x200_crop_328a76e70961ee6f64165f802d281e09.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/200x200_crop_80f3dfc8fb0c6fe5c33950e89eed32cf.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/200x200_crop_be8a93e588f5469ee426a77a66e2444a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/220x200_crop_328a76e70961ee6f64165f802d281e09.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/220x200_crop_80f3dfc8fb0c6fe5c33950e89eed32cf.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/220x200_crop_be8a93e588f5469ee426a77a66e2444a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/22285438321c76a76dc925206f5dd5bf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/230x0_22285438321c76a76dc925206f5dd5bf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/230x0_328a76e70961ee6f64165f802d281e09.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/230x0_80f3dfc8fb0c6fe5c33950e89eed32cf.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/230x0_9bfe8a178df245ee90a2b5d62bfe682b.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/230x0_be8a93e588f5469ee426a77a66e2444a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/230x0_c142759dc89ae8e20abc642e1dd0e99c.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/230x200_crop_22285438321c76a76dc925206f5dd5bf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/230x200_crop_328a76e70961ee6f64165f802d281e09.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/230x200_crop_80f3dfc8fb0c6fe5c33950e89eed32cf.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/230x200_crop_9bfe8a178df245ee90a2b5d62bfe682b.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/230x200_crop_be8a93e588f5469ee426a77a66e2444a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/230x200_crop_c142759dc89ae8e20abc642e1dd0e99c.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/328a76e70961ee6f64165f802d281e09.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/430x200_crop_328a76e70961ee6f64165f802d281e09.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/430x200_crop_80f3dfc8fb0c6fe5c33950e89eed32cf.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/430x200_crop_be8a93e588f5469ee426a77a66e2444a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/450x0_328a76e70961ee6f64165f802d281e09.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/570x0_328a76e70961ee6f64165f802d281e09.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/580x0_328a76e70961ee6f64165f802d281e09.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/580x0_80f3dfc8fb0c6fe5c33950e89eed32cf.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/580x0_be8a93e588f5469ee426a77a66e2444a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/600x0_328a76e70961ee6f64165f802d281e09.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/80f3dfc8fb0c6fe5c33950e89eed32cf.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/80x0_22285438321c76a76dc925206f5dd5bf.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/80x0_328a76e70961ee6f64165f802d281e09.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/80x0_80f3dfc8fb0c6fe5c33950e89eed32cf.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/80x0_9bfe8a178df245ee90a2b5d62bfe682b.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/80x0_be8a93e588f5469ee426a77a66e2444a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/80x0_c142759dc89ae8e20abc642e1dd0e99c.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/80x80_crop_328a76e70961ee6f64165f802d281e09.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/80x80_crop_80f3dfc8fb0c6fe5c33950e89eed32cf.jpeg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/80x80_crop_be8a93e588f5469ee426a77a66e2444a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/9bfe8a178df245ee90a2b5d62bfe682b.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/be8a93e588f5469ee426a77a66e2444a.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news/c142759dc89ae8e20abc642e1dd0e99c.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news_files/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news_files/NATURE-AtTheEdgeOfAtmosphere_1024x768.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news_files/OTHER-SmolovSummer2004_1024x768.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news_files/awp05_alltolls_blogspot098-1280x1024.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/news_files/ski-resort-bad-hofgastein-1280x1024.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/25.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/26.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/27.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/28.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/29.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/30.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/31.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/32.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/33.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/34.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/35.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/36.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/37.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/38.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/39.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/40.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/41.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/42.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/43.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/44.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/45.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/46.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/47.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/48.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/49.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_25.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_26.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_27.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_28.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_29.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_30.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_31.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_32.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_33.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_34.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_35.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_36.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_37.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_38.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_39.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_40.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_41.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_42.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_43.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_44.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_45.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_46.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_47.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_48.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_49.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_50.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_51.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_52.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_53.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_54.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_55.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_56.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_57.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_58.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_59.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_60.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/51.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/52.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/53.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/54.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/55.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/56.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/57.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/58.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/59.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/60.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/61.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/62.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/63.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/64.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/65.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/66.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/67.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/68.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/69.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/ymarket/70.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/fmanager/DSCN2060(www.CoolWallpapers.org)-1280x1024.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/fmanager/DSCN2060(www.CoolWallpapers.org)-1280x10242.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/fmanager/DSCN2060(www.CoolWallpapers.org)-1280x102420.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/fmanager/DSCN2060(www.CoolWallpapers.org)-1280x102421.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/fmanager/GNOME-210SimpleAndElegant_1280x1024.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/fmanager/GNOME-210SimpleAndElegant_1280x10240.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/fmanager/GNOME-210SimpleAndElegant_1280x10241.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/fmanager/GNOME-210SimpleAndElegant_1280x10242.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/fmanager/NATURE-AtTheEdgeOfAtmosphere_1024x768.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/fmanager/OTHER-SmolovSummer2004_1024x768.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/fmanager/awp05_alltolls_blogspot098-1280x1024.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/fmanager/awp05_alltolls_blogspot098-1280x10240.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/autocomplete/indicator.gif" afterPath="$PROJECT_DIR$/assets/90f839/autocomplete/indicator.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_flat_0_aaaaaa_40x100.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="$PROJECT_DIR$/assets/90f839/jui/css/base/images/ui-bg_flat_75_ffffff_40x100.png" />
@@ -300,17 +166,96 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-red.gif" afterPath="$PROJECT_DIR$/assets/90f839/treeview/images/treeview-red.gif" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/dad6e4f/img/icon.png" afterPath="$PROJECT_DIR$/assets/dad6e4f/img/icon.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f8a6567a/img/icon.png" afterPath="$PROJECT_DIR$/assets/f8a6567a/img/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/img/hand.png" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/img/hand.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/img/icon.png" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/img/icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/img/lb.png" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/img/lb.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/img/lt.png" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/img/lt.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/img/ltbr.png" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/img/ltbr.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/img/mp3.png" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/img/mp3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/img/rb.png" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/img/rb.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/img/rt.png" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/img/rt.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/img/calendar.png" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/img/calendar.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/img/indicator.gif" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/img/indicator.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jFileUpload/pbar-ani.gif" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jFileUpload/pbar-ani.gif" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/21.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/21.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/22.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/22.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/23.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/23.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/24.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/24.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/25.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/25.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/26.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/26.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/27.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/27.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/28.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/28.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/29.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/29.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/30.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/30.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/31.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/31.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/32.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/32.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/33.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/33.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/34.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/34.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/35.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/35.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/36.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/36.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/37.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/37.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/38.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/38.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/39.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/39.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/40.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/40.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/41.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/41.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/42.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/42.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/43.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/43.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/44.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/44.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/45.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/45.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/46.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/46.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/47.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/47.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/48.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/48.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/49.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/49.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_21.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_21.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_22.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_22.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_23.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_23.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_24.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_24.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_25.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_25.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_26.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_26.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_27.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_27.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_28.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_28.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_29.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_29.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_30.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_30.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_31.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_31.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_32.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_32.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_33.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_33.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_34.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_34.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_35.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_35.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_36.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_36.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_37.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_37.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_38.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_38.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_39.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_39.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_40.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_40.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_41.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_41.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_42.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_42.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_43.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_43.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_44.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_44.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_45.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_45.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_46.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_46.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_47.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_47.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_48.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_48.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_49.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_49.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_50.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_50.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_51.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_51.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_52.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_52.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_53.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_53.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_54.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_54.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_55.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_55.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_56.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_56.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_57.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_57.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_58.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_58.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_59.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_59.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/50x0_60.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/50x0_60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/51.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/51.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/52.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/52.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/53.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/53.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/54.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/54.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/55.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/55.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/56.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/56.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/57.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/57.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/58.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/58.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/59.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/59.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/60.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/60.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/61.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/61.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/62.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/62.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/63.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/63.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/64.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/64.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/65.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/65.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/66.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/66.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/67.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/67.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/68.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/68.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/69.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/69.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/70.jpg" afterPath="$PROJECT_DIR$/upload/ymarket/70.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/autocomplete/jquery.autocomplete.css" afterPath="$PROJECT_DIR$/assets/90f839/autocomplete/jquery.autocomplete.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/90f839/jquery.ajaxqueue.js" afterPath="$PROJECT_DIR$/assets/90f839/jquery.ajaxqueue.js" />
@@ -354,85 +299,18 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/dad6e4f/js/filesManage.js" afterPath="$PROJECT_DIR$/assets/dad6e4f/js/filesManage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f8a6567a/css/main.css" afterPath="$PROJECT_DIR$/assets/f8a6567a/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/f8a6567a/css/modules.css" afterPath="$PROJECT_DIR$/assets/f8a6567a/css/modules.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/admin/style.css" afterPath="$PROJECT_DIR$/css/admin/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/BaseForm.php" afterPath="$PROJECT_DIR$/protected/components/BaseForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/GridView.php" afterPath="$PROJECT_DIR$/protected/components/GridView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/LangConditionBehavior.php" afterPath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/LangConditionBehavior.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/libs/yii/zii/widgets/grid/CGridView.php" afterPath="$PROJECT_DIR$/protected/libs/yii/zii/widgets/grid/CGridView.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/news/forms/NewsForm.php" afterPath="$PROJECT_DIR$/protected/modules/news/forms/NewsForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/FmanagerBehavior.php" afterPath="$PROJECT_DIR$/protected/components/activeRecordBehaviors/FmanagerBehavior.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/news/models/News.php" afterPath="$PROJECT_DIR$/protected/modules/news/models/News.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/news/views/newsAdmin/update.php" afterPath="$PROJECT_DIR$/protected/modules/news/views/newsAdmin/update.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/contributed/jquery.jeditable.datepicker.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/contributed/jquery.jeditable.datepicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/contributed/jquery.jeditable.selectdate.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/contributed/jquery.jeditable.selectdate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/contributed/jquery.jeditable.ui-datepicker.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/contributed/jquery.jeditable.ui-datepicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/css/datePicker.css" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/css/datePicker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/css/jquery.autocomplete.css" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/css/jquery.autocomplete.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/custom.html" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/custom.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/custom_autocomplete.html" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/custom_autocomplete.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/default.html" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/default.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.ajaxupload.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.ajaxupload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.autogrow.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.autogrow.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.charcounter.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.charcounter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.datepicker.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.datepicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.masked.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.masked.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.time.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.time.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.timepicker.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/jquery.jeditable.timepicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/Textile.php" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/Textile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/date.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/date.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.ajaxfileupload.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.ajaxfileupload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.autocomplete.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.autocomplete.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.autogrow.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.autogrow.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.charcounter.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.charcounter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.datePicker.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.datePicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.dimensions.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.dimensions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.highlightFade.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.highlightFade.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.jeditable.inputs.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.jeditable.inputs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.jeditable.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.jeditable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.maskedinput.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.maskedinput.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.timepicker.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/js/jquery.timepicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/Textile.php" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/Textile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/config.php" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/defaults.php" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/defaults.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/echo.php" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/echo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/json.php" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/json.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/load.php" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/load.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/save.php" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/save.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/upload.php" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/php/upload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/tests/echo.php" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/tests/echo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/tests/index.html" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/tests/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/tests/load.php" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/tests/load.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/tests/method.php" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/tests/method.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/tests/testrunner.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/tests/testrunner.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/tests/testsuite.css" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jEditable/tests/testsuite.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jFileUpload/cmsUI.fileupload.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jFileUpload/cmsUI.fileupload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jFileUpload/jquery.fileupload-ui.css" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jFileUpload/jquery.fileupload-ui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jFileUpload/jquery.fileupload-ui.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jFileUpload/jquery.fileupload-ui.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jFileUpload/jquery.fileupload.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jFileUpload/jquery.fileupload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jFileUpload/jquery.iframe-transport.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jFileUpload/jquery.iframe-transport.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/moderniz/moderniz.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/moderniz/moderniz.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/tmpl/jquery.tmpl.min.js" afterPath="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/tmpl/jquery.tmpl.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/Upload.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/Upload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/examples.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/examples.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/index.html" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.de_DE.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.de_DE.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.fr_FR.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.fr_FR.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.lt_LT.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.lt_LT.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.nl_NL.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.nl_NL.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.no_NO.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.no_NO.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.pl_PL.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.pl_PL.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.pt_BR.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.pt_BR.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.sk_SK.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.sk_SK.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.sv_SE.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.sv_SE.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.tr_TR.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.tr_TR.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.vn_VN.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.vn_VN.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.zh_CN.php" afterPath="$PROJECT_DIR$/protected/modules/upload/extensions/upload/lang/class.upload.zh_CN.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/models/Files.php" afterPath="$PROJECT_DIR$/protected/modules/upload/models/Files.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/controllers/FilesAdminController.php" afterPath="$PROJECT_DIR$/protected/modules/upload/controllers/FilesAdminController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/portlets/Uploader.php" afterPath="$PROJECT_DIR$/protected/modules/upload/portlets/Uploader.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/portlets/views/uploader.php" afterPath="$PROJECT_DIR$/protected/modules/upload/portlets/views/uploader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/users/views/userAdmin/manage.php" afterPath="$PROJECT_DIR$/protected/modules/users/views/userAdmin/manage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/upload/portlets/views/uploaderTemplates.php" afterPath="$PROJECT_DIR$/protected/modules/upload/portlets/views/uploaderTemplates.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/layouts/_adminForm.php" afterPath="$PROJECT_DIR$/protected/views/layouts/_adminForm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/articles_files/.gitignore" afterPath="$PROJECT_DIR$/upload/articles_files/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/news/.gitignore" afterPath="$PROJECT_DIR$/upload/news/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/news_files/.gitignore" afterPath="$PROJECT_DIR$/upload/news_files/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/ymarket/.gitignore" afterPath="$PROJECT_DIR$/upload/ymarket/.gitignore" />
     </list>
     <ignored path="Yii-CMS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -468,22 +346,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/protected/modules/upload/assets/js/plugins/jFileUpload/jquery.fileupload-ui.css" />
         <option value="$PROJECT_DIR$/css/admin/style.css" />
         <option value="$PROJECT_DIR$/assets/c1516779/js/plugins/jFileUpload/jquery.fileupload-ui.css" />
-        <option value="$PROJECT_DIR$/protected/modules/news/views/newsAdmin/update.php" />
         <option value="$PROJECT_DIR$/assets/c1516779/js/plugins/jFileUpload/cmsUI.fileupload.js" />
         <option value="$PROJECT_DIR$/assets/c1516779/js/plugins/jFileUpload/jquery.fileupload.js" />
-        <option value="$PROJECT_DIR$/protected/modules/upload/portlets/Uploader.php" />
         <option value="$PROJECT_DIR$/protected/components/BaseForm.php" />
-        <option value="$PROJECT_DIR$/protected/views/layouts/_adminForm.php" />
-        <option value="$PROJECT_DIR$/protected/modules/upload/models/Files.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/protected/modules/upload/controllers/FilesAdminController.php" />
-        <option value="$PROJECT_DIR$/protected/components/activeRecordBehaviors/FmanagerBehavior.php" />
-        <option value="$PROJECT_DIR$/protected/modules/news/models/News.php" />
         <option value="$PROJECT_DIR$/protected/modules/news/forms/NewsForm.php" />
+        <option value="$PROJECT_DIR$/protected/modules/news/views/newsAdmin/update.php" />
+        <option value="$PROJECT_DIR$/protected/views/layouts/_adminForm.php" />
         <option value="$PROJECT_DIR$/protected/modules/upload/portlets/views/uploader.php" />
+        <option value="$PROJECT_DIR$/protected/modules/upload/portlets/views/uploaderTemplates.php" />
+        <option value="$PROJECT_DIR$/protected/modules/upload/portlets/Uploader.php" />
+        <option value="$PROJECT_DIR$/protected/modules/upload/controllers/FilesAdminController.php" />
+        <option value="$PROJECT_DIR$/protected/modules/upload/models/Files.php" />
+        <option value="$PROJECT_DIR$/protected/modules/news/models/News.php" />
+        <option value="$PROJECT_DIR$/protected/components/activeRecordBehaviors/FmanagerBehavior.php" />
       </list>
     </option>
   </component>
@@ -538,6 +416,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -557,151 +436,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portlets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="upload" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="portlets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Yii-CMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -709,8 +445,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../test/protected/modules/news/views/newsAdmin" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -768,16 +504,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="25" width="1282" height="1003" extended-state="6" />
+    <frame x="-3" y="-24" width="1372" height="771" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3325527" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33067092" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19821283" sideWeight="0.6674473" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20197418" sideWeight="0.66932905" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -832,114 +568,104 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/views/layouts/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="22.392857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/c1516779/js/plugins/jFileUpload/cmsUI.fileupload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="14" selection-start="748" selection-end="748" vertical-scroll-proportion="0.49812734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/c1516779/js/plugins/jFileUpload/jquery.fileupload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="297" column="11" selection-start="14804" selection-end="14804" vertical-scroll-proportion="0.7469734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/BaseForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="934" selection-end="1100" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/layouts/_adminForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="34" selection-start="7881" selection-end="7881" vertical-scroll-proportion="0.48407644">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/upload/portlets/Uploader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="50" selection-end="50" vertical-scroll-proportion="0.07470511">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/upload/controllers/FilesAdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="54" selection-start="835" selection-end="835" vertical-scroll-proportion="-12.92">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="9" selection-start="902" selection-end="902" vertical-scroll-proportion="0.7469734">
-          <folding />
-        </state>
+        <state line="41" column="9" selection-start="902" selection-end="902" vertical-scroll-proportion="0.7469734" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/LangConditionBehavior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/ActiveRecordModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="28" selection-start="813" selection-end="880" vertical-scroll-proportion="0.69395465" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/news/forms/NewsForm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="8" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/upload/extensions/upload/Upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3281" column="13" selection-start="141875" selection-end="141875" vertical-scroll-proportion="-0.99877" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/news/views/newsAdmin/create.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/FmanagerBehavior.php">
+    <entry file="file://$PROJECT_DIR$/protected/modules/news/views/newsAdmin/update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="22" selection-start="13" selection-end="29" vertical-scroll-proportion="0.0">
+        <state line="7" column="11" selection-start="146" selection-end="146" vertical-scroll-proportion="0.21070234">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/ActiveRecordModel.php">
+    <entry file="file://$PROJECT_DIR$/protected/views/layouts/_adminForm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="28" selection-start="813" selection-end="880" vertical-scroll-proportion="0.69395465">
+        <state line="81" column="42" selection-start="1785" selection-end="1785" vertical-scroll-proportion="0.48387095">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/models/News.php">
+    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/DateFormatBehavior.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="112" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/news/forms/NewsForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="8" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/upload/extensions/upload/Upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3281" column="13" selection-start="141875" selection-end="141875" vertical-scroll-proportion="-0.99877">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/upload/portlets/views/uploader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="21" selection-start="812" selection-end="812" vertical-scroll-proportion="0.5714286">
+        <state line="24" column="16" selection-start="807" selection-end="807" vertical-scroll-proportion="0.6619965">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/upload/models/Files.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="400" column="24" selection-start="12029" selection-end="12029" vertical-scroll-proportion="0.59771574">
+        <state line="554" column="12" selection-start="16269" selection-end="16269" vertical-scroll-proportion="0.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/upload/controllers/FilesAdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="13" selection-start="2695" selection-end="2695" vertical-scroll-proportion="-0.31282052">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/upload/portlets/Uploader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="102" selection-start="2787" selection-end="2787" vertical-scroll-proportion="1.6444445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/upload/portlets/views/uploaderTemplates.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="0" selection-start="3333" selection-end="3333" vertical-scroll-proportion="1.3870968">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/activeRecordBehaviors/FmanagerBehavior.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="22" selection-start="689" selection-end="689" vertical-scroll-proportion="0.638796">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/news/models/News.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="24" selection-start="70" selection-end="70" vertical-scroll-proportion="0.12307692">
           <folding />
         </state>
       </provider>

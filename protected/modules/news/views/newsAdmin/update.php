@@ -6,9 +6,6 @@ $this->tabs = array(
 );
 
 echo $form;
-
-
-
 ?>
 
 

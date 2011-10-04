@@ -22,10 +22,7 @@
     {
         $('.submit').click(function()
         {
-            alert(222);
-            $(this).parents('form:eq(0)').remove();
-            //$(this).parents('form:eq(0)').remove();
-            return false;
+            $('.admin_form').submit();
         });
     });
 </script>

@@ -58,7 +58,6 @@ class Uploader extends CJuiWidget
 
         $this->assets = Yii::app()->getModule('upload')->assetsUrl();
 
-        //uploadUrl
         $this->uploadUrl = UploadHtml::url('filesAdmin/upload', array(
             'model_id'  => get_class($this->model),
             'object_id' => $this->model->id ? $this->model->id : 0,
@@ -67,7 +66,6 @@ class Uploader extends CJuiWidget
             'options' => $this->options
         ));
 
-        //options
         $default = array(
             'url'                       => $this->uploadUrl,
             'dropZone'                  => "js:$('#{$this->id}-drop-zone')",
@@ -78,7 +76,7 @@ class Uploader extends CJuiWidget
             'limitConcurrentUploads'    => 4,
             'existFilesUrl'             => UploadHtml::url('filesAdmin/existFiles', array(
                                                 'model_id'  => get_class($this->model),
-                                                'object_id' => $this->model->id,
+                                                'object_id' => $this->model->id ? $this->model->id : 0,
                                                 'tag'       => $this->tag
                                             )),
         );
