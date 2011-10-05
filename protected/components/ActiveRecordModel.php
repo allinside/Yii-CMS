@@ -133,10 +133,11 @@ class ActiveRecordModel extends CActiveRecord
     /*SCOPES_____________________________________________________________________________*/
     public function scopes()
     {
+        $alias = $this->getTableAlias();
         return array(
-           'published' => array('condition' => 'is_published = 1'),
-           'ordered'   => array('order' => '`order`'),
-           'last'      => array('order' => 'date_create DESC')
+           'published' => array('condition' => $alias.'.is_published = 1'),
+           'ordered'   => array('order' => $alias.'.`order`'),
+           'last'      => array('order' => $alias.'.date_create DESC')
         );
     }
 
@@ -150,11 +151,19 @@ class ActiveRecordModel extends CActiveRecord
 	    return $this;
 	}
 
+    public function offset($num)
+    {
+        $this->getDbCriteria()->mergeWith(array(
+            'offset' => $num,
+        ));
+
+        return $this;
+    }
 
 	public function notEqual($param, $value)
 	{
 	    $this->getDbCriteria()->mergeWith(array(
-	        'condition' => "`{$param}` != '{$value}'",
+	        'condition' => $alias.".`{$param}` != '{$value}'",
 	    ));
 
 	    return $this;
