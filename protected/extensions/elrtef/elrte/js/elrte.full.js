@@ -19,9 +19,6 @@
  * @author:    Dmitry (dio) Levashov dio@std42.ru
  * license:   BSD license
  **/
-
-
-
 function eli18n(o) {
 	
 	/**
@@ -147,18 +144,19 @@ function elDialogForm(o) {
 	
 	var defaults = {
 		'class'   : 'el-dialogform',
-		submit    : function(e, d) { window.console && window.console.log && window.console.log('submit called'); d.close(); },
+		submit    : function(e, d) { d.close(); },
 		form      : { action : window.location.href,	method : 'post'	},
 		ajaxForm  : null,
 		validate  : null,
 		spinner   : 'Loading',
-		tabs      : { active: 0 },
+		tabs      : { active: 0, selected : 0 },
 		tabPrefix : 'el-df-tab-',
 		dialog    : {
 			title     : 'dialog',
 			autoOpen  : false,
 			modal     : true,
 			resizable : false,
+			closeOnEscape : true,
 			buttons  : {
 				Cancel : function() { self.close(); },
 				Ok     : function() { self.form.trigger('submit'); }
@@ -166,8 +164,13 @@ function elDialogForm(o) {
 		}
 	};
 
-	this.opts = jQuery.extend(true, defaults, o, {dialog : { autoOpen : false, close : function() { self.close(); } }});
+	this.opts = jQuery.extend(true, {}, defaults, o);
 	
+	this.opts.dialog.close = function() { 
+		self.close(); 
+	}
+
+	// this.opts.dialog.autoOpen = true;
 	if (this.opts.rtl) {
 		this.opts['class'] += ' el-dialogform-rtl';
 	}
@@ -175,10 +178,13 @@ function elDialogForm(o) {
 	if (o && o.dialog && o.dialog.buttons && typeof(o.dialog.buttons) == 'object') {
 		this.opts.dialog.buttons = o.dialog.buttons;
 	}
+
 	this.ul     = null;
 	this.tabs   = {};
 	this._table = null;
+
 	this.dialog = jQuery('<div />').addClass(this.opts['class']).dialog(this.opts.dialog);
+
 	this.message = jQuery('<div class="el-dialogform-message rounded-5" />').hide().appendTo(this.dialog);
 	this.error   = jQuery('<div class="el-dialogform-error rounded-5" />').hide().appendTo(this.dialog);
 	this.spinner = jQuery('<div class="spinner" />').hide().appendTo(this.dialog);
@@ -356,26 +362,23 @@ function elDialogForm(o) {
 	 * @return elDialogForm	
 	**/
 	this.open = function() {
-		this.ul && this.form.tabs(this.opts.tabs);
-		// this.form.find(':text').keyup(function(e) {
-		// 	if (e.keyCode == 13) {
-		// 		self.form.submit();
-		// 	}
-		// });
-		
-		this.form.find(':text').keydown(function(e) {
-			if (e.keyCode == 13) {
-				e.preventDefault()
-				self.form.submit();
-			}
-		});
-
-		this.dialog.attr('unselectable', 'on').dialog('open');
 		var self = this;
-		if (this.form && this.form.find(':text').length) {
-			setTimeout(function() { self.form.find(':text')[0].focus(); }, 20);
-		}
 		
+		this.ul && this.form.tabs(this.opts.tabs);
+
+		setTimeout(function() {
+			self.dialog.find(':text')
+				.keydown(function(e) {
+					if (e.keyCode == 13) {
+						e.preventDefault()
+						self.form.submit();
+					}
+				})
+				.filter(':first')[0].focus()
+		}, 200);
+
+		this.dialog.dialog('open');
+
 		return this;
 	}
 	
@@ -387,7 +390,7 @@ function elDialogForm(o) {
 		if (typeof(this.opts.close) == 'function') {
 			this.opts.close();
 		}
-		this.dialog.dialog('destroy').remove();
+		this.dialog.dialog('destroy')//.remove();
 	}
 	
 }
@@ -512,13 +515,18 @@ function elDialogForm(o) {
 				self.palette.hide()
 					.appendTo(self.parents('body').eq(0))
 					.mouseleave(function() {
+						if (!self.palette.is(':animated')) {
 						$(this).slideUp();
 						self.val(self.val());
+					}
 					});
 				self.mouseleave(function(e) {
 					if (e.relatedTarget != self.palette.get(0)) {
-						self.palette.slideUp();
-						self.val(self.val());
+						if (!self.palette.is(':animated')) {
+							self.palette.slideUp();
+							self.val(self.val());
+						}
+						
 					}
 				})
 			} else {
@@ -720,16 +728,26 @@ function elDialogForm(o) {
 		}
 		
 		this.val = function(v) {
+			var w, s, c, b, m;
+			
 			if (!v && v !== '') {
-				var w = parseInt(width.val());
-				return {width : !isNaN(w) ? w+'px' : '', style : style.val(), color : color.val()};
+				w = parseInt(width.val());
+				w = !isNaN(w) ? w+'px' : '';
+				s = style.val();
+				c = color.val();
+				return {
+					width : w,
+					style : s,
+					color : c,
+					css   : $.trim(w+' '+s+' '+c)
+				}
 			} else {
-				var m, w, s, c, b = '';
+				b = '';
 				if (v.nodeName || v.css) {
 					if (!v.css) {
 						v = $(v);					
 					}
-					var b = v.css('border')
+					b = v.css('border');
 					if ((b = v.css('border'))) {
 						w = s = c = b;
 					} else {
@@ -745,9 +763,9 @@ function elDialogForm(o) {
 				}
 
 				width.val(toPixels(w));
-				var m = s ? s.match(/(solid|dashed|dotted|double|groove|ridge|inset|outset)/i) :'';
+				m = s ? s.match(/(solid|dashed|dotted|double|groove|ridge|inset|outset)/i) :'';
 				style.val(m ? m[1] : '');
-				color.val(rgb2hex(c));
+				color.val(c.indexOf('#') === 0 ? c : rgb2hex(c));
 				return this;
 			}
 		}
@@ -864,6 +882,8 @@ function elDialogForm(o) {
 
 				$.each(['left', 'top', 'right', 'bottom'], function() {
 					var name = this.toString();
+					self[name].val('');
+					self['u'+name].val();
 					if (typeof(v[name]) != 'undefined' && v[name] !== null) {
 						v[name] = v[name].toString();
 						var _v = parseNum(v[name]);
@@ -1102,8 +1122,8 @@ elRTE = function(target, opts) {
 		return alert('elRTE: argument "target" is not DOM Element');
 	}
 	var self       = this, html;
-	this.version   = '1.2';
-	this.build     = '2010-12-12';
+	this.version   = '1.3';
+	this.build     = '2011-06-23';
 	this.options   = $.extend(true, {}, this.options, opts);
 	this.browser   = $.browser;
 	this.target    = $(target);
@@ -1117,6 +1137,7 @@ elRTE = function(target, opts) {
 	}
 	this.toolbar   = $('<div class="toolbar"/>');
 	this.iframe    = document.createElement('iframe');
+	this.iframe.setAttribute('frameborder', 0); // fixes IE border
 
 	// this.source    = $('<textarea />').hide();
 	this.workzone  = $('<div class="workzone"/>').append(this.iframe).append(this.source);
@@ -1173,7 +1194,7 @@ elRTE = function(target, opts) {
 	this.source.attr('name', this.target.attr('name')||this.target.attr('id'));
 	content = $.trim(content);
 	if (!content) {
-		content = '';
+		content = ' ';
 	}
 
 	/* add tabs */
@@ -1249,7 +1270,7 @@ elRTE = function(target, opts) {
 	
 	
 	/* bind updateSource to parent form submit */
-	this.target.parents('form').bind('submit', function(e) {
+	this.target.parents('form').bind('submit.elfinder', function(e) {
 		self.source.parents('form').find('[name="el-select"]').remove()
 		self.beforeSave();
 	});
@@ -1272,7 +1293,6 @@ elRTE = function(target, opts) {
 		}
 	});
 	
-	
 	$(this.doc.body).bind('dragend', function(e) {
 		setTimeout(function() {
 			try {
@@ -1289,7 +1309,6 @@ elRTE = function(target, opts) {
 	
 	this.typing = false;
 	this.lastKey = null;
-	
 	/* update buttons on click and keyup */
 	this.$doc.bind('mouseup', function() {
 		self.typing = false;
@@ -1315,7 +1334,7 @@ elRTE = function(target, opts) {
 				return false;
 			}
 		}
-		
+
 		if ((e.keyCode>=48 && e.keyCode <=57) || e.keyCode==61 || e.keyCode == 109 || (e.keyCode>=65 && e.keyCode<=90) || e.keyCode==188 ||e.keyCode==190 || e.keyCode==191 || (e.keyCode>=219 && e.keyCode<=222)) {
 			if (!self.typing) {
 				self.history.add(true);
@@ -1328,6 +1347,11 @@ elRTE = function(target, opts) {
 			}
 			self.lastKey = e.keyCode;
 			self.typing = false;
+		}
+		
+		if (e.keyCode == 32 && $.browser.opera) {
+			self.selection.insertNode(self.doc.createTextNode(" "));
+			return false
 		}
 	})
 	.bind('paste', function(e) {
@@ -1392,10 +1416,16 @@ elRTE = function(target, opts) {
 		})
 	}
 	
-	// this.resizable(true)
 	this.window.focus();
-	// this.log(this.editor.parents('form').find('[name="el-select"]'))
 	
+	this.destroy = function() {
+		this.updateSource();
+		this.target.is('textarea')
+			? this.target.val($.trim(this.source.val()))
+			: this.target.html($.trim(this.source.val()));
+		this.editor.remove();
+		this.target.show().parents('form').unbind('submit.elfinder');
+	}
 	
 }
 
@@ -1458,15 +1488,15 @@ elRTE.prototype.val = function(v) {
 		}
 	} else {
 		if (this.source.is(':visible')) {
-			return this.filter.source2source(this.source.val());
+			return this.filter.source2source(this.source.val()).trim();
 		} else {
-			return this.filter.source($(this.doc.body).html());
+			return this.filter.source($(this.doc.body).html()).trim();
 		}
 	}
 }
 
 elRTE.prototype.beforeSave = function() {
-	this.source.val(this.val()||'');
+	this.source.val($.trim(this.val())||'');
 }
 
 /**
@@ -1507,6 +1537,8 @@ $.fn.elrte = function(o, v) {
 			case 'updateSource':
 				this.elrte.updateSource();
 				break;
+			case 'destroy':
+				this.elrte.destroy();
 		}
 	});
 	
@@ -1600,7 +1632,7 @@ elRTE.prototype.dom = function(rte) {
 		var v = '';
 		if (n.nodeType == 1) {
 			v = $(n).attr(attr);
-			if (v && attr != 'src' && attr != 'href') {
+			if (v && attr != 'src' && attr != 'href' && attr != 'title' && attr != 'alt') {
 				v = v.toString().toLowerCase();
 			}
 		} 
@@ -1838,9 +1870,11 @@ elRTE.prototype.dom = function(rte) {
 	
 	this.is = function(n, f) {
 		if (n && n.nodeName) {
+
 			if (typeof(f) == 'string') {
 				f = this.regExp[f]||/.?/;
 			}
+
 			if (f instanceof RegExp && n.nodeName) {
 				return f.test(n.nodeName);
 			} else if (typeof(f) == 'function') {
@@ -2234,7 +2268,7 @@ elRTE.prototype.dom = function(rte) {
 		// cdata regexp
 		this.cdataRegExp = /<!\[CDATA\[([\s\S]+)\]\]>/g;
 		// object tag regexp
-		this.objRegExp = /<object([^>]*)>([\s\S]*?)<\/object>/gi;
+		this.objRegExp = /<object([^>]*)>(.*?)<\/object>/gi;
 		// embed tag regexp
 		this.embRegExp = /<(embed)((?:\s+\w+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*>/gi;
 		// param tag regexp
@@ -2297,7 +2331,7 @@ elRTE.prototype.dom = function(rte) {
 				html = this.call(self, html);
 			});
 			html = html.replace(/\t/g, '  ').replace(/\r/g, '').replace(/\s*\n\s*\n+/g, "\n")+'  ';
-			return $.trim(html) ? html : '';
+			return $.trim(html) ? html : ' ';
 		}
 		
 		/**
@@ -2351,11 +2385,12 @@ elRTE.prototype.dom = function(rte) {
 				b = this.boolAttrs,
 				m = s.match(this.attrRegExp),
 				t, n, v;
-
+				// this.rte.log(s)
+			// this.rte.log(m)
 			m && $.each(m, function(i, s) {
 				t = s.split('=');
 				n = $.trim(t[0]).toLowerCase();
-				
+
 				if (t.length>2) {
 					t.shift();
 					v = t.join('=');
@@ -2366,6 +2401,7 @@ elRTE.prototype.dom = function(rte) {
 			});
 
 			a.style = this.rte.utils.parseStyle(a.style);
+			// rte.log(a.style)
 			a['class'] = this.rte.utils.parseClass(a['class']||'')
 			return a;
 		}
@@ -2383,6 +2419,8 @@ elRTE.prototype.dom = function(rte) {
 				if (n=='style') {
 					v = self.rte.utils.serializeStyle(v, c);
 				} else if (n=='class') {
+					// self.rte.log(v)
+					// self.rte.log(self.rte.utils.serializeClass(v))
 					v = self.rte.utils.serializeClass(v);
 				} 
 				v && s.push(n+'="'+v+'"');
@@ -2658,10 +2696,10 @@ elRTE.prototype.dom = function(rte) {
 					if (c) {
 						return '</'+(rt[n] ? rt[n].tag : n)+'>';
 					}
-					
+					// self.rte.log(t)
 					// create attributes hash and clean it
 					a = self.cleanAttrs(self.parseAttrs(a||''), n);
-					
+					// self.rte.log(a)
 					if (rt[n]) {
 						rt[n].style && $.extend(a.style, rt[n].style);
 						n = rt[n].tag;
@@ -2673,6 +2711,7 @@ elRTE.prototype.dom = function(rte) {
 						}
 					});
 					a = self.serializeAttrs(a);
+					// self.rte.log(a)
 					return '<'+n+(a?' ':'')+a+'>';
 				});
 				
@@ -2684,6 +2723,7 @@ elRTE.prototype.dom = function(rte) {
 				var t = $(this);
 				
 				if (!t.attr('style')) {
+					
 					$.trim(t.html()).length ? self.rte.dom.unwrap(this) : t.remove();
 					// t.children().length ? self.rte.dom.unwrap(this) : t.remove();
 				}
@@ -2693,7 +2733,7 @@ elRTE.prototype.dom = function(rte) {
 					tid = t.attr('id'), 
 					pid = p.attr('id'), id, s, c;
 
-				if (self.rte.dom.is(this, 'onlyChild') && (!tid || !pid)) {
+				if (self.rte.dom.isOnlyNotEmpty(this) && (!tid || !pid)) {
 					c = $.trim(p.attr('class')+' '+t.attr('class'))
 					c && p.attr('class', c);
 					s = self.rte.utils.serializeStyle($.extend(self.rte.utils.parseStyle($(this).attr('style')||''), self.rte.utils.parseStyle($(p).attr('style')||'')));
@@ -3042,7 +3082,7 @@ elRTE.prototype.dom = function(rte) {
 		 * return String
 		 **/
 		xhtmlTags : function(html) {
-			return this.xhtml ? html.replace(/<(img|hr|br|embed|param|link)([^>]*\/*)>/gi, "<$1$2 />") : html;
+			return this.xhtml ? html.replace(/<(img|hr|br|embed|param|link|area)([^>]*\/*)>/gi, "<$1$2 />") : html;
 		}
 	}
 	
@@ -3057,11 +3097,11 @@ elRTE.prototype.dom = function(rte) {
 	 * deniedTags is in the end of chain to protect google maps iframe from removed
 	 **/
 	elRTE.prototype.filter.prototype.chains = {
-		wysiwyg         : ['clean','allowedTags', 'replace', 'deniedTags', 'compactStyles'],
-		source          : ['clean','allowedTags', 'restore', 'compactStyles', 'xhtmlTags'],
-		paste           : ['clean','allowedTags', 'cleanPaste', 'replace', 'deniedTags', 'compactStyles'],
-		wysiwyg2wysiwyg : ['clean','allowedTags', 'restore', 'replace', 'deniedTags', 'compactStyles'],
-		source2source   : ['clean','allowedTags', 'replace', 'deniedTags', 'restore', 'compactStyles', 'xhtmlTags']
+		wysiwyg         : ['replace', 'clean', 'allowedTags', 'deniedTags', 'compactStyles'],
+		source          : ['clean', 'allowedTags', 'restore', 'compactStyles', 'xhtmlTags'],
+		paste           : ['clean', 'allowedTags', 'cleanPaste', 'replace', 'deniedTags', 'compactStyles'],
+		wysiwyg2wysiwyg : ['clean', 'allowedTags', 'restore', 'replace', 'deniedTags', 'compactStyles'],
+		source2source   : ['clean', 'allowedTags', 'replace', 'deniedTags', 'restore', 'compactStyles', 'xhtmlTags']
 	}
 	
 
@@ -3234,8 +3274,10 @@ elRTE.prototype.options   = {
 		'fullscreen'          : 'Toggle full screen mode',
 		'nbsp'                : 'Non breakable space',
 		'stopfloat'           : 'Stop element floating',
+		'about'               : 'About this software'
 	},
 	panels      : {
+		eol        : [], // special panel, insert's a new line in toolbar
 		save       : ['save'],
 		copypaste  : ['copy', 'cut', 'paste', 'pastetext', 'pasteformattext', 'removeformat', 'docstructure'],
 		undoredo   : ['undo', 'redo'],
@@ -3245,14 +3287,14 @@ elRTE.prototype.options   = {
 		indent     : ['outdent', 'indent'],
 		format     : ['formatblock', 'fontsize', 'fontname'],
 		lists      : ['insertorderedlist', 'insertunorderedlist'],
-		elements   : ['horizontalrule', 'stopfloat', 'css', 'nbsp'],
+		elements   : ['horizontalrule', 'blockquote', 'div', 'stopfloat', 'css', 'nbsp', 'smiley', 'pagebreak'],
 		direction  : ['ltr', 'rtl'],
 		links      : ['link', 'unlink', 'anchor'],
 		images     : ['image'],
-		media      : ['image'],
+		media      : ['image', 'flash'],		
 		tables     : ['table', 'tableprops', 'tablerm',  'tbrowbefore', 'tbrowafter', 'tbrowrm', 'tbcolbefore', 'tbcolafter', 'tbcolrm', 'tbcellprops', 'tbcellsmerge', 'tbcellsplit'],
 		elfinder   : ['elfinder'],
-		fullscreen : ['fullscreen']
+		fullscreen : ['fullscreen', 'about']
 	},
 	toolbars    : {
 		tiny     : ['style'],
@@ -4077,18 +4119,28 @@ elRTE.prototype.ui = function(rte) {
 		tb        = this.rte.options.toolbars[rte.options.toolbar && rte.options.toolbars[rte.options.toolbar] ? rte.options.toolbar : 'normal'],
 		tbl       = tb.length,
 		p, pname, pl, n, c, b, i;
-	
+
 	// add prototype to all buttons
 	for (i in this.buttons) {
 		if (this.buttons.hasOwnProperty(i) && i != 'button') {
 			this.buttons[i].prototype = this.buttons.button.prototype;
 		}
 	}
-	
+
 	// create buttons and put on toolbar
 	while (tbl--) {
+		first = (tbl == 0 ? true : false);
+		if (tb[tbl - 1] == 'eol') { first = true; }
+
 		pname = tb[tbl];
-		p = $('<ul class="panel-'+pname+(tbl == 0 ? ' first' : '')+'" />').prependTo(this.rte.toolbar);
+
+		// special 'end of line' panel, starts next panel on a new line
+		if (pname == 'eol') {
+			$(this.rte.doc.createElement('br')).prependTo(this.rte.toolbar);
+			continue;
+		}
+
+		p = $('<ul class="panel-'+pname+(first ? ' first' : '')+'" />').prependTo(this.rte.toolbar);
 		p.bind('mousedown', function(e) {
 			e.preventDefault();
 		})
@@ -4100,15 +4152,15 @@ elRTE.prototype.ui = function(rte) {
 			p.prepend(b.domElem);
 		}
 	}
-	
+
 	this.update();
-	
+
 	this.disable = function() {
 		$.each(self._buttons, function() {
 			!this.active && this.domElem.addClass('disabled');
 		});
 	}
-	
+
 }
 
 /**
@@ -4121,9 +4173,9 @@ elRTE.prototype.ui.prototype.update = function(cleanCache) {
 	var n    = this.rte.selection.getNode(),
 		p    = this.rte.dom.parents(n, '*'),
 		rtl = this.rte.rtl,
-		sep  = rtl ? ' &laquo; ' : ' &raquo; ', 
+		sep  = rtl ? ' &laquo; ' : ' &raquo; ',
 		path = '', name, i;
-		
+
 	function _name(n) {
 		var name = n.nodeName.toLowerCase();
 		n = $(n)
@@ -4140,19 +4192,19 @@ elRTE.prototype.ui.prototype.update = function(cleanCache) {
 		}
 		return name;
 	}
-	
+
 	if (n && n.nodeType == 1 && n.nodeName != 'BODY') {
 		p.unshift(n);
 	}
-	
+
 	if (!rtl) {
 		p = p.reverse();
 	}
-	
+
 	for (i=0; i < p.length; i++) {
 		path += (i>0 ? sep : '')+_name(p[i]);
 	}
-	
+
 	this.rte.statusbar.html(path);
 	$.each(this._buttons, function() {
 		this.update();
@@ -4163,9 +4215,9 @@ elRTE.prototype.ui.prototype.update = function(cleanCache) {
 
 
 elRTE.prototype.ui.prototype.buttons = {
-	
+
 	/**
-	 * @class кнопка на toolbar редактора 
+	 * @class кнопка на toolbar редактора
 	 * реализует поведение по умолчанию и является родителем для других кнопок
 	 *
 	 * @param  elRTE  rte   объект-редактор
@@ -4186,7 +4238,12 @@ elRTE.prototype.ui.prototype.buttons = {
 				e.stopPropagation();
 				e.preventDefault();
 				if (!$(this).hasClass('disabled')) {
-					self.command();
+					// try{
+						self.command();
+					// } catch(e) {
+					// 	self.rte.log(e)
+					// }
+					
 				}
 				self.rte.window.focus();
 			});
@@ -4205,7 +4262,7 @@ elRTE.prototype.ui.prototype.buttons.button.prototype.command = function() {
 	} catch(e) {
 		return this.rte.log('commands failed: '+this.name);
 	}
-	
+
 	this.rte.ui.update(true);
 }
 
@@ -4233,7 +4290,8 @@ elRTE.prototype.ui.prototype.buttons.button.prototype.update = function() {
 	} catch (e) { }
 }
 
-})(jQuery);/*
+})(jQuery);
+/*
  * Misc utils for elRTE
  *
  * @param Object rte - editor
@@ -4444,14 +4502,14 @@ elRTE.prototype.utils = function(rte) {
 	 * @return  Object
 	 **/
 	this.parseStyle = function(s) {
-		var st = {}, a = this.rte.options.allowBrowsersSpecStyles, t, n, v;
+		var st = {}, a = this.rte.options.allowBrowsersSpecStyles, t, n, v, p;
 		
 		if (typeof(s) == 'string' && s.length) {
-			$.each(s.replace(/&quot;/gi, "'").split(';'), function() {
-				t = this.toString().split(':');
-				if (t[0] && t[1]) {
-					n = $.trim(t[0]).toLowerCase();
-					v = $.trim(t[1]);
+			
+			$.each(s.replace(/&quot;/gi, "'").split(';'), function(i, str) {
+				if ((p = str.indexOf(':')) !== -1) {
+					n = $.trim(str.substr(0, p));
+					v = $.trim(str.substr(p+1))
 					if (n == 'color' || n == 'background-color') {
 						v = v.toLowerCase();
 					}
@@ -4567,8 +4625,11 @@ elRTE.prototype.utils = function(rte) {
 	this.serializeClass = function(c) {
 		// return c.join(' ')
 		var s = [];
+		// this.rte.log(c)
+		var rte = this.rte
 		$.each(c, function(n) {
 			s.push(n);
+			// rte.log(typeof(n))
 		});
 		return s.join(' ');
 	}
@@ -4993,7 +5054,7 @@ elRTE.prototype.w3cRange = function(rte) {
 				+'<tr><td>Tawfek Daghistani &lt;tawfekov@gmail.com&gt;</td><td>'+this.rte.i18n('RTL support')+'</td></tr>'
 				+(this.rte.options.lang != 'en' ? '<tr><td>'+this.rte.i18n('_translator')+'</td><td>'+this.rte.i18n('_translation')+'</td></tr>' : '')
 				+'</table>'
-				+'<div class="elrte-copy">Copyright &copy; 2009-2011, <a href="http://www.std42.ru">Studio 42 LTD</a></div>'
+				+'<div class="elrte-copy">Copyright &copy; 2009-2011, <a href="http://www.std42.ru">Studio 42</a></div>'
 				+'<div class="elrte-copy">'+this.rte.i18n('For more information about this software visit the')+' <a href="http://elrte.org">'+this.rte.i18n('elRTE website')+'.</a></div>'
 				+'<div class="elrte-copy">Twitter: <a href="http://twitter.com/elrte_elfinder">elrte_elfinder</a></div>';
 			
@@ -5161,9 +5222,9 @@ elRTE.prototype.ui.prototype.buttons.paste = elRTE.prototype.ui.prototype.button
 	elRTE.prototype.ui.prototype.buttons.css = function(rte, name) {
 		var self = this;
 		this.constructor.prototype.constructor.call(this, rte, name);
-		this.cssStyle = $('<input type="text" size="42" name="style" />');
-		this.cssClass = $('<input type="text" size="42" name="class" />');
-		
+		this.cssStyle  = $('<input type="text" size="42" name="style" />');
+		this.cssClass  = $('<input type="text" size="42" name="class" />');
+		this.elementID = $('<input type="text" size="42" name="id" />');
 		
 		this.command = function() {
 			var n = this.node(), opts;
@@ -5181,9 +5242,12 @@ elRTE.prototype.ui.prototype.buttons.paste = elRTE.prototype.ui.prototype.button
 				}
 				this.cssStyle.val($(n).attr('style'));
 				this.cssClass.val($(n).attr('class'));
+				this.elementID.val($(n).attr('id'));
 				var d = new elDialogForm(opts);
-				d.append([this.rte.i18n('Css style'), this.cssStyle], null, true)
-				d.append([this.rte.i18n('Css class'), this.cssClass], null, true).open();
+				d.append([this.rte.i18n('Css style'), this.cssStyle],  null, true)
+				d.append([this.rte.i18n('Css class'), this.cssClass],  null, true)
+				d.append([this.rte.i18n('ID'),        this.elementID], null, true)
+				d.open();
 				setTimeout(function() { self.cssStyle.focus() }, 20)
 			}
 		}
@@ -5194,6 +5258,7 @@ elRTE.prototype.ui.prototype.buttons.paste = elRTE.prototype.ui.prototype.button
 			if (n) {
 				$(n).attr('style', this.cssStyle.val());
 				$(n).attr('class', this.cssClass.val());
+				$(n).attr('id',    this.elementID.val());
 				this.rte.ui.update();
 			}
 		}
@@ -5213,6 +5278,7 @@ elRTE.prototype.ui.prototype.buttons.paste = elRTE.prototype.ui.prototype.button
 	}
 	
 })(jQuery);
+
 (function($) {
 	/**
 	 * @class button - right to left direction (not work yet with text nodes in body)
@@ -5384,10 +5450,20 @@ elRTE.prototype.ui.prototype.buttons.docstructure = function(rte, name) {
 (function($) {
 elRTE.prototype.ui.prototype.buttons.elfinder = function(rte, name) {
 	this.constructor.prototype.constructor.call(this, rte, name);
-	var self = this;
+	var self = this,
+		rte = this.rte;
 	this.command = function() {
 		if (self.rte.options.fmAllow && typeof(self.rte.options.fmOpen) == 'function') {
-			self.rte.options.fmOpen( function(url) { self.rte.log(url) } );
+			self.rte.options.fmOpen( function(url) { 
+				var name = decodeURIComponent(url.split('/').pop().replace(/\+/g, " "));
+				
+				if (rte.selection.collapsed()) {
+					rte.selection.insertHtml('<a href="'+url+'" >'+name+'</a>');
+				} else {
+					rte.doc.execCommand('createLink', false, url);
+				}
+				
+			} );
 		}
 	}
 	
@@ -5400,7 +5476,8 @@ elRTE.prototype.ui.prototype.buttons.elfinder = function(rte, name) {
 	}
 }
 
-})(jQuery);(function($) {
+})(jQuery);
+(function($) {
 	
 	elRTE.prototype.ui.prototype.buttons.flash = function(rte, name) {
 		this.constructor.prototype.constructor.call(this, rte, name);
@@ -5530,7 +5607,7 @@ elRTE.prototype.ui.prototype.buttons.elfinder = function(rte, name) {
 			
 			
 			d.open();
-			setTimeout( function() {self.src.url.focus()}, 100)
+			// setTimeout( function() {self.src.url.focus()}, 100)
 			
 			
 			var fs = $('<fieldset />').append($('<legend />').text(this.rte.i18n('Preview')))
@@ -5869,6 +5946,7 @@ elRTE.prototype.ui.prototype.buttons.forecolor = function(rte, name) {
 	this.constructor.prototype.constructor.call(this, rte, name);
 	var opts = {
 		'class' : '',
+		palettePosition : 'outer',
 		color   : this.defaultColor,
 		update  : function(c) { self.indicator.css('background-color', c); },
 		change  : function(c) { self.set(c) }
@@ -6215,10 +6293,132 @@ elRTE.prototype.ui.prototype.buttons.horizontalrule = function(rte, name) {
 (function($) {
 elRTE.prototype.ui.prototype.buttons.image = function(rte, name) {
 	this.constructor.prototype.constructor.call(this, rte, name);
-	var self = this;
-	this.img = null
-	this.init = function() {
-		
+	var self = this,
+		rte  = self.rte,
+		proportion = 0,
+		width = 0,
+		height = 0,
+		bookmarks = null,
+		reset = function(nosrc) {
+			$.each(self.src, function(i, elements) {
+				$.each(elements, function(n, el) {
+					if (n == 'src' && nosrc) {
+						return;
+					}
+					el.val('');
+				});
+			});
+		},
+		values = function(img) {
+			$.each(self.src, function(i, elements) {
+				$.each(elements, function(n, el) {
+					var val, w, c, s, border;
+					
+					if (n == 'width') {
+						val = img.width();
+					} else if (n == 'height') {
+						val = img.height();
+					} else if (n == 'border') {
+						val = '';
+						border = img.css('border') || rte.utils.parseStyle(img.attr('style')).border || '';
+
+						if (border) {
+							w = border.match(/(\d(px|em|%))/);
+							c = border.match(/(#[a-z0-9]+)/);
+							val = {
+								width : w ? w[1] : border,
+								style : border,
+								color : rte.utils.color2Hex(c ? c[1] : border)
+							}
+						} 
+					} else if (n == 'margin') {
+						val = img;
+					} else if (n == 'align') { 
+						val = img.css('float');
+
+						if (val != 'left' && val != 'right') {
+							val = img.css('vertical-align');
+						}
+					 }else {
+						val = img.attr(n)||'';
+					}
+					
+					if (i == 'events') {
+						val = rte.utils.trimEventCallback(val);
+					}
+
+					el.val(val);
+				});
+			});
+		},
+		preview = function() {
+			var src = self.src.main.src.val();
+			
+			reset(true);
+			
+			if (!src) {
+				self.preview.children('img').remove();
+				self.prevImg = null;
+			} else {
+				if (self.prevImg) {
+					self.prevImg
+						.removeAttr('src')
+						.removeAttr('style')
+						.removeAttr('class')
+						.removeAttr('id')
+						.removeAttr('title')
+						.removeAttr('alt')
+						.removeAttr('longdesc');
+						
+					$.each(self.src.events, function(name, input) {
+						self.prevImg.removeAttr(name);
+					});
+				} else {
+					self.prevImg = $('<img/>').prependTo(self.preview);
+				}
+				self.prevImg.load(function() {
+					self.prevImg.unbind('load');
+					setTimeout(function() {
+						width      = self.prevImg.width();
+						height     = self.prevImg.height();
+						proportion = (width/height).toFixed(2);
+						self.src.main.width.val(width);
+						self.src.main.height.val(height);
+						
+					}, 100);
+				})
+				.attr('src', src);
+			}
+			
+		},
+		size = function(e) {
+			var w = parseInt(self.src.main.width.val())||0,
+				h = parseInt(self.src.main.height.val())||0;
+				
+			if (self.prevImg) {
+				if (w && h) {
+					if (e.target === self.src.main.width[0]) {
+						h = parseInt(w/proportion);
+					} else {
+						w = parseInt(h*proportion);
+					}
+				} else {
+					w = width;
+					h = height;
+				}
+				self.src.main.height.val(h);
+				self.src.main.width.val(w);
+				self.prevImg.width(w).height(h);
+				self.src.adv.style.val(self.prevImg.attr('style'));
+			}
+		}
+		;
+	
+	this.img     = null;
+	this.prevImg = null;
+	this.preview = $('<div class="elrte-image-preview"/>').text('Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin');
+	
+	this.init = function() {	
 		this.labels = {
 			main   : 'Properies',
 			link   : 'Link',
@@ -6235,12 +6435,30 @@ elRTE.prototype.ui.prototype.buttons.image = function(rte, name) {
 		
 		this.src = {
 			main : {
-				src    : $('<input type="text" />').css('width', '100%'),
+				src    : $('<input type="text" />').css('width', '100%').change(preview),
 				title  : $('<input type="text" />').css('width', '100%'),
 				alt    : $('<input type="text" />').css('width', '100%'),
-				width  : $('<input type="text" />').attr('size', 5).css('text-align', 'right'),
-				height : $('<input type="text" />').attr('size', 5).css('text-align', 'right'),
-				margin : $('<div />'),
+				width  : $('<input type="text" />').attr('size', 5).css('text-align', 'right').change(size),
+				height : $('<input type="text" />').attr('size', 5).css('text-align', 'right').change(size),
+				margin : $('<div />').elPaddingInput({
+					type : 'margin', 
+					change : function() {
+						var margin = self.src.main.margin.val();
+					
+						if (self.prevImg) {
+							if (margin.css) {
+								self.prevImg.css('margin', margin.css)
+							} else {
+								self.prevImg.css({
+									'margin-left'   : margin.left,
+									'margin-top'    : margin.top,
+									'margin-right'  : margin.right,
+									'margin-bottom' : margin.bottom
+								});
+							}
+						}
+					} 
+				}), 
 				align  : $('<select />').css('width', '100%')
 							.append($('<option />').val('').text(this.rte.i18n('Not set', 'dialogs')))
 							.append($('<option />').val('left'       ).text(this.rte.i18n('Left')))
@@ -6250,82 +6468,123 @@ elRTE.prototype.ui.prototype.buttons.image = function(rte, name) {
 							.append($('<option />').val('middle'     ).text(this.rte.i18n('middle')))
 							.append($('<option />').val('baseline'   ).text(this.rte.i18n('Baseline')))
 							.append($('<option />').val('bottom'     ).text(this.rte.i18n('Bottom')))
-							.append($('<option />').val('text-bottom').text(this.rte.i18n('Text bottom'))),
-				border : $('<div />')
+							.append($('<option />').val('text-bottom').text(this.rte.i18n('Text bottom')))
+							.change(function() {
+								var val = $(this).val(),
+									css = {
+										'float' : '',
+										'vertical-align' : ''
+									};
+								if (self.prevImg) {
+									if (val == 'left' || val == 'right') {
+										css['float'] = val;
+										css['vertical-align'] = '';
+									} else if (val) {
+										css['float'] = '';
+										css['vertical-align'] = val;
+									} 
+									self.prevImg.css(css);
+								}
+							})
+						,
+				border : $('<div />').elBorderSelect({
+					name : 'border',
+					change : function() {
+						var border = self.src.main.border.val();
+						if (self.prevImg) {
+							self.prevImg.css('border', border.width ? border.width+' '+border.style+' '+border.color : '');
+						}
+					}
+				})
 			},
 
-			adv : {
-				id       : $('<input type="text" />').css('width', '100%'),
-				'class'  : $('<input type="text" />').css('width', '100%'),
-				style    : $('<input type="text" />').css('width', '100%'),
-				longdesc : $('<input type="text" />').css('width', '100%')
-			},
+			adv : {},
 			events : {}
 		}
+		
+		$.each(['id', 'class', 'style', 'longdesc'], function(i, name) {
+			self.src.adv[name] = $('<input type="text" style="width:100%" />');
+		});
+		
+		this.src.adv['class'].change(function() {
+			if (self.prevImg) {
+				self.prevImg.attr('class', $(this).val());
+			}
+		});
+		
+		this.src.adv.style.change(function() {
+			if (self.prevImg) {
+				self.prevImg.attr('style', $(this).val());
+				values(self.prevImg);
+			}
+		});
 		
 		$.each(
 			['onblur', 'onfocus', 'onclick', 'ondblclick', 'onmousedown', 'onmouseup', 'onmouseover', 'onmouseout', 'onmouseleave', 'onkeydown', 'onkeypress', 'onkeyup'], 
 			function() {
-				self.src.events[this] = $('<input type="text" />').css('width', '100%');
+				self.src.events[this] = $('<input type="text"  style="width:100%"/>');
 		});
-		
-		$.each(self.src, function() {
-			for (var n in this) {
-				this[n].attr('name', n);
-			}
-		});
-		
 	}
 	
 	this.command = function() {
 		!this.src && this.init();
-		this.rte.selection.saveIERange();
-		this.src.main.border.elBorderSelect({ change : function() { self.updateImg(); }, name : 'border' });
-		this.src.main.margin.elPaddingInput({ type : 'margin' });
+		
+		var img, 
+			opts = {
+				rtl : rte.rtl,
+				submit : function(e, d) { 
+					e.stopPropagation(); 
+					e.preventDefault(); 
+					self.set(); 
 
-		this.cleanValues();
-		this.src.main.src.val('');
-		
-		var n = this.rte.selection.getEnd(),
-			$n = $(n);
-		this.preview = null;
-		this.prevImg = null;
-		this.link    = null;
-		if (n.nodeName == 'IMG' && !$n.hasClass('elrte-protected')) {
-			this.img     = $(n);
-		} else {
-			this.img = $(this.rte.doc.createElement('img'));
+					dialog.close(); 
+				},
+				close : function() {
+
+					bookmarks && rte.selection.moveToBookmark(bookmarks)
+				},
+				dialog : {
+					autoOpen  : false,
+					width     : 500,
+					position  : 'top',
+					title     : rte.i18n('Image'),
+					resizable : true,
+					open      : function() {
+						$.fn.resizable && $(this).parents('.ui-dialog:first').resizable('option', 'alsoResize', '.elrte-image-preview');
+					}
+				}
+			},
+			dialog = new elDialogForm(opts),
+			fm = !!rte.options.fmOpen,
+			src = fm
+				? $('<div class="elrte-image-src-fm"><span class="ui-state-default ui-corner-all"><span class="ui-icon ui-icon-folder-open"/></span></div>')
+					.append(this.src.main.src.css('width', '87%'))
+				: this.src.main.src;
 			
+			;
+		
+		reset();
+		this.preview.children('img').remove();
+		this.prevImg = null;
+		img = rte.selection.getEnd();
+		
+		this.img = img.nodeName == 'IMG' && !$(img).is('.elrte-protected')
+			? $(img)
+			: $('<img/>');
+		
+		bookmarks = rte.selection.getBookmark();
+
+		if (fm) {
+			src.children('.ui-state-default')
+				.click( function() {
+					rte.options.fmOpen( function(url) { self.src.main.src.val(url).change() } );
+				})
+				.hover(function() {
+					$(this).toggleClass('ui-state-hover');
+				});
 		}
 		
-		var opts = {
-			rtl : this.rte.rtl,
-			submit : function(e, d) { e.stopPropagation(); e.preventDefault(); self.set(); d.close(); },
-			dialog : {
-				width    : 570,
-				position : 'top',
-				title    : this.rte.i18n('Image')
-			}
-		}
-		var d = new elDialogForm(opts);
-		
-		if (this.rte.options.fmAllow && this.rte.options.fmOpen) {
-			var src = $('<span />').append(this.src.main.src.css('width', '88%'))
-					.append(
-						$('<span />').addClass('ui-state-default ui-corner-all')
-							.css({'float' : 'right', 'margin-right' : '3px'})
-							.attr('title', self.rte.i18n('Open file manger'))
-							.append($('<span />').addClass('ui-icon ui-icon-folder-open'))
-								.click( function() {
-									self.rte.options.fmOpen( function(url) { self.src.main.src.val(url).change() } );
-								})
-								.hover(function() {$(this).addClass('ui-state-hover')}, function() { $(this).removeClass('ui-state-hover')})
-						);
-		} else {
-			var src = this.src.main.src;
-		}
-		
-		d.tab('main', this.rte.i18n('Properies'))
+		dialog.tab('main', this.rte.i18n('Properies'))
 			.append([this.rte.i18n('Image URL'), src],                 'main', true)
 			.append([this.rte.i18n('Title'),     this.src.main.title], 'main', true)
 			.append([this.rte.i18n('Alt text'),  this.src.main.alt],   'main', true)
@@ -6333,263 +6592,100 @@ elRTE.prototype.ui.prototype.buttons.image = function(rte, name) {
 			.append([this.rte.i18n('Alignment'), this.src.main.align],  'main', true)
 			.append([this.rte.i18n('Margins'),   this.src.main.margin], 'main', true)
 			.append([this.rte.i18n('Border'),    this.src.main.border], 'main', true)
-
-		for (var tab in this.src) {
-			if (tab != 'main') {
-				d.tab(tab, this.rte.i18n(this.labels[tab]));
-				for (var name in this.src[tab]) {
-					var l = this.rte.i18n(this.labels[name] ? this.labels[name] : name);
-					if (tab == 'events') {
-						this.src[tab][name].val(this.rte.utils.trimEventCallback(this.img.attr(name)));
-					} else if (tab == 'link') {
-						if (this.link) {
-							this.src[tab][name].val(name == 'href' ? this.rte.utils.absoluteURL(this.link.attr(name)) : this.link.attr(name));
-						}
-					} else {
-						this.src[tab][name].val(this.img.attr(name)||'');
-					}
-					d.append([l, this.src[tab][name]], tab, true);
-				}
-			}
-		};
-				
-		d.open();
 		
-		var fs = $('<fieldset />').append($('<legend />').text(this.rte.i18n('Preview')))
-		d.append(fs, 'main');
-		var frame = document.createElement('iframe');
-		$(frame).attr('src', '#').addClass('el-rte-preview').appendTo(fs);
-
-		html = this.rte.options.doctype+'<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /></head><body style="padding:0;margin:0;font-size:9px"> </body></html>';
-		frame.contentWindow.document.open();
-		frame.contentWindow.document.write(html);
-		frame.contentWindow.document.close();
-		this.frame = frame.contentWindow.document
-		this.preview = $(frame.contentWindow.document.body)
-		 				 .text('Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin');
+		dialog.append($('<fieldset><legend>'+this.rte.i18n('Preview')+'</legend></fieldset>').append(this.preview), 'main');
+		
+		
+		
+		$.each(this.src, function(tabname, elements) {
+		
+			if (tabname == 'main') {
+				return;
+			}
+			dialog.tab(tabname, rte.i18n(self.labels[tabname]));
+			
+			$.each(elements, function(name, el) {
+				self.src[tabname][name].val(tabname == 'events' ? rte.utils.trimEventCallback(self.img.attr(name)) : self.img.attr(name)||'');
+				dialog.append([rte.i18n(self.labels[name] || name), self.src[tabname][name]], tabname, true);
+			});
+		});
+		
+		dialog.open();		
 		
 		if (this.img.attr('src')) {
-			
-			this.prevImg = $(this.frame.createElement('img'))
-				.attr('src',  this.rte.utils.absoluteURL(this.img.attr('src')))
-				
-			this.prevImg.attr('width', this.img.attr('width'))
-				.attr('height', this.img.attr('height'))
-				.attr('title', this.img.attr('title')||'')
-				.attr('alt', this.img.attr('alt')||'')
-				.attr('style', this.img.attr('style')||'')
-			for (var n in this.src.adv) {
-				var a = this.img.attr(n);
-				if (a) {
-					this.prevImg.attr(n, a)
-				}
-			}	
-				
-			this.preview.prepend(this.prevImg);
-			this.updateValues();
-		}
-		
-		$.each(this.src, function() {
-			$.each(this, function() {
-				if (this === self.src.main.src) {
-					this.bind('change', function() { self.updatePreview(); });
-				} else if (this == self.src.main.width || this == self.src.main.height) {
-					this.bind('change', function(e) {self.updateDimesions(e);});
-				} else {
-					this.bind('change', function() { self.updateImg(); });
-				}
-			});
-		});
-		
-		// this.src.link.href.change(function() {
-		// 	var $this = $(this);
-		// 	$this.val(self.rte.utils.absoluteURL($this.val()));
-		// });
-		
-	}
-	
-
-	
-	/**
-	 * Устанавливает значения полей формы из аттрибутов prevImg
-	 * Вызывается после загрузки prevImg
-	 *
-	 **/
-	this.updateValues = function() {
-		
-		var i = this.prevImg.get(0);
-		
-		this.origW = this.prevImg.attr('width'); 
-		this.origH = this.prevImg.attr('height');
-		
-		this.src.main.src.val(this.rte.dom.attr(i, 'src'));
-		this.src.main.title.val(this.rte.dom.attr(i, 'title'));		
-		this.src.main.alt.val(this.rte.dom.attr(i, 'alt'));
-		this.src.main.width.val(this.origW);
-		this.src.main.height.val(this.origH);
-		this.src.adv['class'].val(this.rte.dom.attr(i, 'class'));
-		this.src.main.margin.val(this.prevImg)
-		var f = this.prevImg.css('float');
-		this.src.main.align.val(f == 'left' || f == 'right' ? f : (this.prevImg.css('vertical-align')||''));
-		this.src.main.border.val(this.prevImg)
-		this.src.adv.style.val(this.rte.dom.attr(i, 'style'));
-	}
-	
-	/**
-	 * Очищает поля формы
-	 *
-	 **/
-	this.cleanValues = function() {
-		$.each(this.src, function() {
-			$.each(this, function() {
-				var $this = $(this);
-				if ($this.attr('name') != 'src') {
-					$this.val('');
-				}
-			});
-		});
-	}
-	
-	/**
-	 * Устанавливает аттрибуты prevImg из полей формы
-	 *
-	 **/
-	this.updateImg = function() {
-		this.prevImg.attr({
-				style  : $.trim(this.src.adv.style.val()),
-				title  : $.trim(this.src.main.title.val()),
-				alt    : $.trim(this.src.main.alt.val()),
-				width  : parseInt(this.src.main.width.val()),
-				height : parseInt(this.src.main.height.val())
-			});
-
-		var a = this.src.main.align.val();
-		var f = a == 'left' || a == 'right' ? a : '';
-		
-		var b = this.src.main.border.val(); 
-		var m = this.src.main.margin.val();
-		this.prevImg.css('float', f);
-		this.prevImg.css('vertical-align', f ? '' : a);
-		this.prevImg.css('border', $.trim(b.width+' '+b.style+' '+b.color));
-		if (m.css) {
-			this.prevImg.css('margin', m.css);
-		} else {
-			this.prevImg.css('margin-top', m.top);
-			this.prevImg.css('margin-right', m.right);
-			this.prevImg.css('margin-bottom', m.bottom);
-			this.prevImg.css('margin-left', m.left);						
-		}
-
-		$.each([this.src.events, this.src.adv], function() {
-			$.each(this, function() {
-				var $this = $(this);
-				var n = $this.attr('name');
-				if (n != 'style') {
-					var v = $.trim($this.val());
-					if (v) {
-						self.prevImg.attr(n, v);
-					} else {
-						self.prevImg.removeAttr(n);
-					}
-				}
-			});
-		});
-		
-	}
-	
-	/**
-	 * Обновляет форму выбора изображения
-	 *
-	 **/
-	this.updatePreview = function() {
-		
-		var imgsrc = this.prevImg ? this.prevImg.attr('src') : '';
-		var src    = $.trim(this.src.main.src.val());
-		if (!src || src !=imgsrc) { // new image or empty src
-			if (this.prevImg) {
-				this.prevImg.remove();
-				this.prevImg = null;
-			}
-			this.cleanValues();
-			if (src) {  // new image
-				
-				this.prevImg = $(this.frame.createElement('img'))
-					.attr('src',  this.rte.utils.absoluteURL(src))
-					.bind('load', function() {
-						self.updateValues();
-					})
-				this.preview.prepend(this.prevImg);
-				self.updateValues();
-			}
-		} else { // update existsed image
-			this.updateImg();
+			values(this.img);
+			this.prevImg = this.img.clone().prependTo(this.preview);
+			proportion   = (this.img.width()/this.img.height()).toFixed(2);
+			width        = parseInt(this.img.width());
+			height       = parseInt(this.img.height());
 		}
 	}
-	
-	this.updateDimesions = function(e) {
 		
-		var w = parseInt(this.src.main.width.val())  || 0;
-		var h = parseInt(this.src.main.height.val()) || 0;
-		if (w > 0 && h > 0) {
-			if (e.currentTarget == this.src.main.width.get(0)) {
-				
-				this.src.main.height.val(parseInt(w*this.origH/this.origW));
-			} else {
-				this.src.main.width.val(parseInt(h*this.origW/this.origH));
-			}	
-		} else {
-			this.src.main.width.val(this.origW);
-			this.src.main.height.val(this.origH);			
-		}
-
-		this.updateImg();
-
-	}
-	
 	this.set = function() {
+		var src = this.src.main.src.val(),
+			link;
+		
 		this.rte.history.add();
-		this.rte.selection.restoreIERange();
-		if (!this.prevImg || !this.prevImg.attr('width')) {
-			this.img  && this.img.remove();
-			this.link && this.rte.doc.execCommand('unlink', false, null);
-		} else {
-			if (!this.img[0].parentNode) {
-				this.img = $(this.rte.doc.createElement('img'));
-			} 
-			
-			this.img.attr({
-					src    : this.rte.utils.absoluteURL($.trim(this.src.main.src.val())),
-					style  : $.trim(this.rte.dom.attr(this.prevImg.get(0), 'style')),
-					title  : $.trim(this.src.main.title.val()),
-					alt    : $.trim(this.src.main.alt.val()),
-					width  : parseInt(this.src.main.width.val()),
-					height : parseInt(this.src.main.height.val())
-				});
-				
-			for (var _n in this.src.adv) {
-				if (_n != 'style') {
-					var val = this.src.adv[_n].val();
-					if (val) {
-						this.img.attr(_n, val);
-					} else {
-						this.img.removeAttr(_n)
-					}
-					
-				}
-			}
-			for (var _n in this.src.events) {
-				var val = this.src.events[_n].val();
-				if (val) {
-					this.img.attr(_n, val);
-				} else {
-					this.img.removeAttr(_n)
-				}
-			}
-				
-			if (!this.img[0].parentNode) {
-				this.rte.selection.insertNode(this.img.get(0))
-			}
+		bookmarks && rte.selection.moveToBookmark(bookmarks);
+		
+		if (!src) {
+			link = rte.dom.selfOrParentLink(this.img[0]);
+			link && link.remove();
+			return this.img.remove();
 		}
+		
+		!this.img[0].parentNode && (this.img = $(this.rte.doc.createElement('img')));
+		
+		this.img.attr('src', src)
+			.attr('style', this.src.adv.style.val());
+		
+		$.each(this.src, function(i, elements) {
+			$.each(elements, function(name, el) {
+				var val = el.val(), style;
+				
+				switch (name) {
+					case 'width':
+						self.img.css('width', val);
+						break;
+					case 'height':
+						self.img.css('height', val);
+						break;
+					case 'align':
+						self.img.css(val == 'left' || val == 'right' ? 'float' : 'vertical-align', val);
+						break;
+					case 'margin':
+						if (val.css) {
+							self.img.css('margin', val.css);
+						} else {
+							self.img.css({
+								'margin-left'   : val.left,
+								'margin-top'    : val.top,
+								'margin-right'  : val.right,
+								'margin-bottom' : val.bottom
+							});
+						}
+						break;
+					case 'border':
+						if (!val.width) {
+							val = '';
+						} else {
+							val = 'border:'+val.css+';'+$.trim((self.img.attr('style')||'').replace(/border\-[^;]+;?/ig, ''));
+							name = 'style';
+							self.img.attr('style', val)
+							return;
+						}
+
+						break;
+					case 'src':
+					case 'style':
+						return;
+					default:
+						val ? self.img.attr(name, val) : self.img.removeAttr(name);
+				}
+			});
+		});
+		
+		!this.img[0].parentNode && rte.selection.insertNode(this.img[0]);
 		this.rte.ui.update();
 	}
 
@@ -6741,7 +6837,7 @@ elRTE.prototype.ui.prototype.buttons.link = function(rte, name) {
 			},
 
 			popup : {
-				use        : $('<input type="checkbox />"'),
+				use        : $('<input type="checkbox" />'),
 				url        : $('<input type="text" />'    ).val('http://'),
 				name       : $('<input type="text" />'    ),
 				width      : $('<input type="text" />'    ).attr({size : 6, title : self.rte.i18n('Width')} ).css('text-align', 'right'),
@@ -6785,7 +6881,7 @@ elRTE.prototype.ui.prototype.buttons.link = function(rte, name) {
 
 		$.each(self.src, function() {
 			for (var n in this) {
-				this[n].attr('name', n);
+				// this[n].attr('name', n);
 				var t = this[n].attr('type');
 				if (!t || (t == 'text'  && !this[n].attr('size')) ) {
 					this[n].css('width', '100%');
@@ -6854,8 +6950,9 @@ elRTE.prototype.ui.prototype.buttons.link = function(rte, name) {
 				
 			}
 		}
+
 		d = new elDialogForm(opts);
-		
+
 		l = $('<div />')
 			.append( $('<label />').append(this.src.popup.location).append(this.rte.i18n('Location bar')))
 			.append( $('<label />').append(this.src.popup.menubar).append(this.rte.i18n('Menu bar')))
@@ -6866,7 +6963,7 @@ elRTE.prototype.ui.prototype.buttons.link = function(rte, name) {
 			.append( $('<label />').append(this.src.popup.resizable).append(this.rte.i18n('Resizable')))
 			.append( $('<label />').append(this.src.popup.dependent).append(this.rte.i18n('Depedent')))				
 			.append( $('<label />').append(this.src.popup.retfalse).append(this.rte.i18n('Add return false')));
-		
+
 		d.tab('main', this.rte.i18n('Properies'))
 			.tab('popup',  this.rte.i18n('Popup'))
 			.tab('adv',    this.rte.i18n('Advanced'))
@@ -6908,7 +7005,7 @@ elRTE.prototype.ui.prototype.buttons.link = function(rte, name) {
 		if (this.src.main.anchor.children().length) {
 			d.append([this.rte.i18n('Bookmark'), this.src.main.anchor.val(href)], 'main', true)
 		}
-		if (!this.rte.options.doctype.match(/xhtml/)) {
+		if (!(this.rte.options.doctype.match(/xhtml/) && this.rte.options.doctype.match(/strict/))) {
 			d.append([this.rte.i18n('Target'), this.src.main.target.val(this.link.attr('target')||'')], 'main', true);
 		}
 		
@@ -6937,6 +7034,7 @@ elRTE.prototype.ui.prototype.buttons.link = function(rte, name) {
 			})
 		});
 		this.src.popup.use.change();
+
 		d.open();
 	}
 	
@@ -6958,9 +7056,9 @@ elRTE.prototype.ui.prototype.buttons.link = function(rte, name) {
 	}
 	
 	this.updatePopup = function() {
-		var onclick = this.rte.dom.attr(this.link.get(0), 'onclick');
-		onclick = onclick ? $.trim(onclick.toString()) : ''
-		if ( onclick.length>0 && (m = onclick.match(/window.open\("([^"]+)",\s*"([^"]*)",\s*"([^"]*)"\s*.*\);\s*(return\s+false)?/))) {
+		var onclick = ''+this.link.attr('onclick');
+		// onclick = onclick ? $.trim(onclick.toString()) : ''
+		if ( onclick.length>0 && (m = onclick.match(/window.open\('([^']+)',\s*'([^']*)',\s*'([^']*)'\s*.*\);\s*(return\s+false)?/))) {
 			this.src.popup.use.attr('checked', 'on')
 			this.src.popup.url.val(m[1]);
 			this.src.popup.name.val(m[2]);
@@ -7059,7 +7157,7 @@ elRTE.prototype.ui.prototype.buttons.link = function(rte, name) {
 				params = params.substring(0, params.length-1)
 			}
 			var retfalse = this.src.popup.retfalse.attr('checked') ? 'return false;' : '';
-			var onclick = 'window.open("'+url+'", "'+$.trim(this.src.popup.name.val())+'", "'+params+'");'+retfalse;
+			var onclick = "window.open('"+url+"', '"+$.trim(this.src.popup.name.val())+"', '"+params+"'); "+retfalse;
 			this.src.events.onclick.val(onclick);
 			if (!this.src.main.href.val()) {
 				this.src.main.href.val('#');
@@ -7085,20 +7183,10 @@ elRTE.prototype.ui.prototype.buttons.link = function(rte, name) {
 			this.rte.selection.moveToBookmark(bm);
 
 		} else {
-			
-			if (this.link[0].parentNode) {
-				var bm = this.rte.selection.getBookmark();
-				this.rte.dom.unwrap(this.link[0]);
-				this.rte.selection.moveToBookmark(bm);
-			} 
-			// else {
-			
-			// if (!this.link[0].parentNode) {
-				
 				if (this.img && this.img.parentNode) {
 					this.link = $(this.rte.dom.create('a')).attr('href', href);
 					this.rte.dom.wrap(this.img, this.link[0]);
-				} else {
+				} else if (!this.link[0].parentNode) {
 					fakeURL = '#--el-editor---'+Math.random();
 					this.rte.doc.execCommand('createLink', false, fakeURL);
 					this.link = $('a[href="'+fakeURL+'"]', this.rte.doc);
@@ -7111,7 +7199,6 @@ elRTE.prototype.ui.prototype.buttons.link = function(rte, name) {
 						}
 					});
 				}
-			// }
 
 			this.src.main.href.val(href);
 			for (var tab in this.src) {
@@ -7128,6 +7215,8 @@ elRTE.prototype.ui.prototype.buttons.link = function(rte, name) {
 					}
 				}
 			};
+
+
 			this.img && this.rte.selection.select(this.img);
 		}
 		this.rte.ui.update(true);
@@ -7606,7 +7695,7 @@ elRTE.prototype.ui.prototype.buttons.table = function(rte, name) {
 		$.each(
 			['onblur', 'onfocus', 'onclick', 'ondblclick', 'onmousedown', 'onmouseup', 'onmouseover', 'onmouseout', 'onmouseleave', 'onkeydown', 'onkeypress', 'onkeyup'], 
 			function() {
-				self.src.events[this] = $('<input type="text" />').attr('name', this).css('width', '100%');
+				self.src.events[this] = $('<input type="text" />').css('width', '100%');
 		});
 		
 		self.src.main.align.change(function() {
@@ -7973,7 +8062,7 @@ elRTE.prototype.ui.prototype.buttons.tbcellprops = function(rte, name) {
 		$.each(
 			['onblur', 'onfocus', 'onclick', 'ondblclick', 'onmousedown', 'onmouseup', 'onmouseover', 'onmouseout', 'onmouseleave', 'onkeydown', 'onkeypress', 'onkeyup'], 
 			function() {
-				self.src.events[this] = $('<input type="text" />').attr('name', this).css('width', '100%');
+				self.src.events[this] = $('<input type="text" />').css('width', '100%');
 		});
 		
 	}
