@@ -76,7 +76,7 @@ class ImageHelper
 
 			$image->save($thumb_path);
 
-            @chmod($thumb_path, 777);
+            @chmod($thumb_path, 0777);
 		}
 		
 		$thumb_path = str_replace($_SERVER["DOCUMENT_ROOT"], "", $thumb_path);
