@@ -56,6 +56,8 @@ class Feedback extends ActiveRecordModel
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('date_create',$this->date_create,true);
 
+        $criteria->order = 'date_create DESC';
+        
 		return new ActiveDataProvider(get_class($this), array(
 			'criteria' => $criteria
 		));
